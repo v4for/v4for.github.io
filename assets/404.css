@@ -1,5 +1,5 @@
 body {
-  background-image: url(/img/island.png);
+  background-image: url(img/island.png);
 }
 
 h1 {
@@ -16,3 +16,13 @@ h1 {
 .lost {
   color: #fff;
 }
+
+/* center h1 on y axis */
+#text_group {
+  height: 90%; 
+  text-align:center; 
+  display:table;
+  width:100%;
+}
+
+#text_group h1 {display:table-cell; vertical-align:middle}
