@@ -15,7 +15,7 @@ body {
     width: 100%;
     min-height: 100vh;
     /* Change url later prob a single color depending a color scheme */
-    background-image: url(https://wallpapercave.com/wp/wp5269905.jpg);
+    background-image: url(img/space.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -43,7 +43,7 @@ body {
 .content-area {
     width: 100%;
     min-height: 100vh;
-    background-image: url(https://raw.githubusercontent.com/maxwell-com/maxwellstevenson.com/main/island.png?token=GHSAT0AAAAAACG47NCQEDLXPDOSO5S7C6ZGZHOFM5A);
+    background-color: #33353d;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
