@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en-us"><head>
+    <meta charset="utf-8">
+    
+    <title>JustFall.LOL - Ultimate Multiplayer Knockout Guys Game</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script type="text/javascript" async src="https://server.cpmstar.com/cached/zonefiles/627_49986_gameapi.js?rnd=635287"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-LHRWF5S3EP%22%3E"></script>
+	<script src="js/googleanalytics.js"></script>
+	<script src="js/mobileRedirect.js"></script>
+	<!-- Rise SDK -->
+	<script src="https://sdk.streamrail.com/wrapper/hb.loader.js?wrapper_id=6171285b3c62870001405b26&amp;org=61711bd93c628700013a452a&amp;player_callbacks=srInterstitialCallback&amp;player_settings=playerConfigs"></script>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<meta name="description" content="Play the fun Fall Ultimate Knockout Guys game directly from your PC without download, just in your browser! Try out the penguin hexagon Fall Multiplayer Game from the Guys of JustFall.LOL">
+	<link rel="canonical" href="https://justfall.lol/">
+	<meta property="og:title" content="JustFall.LOL">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://justfall.lol/">
+	<meta property="og:image" content="images/splash.jpg">
+	<meta property="og:description" content="Play the fun Fall Ultimate Knockout Guys game directly from your PC without download, just in your browser! Try out the penguin hexagon Fall Multiplayer Game from the Guys of JustFall.LOL">
+	<meta name="google-site-verification" content="RifuMznLHeHFAqW88OvLrXFbF2bCILkz8aqNd6KEM0E">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- ZONETAG - PLACE INTO HEAD SECTION OR RUN CODE AT STARTUP -->
+	<script>
+		(function(zonefile) { 
+			var y = "cpmstarx";
+			var drutObj = window[y] = window[y] || {};
+			function failCpmstarAPI() { var failFn = function(o) { o && typeof(o) === "object" && o.fail && o.fail(); }; drutObj && Array.isArray(drutObj.cmd) && drutObj.cmd.forEach(failFn) && (drutObj.cmd.length = 0);  window.cpmstarAPI = window["_"+zonefile] = failFn; }
+			var rnd = Math.round(Math.random()*999999);
+			var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.onerror=failCpmstarAPI;
+			var proto = document.location.protocol;
+			var host = ( proto == "https:" || proto == "file:")?"https://server":"//cdn";
+			if(window.location.hash=="#cpmstarDev") host = "//dev.server";
+			if(window.location.hash=="#cpmstarStaging") host = "//staging.server"; 
+			s.src = host + ".cpmstar.com/cached/zonefiles/" + zonefile + ".js?rnd="+rnd; 
+			var s2=document.getElementsByTagName('script')[0];
+			s2.parentNode.insertBefore(s, s2);
+			window.cpmstarAPI = function(o) { (drutObj.cmd = drutObj.cmd || []).push(o); }
+		}('627_49986_gameapi'));
+	</script>
+	<!-- MIDROLL/INTERSTITIAL VIDEO API -->
+	<script src="js/rise.js"></script>
+  </head>
+  <body>
+	<div id="interAdsContainer"></div>
+	<div class="ads">
+		<div class="ad-smallscreen">
+			<div class="ad ad-rectangle-bottom">
+			</div>
+		</div>
+		<div class="ad ad-rectangle-upper" id="adRectangleUpper">
+			<!-- 300X250B PLACEMENT TAG - PLACE INTO BODY (ZONE TAG REQUIRED) -->
+			<script>
+				(function(w,pid){
+				var r=function(c,m){c=c.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>m},0);return(10+((c*7)%26)).toString(36)+c.toString(36);},y=r(w.location.href.split('#')[0],1),c=r(w.location.href.split('#')[0]+pid,0);
+				w.document.write('<div style="width:300px;height:250px" class="'+c+'"></div>');
+				})(window,85074);
+			</script><div style="width:300px;height:250px" class="y1fvblyq"></div>
+		</div>
+		<div class="ad-largescreen">
+			<div class="ad ad-leaderboard-bottom">
+			</div>
+		</div>
+	</div>
+	<div id="gameContainer"></div>
+	<div id="loader">
+		<div class="spinner"></div>
+		<div class="progress">
+			<div class="full"></div>
+		</div>
+	</div>
+	<script src="js/fullscreen.js"></script>
+	<script id="unity-loader" src="js/UnityLoader.js"></script>
+    <script>
+		var gameJsonUrl = "https://justbuild.nyc3.cdn.digitaloceanspaces.com/CI/JustFall/Prod/65/WebGL.json"; //%gameJsonUrl
+		var urlParams = new URLSearchParams(window.location.search);
+		if(urlParams.has('v')){
+			gameJsonUrl = gameJsonUrl.replace(/[0-9][0-9]+/i, urlParams.get('v'));
+		}
+		var gameInstance = UnityLoader.instantiate("gameContainer", gameJsonUrl, {onProgress: UnityProgress});
+		
+		function UnityProgress(gameInstance, progress) {
+			if (!gameInstance.Module) {
+				return;
+			}
+			const loader = document.querySelector("#loader");
+			if (!gameInstance.progress) {
+				const progress = document.querySelector("#loader .progress");
+				progress.style.display = "block";
+				gameInstance.progress = progress.querySelector(".full");
+				loader.querySelector(".spinner").style.display = "none";
+			}
+			gameInstance.progress.style.transform = `scaleX(${progress})`;
+			if (progress === 1 && !gameInstance.removeTimeout) {
+				loader.style.display = "none";
+				gameLoaded = true;
+			}
+		}
+		
+		initializeFullscreenEvents();
+		
+		injectAdByWindowSize();
+		
+		showAds();
+		
+		document.addEventListener('visibilitychange',
+		function () {
+		  if(!gameInstance)
+			return;
+			
+		  if (document.visibilityState == "hidden") {
+			gameInstance.SendMessage('FocusManager', 'ApplicationFocusChangedWebCallback', 0);
+		  } else {
+			gameInstance.SendMessage('FocusManager', 'ApplicationFocusChangedWebCallback', 1);
+		  }
+		});
+		
+		window.addEventListener('resize', injectAdByWindowSize);
+		
+		function injectAdByWindowSize() {
+			// Inject small ad if screen is small, or large ad if screen is large
+			if (window.innerHeight < 900) {
+				if (document.getElementById("adRectangleBottom") == null) {
+					var el = document.getElementsByClassName("ad-rectangle-bottom")[0];
+					el.id = "adRectangleBottom";
+					cpmstarAPI({kind:'go',module:'POOL 84816', config: { conditions: { target: { el: el, kind: 'replace' }}}});
+				}
+			}
+			else {
+				if (document.getElementById("adLeaderboardBottom") == null) {
+					var el = document.getElementsByClassName("ad-leaderboard-bottom")[0];
+					el.id = "adLeaderboardBottom";
+					cpmstarAPI({kind:'go',module:'POOL 85075', config: { conditions: { target: { el: el, kind: 'replace' }}}});
+				}
+			}
+		}
+		
+		function showAds() {
+			console.log("show ads");
+			
+			document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "block";
+			document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "block";
+			document.getElementById("adRectangleUpper").style.display = "block";
+
+			refresh();
+		}
+
+		function hideAds() {
+			console.log("hide ads");
+
+			document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "none";
+			document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "none";
+			document.getElementById("adRectangleUpper").style.display = "none";
+		}
+
+		function refresh() {
+			if (document.getElementById("adRectangleBottom") != null &&
+				window.getComputedStyle(document.getElementsByClassName("ad-smallscreen")[0]).display != "none") {
+				cpmstarAPI({ kind: "adcmd", module: "POOL 84816", command: "refresh" });
+			}
+			
+			if (document.getElementById("adLeaderboardBottom") != null &&
+				window.getComputedStyle(document.getElementsByClassName("ad-largescreen")[0]).display != "none") {
+				cpmstarAPI({ kind: "adcmd", module: "POOL 85075", command: "refresh" });
+			}
+			
+			cpmstarAPI({ kind: "adcmd", module: "POOL 85074", command: "refresh" });
+			
+			console.log("refresh ads");
+		}
+
+		window.onfocus = function () {
+			console.log("onfocus");
+			refresh();
+		};
+    </script>
+  
+
+</body></html>
