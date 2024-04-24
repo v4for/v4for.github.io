@@ -1,9 +1,9 @@
 body {
-  background-image: url(img/island.png);
+  background-image: url(/img/island.png);
 }
 
 h1 {
-  color: #fff;
+  font-size: 300 px;
 }
 
 .text_group {
@@ -11,8 +11,3 @@ h1 {
   margin-right: auto;
   text-align: center;
 }
-
-.lost {
-  color:#737373;
-}
-
