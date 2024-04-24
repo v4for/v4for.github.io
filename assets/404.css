@@ -1,0 +1,18 @@
+body {
+  background-color:#26272b;
+}
+
+h1 {
+  color: #fff;
+}
+
+.text_group {
+  margin-left:auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.lost {
+  color:#737373;
+}
+
