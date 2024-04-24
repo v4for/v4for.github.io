@@ -35,8 +35,14 @@
 
     <div id="text_group">
       <h1 class="404text">404</h1>
-      <p class="lost">The page you are looking for is non-existent (like your father). Possible skill issue</p>
+      <p class="lost"> <span id="pageUrl"></span> is non-existent (like your father). Possible skill issue</p>
     </div>
+
+    <script>
+              var pageUrl = window.location.href;
+              var pageNotFound = pageUrl.split('/')[3]; 
+              document.getElementById('pageUrl').textContent = pageNotFound;
+    </script>
   </body>
 </html>
 

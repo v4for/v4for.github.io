@@ -7,7 +7,7 @@ h1 {
   align-items: center;
 }
 
-.text_group {
+#text_group {
   margin-left:auto;
   margin-right: auto;
   text-align: center;
@@ -17,12 +17,3 @@ h1 {
   color: #fff;
 }
 
-/* center h1 on y axis */
-#text_group {
-  height: 90%; 
-  text-align:center; 
-  display:table;
-  width:100%;
-}
-
-#text_group h1 {display:table-cell; vertical-align:middle}
