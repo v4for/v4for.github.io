@@ -3,11 +3,16 @@ body {
 }
 
 h1 {
-  font-size: 300 px;
+  display: flex;
+  align-items: center;
 }
 
 .text_group {
   margin-left:auto;
   margin-right: auto;
   text-align: center;
+}
+
+.lost {
+  color: #fff;
 }
