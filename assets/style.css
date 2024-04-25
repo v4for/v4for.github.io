@@ -56,7 +56,6 @@ body {
 
 .site-footer {
     background-color: #13111c;
-    background-image: linear-gradient(to bottom right, #13111c, #26272b);
     padding:45px 0 20px;
     font-size:15px;
     line-height:24px;
@@ -165,7 +164,7 @@ body {
     margin-right: 20px;
   }
   .flex-container > div > p {
-    text-decoration: none; /* Remove underline from the paragraph */
+    text-decoration: none;
     color: #26272b;
 
   }
