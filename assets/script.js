@@ -11,6 +11,6 @@ var phrases = [
   var randomIndex = Math.floor(Math.random() * phrases.length);
   var randomPhrase = phrases[randomIndex];
   
-  var bannerSubtitle = document.getElementsByClassName("banner-subtitle")[0];
+  var bannerSubtitle = document.getElementsById("changetext");
   bannerSubtitle.innerHTML = randomPhrase;
   
