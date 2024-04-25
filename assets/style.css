@@ -172,7 +172,3 @@ body {
     text-decoration: none;
   }  
 
-/* fade stuff */
-
-.fadeOut { opacity: 0; }
-.fadeIn { opacity: 1; }
