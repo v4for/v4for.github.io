@@ -1,0 +1,297 @@
+
+<!-- 
+          _____                    _____                _____                    _____          
+         /\    \                  /\    \              /\    \                  /\    \         
+        /::\    \                /::\    \            /::\    \                /::\    \        
+        \:::\    \              /::::\    \           \:::\    \              /::::\    \       
+         \:::\    \            /::::::\    \           \:::\    \            /::::::\    \      
+          \:::\    \          /:::/\:::\    \           \:::\    \          /:::/\:::\    \     
+           \:::\    \        /:::/__\:::\    \           \:::\    \        /:::/__\:::\    \    
+           /::::\    \      /::::\   \:::\    \          /::::\    \      /::::\   \:::\    \   
+  _____   /::::::\    \    /::::::\   \:::\    \        /::::::\    \    /::::::\   \:::\    \  
+ /\    \ /:::/\:::\    \  /:::/\:::\   \:::\____\      /:::/\:::\    \  /:::/\:::\   \:::\____\ 
+/::\    /:::/  \:::\____\/:::/  \:::\   \:::|    |    /:::/  \:::\____\/:::/  \:::\   \:::|    |
+\:::\  /:::/    \::/    /\::/    \:::\  /:::|____|   /:::/    \::/    /\::/   |::::\  /:::|____|
+ \:::\/:::/    / \/____/  \/_____/\:::\/:::/    /   /:::/    / \/____/  \/____|:::::\/:::/    / 
+  \::::::/    /                    \::::::/    /   /:::/    /                 |:::::::::/    /  
+   \::::/    /                      \::::/    /   /:::/    /                  |::|\::::/    /   
+    \::/    /                        \::/____/    \::/    /                   |::| \::/____/    
+     \/____/                          ~~           \/____/                    |::|  ~|          
+                                                                              |::|   |          
+                                                                              \::|   |          
+                                                                               \:|   |          
+                                                                                \|___|          
+                                                                                                
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+    <meta name="keywords"
+        content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport"
+        content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>Canvas</title>
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6/css/all.css" rel="stylesheet">
+    <link href="assets/css/index.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6824112472674918"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/picmo@latest/dist/umd/index.js"></script>
+    <script src="assets/js/quadtree.js"></script>
+    <script src="assets/js/main_out.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45C2EV6T5X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-45C2EV6T5X');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TDKSTRS');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body onload="MC()">
+    <div id="gallery" onclick="if (event.target == this) this.hide()" style="display: none;">
+        <div id="gallery-content">
+            <div id="gallery-header">
+                <p>Skins & Settings</p>
+            </div>
+
+            <div id="gallery-body">
+                <ul id="skinsUL"></ul>
+            </div>
+            <center>
+                <h4 style="color: white;">
+                    Settings:
+                </h4>
+                <div id="settings" class="checkbox">
+                    <div style="margin: 6px;">
+                        <label><input id="showSkins" type="checkbox">Skins</label>
+                        <label><input id="showNames" type="checkbox">Names</label>
+                        <label><input id="darkTheme" type="checkbox">Dark</label>
+                        <label><input id="showColor" type="checkbox">Color</label>
+                        <label><input id="showMass" type="checkbox">Mass</label>
+                        <label><input id="showChat" type="checkbox">Chat</label>
+                        <label><input id="showMinimap" type="checkbox">Minimap</label>
+                        <label><input id="showPosition" type="checkbox">Position</label>
+                        <label><input id="showBorder" type="checkbox">Border</label>
+                        <label><input id="showGrid" type="checkbox">Grid</label>
+                        <label><input id="moreZoom" type="checkbox">Zoomout</label>
+                        <label><input id="fillSkin" type="checkbox">Fill Skin</label>
+                        <label><input id="backgroundSectors" type="checkbox">Background Sectors</label>
+                        <label><input id="jellyPhysics" type="checkbox">Jelly Physics</label>
+                        <label>
+                            <input id="playSounds" type="checkbox">Sounds
+                            <input id="soundsVolume" type="range" min="0" max="1" step="any">
+                        </label>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+    <div id="update" onclick="if (event.target == this) this.hide()" style="display: none;">
+        <div id="gallery-content">
+            <div id="gallery-header">Updates</div>
+            <div id="update-body"></div>
+        </div>
+    </div>
+    <div id="credits" onclick="if (event.target == this) this.hide()" style="display: none;">
+        <div id="credit-content">
+            <div id="gallery-header" style="border-radius: 10px 10px 0px 0px;">Credits</div>
+            <div id="credit-body"></div>
+        </div>
+    </div>
+    <div id="overlays" style="display: none;">
+        <div id="helloDialog">
+            <div class="form-group">
+                <img src="https://cdn.glitch.global/2d6e8d70-57a5-4dd2-b4bb-c1505f83f020/JPTRAGAR.png"
+                    style="width: 100%;">
+                <p id="subtitle">
+                    Loading...
+                </p>
+            </div>
+
+            <div class="form-group">
+                <input id="nick" class="nick form-control" placeholder="Nickname" maxlength="100">
+                <button id="emoji-btn" class="emoji-btn btn">😎</button>
+                <select id="gamemode" class="form-control" onchange="setserver(this.value)" required>
+                    <option value="bloodonmyjeans.glitch.me" selected>MAIN #1 [US]</option>
+                    <option value="pussylovers.glitch.me" selected>MAIN #2 [US]</option>
+                    <option value="zekrom.glitch.me">Super Rainbow [US]</option>
+                    <option value="love-yourz.glitch.me">Auto-Merge [US]</option>
+                </select>
+            </div>
+
+            <button id="play-btn" class="btn btn-play btn-primary btn-needs-server">Play</button>
+            <button id="spectate-btn" onclick="spectate()"
+                class="btn btn-warning btn-spectate btn-needs-server glyphicon glyphicon-eye-open"></button>
+            <button id="gallery-btn" onclick="openSkinsList()"
+                class="btn btn-play btn-primary btn-needs-server btn-info">Skins / <i
+                    class="fa-duotone fa-gear"></i></button>
+            <button id="imgur-btn" onclick="window.open('https://imgur.com/t/agario%20skin','_blank')"
+                class="btn btn-play btn-primary btn-needs-server btn-info">Pub Skins</button>
+            <button id="update-btn" onclick="openUpdates()"
+                class="btn btn-play btn-primary btn-needs-server btn-info">Updates</button>
+            <button id="credit-btn" onclick="openCredits()"
+                class="btn btn-play btn-primary btn-needs-server btn-info">Credits</button>
+            <input id="skin" class="form-control" style="width:100%;" placeholder="Place Skin URL Here...">
+            <hr>
+
+            <div id="instructions">
+                <hr>
+                <center>
+                    <span class="text-muted">
+                        Move your mouse to control your cell<br>
+                        Press <b>Space</b> to split<br>
+                        Press <b>W</b> to eject some mass<br>
+                        If you can't join the first server<br>
+                        <b>JOIN THE 2ND SERVER!</b>
+                    </span>
+                </center>
+            </div>
+            <div id="opensource">
+                <hr>
+                <center>
+                    <span class="text-muted">
+                        This website is open source <a href="https://github.com/imadejptr/jptr-agario"
+                            target="_blank">here</a>, feel free to use it :><br>
+                        You wanna partner? Contact me on Discord: <span
+                            style="font-family: 'Courier New', Courier, monospace; background-color: #00090e; padding: 5px; border-radius: 1em;">Th3Skeleton#1337</span><br>
+                        <-- join the discord o_o </span> </center> </div> <hr>
+                            <div id="footer">
+                                <a href="https://imadejptr.glitch.me/" target="_blank"><span id="rainbow">Copyright ©
+                                        2022-2023
+                                        imadejptr</span></a>
+                            </div>
+
+                            <div id="versionDialog">
+                                <div class="form-group">
+                                    <img src="https://cdn.glitch.global/9c8c96bb-a059-45d7-8b2b-d37ee6083aa6/logo.png" width="100%">
+                                    <h1 id="rainbow" style="text-align: center;">Check out <a href="https://www.imadejptr.com" target="_blank">imadejptr</a> for more games!</h1>
+                                    <script async
+                                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6003658983346596"
+                                        crossorigin="anonymous"></script>
+                                    <!-- woo-jptragar -->
+                                    <ins class="adsbygoogle" style="display:block"
+                                        data-ad-client="ca-pub-6003658983346596" data-ad-slot="1509634628"
+                                        data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                </div>
+
+                            </div>
+                            <div id="otherWebsite">
+                                <div class="form-group">
+                                    <h2 id="title-about">About</h2>
+                                    <div>
+                                        <hr>
+                                        <center>
+                                            <span class="updates">
+                                                JPTR Agario is a faitful recreation of the agarios in the past that have
+                                                sadly
+                                                fallen.
+                                                This is a heavily modified agario client using Cigar2. If you wanna see
+                                                more games
+                                                just
+                                                like this, go check out <a href="https://imadejptr.glitch.me/">i made
+                                                    jptr</a>. From
+                                                flash games, to html5 games like slope and slither.io, to even old games
+                                                like
+                                                Pokemon
+                                                and Mario Bros. This site offers something that isn't really seen on
+                                                other game
+                                                sites,
+                                                and that is clarity so you are guaranteed to play the game that is shown
+                                                to you, no
+                                                bs
+                                                required. Go check it out and check out the credits for more
+                                            </span>
+                                            <hr>
+                                            <span class="updates">
+                                                <a href="https://discord.gg/UQ35z2ACNw" target="_blank" class="woo">
+                                                    <h4
+                                                        style="color: #c88b3a; text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000; font-size: xx-large;">
+                                                        Join the Discord!</h4>
+                                                    <img src="https://discordapp.com/api/guilds/1049872644528418856/widget.png?style=shield"
+                                                        width="50%" id="dcimg">
+                                                </a>
+                                            </span>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+
+        </div>
+
+        <div id="connecting">
+            <div id="connecting-content">
+                <h2>Loading...</h2>
+                <p> If you cannot connect to the servers, check if you have some anti virus or firewall blocking the
+                    connection.</p>
+            </div>
+        </div>
+
+        <div id="mobileStuff" style="display: none;">
+            <div id="touchpad"></div>
+            <div id="touchCircle" style="display: none;"></div>
+            <img src="/assets/img/split.png" id="splitBtn">
+            <img src="/assets/img/eject.png" id="ejectBtn">
+        </div>
+
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <input type="text" id="chat_textbox" placeholder="Press enter to chat" maxlength="200">
+        <div style="font-family:'Ubuntu'">&nbsp;</div>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDKSTRS" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <script src="/assets/js/vanillaEmojiPicker.js"></script>
+        <script>
+            new EmojiPicker({
+                trigger: [{
+                    selector: '.emoji-btn',
+                    insertInto: '#emoji' // '.selector' can be used without array
+                }],
+                closeButton: true,
+                //specialButtons: green
+            });
+        </script>
+</body>
+
+</html>

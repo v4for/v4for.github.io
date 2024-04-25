@@ -1,0 +1,23 @@
+{
+  "name": "jptragar",
+  "version": "1.2.3",
+  "author": "prkr",
+  "description": "A new take on agario made by prkr/pshel/th3skeleton/crilp",
+  "main": "webserver.js",
+  "scripts": {
+    "start": "node webserver.js",
+    "dev": "nodemon webserver"
+  },
+  "dependencies": {
+    "emojipanel": "^1.0.0",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://jptragar.glitch.me"
+  },
+  "license": "ISC"
+}
