@@ -172,6 +172,10 @@ body {
     text-decoration: none;
   }  
 
-      /* fade stuff */
-  .fadeOut { opacity: 0; }
-  .fadeIn { opacity: 1; }
+
+  /* fade stuffs */
+  .fade-in {
+    opacity: 0;
+    transition: opacity 2s;
+    -webkit-transition: opacity 2s;
+  }
