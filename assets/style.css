@@ -172,3 +172,9 @@ body {
   .descriptions{
     text-decoration: none;
   }  
+  .styled-hr {
+    width: 30%;
+    height: 5px;
+    border: none;
+    background-color: #306ee8; /* Change the color as needed */
+}
