@@ -56,7 +56,7 @@ body {
 .content-area2 {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(132.29deg, rgba(132, 200, 168, 0.08) 17.64%, rgba(114, 192, 156, 0) 66.58%);
+    background-color: rgba(114, 192, 156, 0);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
