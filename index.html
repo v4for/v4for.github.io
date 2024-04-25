@@ -15,7 +15,7 @@
     <script src="assets/script.js"></script>
 
     <script>
-        var phrases = [
+      var phrases = [
           'Do your IT "work" here. Dev work in progress',
           "To actually learn IT, go to W3",
           "Minecraft ahh vibes",
@@ -24,14 +24,12 @@
           'Wow, such difficult "education"',
           "Bro, don't clown my dev build"
         ];
-        
+
         var randomIndex = Math.floor(Math.random() * phrases.length);
         var randomPhrase = phrases[randomIndex];
+
+        document.getElementById("changetext").innerHTML = randomPhrase;
         
-        var bannerSubtitle = document.getElementById("changetext");
-        bannerSubtitle.innerHTML = randomPhrase;
-        
-            
     </script>
   </head>
   <body>
@@ -55,7 +53,7 @@
 
     <div class="banner">
         <h1 class="banner-title">Vafor</h1>
-        <h2 class="banner-subtitle" id="changetext">Do your IT "work" here. Dev work in progress</h2>
+        <h2 class="banner-subtitle" id="changetext"></h2>
     </div>
     <div class="content-area">
         <h2>Popular gxmes.<h2>
