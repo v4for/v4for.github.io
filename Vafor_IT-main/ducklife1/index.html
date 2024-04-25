@@ -2,33 +2,38 @@
 <html>
     <head>
         <meta charset='utf8'>
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
+            #ruffle {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
     </head>
     <body>
         <div id='ruffle'></div>
-        <button onclick="requestFullscreen()">Fullscreen</button>
         <script src='../../assets/ruffle/ruffle.js'></script>
         <script>
 var swfobject = {};
 
-swfobject.embedSWF = function(url, cont, width, height){
-    var ruffle = window.RufflePlayer.newest(),
-        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
-            width: width,
-            height: height,
-            style: 'width: ' + width + 'px; height: ' + height + 'px',
-        });
+swfobject.embedSWF = function(url, cont){
+    var ruffle = window.RufflePlayer.newest({
+        allowFullscreen: true // Enable fullscreen mode
+    });
+    var player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+        width: '100%',
+        height: '100%',
+        style: 'width: 100%; height: 100%;'
+    });
     
     player.load({ url: url });
 }
 
-swfobject.embedSWF('ducklife.swf', 'ruffle', 500, 500);
-
-function requestFullscreen() {
-    var elem = document.getElementById('ruffle');
-    elem.requestFullscreen().catch(err => {
-        alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-    });
-}
+swfobject.embedSWF('ducklife.swf', 'ruffle');
         </script>
     </body>
 </html>
