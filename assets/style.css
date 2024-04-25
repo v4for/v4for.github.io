@@ -43,7 +43,7 @@ body {
 .content-area {
     width: 100%;
     min-height: 100vh;
-    background-color: #272200b3;
+    background-color: #13111c; /*bro really took the railway color */
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
