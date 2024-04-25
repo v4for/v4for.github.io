@@ -53,23 +53,10 @@ body {
     justify-content: center;
     align-items: center;
 }
-.content-area2 {
-    width: 100%;
-    min-height: 100vh;
-    background-color: hsl(152, 15%, 10%);
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .site-footer {
-    background-color: linear-gradient(to bottom right, hsl(152, 15%, 10%), #26272b);
+    background-color: #13111c;
+    background-image: linear-gradient(to bottom right, #13111c, #26272b);
     padding:45px 0 20px;
     font-size:15px;
     line-height:24px;
