@@ -1,15 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ducklife</title>
-</head>
-<body>
-  <div id="container"></div>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset='utf8'>
+    </head>
+    <body>
+        <div id='ruffle'></div>
+        <script src='../../assets/ruffle/ruffle.js'></script>
+        <script>
+var swfobject = {};
 
-<script>swfobject.embedSWF("ducklife.swf", 'ruffle', 100%, 100%);</script> <!-- Theses files should be local -->
-<script src="../../assets/ruffle/ruffle.js"></script>
+swfobject.embedSWF = function(url, cont, width, height){
+    var ruffle = window.RufflePlayer.newest(),
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            width: width,
+            height: height,
+            style: 'width: ' + width + 'px; height: ' + height + 'px',
+        });
+    
+    player.load({ url: url });
+}
 
-</body>
+swfobject.embedSWF('ducklife.swf', 'ruffle', 500, 500);
+        </script>
+    </body>
 </html>
