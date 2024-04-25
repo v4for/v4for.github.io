@@ -21,6 +21,13 @@ swfobject.embedSWF = function(url, cont, width, height){
 }
 
 swfobject.embedSWF('ducklife.swf', 'ruffle', 500, 500);
+
+document.addEventListener("DOMContentLoaded", function() {
+    var elem = document.getElementById('ruffle');
+    elem.requestFullscreen().catch(err => {
+        alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+    });
+});
         </script>
     </body>
 </html>
