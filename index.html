@@ -13,6 +13,26 @@
    <!--- //import javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="assets/script.js"></script>
+
+    <script>
+        var phrases = [
+          'Do your IT "work" here. Dev work in progress',
+          "To actually learn IT, go to W3",
+          "Minecraft ahh vibes",
+          "The answer is 42",
+          "Linux on top (that's right Martin)",
+          'Wow, such difficult "education"',
+          "Bro, don't clown my dev build"
+        ];
+        
+        var randomIndex = Math.floor(Math.random() * phrases.length);
+        var randomPhrase = phrases[randomIndex];
+        
+        var bannerSubtitle = document.getElementById("changetext");
+        bannerSubtitle.innerHTML = randomPhrase;
+        
+            
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -37,8 +57,7 @@
         <h1 class="banner-title">Vafor</h1>
         <h2 class="banner-subtitle" id="changetext">Do your IT "work" here. Dev work in progress</h2>
     </div>
-    <div class="content-area"><!--
-        <!---   //underneath title -->
+    <div class="content-area">
         <h2>Popular gxmes.<h2>
           <h3>You can find the rest of the games <a href="Vafor_IT-main/">here</a></h3>
           <div class="flex-container">
