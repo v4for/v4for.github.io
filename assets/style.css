@@ -53,6 +53,19 @@ body {
     justify-content: center;
     align-items: center;
 }
+.content-area2 {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(132.29deg, rgba(132, 200, 168, 0.08) 17.64%, rgba(114, 192, 156, 0) 66.58%);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .site-footer {
     background-color: #13111c;
