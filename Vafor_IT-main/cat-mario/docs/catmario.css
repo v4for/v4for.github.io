@@ -1,0 +1,354 @@
+﻿html {
+  height: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+    background-color: #5D5C5C;
+    height: 100%;
+    user-select: none;
+    overflow: hidden;
+}
+
+btn {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 0 40px 0 40px;
+    background-color: #C3C8C9;
+    font-size: 28px;
+    margin: 6px;
+    padding: 6px 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+btn:active {
+    background-color: #D7DCDD;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+  float: right;
+  text-align: right;
+}
+
+
+#container {
+    position: relative;
+    width: 480px;
+    height: 100%;
+    max-height:853px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #282828;
+}
+
+#canvas {
+    border: 0px none;
+    outline: none;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ad {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 480px;
+    overflow: hidden;
+}
+
+#title {
+    position: absolute;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title header {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title btn {
+    width: 200px;
+}
+
+#title footer {
+    line-height: 50px;
+    font-size: 16px;
+    text-shadow: 0px 0px 5px #000;
+}
+
+#title footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#settings_window {
+    height: 450px;
+}
+
+#settings_window content {
+    padding: 25px 95px;
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+#settings_window content div {
+  margin: 10px;
+}
+
+#error {
+	height: 50%;
+}
+
+#error content {
+ padding: 40px;
+}
+
+.mask {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+figure {
+  margin: 0;
+  padding: 10px;
+}
+figure a {
+  display: block;
+}
+mark {
+  padding: 0 5px;
+  background-color: #ddd;
+}
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.btn {
+  padding: 10px 45px;
+  cursor: pointer;
+  color: #555;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  background-color: #f3f3f3;
+}
+.btn.disabled {
+  cursor: not-allowed;
+  color: #ddd;
+  border-color: #ddd;
+}
+.btn-group {
+  padding: 15px 20px;
+  text-align: right;
+  background-color: #f5f6f8;
+}
+.btn-primary {
+  color: #fff;
+  border-color: #0066c0;
+  background-color: #0074d9;
+}
+.btn-primary:hover {
+  background-color: #0066c0;
+}
+.btn-danger {
+  color: #fff;
+  font-size: 24px;
+  border-color: #ab3326;
+  margin: 8px;
+  background-color: #c0392b;
+}
+
+.start-btn{
+    width: 210px
+}
+
+.setting-btn{
+    font-size: 18px;
+    margin: 8px;
+    width: 200px;
+}
+
+.btn-danger:hover {
+  background-color: #ab3326;
+}
+.btn-cancel {
+  color: #999;
+  border-color: #ddd;
+}
+.btn-cancel:hover {
+  background-color: #e6e6e6;
+}
+.window {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 32px;
+    font-family: 黑体;
+    width: 416px;
+    margin: auto;
+    background-color: #fff;
+    border-width: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.window header {
+    position: relative;
+    padding: 8px;
+    text-align: center;
+    padding: 12px 20px;
+    background-color: #434a54;
+    color: white;
+}
+
+.window content {
+    position: relative;
+    background-color: #FFF;
+    flex: 1;
+    font-size: 22px;
+    height: 60%;
+}
+
+.window footer {
+    position: relative;
+    padding: 10px;
+    background-color: #f5f6f8;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/**
+ * Checkbox Four
+ */
+.checkboxFour {
+    width: 40px;
+    height: 40px;
+    background: #ddd;
+    margin: 20px 90px;
+ 
+    border-radius: 100%;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    float: left;
+}
+
+.checkboxFour input{
+    display: none;
+}
+
+.checkboxFourFront{
+    padding-top: 5px;
+}
+
+/**
+ * Create the checkbox button
+ */
+.checkboxFour label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+ 
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+ 
+    background: #333;
+ 
+    -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+/**
+ * Create the checked state
+ */
+.checkboxFour input[type=checkbox]:checked + label {
+    background: #26ca28;
+}
+
+
+.close {
+  position: absolute;
+  width: 58px;
+  height: 54px;
+  background:#434a54;
+  opacity:0.5;
+  display:inline-block;
+  top: 3px;
+  right: 3px;
+}
+.close:hover{
+	cursor:pointer;
+	opacity:1;
+}
+.close::before, .close::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 10%;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: 5px;
+  background: #ffffff;
+}
+.close::before {
+  transform: rotate(45deg);
+}
+.close::after {
+  transform: rotate(-45deg);
+}
