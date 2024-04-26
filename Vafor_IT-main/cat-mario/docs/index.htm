@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=480,user-scalable=no" />
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-orientation" content="portrait">
+  <title>超级猫里奥</title>
+  <link rel="stylesheet" href="catmario.css"/>
+  <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+</head>
+<body oncontextmenu="event.preventDefault()">
+  <div style='display:none'><img src='res/wxicon.jpg'/></div>
+  <div id="container">
+    <div id="title" style="display:none">
+      <header><div><img class="titleimg" src="res/logo.png" /></div></header>
+      <content>
+        <button class="btn btn-danger start-btn" id="startgame">开始游戏</button>
+        <button class="btn btn-danger start-btn" id="settings">游戏设置</button>
+      </content>
+      <footer><div><a href="http://tiwb.com">游戏版权归原作者所有</a></div></footer>
+    </div>
+
+    <div id="error" class="window" style="display:none">
+      <div class="mask"></div>
+      <header>错误</header>
+      <content id="error_text"></content>
+      <footer>
+        <button class="btn btn-danger start-btn" id="error_close">确定</button>
+      </footer>
+    </div>
+
+    <div id="settings_window" class="window" style="display:none">
+      <div class="mask"></div>
+      <header>设置 <span id ="settings_back" class="close"></span></header>
+      <content>
+        <div>
+          <div class="checkboxFour">
+            <input type="checkbox"  id="settings_se" name="" />
+            <label for="settings_se"></label>
+          </div>
+          <div class="checkboxFourFront">
+            <label for="settings_se">播放音效</label>
+          </div>
+        </div>
+        <div>
+          <div class="checkboxFour">
+            <input type="checkbox" id="settings_bgm" name="" />
+            <label for="settings_bgm"></label>
+          </div>
+          <div class="checkboxFourFront">
+            <label for="settings_bgm">播放音乐</label>
+          </div>
+        </div>
+        <div>
+          <div class="checkboxFour">
+            <input type="checkbox" id="settings_onehand" name="" />
+            <label for="settings_onehand"></label>
+          </div>
+          <div class="checkboxFourFront">
+            <label for="settings_onehand">单手模式</label>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-cancel setting-btn" id="settings_cleardata" >清除游戏数据</button>
+        </div>
+      </content>
+    </div>
+    <canvas id="canvas" width="480" height="420" tabindex="0"></canvas>
+    <script type='text/javascript' src="load.js"></script>
+    <script async type="text/javascript" src="catmario.js"></script>
+  </div>
+</body>
+</html>
