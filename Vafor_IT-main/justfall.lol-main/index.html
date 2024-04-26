@@ -144,12 +144,11 @@
 			document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "block";
 			document.getElementById("adRectangleUpper").style.display = "block";
 
-			refresh();
+			//refresh();
 		}
 		
 		function hideAds() {
 			console.log("hide ads");
-
 			document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "none";
 			document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "none";
 			document.getElementById("adRectangleUpper").style.display = "none";
@@ -176,20 +175,7 @@
 			refresh();
 		};
 
-	    //clap the ads
-
-		var largeScreenAd = document.querySelector('.ad-largescreen');
-		var leaderboardAd = document.querySelector('.ad-leaderboard-bottom');
-		var clappedad = document.querySelector('.adRectangleUpper');
-
-		if (largeScreenAd && leaderboardAd && clappedad) {
-			largeScreenAd.style.display = 'none';
-			leaderboardAd.style.display = 'none';
-			clappedad.style.display = 'none';
-		} else {
-			console.error('One or more elements not found.');
-		}
-
+		hideAds()
 
     </script>
   
