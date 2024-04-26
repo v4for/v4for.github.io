@@ -180,15 +180,16 @@
 
 		var largeScreenAd = document.querySelector('.ad-largescreen');
 		var leaderboardAd = document.querySelector('.ad-leaderboard-bottom');
-	    	var clappedad = document.querySelector('#adRectangleUpper');
-		
-		if (largeScreenAd && leaderboardAd) {
-		    largeScreenAd.style.display = 'none';
-		    leaderboardAd.style.display = 'none';
-		    clappedad.style.display = 'none';
+		var clappedad = document.querySelector('.adRectangleUpper');
+
+		if (largeScreenAd && leaderboardAd && clappedad) {
+			largeScreenAd.style.display = 'none';
+			leaderboardAd.style.display = 'none';
+			clappedad.style.display = 'none';
 		} else {
-		    console.error('One or more elements not found.');
+			console.error('One or more elements not found.');
 		}
+
 
     </script>
   
