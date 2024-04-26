@@ -137,15 +137,6 @@
 			}
 		}
 		
-		function showAds() {
-			console.log("show ads");
-			
-			document.getElementsByClassName("ad-rectangle-bottom")[0].style.display = "block";
-			document.getElementsByClassName("ad-leaderboard-bottom")[0].style.display = "block";
-			document.getElementById("adRectangleUpper").style.display = "block";
-
-			//refresh();
-		}
 		
 		function hideAds() {
 			console.log("hide ads");
@@ -172,7 +163,6 @@
 
 		window.onfocus = function () {
 			console.log("onfocus");
-			refresh();
 		};
 
 		hideAds()
