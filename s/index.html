@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Name and Image Changer</title>
+</head>
+<body>
+  <h1>Change Tab Name and Image</h1>
+  <p>
+    <b>Google Search: </b>
+    <button style="background-color: rgb(58, 39, 12);height:20px;width:75px;color:white;" onclick="applyUrl('https://storage.googleapis.com/operating-anagram-8280/favicon-32x32.png', 'Math practice - Google Search');">Apply</button>
+  </p>
+  <p>
+    <b>Google Classroom: </b>
+    <button style="background-color: rgb(58, 39, 12);height:20px;width:75px;color:white;" onclick="applyUrl('https://ssl.gstatic.com/classroom/favicon.png', 'Classes');">Apply</button>
+  </p>
+  <!-- Add more tabs here -->
+
+<script>
+function applyUrl(url, tabName) {
+  // Change tab name
+  document.title = tabName;
+
+  // Change tab image (favicon)
+  var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = url;
+  document.getElementsByTagName('head')[0].appendChild(link);
+
+  // Save info to local storage
+  localStorage.setItem('tabName', tabName);
+  localStorage.setItem('tabImage', url);
+}
+
+// Load saved info from local storage when page loads
+window.onload = function() {
+  var savedTabName = localStorage.getItem('tabName');
+  var savedTabImage = localStorage.getItem('tabImage');
+  if (savedTabName) {
+    document.title = savedTabName;
+  }
+  if (savedTabImage) {
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    link.href = savedTabImage;
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }
+}
+</script>
+</body>
+</html>
