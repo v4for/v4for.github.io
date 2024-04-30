@@ -70,7 +70,7 @@ function closeblob() {
 function normal(){
     var button = document.getElementById('normal');
     button.classList.toggle('active');
-    var links = document.querySelectorAll('.nav-link');
+    var links = document.querySelectorAll('a');
     if (button.classList.contains('active')) {
         links.forEach(function(link) {
             link.onclick = null;
