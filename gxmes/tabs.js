@@ -1,5 +1,5 @@
 window.onload = function() {
-    toggleButton();
+    toggle2();
 };
 
 function toggleLinkBehavior() {
