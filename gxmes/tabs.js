@@ -1,7 +1,7 @@
 function toggleLinkBehavior() {
     var useIframe = document.getElementById('useIframe').classList.contains('active');
 
-    var links = document.querySelectorAll('.nav-link');
+    var links = document.querySelectorAll('a');
 
     if (useIframe) {
         links.forEach(function(link) {
@@ -36,7 +36,7 @@ function toggle2() {
 }
 
 function openblob() {
-    var links = document.querySelectorAll('.nav-link');
+    var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.onclick = function(event) {
             event.preventDefault(); 
@@ -61,7 +61,7 @@ function openblob() {
 }
 
 function closeblob() {
-    var links = document.querySelectorAll('.nav-link');
+    var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.onclick = null;
     });
@@ -91,7 +91,7 @@ function togglePopupButton() {
 }
 
 function enablePopupBehavior() {
-    var links = document.querySelectorAll('.nav-link');
+    var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.onclick = function(event) {
             event.preventDefault(); 
@@ -102,7 +102,7 @@ function enablePopupBehavior() {
 }
 
 function disablePopupBehavior() {
-    var links = document.querySelectorAll('.nav-link');
+    var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.onclick = null;
     });
