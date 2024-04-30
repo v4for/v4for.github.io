@@ -1,3 +1,7 @@
+window.onload = function() {
+    toggleButton();
+};
+
 function toggleLinkBehavior() {
     var useIframe = document.getElementById('useIframe').classList.contains('active');
 
