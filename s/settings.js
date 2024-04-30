@@ -32,5 +32,6 @@ function loadBlank() {
         iframe.style.zIndex = "999999";
         iframe.src = window.location.href;
         win.document.body.appendChild(iframe);
+        window.close();
     }
 }
