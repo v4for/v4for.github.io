@@ -1,11 +1,17 @@
+var popupButton, useIframeButton, noButton, normalButton;
+
 window.onload = function() {
+    popupButton = document.getElementById('popup');
+    useIframeButton = document.getElementById('useIframe');
+    noButton = document.getElementById('no');
+    normalButton = document.getElementById('normal');
+    
     toggle2();
 };
 
 function togglePopupButton() {
-    var button = document.getElementById('popup');
-    button.classList.toggle('active');
-    if (button.classList.contains('active')) {
+    popupButton.classList.toggle('active');
+    if (popupButton.classList.contains('active')) {
         enablePopupBehavior();
     } else {
         disablePopupBehavior();
@@ -13,15 +19,13 @@ function togglePopupButton() {
 }
 
 function toggleButton() {
-    var button = document.getElementById('useIframe');
-    button.classList.toggle('active');
+    useIframeButton.classList.toggle('active');
     toggleLinkBehavior();
 }
 
 function toggle2() {
-    var button = document.getElementById('no');
-    button.classList.toggle('active');
-    if (button.classList.contains('active')) {
+    noButton.classList.toggle('active');
+    if (noButton.classList.contains('active')) {
         openblob();
     } else {
         closeblob();
@@ -29,10 +33,9 @@ function toggle2() {
 }
 
 function normal(){
-    var button = document.getElementById('normal');
-    button.classList.toggle('active');
+    normalButton.classList.toggle('active');
     var links = document.querySelectorAll('a');
-    if (button.classList.contains('active')) {
+    if (normalButton.classList.contains('active')) {
         links.forEach(function(link) {
             link.onclick = null;
         });
@@ -40,28 +43,6 @@ function normal(){
         toggleLinkBehavior();
     }
 }
-
-function toggleLinkBehavior() {
-    var useIframe = document.getElementById('useIframe').classList.contains('active');
-
-    var links = document.querySelectorAll('a');
-
-    if (useIframe) {
-        links.forEach(function(link) {
-            link.onclick = function(event) {
-                event.preventDefault(); 
-                const html = '<html><title>Link</title><iframe src="' + link.href + '" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe></html>';
-                const blob = new Blob([html], { type: 'text/html' });
-                window.open(URL.createObjectURL(blob));
-            };
-        });
-    } else {
-        links.forEach(function(link) {
-            link.onclick = null;
-        });
-    }
-}
-
 
 
 function openblob() {
