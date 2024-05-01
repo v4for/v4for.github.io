@@ -5,6 +5,13 @@ window.onload = function() {
     useIframeButton = document.getElementById('useIframe');
     noButton = document.getElementById('no');
     normalButton = document.getElementById('normal');
+
+    popupButton.addEventListener('click', togglePopupButton);
+    useIframeButton.addEventListener('click', toggleButton);
+    noButton.addEventListener('click', toggle2);
+    normalButton.addEventListener('click', normal);
+
+    restoreTabSettings();
 };
 
 function togglePopupButton() {
@@ -24,9 +31,9 @@ function toggleButton() {
 function toggle2() {
     noButton.classList.toggle('active');
     if (noButton.classList.contains('active')) {
-        openblob();
+        openBlob();
     } else {
-        closeblob();
+        closeBlob();
     }
 }
 
@@ -42,9 +49,7 @@ function normal(){
     }
 }
 
-
-
-function openblob() {
+function openBlob() {
     var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.onclick = function(event) {
@@ -69,14 +74,12 @@ function openblob() {
     });
 }
 
-function closeblob() {
+function closeBlob() {
     var links = document.querySelectorAll('a');
     links.forEach(function(link) {
         link.onclick = null;
     });
 }
-
-
 
 function enablePopupBehavior() {
     var links = document.querySelectorAll('a');
@@ -96,20 +99,17 @@ function disablePopupBehavior() {
     });
 }
 
-
-// freaking tab cloak being retarted 
-
-window.onload = function() {
-  var savedTabName = localStorage.getItem('tabName');
-  var savedTabImage = localStorage.getItem('tabImage');
-  if (savedTabName) {
-    document.title = savedTabName;
-  }
-  if (savedTabImage) {
-    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/x-icon';
-    link.rel = 'shortcut icon';
-    link.href = savedTabImage;
-    document.getElementsByTagName('head')[0].appendChild(link);
-  }
+function restoreTabSettings() {
+    var savedTabName = localStorage.getItem('tabName');
+    var savedTabImage = localStorage.getItem('tabImage');
+    if (savedTabName) {
+        document.title = savedTabName;
+    }
+    if (savedTabImage) {
+        var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.type = 'image/x-icon';
+        link.rel = 'shortcut icon';
+        link.href = savedTabImage;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
 }
