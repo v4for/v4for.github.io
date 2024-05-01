@@ -5,7 +5,7 @@ window.onload = function() {
     useIframeButton = document.getElementById('useIframe');
     noButton = document.getElementById('no');
     normalButton = document.getElementById('normal');
-    
+
     toggle2();
 };
 
@@ -13,6 +13,9 @@ function togglePopupButton() {
     popupButton.classList.toggle('active');
     if (popupButton.classList.contains('active')) {
         enablePopupBehavior();
+        useIframeButton.classList.remove('active');
+        noButton.classList.remove('active');
+        normalButton.classList.remove('active');
     } else {
         disablePopupBehavior();
     }
@@ -21,12 +24,18 @@ function togglePopupButton() {
 function toggleButton() {
     useIframeButton.classList.toggle('active');
     toggleLinkBehavior();
+    popupButton.classList.remove('active');
+    noButton.classList.remove('active');
+    normalButton.classList.remove('active');
 }
 
 function toggle2() {
     noButton.classList.toggle('active');
     if (noButton.classList.contains('active')) {
         openblob();
+        popupButton.classList.remove('active');
+        useIframeButton.classList.remove('active');
+        normalButton.classList.remove('active');
     } else {
         closeblob();
     }
@@ -39,6 +48,9 @@ function normal(){
         links.forEach(function(link) {
             link.onclick = null;
         });
+        popupButton.classList.remove('active');
+        useIframeButton.classList.remove('active');
+        noButton.classList.remove('active');
     } else {
         toggleLinkBehavior();
     }
