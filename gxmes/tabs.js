@@ -26,23 +26,30 @@ function togglePopupButton() {
 }
 
 function toggleButton() {
-// Toggle the class 'active' on useIframeButton
-useIframeButton.classList.toggle('active');
-
 // Get all anchor tags
 var links = document.querySelectorAll('a');
 
 // Iterate over each link
 links.forEach(function(link) {
-    // Create HTML content for the iframe
-    const html = '<html><title>IT work</title><iframe src="' + link.href + '" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe></html>';
-    // Create a Blob object containing the HTML content
-    const blob = new Blob([html], { type: 'text/html' });
-    // Create a URL for the Blob object
-    const blobUrl = URL.createObjectURL(blob);
-    // Open a new window with the URL of the Blob
-    window.open(blobUrl);
+    // Attach click event listener to each link
+    link.addEventListener('click', function(event) {
+        // Prevent the default action of the link
+        event.preventDefault();
+        
+        // Toggle the class 'active' on useIframeButton
+        useIframeButton.classList.toggle('active');
+
+        // Create HTML content for the iframe
+        const html = '<html><title>IT work</title><iframe src="' + link.href + '" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe></html>';
+        // Create a Blob object containing the HTML content
+        const blob = new Blob([html], { type: 'text/html' });
+        // Create a URL for the Blob object
+        const blobUrl = URL.createObjectURL(blob);
+        // Open a new window with the URL of the Blob
+        window.open(blobUrl);
+    });
 });
+
 
 }
 
