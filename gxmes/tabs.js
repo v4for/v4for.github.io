@@ -2,6 +2,45 @@ window.onload = function() {
     toggle2();
 };
 
+function togglePopupButton() {
+    var button = document.getElementById('popup');
+    button.classList.toggle('active');
+    if (button.classList.contains('active')) {
+        enablePopupBehavior();
+    } else {
+        disablePopupBehavior();
+    }
+}
+
+function toggleButton() {
+    var button = document.getElementById('useIframe');
+    button.classList.toggle('active');
+    toggleLinkBehavior();
+}
+
+function toggle2() {
+    var button = document.getElementById('no');
+    button.classList.toggle('active');
+    if (button.classList.contains('active')) {
+        openblob();
+    } else {
+        closeblob();
+    }
+}
+
+function normal(){
+    var button = document.getElementById('normal');
+    button.classList.toggle('active');
+    var links = document.querySelectorAll('a');
+    if (button.classList.contains('active')) {
+        links.forEach(function(link) {
+            link.onclick = null;
+        });
+    } else {
+        toggleLinkBehavior();
+    }
+}
+
 function toggleLinkBehavior() {
     var useIframe = document.getElementById('useIframe').classList.contains('active');
 
@@ -23,21 +62,7 @@ function toggleLinkBehavior() {
     }
 }
 
-function toggleButton() {
-    var button = document.getElementById('useIframe');
-    button.classList.toggle('active');
-    toggleLinkBehavior();
-}
 
-function toggle2() {
-    var button = document.getElementById('no');
-    button.classList.toggle('active');
-    if (button.classList.contains('active')) {
-        openblob();
-    } else {
-        closeblob();
-    }
-}
 
 function openblob() {
     var links = document.querySelectorAll('a');
@@ -71,28 +96,7 @@ function closeblob() {
     });
 }
 
-function normal(){
-    var button = document.getElementById('normal');
-    button.classList.toggle('active');
-    var links = document.querySelectorAll('a');
-    if (button.classList.contains('active')) {
-        links.forEach(function(link) {
-            link.onclick = null;
-        });
-    } else {
-        toggleLinkBehavior();
-    }
-}
 
-function togglePopupButton() {
-    var button = document.getElementById('popup');
-    button.classList.toggle('active');
-    if (button.classList.contains('active')) {
-        enablePopupBehavior();
-    } else {
-        disablePopupBehavior();
-    }
-}
 
 function enablePopupBehavior() {
     var links = document.querySelectorAll('a');
