@@ -5,8 +5,6 @@ window.onload = function() {
     useIframeButton = document.getElementById('useIframe');
     noButton = document.getElementById('no');
     normalButton = document.getElementById('normal');
-    
-    toggle2();
 };
 
 function togglePopupButton() {
