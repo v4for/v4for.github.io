@@ -45,7 +45,7 @@ function normal(){
             link.onclick = null;
         });
     } else {
-        toggleLinkBehavior();
+        //nothing ig
     }
 }
 
