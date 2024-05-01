@@ -11,6 +11,8 @@ window.onload = function() {
     noButton.addEventListener('click', toggle2);
     normalButton.addEventListener('click', normal);
 
+    document.getElementById("no").click();
+
     restoreTabSettings();
 };
 
