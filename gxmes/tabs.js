@@ -27,7 +27,6 @@ function togglePopupButton() {
 
 function toggleButton() {
     useIframeButton.classList.toggle('active');
-    if (useIframeButton.classList.contains('active')) {
         var links = document.querySelectorAll('a');
         links.forEach(function(link) {
             link.onclick = function(event) {
@@ -39,7 +38,6 @@ function toggleButton() {
             };
         });
     } 
-}
 
 
 
