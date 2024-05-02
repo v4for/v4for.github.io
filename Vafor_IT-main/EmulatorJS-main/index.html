@@ -8,99 +8,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">  
     <style>
-                * {
+          * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
                 font-family: "Heebo", sans-serif;
             }
-
-             body, html {
-                height: 100%;
-                background-color: black;
-                color: white;
-            }
-
             body {
-                margin: 0;
-                overflow: hidden;
-            }
-
-            body, #box, #top {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
-
-            #box {
-                color: #aaa;
-                height: 20em;
-                width: 30em;
-                max-width: 80%;
-                max-height: 80%;
-                background-color: #333;
-                border-radius: 0.4em;
-                border: 2px solid #555;
-                position: relative;
-                flex-direction: column;
-                transition-duration: 0.2s;
-                overflow: hidden;
-                font-family: monospace;
-                font-weight: bold;
-                font-size: 20px;
-                margin: 5px;
-            }
-
-            #box:hover, #box[drag] {
-                border-color: #38f;
-                color: #ddd
-            }
-
-            #input {
-                cursor: pointer;
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0
-            }
-
-            #display {
-                width: 100%;
-                height: 100%
-            }
-
-            select, button {
-                padding: 0.6em 0.4em;
-                margin: 0.5em;
-                width: 15em;
-                max-width: 100%;
-                font-family: monospace;
-                font-weight: bold;
-                font-size: 16px;
-                background-color: #444;
-                color: #aaa;
-                border-radius: 0.4em;
-                border: 1px solid #555;
-                cursor: pointer;
-                transition-duration: 0.2s
-            }
-
-            select:hover, button:hover {
-                background-color: #666;
-                color: #ddd
-            }
-
-            .logo {
-                width: 130px;
-                height: 130px;
-                filter: drop-shadow(0 0 10px white);
-            }
-
-            #top {
-                margin: 5px;
+                background-color: #181622;
+                color: #42946e;
             }
         </style>
     </head>
@@ -127,7 +43,7 @@
 
 
         <div id="top">
-            <h1>EmulatorJS Demo</h1>
+            <h1>EmulatorJS</h1>
             <img src="docs/Logo-light.png" alt="Logo" class="logo">
         </div>
         <div id = box>
