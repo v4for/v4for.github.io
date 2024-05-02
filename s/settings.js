@@ -5,6 +5,12 @@ window.addEventListener('beforeunload', function(e) {
     }
 });
 
+const toggleButton = document.getElementById('toggleButton');
+
+toggleButton.addEventListener('click', function() {
+    toggleBlank();
+});
+
 function toggleBlank() {
     var load = localStorage.getItem('leaveConf');
     if (load === 'false' || load === null) {
@@ -13,7 +19,7 @@ function toggleBlank() {
         localStorage.setItem('leaveConf', true);
     } else {
         load = false; 
-        document.getElementById('toggleButton').innerHTML = 'flase';
+        document.getElementById('toggleButton').innerHTML = 'false'; 
         localStorage.setItem('leaveConf', false);
     }
 }
