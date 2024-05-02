@@ -8,11 +8,11 @@ function toggleBlank() {
     var load = localStorage.getItem('leaveConf');
     if (load === 'false' || load === null) {
         load = true; 
-        document.getElementById('toggleButton').innerHTML = 'true';
+        document.getElementById('toggleButton').innerHTML = 'false';
         localStorage.setItem('leaveConf', true);
     } else {
         load = false; 
-        document.getElementById('toggleButton').innerHTML = 'false'; 
+        document.getElementById('toggleButton').innerHTML = 'true'; 
         localStorage.setItem('leaveConf', false);
     }
 }
