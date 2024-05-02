@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     toggleButton.addEventListener('click', function() {
         toggleBlank();
+        console.log(localStorage.getItem('leaveConf'));
     });
 
     function toggleBlank() {
