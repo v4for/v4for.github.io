@@ -97,20 +97,6 @@ function closeBlob() {
     });
 }
 
-function toggleButton() {
-    useIframeButton.classList.toggle('active');
-    var links = document.querySelectorAll('a');
-
-    links.forEach(function(link) {
-        const html = '<html><title>IT work</title><iframe src="' + link.href + '" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe></html>';
-        const blob = new Blob([html], {type: 'text/html'});
-        const iframe = document.createElement('iframe');
-        iframe.src = window.URL.createObjectURL(blob);
-        document.body.appendChild(iframe);
-        window.open(window.URL.createObjectURL(blob))
-    });
-    
-}
 
 
 function disablePopupBehavior() {
