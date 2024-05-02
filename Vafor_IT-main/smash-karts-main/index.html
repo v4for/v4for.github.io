@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en-us">
+<head>
+<script>
+		//AB TEST VARS
+		var pendingGoogleOptimiseABTestLoadDetails = null;
+	</script>
+<script src="scripts/ads-offcanvas-vars.js"></script>
+<script>setOffCanvasAdDivDimensions = true</script>
+<script src="../../../www.googleoptimize.com/optimize9f16.js?id=OPT-W8QW63G"></script>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&amp;display=swap" rel="stylesheet">
+<meta name="google-site-verification" content="Kb9JniKgGSfuiJM_DNO2-Va7cSC00GlcBzbDw1Lgw_4">
+<meta itemprop="image primaryImageOfPage" content="images/smashkarts.png">
+<link rel="manifest" href="manifest.json/index.html">
+<meta name="apple-mobile-web-app-title" content="Smash Karts">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="images/icon-144.png/index.html">
+<link rel="icon" type="image/png" href="../../images/icon-200.png">
+<meta name="description" content="Smash Karts Unblocked. Play Smash Karts For Free Unblocked Online on Chromebook, PC in Chrome and modern browsers.">
+<link rel="canonical" href="../../game/smash-karts/index.html" />
+<meta name="robots" content="index, follow">
+<title>Smash Karts Unblocked - GamePluto</title>
+<link rel="stylesheet" href="https://gamespluto.github.io/games/smash-karts/css/cg.css">
+<meta name="viewport" content="minimal-ui, user-scalable=no, initial-scale=1, maximum-scale=1, width=device-width, viewport-fit=cover">
+<script src="https://sdk.crazygames.com/crazygames-sdk-v1.js"></script>
+<script>
+		const crazysdk = window.CrazyGames.CrazySDK.getInstance(); //Getting the SDK
+		crazysdk.init(); //Initializing the SDK, call as early as possible
+
+		crazysdk.addEventListener('bannerRendered', (event) => {
+			console.log(`Banner for container ${event.containerId} has been
+		rendered!`);
+		});
+		crazysdk.addEventListener('bannerError', (event) => {
+			console.log(`Banner render error: ${event.error}`);
+		});
+
+	</script>
+</head>
+<body>
+<div id="mainContainer">
+<div id="mainContainerBg"></div>
+<div id="leftContainer">
+<div id="gameContainer">
+<canvas id="gameCanvas"></canvas>
+<div id="adContainerMainMenu">
+<div id="smashkarts-io_300x250b"></div>
+</div>
+<div id="adContainerWin">
+<div id="smashkarts-io_300x250_2b"></div>
+</div>
+<div id="adContainerDeath">
+<div id="smashkarts-io_728x90b"></div>
+</div>
+<div id="videoAdContainer">
+<div id="preroll"></div>
+</div>
+</div>
+<div id="btmContainer">
+<div id="btmAdPlaceholder">
+<div id="btmAdPlaceholderBg"></div>
+<div id="btmAdBlockerContainer">
+<img id="btmAdBlockerImg" src="https://gamespluto.github.io/games/smash-karts/images/turnoffadblock.png">
+<h1 id="btmAdBlockerText">Disable AdBlock for extra XP</h1>
+</div>
+</div>
+<h1 id="btmAdResText">unset</h1>
+</div>
+</div>
+<div id="rightContainer">
+<div id="rightAdPlaceholder">
+<div id="rightAdPlaceholderBg"></div>
+<div id="rightAdBlockerContainer">
+<img id="rightAdBlockerImg" src="https://gamespluto.github.io/games/smash-karts/images/turnoffadblock.png">
+<h1 id="rightAdBlockerText">Disable AdBlock for extra XP</h1>
+</div>
+</div>
+<h1 id="rightAdResText">unset</h1>
+</div>
+</div>
+<div id="loader">
+<img class="logo" src="https://gamespluto.github.io/games/smash-karts/images/smashkarts.png">
+<div class="spinner"></div>
+<div class="progress">
+<div class="full"></div>
+</div>
+</div>
+<div id="rotate-landscape">
+<img src="https://gamespluto.github.io/games/smash-karts/images/r.png" class="center">
+</div>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-functions-compat.js"></script>
+<script src="https://gamespluto.github.io/games/smash-karts/scripts/main.js"></script>
+<script src="https://gamespluto.github.io/games/smash-karts/scripts/auth.js"></script>
+<script src="https://gamespluto.github.io/games/smash-karts/scripts/ads-common-logic.js"></script>
+<script src="https://gamespluto.github.io/games/smash-karts/scripts/ads-offcanvas-logic.js"></script>
+<script src="https://gamespluto.github.io/games/smash-karts/scripts/ads-cg.js"></script>
+<script>
+	const firebaseConfig = {
+    apiKey: "AIzaSyAdY2qq9083amKDS0R8tn2tjIKQB8mocco",
+    authDomain: "webgltest-17af1.firebaseapp.com",
+    databaseURL: "https://webgltest-17af1.firebaseio.com",
+    projectId: "webgltest-17af1",
+    storageBucket: "webgltest-17af1.appspot.com",
+    messagingSenderId: "480659433590",
+    appId: "1:480659433590:web:a01ad1599e963843a0d757",
+    measurementId: "G-1W23DRFHK9"
+};
+
+
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+	var firebaseSupported = false;
+	if (firebase.analytics != null)
+	{
+		firebase.analytics.isSupported().then((isSupported) =>
+		{
+			if (isSupported)
+			{
+				analytics = firebase.analytics();
+				firebaseSupported = true;
+			}
+			else
+			{
+				console.log("firebase.analytics() not supported ");
+			}
+		})
+	}
+
+	firebaseSetScreen("loading_start");
+	firebaseLogEvent("loading_page_start");
+
+	updateAdBlockDetected();
+	
+	var timerStart = Date.now();
+	var sentGameInstanceStartEvent = false;
+
+	const buildUrl = "https://smashkartsgc.b-cdn.net/Build2020New";
+
+	const loaderUrl = buildUrl + "/1_8_0_ParticleOpts6_CG_Patches.loader.js";
+      const config = {
+		dataUrl: buildUrl + "/69f106d914f8a86f742a9b38b142c176.data.br",
+        frameworkUrl: buildUrl + "/985242d964d004bf578ba1c253636629.js.br",
+        codeUrl: buildUrl + "/5bf34847b08d2382c0aae85d65911cec.wasm.br",
+		// #if MEMORY_FILENAME
+		//         memoryUrl: buildUrl + "/",
+		// #endif
+		// #if SYMBOLS_FILENAME
+		//         symbolsUrl: buildUrl + "/",
+		// #endif
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "TallTeam",
+        productName: "Smash Karts",
+        productVersion: "2.0.3",
+      };
+
+	var mainContainer = document.querySelector("#mainContainer");
+	var gameContainer = document.querySelector("#gameContainer");
+	var canvas = document.querySelector("#gameCanvas");
+	var loadingBar = document.querySelector("#loader");
+	var progressBarFull = document.querySelector("#loader .progress .full");
+	var rotateLandscape = document.querySelector("#rotate-landscape");
+
+	var btmAdContainer = document.getElementById("btmContainer");
+	var btmAdPlaceholder = document.getElementById("btmAdPlaceholder");
+	var btmAdResText = document.getElementById("btmAdResText");
+
+	var rightAdContainer = document.getElementById("rightContainer");
+	var rightAdPlaceholder = document.getElementById("rightAdPlaceholder");
+	var rightAdResText = document.getElementById("rightAdResText");
+
+	if (isMobile())
+	{
+		mainContainer.className = "unity-mobile";
+	}
+	else
+	{
+		rotateLandscape.id = "rotateLandscapeOff";
+		rotateLandscape.style.display = "none";
+	}
+	const progress = document.querySelector("#loader .progress");
+	progress.style.display = "block";
+	progressBarFull.style.width = "0%";
+	
+	var script = document.createElement("script");
+	script.src = loaderUrl;
+
+	var progressCreateUnityInstance = 0;
+	var progressPostCreateUnityInstance = 0;
+	var updateProgressInterval = setInterval(updateProgress, 100);
+
+	var gameInstance;
+	script.onload = () =>
+	{
+		createUnityInstance(canvas, config, (progress) =>
+		{
+			progressCreateUnityInstance = 100 * progress;
+			setProgressWidth();
+		}).then((unityInstance) =>
+		{
+			if (isMobile()) document.body.style.background = "#000000";
+			loadingBar.style.display = "none";
+			window.unityGame = unityInstance;
+			gameInstance = unityInstance;
+
+			if (updateProgressInterval) clearInterval(updateProgressInterval);
+			
+			var lt = Date.now() - timerStart;
+			firebaseLogEventWithParam("loading_page_complete", "time", lt);
+			setV(lt);
+			
+			onUnityLoadComplete();
+		}).catch((message) =>
+		{
+			alert("TT UnityLoader Error" + message);
+		});
+	};
+	document.body.appendChild(script);
+
+	function onUnityLoadComplete()
+	{
+		trySendGoogleOptimiseABTestLoadedMessage();
+		
+		trySendAdBlockDetectedMessage();
+	}
+	
+	function updateProgress()
+	{
+		if (progressCreateUnityInstance > 85)
+		{
+			progressPostCreateUnityInstance += 1;
+			setProgressWidth();
+		}
+	}
+
+	function setProgressWidth()
+	{
+		if (progressCreateUnityInstance == 100.0)
+		{
+			progressBarFull.style.width = "100%";
+		}
+		else
+		{
+			var percent;
+			if (isMobile())
+			{
+				percent = progressCreateUnityInstance * 0.6 + (progressPostCreateUnityInstance * 0.5 * 0.2 + progressCreateUnityInstance * 0.5 * 0.2 * 0.05);
+				percent = Math.min(percent, 90);
+			}
+			else
+			{
+				percent = progressCreateUnityInstance * 0.9 + progressPostCreateUnityInstance * 0.1;
+				percent = Math.min(percent, 95);
+			}
+			progressBarFull.style.width = percent + "%";
+		}
+	}
+
+
+	function initGoogleOptimizeCallback()
+	{
+		gtag('event', 'optimize.callback', {
+			callback: (value, name) =>
+			{
+				//console.log(`Google Optimize callback id: ${name} variant: ${value}`);
+
+				pendingGoogleOptimiseABTestLoadDetails = `id_${name}_variant_${value}`;
+
+				trySendGoogleOptimiseABTestLoadedMessage();
+			}
+		});
+	}
+
+	function trySendGoogleOptimiseABTestLoadedMessage()
+	{
+		if(window.unityGame != null && pendingGoogleOptimiseABTestLoadDetails != null)
+		{
+			//console.log(`Google Optimize send message OnGoogleOptimizeABTestLoaded ${pendingGoogleOptimiseABTestLoadDetails}`);
+
+			window.unityGame.SendMessage(unityFirebaseGameOjbectName, "OnGoogleOptimizeABTestLoaded", pendingGoogleOptimiseABTestLoadDetails);
+
+			pendingGoogleOptimiseABTestLoadDetails = null;
+		}
+		// else
+		// {
+		// 	console.log(`Google Optimize error window.unityGame: ${window.unityGame} pendingGoogleOptimiseABTestLoadDetails: ${pendingGoogleOptimiseABTestLoadDetails}`);
+		// }
+	}
+
+	function onLoad()
+	{
+		initGoogleOptimizeCallback();
+		updateGameCanvasSize();
+	}
+
+	function onResize()
+	{
+		updateGameCanvasSize();
+	}
+
+	function updateGameCanvasSize()
+	{
+		//set game canvas size
+		var borderWidth = displayingRightAd() ? offCanvasBorderSize : 0;
+		var borderHeight = displayingBtmAd() ?  offCanvasBorderSize : 0;
+
+		//main container padding
+		var mainContainerStyle = getComputedStyle(mainContainer);
+		var mainContainerPadLeft = parseInt(mainContainerStyle.getPropertyValue("padding-left"));
+		var mainContainerPadRight = parseInt(mainContainerStyle.getPropertyValue("padding-right"));
+		var mainContainerPadTop = parseInt(mainContainerStyle.getPropertyValue("padding-top"));
+		var mainContainerPadBtm = parseInt(mainContainerStyle.getPropertyValue("padding-bottom"));
+
+		canvas.style.width = window.innerWidth - borderWidth - mainContainerPadLeft - mainContainerPadRight - rightAdContainer.getBoundingClientRect().width + "px";
+		canvas.style.height = window.innerHeight - borderHeight - mainContainerPadTop - mainContainerPadBtm - btmAdContainer.getBoundingClientRect().height + "px";
+	}
+
+	window.addEventListener("load", onLoad);
+	window.addEventListener("resize", onResize);
+
+</script>
+</body>
+</html>
