@@ -1,18 +1,28 @@
-const toggleButton = document.getElementById('toggleButton');
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.getElementById('toggleButton');
 
-toggleButton.addEventListener('click', function() {
-    toggleBlank();
-});
-
-function toggleBlank() {
     var load = localStorage.getItem('leaveConf');
-    if (load === 'false' || load === null) {
-        load = true; 
-        document.getElementById('toggleButton').innerHTML = 'false';
-        localStorage.setItem('leaveConf', true);
+    if (load === null) {
+        load = false;
+        localStorage.setItem('leaveConf', load);
     } else {
-        load = false; 
-        document.getElementById('toggleButton').innerHTML = 'true'; 
-        localStorage.setItem('leaveConf', false);
+        load = load === 'true';
     }
-}
+    
+    toggleButton.innerHTML = load.toString(); 
+
+    toggleButton.addEventListener('click', function() {
+        toggleBlank();
+    });
+
+    function toggleBlank() {
+        if (load) {
+            load = false;
+            toggleButton.innerHTML = 'false';
+        } else {
+            load = true;
+            toggleButton.innerHTML = 'true';
+        }
+        localStorage.setItem('leaveConf', load); 
+    }
+});
