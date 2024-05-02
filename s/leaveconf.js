@@ -6,3 +6,4 @@ if (localStorage.getItem('leaveConf') == 'true') {
         e.returnValue = ''; 
     });
 }
+
