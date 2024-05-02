@@ -38,9 +38,7 @@ function toggleButton() {
                 const blobUrl = URL.createObjectURL(blob);
             };
         });
-    } else {
-        closeBlob();
-    }
+    } 
 }
 
 
