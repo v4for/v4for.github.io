@@ -1,0 +1,95 @@
+{
+  "swfs": [
+    {
+      "location": "swfs/color_combat.swf",
+      "title": "Color Combat",
+      "author": "KBasic16",
+      "authorLink": "https://www.newgrounds.com",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/miami-shark.swf",
+      "title": "Miami Shark",
+      "author": "Felix Wiesner",
+      "authorLink": "https://www.newgrounds.com",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/dadnme.swf",
+      "title": "Dad n' Me",
+      "author": "Tom Fulp & Dan Paliden",
+      "authorLink": "https://www.newgrounds.com/",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/bloxorz.swf",
+      "title": "Bloxorz",
+      "author": "Damien Clark",
+      "authorLink": "https://www.damienclarke.me/",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/papaspizzeria_v2.swf",
+      "title": "Papa's Pizzeria",
+      "author": "Flipline Studios",
+      "authorLink": "http://www.flipline.com/",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/papasburgeria.swf.swf",
+      "title": "Papa's Burgeria",
+      "author": "Flipline Studios",
+      "authorLink": "http://www.flipline.com/",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/worlds-hardest-game.swf",
+      "title": "The Worlds Hardest Game",
+      "author": "Snubby Land",
+      "authorLink": "http://www.kanogames.com/profile/developer/snubby-land",
+      "type": "Game"
+    },
+    {
+      "location": "swfs/bloonstd_moved.swf",
+      "title": "Bloon's Tower Defence",
+      "author": "Team Bobo ",
+      "authorLink": "https://ninjakiwi.com/",
+       "type": "Game"
+    },
+    {
+      "location": "swfs/age_of_war.swf",
+      "title": "Age of War",
+      "author": "Louissi",
+      "authorLink": "https://archive.org/search.php?query=creator%3A%22Louissi%22",
+       "type": "Game"
+    },
+    {
+      "location": "swfs/alien_hominid.swf",
+      "title": "Alien Hominid",
+      "author": "Tom Fulp & Dan Paladan",
+      "authorLink": "https://www.newgrounds.com/",
+       "type": "Game"
+    },
+    {
+      "location": "swfs/pacman.swf",
+      "title": "Pacman",
+      "author": "Neave / Namco",
+      "authorLink": "www.neave.com",
+       "type": "Game"
+    },
+    {
+      "location": "swfs/this-is-the-only-lev-4309.swf",
+      "title": "This is the Only Level",
+      "author": "jmtb02",
+      "authorLink": "http://www.jmtb02.com/",
+       "type": "Game"
+    },
+    {
+      "location": "swfs/doom-1.swf",
+      "title": "DOOM",
+      "author": "Id Software / Newgrounds",
+      "authorLink": "http://www.newgrounds.com",
+       "type": "Game"
+    }
+  ]
+}
