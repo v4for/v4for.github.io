@@ -66,7 +66,7 @@
      </div>
       <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">
             <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-        <div style="margin: 10px;">
+        <div style="margin: 10px;" id="emulator">
           <a href="../Vafor_IT-main/EmulatorJS-main/index.html" target="_blank">
             <img src="../Vafor_IT-main/EmulatorJS-main/docs/favicon.ico" alt="Emulator JS" class="rounded-image" width="100px" height="100px">
           </a>
@@ -81,5 +81,13 @@
 
       
     </div>
+    <script>
+          emulator = document.getElementById('emulator');
+          emulator.addEventListener('click', alert);
+
+          alert() {
+            alert('Warning, may not work, if you get a netowrk error, use Web Retro')
+          }
+    </script>
   </body>
 </html>
