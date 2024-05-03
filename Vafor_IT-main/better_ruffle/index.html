@@ -5,99 +5,153 @@
     <style>
         body, html {
             height: 100%;
+            background-color: black;
+            color: white;
+        }
+
+        body {
             margin: 0;
             overflow: hidden;
         }
-        body, #loadbutton{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-            }
-        #ruffle {
+
+        body, #box, #top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #box {
+            color: #aaa;
+            height: 20em;
+            width: 30em;
+            max-width: 80%;
+            max-height: 80%;
+            background-color: #333;
+            border-radius: 0.4em;
+            border: 2px solid #555;
+            position: relative;
+            flex-direction: column;
+            transition-duration: 0.2s;
+            overflow: hidden;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 5px;
+        }
+
+        #box:hover, #box[drag] {
+            border-color: #38f;
+            color: #ddd
+        }
+
+        #input {
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
+            opacity: 0
         }
-        #loadButton {
-                color: #aaa;
-                height: 20em;
-                width: 30em;
-                max-width: 80%;
-                max-height: 80%;
-                background-color: #333;
-                border-radius: 0.4em;
-                border: 2px solid #555;
-                position: relative;
-                flex-direction: column;
-                transition-duration: 0.2s;
-                overflow: hidden;
-                font-family: monospace;
-                font-weight: bold;
-                font-size: 20px;
-                margin: 5px;
-            }
 
-            #loadbutton:hover, #loadbutton[drag] {
-                border-color: #38f;
-                color: #ddd
-            }
+        #display {
+            width: 100%;
+            height: 100%
+        }
+
+        select, button {
+            padding: 0.6em 0.4em;
+            margin: 0.5em;
+            width: 15em;
+            max-width: 100%;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: #444;
+            color: #aaa;
+            border-radius: 0.4em;
+            border: 1px solid #555;
+            cursor: pointer;
+            transition-duration: 0.2s
+        }
+
+        select:hover, button:hover {
+            background-color: #666;
+            color: #ddd
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            filter: drop-shadow(0 0 10px white);
+        }
+
+        #top {
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
-    <div id="loadbutton">
-        <input type="file" id="fileInput" accept=".swf">
-        Drag .swf file or click here
-    </div>
+<div id="box" onclick="document.getElementById('fileInput').click()" ondragover="event.preventDefault()" ondrop="handleDrop(event)">
+    <input type="file" id="fileInput" accept=".swf" style="display: none" onchange="loadSWF()">
+    Drag .swf file or click here
+</div>
 
-    <button onclick="loadSWF()">Load SWF</button>
+<button onclick="loadSWF()">Load SWF</button>
 
+<div id='ruffle'></div>
+<script src='../../assets/ruffle/ruffle.js'></script>
+<script>
+    var swfobject = {};
 
+    swfobject.embedSWF = function(url, cont){
+        var ruffle = window.RufflePlayer.newest({
+            allowFullscreen: true
+        });
+        var player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            width: '100%',
+            height: '100%',
+            style: 'width: 100%; height: 100%;'
+        });
 
+        player.load({ url: url });
+    }
 
-    <div id='ruffle'></div>
-    <script src='../../assets/ruffle/ruffle.js'></script>
-    <script>
-        var swfobject = {};
+    function loadSWF() {
+        var fileInput = document.getElementById('fileInput');
+        var file = fileInput.files[0];
 
-        swfobject.embedSWF = function(url, cont){
-            var ruffle = window.RufflePlayer.newest({
-                allowFullscreen: true
-            });
-            var player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
-                width: '100%',
-                height: '100%',
-                style: 'width: 100%; height: 100%;'
-            });
-            
-            player.load({ url: url });
+        if (!file) {
+            alert("Please select a file.");
+            return;
+        }	
+
+        if (file.type !== "application/x-shockwave-flash") {
+            alert("Please select a valid SWF file.");
+            return;
         }
 
-        function loadSWF() {
-            var loadButtonDiv = document.getElementById("loadbutton");
-            loadButtonDiv.style.display = "none";
-            var fileInput = document.getElementById('fileInput');
-            var file = fileInput.files[0];
+        var reader = new FileReader();
 
-            if (!file) {
-                alert("Please select a file.");
-                return;
-            }
+        reader.onload = function(e) {
+            var swfData = e.target.result;
+            var url = URL.createObjectURL(new Blob([swfData], {type: "application/x-shockwave-flash"}));
+            swfobject.embedSWF(url, 'ruffle');
+        };
 
-            if (file.type !== "application/x-shockwave-flash") {
-                alert("Please select a valid SWF file.");
-                return;
-            }
+        reader.readAsArrayBuffer(file);
+    }
 
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                var swfData = e.target.result;
-                var url = URL.createObjectURL(new Blob([swfData], {type: "application/x-shockwave-flash"}));
-                swfobject.embedSWF(url, 'ruffle');
-            };
-
-            reader.readAsArrayBuffer(file);
+    function handleDrop(event) {
+        event.preventDefault();
+        var file = event.dataTransfer.files[0];
+        if (file) {
+            loadSWF();
+        } else {
+            console.log('No file dropped.');
         }
-    </script>
+    }
+</script>
 </body>
 </html>
