@@ -22,7 +22,7 @@ var swfobject = {};
 
 swfobject.embedSWF = function(url, cont){
     var ruffle = window.RufflePlayer.newest({
-        allowFullscreen: true // Enable fullscreen mode
+        allowFullscreen: true
     });
     var player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
         width: '100%',
