@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apps</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="education " />
+    <script type="text/javascript" src="tabs.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+   <style>
+      body {
+         background-color: #181622;
+      }
+
+      #text_group {
+        margin-left:auto;
+        margin-right: auto;
+        text-align: center;
+        padding-top: 30px;
+      }
+
+      .lost {
+        color: #a1a0ab;
+      }
+
+      .header {
+          color: #fff;
+      }
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+            }
+
+            .searchTerm {
+            width: 100%;
+            border: 3px solid #00B4CC;
+            border-right: none;
+            padding: 5px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+            }
+
+            .searchTerm:focus{
+            color: #00B4CC;
+            }
+
+            .searchButton {
+            width: 40px;
+            height: 36px;
+            border: 1px solid #00B4CC;
+            background: #00B4CC;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+            }
+
+            /*Resize the wrap to see the search bar change!*/
+            .wrap{
+            width: 30%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            }
+    </style>
+  </head>
+  <body>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+              <span class="navbar-brand" onclick="window.location.pathname = '/'">Vafor</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav d-flex w-100 justify-content-end">
+                      <li class="nav-item"><span id="useIframe" class="nav-link">blob</span></li>
+                      <li class="nav-item"><span id="no" class="nav-link">about:blank</span></li>
+                      <li class="nav-item"><span id="normal" class="nav-link">default</span></li>
+                      <li class="nav-item"><span id="popup" class="nav-link">popup</span></li>
+                </ul>
+            </div>              
+          </div>
+      </nav>
+  </header>
+    
+    <div id="text_group">
+      <h1 class="header">Apps</h1>
+      <div class="wrap">
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="What are you looking for?">
+           <button type="submit" class="searchButton">
+             <i class="fa fa-search"></i>
+          </button>
+        </div>
+     </div>
+      <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">
+            <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <div style="margin: 10px;">
+          <a href="../Vafor_IT-main/EmulatorJS-main/index.html" target="_blank">
+            <img src="../Vafor_IT-main/EmulatorJS-main/docs/favicon.ico" alt="Emulator JS" class="rounded-image" width="100px" height="100px">
+          </a>
+          <p class="description" style="color: #95d0b4;">Emulator JS</p>
+        </div>
+
+      
+    </div>
+  </body>
+</html>
