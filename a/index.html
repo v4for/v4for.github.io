@@ -41,6 +41,16 @@
     </style>
   </head>
   <body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var emulator = document.getElementById('emulator');
+      emulator.addEventListener('click', showAlert);
+  
+      function showAlert() {
+        alert('Warning: This may not work. If you encounter a network error, use Web Retro.');
+      }
+    });
+  </script>
 
     <header class="site-header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -81,13 +91,5 @@
 
       
     </div>
-    <script>
-          emulator = document.getElementById('emulator');
-          emulator.addEventListener('click', alert);
-
-          alert() {
-            alert('Warning, may not work, if you get a netowrk error, use Web Retro')
-          }
-    </script>
   </body>
 </html>
