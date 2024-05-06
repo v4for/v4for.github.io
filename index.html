@@ -200,48 +200,58 @@
         </div>
   </footer>
       <script>
-        //has to wait for dom (what a loser)
-        let phrases;
+        // Wait for DOM to load
+document.addEventListener("DOMContentLoaded", function() {
+    let phrases;
 
-        if (local.storage('phrases1')) {
-            phrases = local.storage('phrases1');
-        } else {
-            phrases = [
-                'Do your IT "work" here. Dev work in progress',
-                "To actually learn IT, go to W3",
-                "Minecraft ahh vibes",
-                "The answer is 42",
-                "Linux on top (that's right Martin)",
-                'Wow, such difficult "education"',
-                "Bro, don't clown my dev build",
-                "Heavy inspiration from railway.app",
-                "Some of my keys on my chromebook broke, thats why I hasve bde spellgng"
-            ];
+    // Check if phrases are stored in local storage
+    if (localStorage.getItem('phrases1')) {
+        phrases = JSON.parse(localStorage.getItem('phrases1'));
+    } else {
+        // Default phrases
+        phrases = [
+            'Do your IT "work" here. Dev work in progress',
+            "To actually learn IT, go to W3",
+            "Minecraft ahh vibes",
+            "The answer is 42",
+            "Linux on top (that's right Martin)",
+            'Wow, such difficult "education"',
+            "Bro, don't clown my dev build",
+            "Heavy inspiration from railway.app",
+            "Some of my keys on my chromebook broke, that's why I have bad spelling"
+        ];
+    }
+
+    // Function to prompt user for a new phrase
+    function askUser() {
+        const newPhrase = prompt('What is the new phrase?');
+        if (newPhrase !== null && newPhrase !== "") {
+            phrases[0] = newPhrase;
+
+            // Save updated phrases to local storage
+            localStorage.setItem('phrases1', JSON.stringify(phrases));
+
+            // Reload the page
+            location.reload();
         }
+    }
 
-        function askUser() {
-      let phrases = JSON.parse(localStorage.getItem('phrases1'));
-      if (phrases && phrases.length > 0) {
-          const newPhrase = prompt('What is the new phrase?');
-                    phrases[0] = newPhrase;
+    // Display a random phrase
+    function displayRandomPhrase() {
+        var randomIndex = Math.floor(Math.random() * phrases.length);
+        var randomPhrase = phrases[randomIndex];
+        document.getElementById("changetext").innerHTML = randomPhrase;
+    }
 
-          window.reload()
-}
 
-// Convert the updated value to a string (as localStorage can only store strings)
-const updatedPhrasesString = JSON.stringify(phrases);
+    // Event listener for updating phrases
+    document.getElementById("updatePhrase").addEventListener("click", askUser);
+});
 
-// Save the updated value back to local storage
-localStorage.setItem('phrases1', updatedPhrasesString);
 
-        }
-
-          var randomIndex = Math.floor(Math.random() * phrases.length);
-          var randomPhrase = phrases[randomIndex];
-
-          document.getElementById("changetext").innerHTML = randomPhrase;
-          
           window.onload = function() {
+            displayRandomPhrase();
+            
             var savedTabName = localStorage.getItem('tabName');
             var savedTabImage = localStorage.getItem('tabImage');
             if (savedTabName) {
