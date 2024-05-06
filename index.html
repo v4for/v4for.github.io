@@ -71,7 +71,7 @@
                         margin-left: auto;
                         margin-right: auto;
                         text-align: center;
-                        font-size: 16px;">Not really useful just thinks its funny.</p>
+                        font-size: 16px;">Not really useful just think its funny.</p>
             </div>
           
             <div style="box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
@@ -201,17 +201,40 @@
   </footer>
       <script>
         //has to wait for dom (what a loser)
-        var phrases = [
-            'Do your IT "work" here. Dev work in progress',
-            "To actually learn IT, go to W3",
-            "Minecraft ahh vibes",
-            "The answer is 42",
-            "Linux on top (that's right Martin)",
-            'Wow, such difficult "education"',
-            "Bro, don't clown my dev build",
-            "Heavy inspiration from railway.app",
-            "Some of my keys on my chromebook broke, thats why I hasve bde spellgng"
-          ];
+        let phrases;
+
+        if (local.storage('phrases1')) {
+            phrases = local.storage('phrases1');
+        } else {
+            phrases = [
+                'Do your IT "work" here. Dev work in progress',
+                "To actually learn IT, go to W3",
+                "Minecraft ahh vibes",
+                "The answer is 42",
+                "Linux on top (that's right Martin)",
+                'Wow, such difficult "education"',
+                "Bro, don't clown my dev build",
+                "Heavy inspiration from railway.app",
+                "Some of my keys on my chromebook broke, thats why I hasve bde spellgng"
+            ];
+        }
+
+        function askUser() {
+      let phrases = JSON.parse(localStorage.getItem('phrases1'));
+      if (phrases && phrases.length > 0) {
+          const newPhrase = prompt('What is the new phrase?');
+                    phrases[0] = newPhrase;
+
+          window.reload()
+}
+
+// Convert the updated value to a string (as localStorage can only store strings)
+const updatedPhrasesString = JSON.stringify(phrases);
+
+// Save the updated value back to local storage
+localStorage.setItem('phrases1', updatedPhrasesString);
+
+        }
 
           var randomIndex = Math.floor(Math.random() * phrases.length);
           var randomPhrase = phrases[randomIndex];
