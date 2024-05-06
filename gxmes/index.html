@@ -42,6 +42,14 @@
         alert('Warning: You have to launch in default mode to change your name.');
       }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+      var dino = document.getElementById('dino');
+      dino.addEventListener('click', showAlert);
+  
+      function showAlert() {
+        alert('Warning: You have to launch in default mode to play.');
+      }
+    });
   </script>
   <body>
 
@@ -244,7 +252,7 @@
           <p class="description" style="color: #95d0b4;">Pixel Gun 2</p>
         </div>
         <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/dino.html" target="_blank">
+          <a href="../Vafor_IT-main/dino.html" target="_blank" id="dino">
             <img src="../assets/img/dino.png" alt="Chrome dino" class="rounded-image" width="100px" height="100px">
           </a>
           <p class="description" style="color: #95d0b4;">Chrome dino</p>
