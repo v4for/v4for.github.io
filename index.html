@@ -59,7 +59,7 @@
                         background-color: #13111c;
                         border: 2px solid #183367;
                         padding: 20px;
-                        margin: 50px 20px;">
+                        margin: 50px 20px;" onclick="askUser()">
               <h3 style="color: #8caef2;
                         margin-left: auto;
                         margin-right: auto;
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
           window.onload = function() {
             displayRandomPhrase();
-            
+
             var savedTabName = localStorage.getItem('tabName');
             var savedTabImage = localStorage.getItem('tabImage');
             if (savedTabName) {
