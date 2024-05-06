@@ -7,3 +7,6 @@ Proxy is in a weird place, it works only if the back end is unblocked, need to c
 to do 
 
 Lots of stuff done now need to make sure that search for games work, settings ui, ask for confirm feature doesnt apply for urls in the site, and finallmy, get proxy working, some other small things like universal navbar and webtro and rom, idk how imma sort that out. Adds all the links for games uploaded.
+
+
+Sorted emulators by putting them in apps, ask for confirm feature now works.
