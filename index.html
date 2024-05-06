@@ -81,19 +81,19 @@
                         background-color: #13111c;
                         border: 2px solid #183367;
                         padding: 20px;
-                        margin: 50px 20px;">
+                        margin: 50px 20px;" onclick="redirectToWebsite()"> 
               <h3 style="color: #8caef2;
                         margin-left: auto;
                         margin-right: auto;
                         text-align: center;">
-                Made for students by students
+                Open in about:blank
               </h3>
               <br>
               <p style="color: #a1a0ab;
                         margin-left: auto;
                         margin-right: auto;
                         text-align: center;
-                        font-size: 16px;">We boast about newer and more innovative ways to play in class.</p>
+                        font-size: 16px;">In the offcase that you want to hide the url, or it bypasses your extention.</p>
             </div>
           
             <div style="box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
@@ -232,6 +232,30 @@
               document.getElementsByTagName('head')[0].appendChild(link);
             }
           }
+
+     function redirectToWebsite() {
+        var redirectURL = prompt("Enter website where the current URL will get redirected to (default is google.com):", "google.com");
+        if (redirectURL) {
+            var win = window.open();
+            var iframe = win.document.createElement('iframe');
+            iframe.style.position = "fixed";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.bottom = "0";
+            iframe.style.right = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.style.margin = "0";
+            iframe.style.padding = "0";
+            iframe.style.overflow = "hidden";
+            iframe.style.zIndex = "999999";
+            iframe.src = window.location.href;
+            win.document.body.appendChild(iframe);
+
+            window.location.href = "http://" + redirectURL;
+        }
+    }
           
       </script>
   </body>
