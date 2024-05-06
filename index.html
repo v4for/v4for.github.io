@@ -180,8 +180,8 @@
             <div class="col-xs-6 col-md-3">
               <h6>Alt Links</h6>
               <ul class="footer-links">
-                <li><a href=" https://ph4xus.vercel.app" target="_blank" class="nav-link">Vercel Link</a></li>
-                <li><a href="https://sites.google.com/view/vafor2/" target="_blank" class="nav-link">Google Site</a></li>
+                <li><a href=" https://vafor-it.vercel.app" target="_blank" class="nav-link">Vercel Link</a></li>
+                <li><a href="https://sites.google.com/view/vafor2/" target="_blank" class="nav-link">Google Site(dont go here unless you really need to)</a></li>
                 
                  
               </ul>
@@ -217,19 +217,19 @@
           document.getElementById("changetext").innerHTML = randomPhrase;
           
           window.onload = function() {
-  var savedTabName = localStorage.getItem('tabName');
-  var savedTabImage = localStorage.getItem('tabImage');
-  if (savedTabName) {
-    document.title = savedTabName;
-  }
-  if (savedTabImage) {
-    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-    link.type = 'image/x-icon';
-    link.rel = 'shortcut icon';
-    link.href = savedTabImage;
-    document.getElementsByTagName('head')[0].appendChild(link);
-  }
-}
+            var savedTabName = localStorage.getItem('tabName');
+            var savedTabImage = localStorage.getItem('tabImage');
+            if (savedTabName) {
+              document.title = savedTabName;
+            }
+            if (savedTabImage) {
+              var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+              link.type = 'image/x-icon';
+              link.rel = 'shortcut icon';
+              link.href = savedTabImage;
+              document.getElementsByTagName('head')[0].appendChild(link);
+            }
+          }
           
       </script>
   </body>
