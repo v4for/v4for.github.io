@@ -29,7 +29,7 @@
 
 .searchButton {
   width: 40px;
-  height: 32px;
+  height: 28px;
   border: 1px solid #42946e;
   background: #42946e;
   text-align: center;
@@ -42,7 +42,4 @@
 .wrap{
   width: 30%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
