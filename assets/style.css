@@ -165,6 +165,8 @@ body {
 .rounded-image {
     border-radius: 20px; /* make edges rounded */
     transition: all 0.2s ease-in-out; /* add transition for smooth effect */
+    display: block;
+    margin: 0 auto;
 }
 
 .rounded-image:hover {
