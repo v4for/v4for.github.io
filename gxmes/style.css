@@ -12,8 +12,11 @@
   height: 25px;
   outline: none;
   color: #9DBFAF;
-  background-color:#181622;
+  background-color: rgba(0, 0, 0, 0);
   transition: width 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
 }
 
 .searchTerm:focus{
