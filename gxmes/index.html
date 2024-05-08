@@ -54,19 +54,21 @@
 
     //w3 moment
     function myFunction() {
-      var input, filter, divs, p, i, j;
-      input = document.getElementById("mySearch");
-      filter = input.value.toUpperCase();
-      divs = document.querySelectorAll('div[style="margin: 10px;"]'); // Get all divs with specific inline style
-      for (i = 0; i < divs.length; i++) {
+    var input, filter, divs, p, i;
+    input = document.getElementById("mySearch");
+    filter = input.value.toUpperCase();
+    divs = document.getElementById("searchlist").getElementsByTagName("div");
+
+    for (i = 0; i < divs.length; i++) {
         p = divs[i].getElementsByTagName("p")[0]; // Assuming there's only one <p> within each div
         if (p.innerHTML.toUpperCase().indexOf(filter) > -1) {
-          divs[i].style.display = ""; // Show the div
+            divs[i].style.display = ""; // Show the div
         } else {
-          divs[i].style.display = "none"; // Hide the div
+            divs[i].style.display = "none"; // Hide the div
         }
-      }
     }
+}
+
 
   </script>
   <body>
@@ -96,7 +98,7 @@
        <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">
        <input type="text" class="searchTerm" placeholder="What are you looking for?" style="border-radius: 5px;" id="mySearch">
       </div>
-            <div style="display: flex; justify-content: center; flex-wrap: wrap;" id="searchlist">
+      <div style="display: flex; justify-content: center; flex-wrap: wrap;" id="searchlist">
         <div style="margin: 10px;">
           <a href="../Vafor_IT-main/hookingman/" target="_blank">
             <img src="../assets/img/stickman.jpeg" alt="Hooking man" class="rounded-image" width="100px" height="100px">
