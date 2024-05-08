@@ -5,24 +5,4 @@
     box-sizing: border-box;
     font-family: "Heebo", sans-serif;
 }
-.searchTerm {
-  width: 15%;
-  border: 1px solid #42946e;
-  padding: 5px;
-  height: 25px;
-  outline: none;
-  color: #9DBFAF;
-  background-color: rgba(0, 0, 0, 0);
-  transition: width 0.3s ease, color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  display: block;
-  margin: 0 auto;
-}
-
-.searchTerm:focus{
-  color: #fff;
-  width: 25%;
-}
 
