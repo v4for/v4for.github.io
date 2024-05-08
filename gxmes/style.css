@@ -6,15 +6,18 @@
     font-family: "Heebo", sans-serif;
 }
 .searchTerm {
-  width: 30%;
+  width: 15%;
   border: 1px solid #42946e;
   padding: 5px;
   height: 25px;
   outline: none;
   color: #9DBFAF;
   background-color:#181622;
+  transition: width 0.3s ease, color 0.3s ease;
 }
 
 .searchTerm:focus{
   color: #fff;
+  width: 25%;
 }
+
