@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,7 @@
 </head>
 <body>
 <h1>Open URLs</h1>
-<p>Paste URLs separated by new lines or commas:</p>
+<p>Paste a bunch of links from google docs other people set up and open them all at the same time to see wich ones are blocked.</p>
 <textarea id="urlInput" rows="5" cols="50"></textarea>
 <button onclick="openURLs()">Open URLs</button>
 
@@ -18,6 +17,10 @@ function openURLs() {
     for (var i = 0; i < urls.length; i++) {
         var url = urls[i].trim();
         if (url !== "") {
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                // Default to HTTPS if no protocol is specified
+                url = "https://" + url;
+            }
             window.open(url);
         }
     }
