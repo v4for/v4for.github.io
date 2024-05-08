@@ -10,8 +10,6 @@
 }
 
 .searchTerm {
-  margin-left:auto;
-  margin-right: auto;
   width: 100%;
   border: 1px solid #42946e;
   padding: 5px;
@@ -19,6 +17,7 @@
   outline: none;
   color: #9DBFAF;
   background-color:#181622;
+  border-radius: 5px;
 }
 
 .searchTerm:focus{
@@ -26,5 +25,7 @@
 }
 
 .wrap{
-  width: 15%;
+  width: 30%;
+  margin-left:auto;
+  margin-right: auto;
 }
