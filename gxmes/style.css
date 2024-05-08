@@ -5,27 +5,16 @@
     box-sizing: border-box;
     font-family: "Heebo", sans-serif;
 }
-.search {
-  width: 100%;
-}
-
 .searchTerm {
-  width: 100%;
+  width: 30%;
   border: 1px solid #42946e;
   padding: 5px;
   height: 25px;
   outline: none;
   color: #9DBFAF;
   background-color:#181622;
-  border-radius: 5px;
 }
 
 .searchTerm:focus{
   color: #fff;
-}
-
-.wrap{
-  width: 30%;
-  margin-left:auto;
-  margin-right: auto;
 }
