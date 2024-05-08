@@ -12,9 +12,9 @@
 .searchTerm {
   width: 100%;
   border: 1px solid #42946e;
-  border-right: none;
   padding: 5px;
-  height: 20px;
+  height: 25px;
+  margin: auto;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
@@ -23,18 +23,6 @@
 
 .searchTerm:focus{
   color: #fff;
-}
-
-.searchButton {
-  width: 40px;
-  height: 28px;
-  border: 1px solid #42946e;
-  background: #42946e;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 16px;
 }
 
 .wrap{
