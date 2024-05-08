@@ -59,6 +59,15 @@
         alert('Pr6xy created by TacoGuy, may be blocked. Some websites completely break though. And everything is in arabic? Idk, dont ask me.');
       }
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var emulator = document.getElementById('url');
+      emulator.addEventListener('click', showAlert1);
+  
+      function showAlert1() {
+        alert('Open in default mode to work, you have to allow multiple popups.');
+      }
+    });
   </script>
 
     <header class="site-header">
@@ -116,7 +125,7 @@
           <p class="description" style="color: #95d0b4;">ByeBlocker</p>
         </div>
         <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/url" target="_blank" id="taco">
+          <a href="../Vafor_IT-main/url" target="_blank" id="url">
             <img src="../assets/img/url.png" alt="url" class="rounded-image" width="100px" height="100px">
           </a>
           <p class="description" style="color: #95d0b4;">Url Opener</p>
