@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open URLs</title>
+</head>
+<body>
+<h1>Open URLs</h1>
+<p>Paste URLs separated by new lines or commas:</p>
+<textarea id="urlInput" rows="5" cols="50"></textarea>
+<button onclick="openURLs()">Open URLs</button>
+
+<script>
+function openURLs() {
+    var urls = document.getElementById("urlInput").value.split(/[\n,]+/);
+    for (var i = 0; i < urls.length; i++) {
+        var url = urls[i].trim();
+        if (url !== "") {
+            window.open(url);
+        }
+    }
+}
+</script>
+</body>
+</html>
