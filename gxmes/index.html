@@ -41,42 +41,41 @@
 crossorigin="anonymous"></script>
   </head>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('mencraft');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
+document.addEventListener('DOMContentLoaded', function() {
+  var emulator = document.getElementById('mencraft');
+  emulator.addEventListener('click', function() {
+    normal();
+    showAlert();
+  });
+});
 
-      function showAlert() {
-        alert('Warning: You have to launch in default mode to change your name.');
-      }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  var emulator = document.getElementById('mencraft2');
+  emulator.addEventListener('click', function() {
+    normal();
+    showAlert();
+  });
+});
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var dino = document.getElementById('dino');
-      dino.addEventListener('click', showAlert1);
-  
-      function showAlert1() {
-        alert('Warning: You have to launch in default mode to play.');
-      }
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      var dino = document.getElementById('mencraft2');
-      dino.addEventListener('click', showAlert1);
-  
-      function showAlert1() {
-        alert('Warning: You have to launch in default mode to change your name.');
-      }
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      var dino = document.getElementById('sus');
-      dino.addEventListener('click', showAlert1);
-      function showAlert1() {
-        alert('Warning: You have to launch in default mode to play.');
-      }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  var emulator = document.getElementById('dino');
+  emulator.addEventListener('click', function() {
+    normal();
+    showAlert();
+  });
+});
 
+document.addEventListener('DOMContentLoaded', function() {
+  var emulator = document.getElementById('sus');
+  emulator.addEventListener('click', function() {
+    normal();
+    showAlert();
+  });
+});
+
+function showAlert() {
+  alert('Warning: Launching in default mode, errors otherwise.');
+}
 
   </script>
   <body>
