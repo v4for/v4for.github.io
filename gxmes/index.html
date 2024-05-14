@@ -43,12 +43,16 @@ crossorigin="anonymous"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var emulator = document.getElementById('mencraft');
-      emulator.addEventListener('click', showAlert);
-  
+      emulator.addEventListener('click', function() {
+        normal();
+        showAlert();
+      });
+
       function showAlert() {
         alert('Warning: You have to launch in default mode to change your name.');
       }
     });
+
     document.addEventListener('DOMContentLoaded', function() {
       var dino = document.getElementById('dino');
       dino.addEventListener('click', showAlert1);
@@ -68,7 +72,6 @@ crossorigin="anonymous"></script>
     document.addEventListener('DOMContentLoaded', function() {
       var dino = document.getElementById('sus');
       dino.addEventListener('click', showAlert1);
-  
       function showAlert1() {
         alert('Warning: You have to launch in default mode to play.');
       }
