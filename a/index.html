@@ -63,13 +63,16 @@ crossorigin="anonymous"></script>
     });
 
     document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('url');
-      emulator.addEventListener('click', showAlert1);
-  
-      function showAlert1() {
-        alert('Open in default mode to work, you have to allow multiple popups.');
-      }
+      var emulator = document.getElementById('sus');
+      emulator.addEventListener('click', function() {
+        normal();
+        showAlert3();
+      });
     });
+
+    function showAlert3() {
+      alert('Warning: Launching in default mode, errors otherwise.');
+    }
   </script>
 
     <header class="site-header">
