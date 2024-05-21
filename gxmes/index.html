@@ -77,7 +77,16 @@ crossorigin="anonymous"></script>
     function showAlert() {
       alert('Warning: Launching in default mode, errors otherwise.');
     }
+    document.addEventListener('DOMContentLoaded', function() {
+      var emulator = document.getElementById('run');
+      emulator.addEventListener('click', function() {
+        showAler3t();
+      });
+    });
 
+    function showAler3t() {
+      alert('Warning: You have to reload the website after the 2nd level then everything should work.');
+    }
   </script>
   <body>
 
@@ -460,6 +469,12 @@ crossorigin="anonymous"></script>
             <img src="../Vafor_IT-main/run2/run-2-logo.jpg" alt="what is the point of this gm" class="rounded-image" width="100px" height="100px">
           </a>
           <p class="description" style="color: #95d0b4;">Run 2 </p>
+        </div>
+        <div style="margin: 10px;">
+          <a href="../Vafor_IT-main/run/" target="_blank">
+            <img src="../assets/img/images.jfif" alt="what is the point of this gm this is more pointkess then 2" class="rounded-image" width="100px" height="100px">
+          </a>
+          <p class="description" style="color: #95d0b4;">Run 3 (infinite mode)</p>
         </div>
         <div style="margin: 10px;">
           <a href="../Vafor_IT-main/hilldraw/" target="_blank">
