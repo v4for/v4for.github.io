@@ -46,7 +46,7 @@ crossorigin="anonymous"></script>
       var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus, #run3');
       emulators.forEach(function(emulator) {
         emulator.addEventListener('click', function() {
-          normal();
+          normal1();
           showAlert();
         });
       });
@@ -59,10 +59,17 @@ crossorigin="anonymous"></script>
     document.addEventListener('DOMContentLoaded', function() {
       var run3 = document.getElementById('run3');
       run3.addEventListener('click', function() {
-        normal();
+        normal1();
         alert('Warning: You have to reload when the game freezes, it will work.')
       });
     });
+
+    normal1() {
+      var dinoElement = document.getElementById('no');
+        if (dinoElement) {
+          dinoElement.click();
+        }
+       } 
 
   </script>
   <body>
