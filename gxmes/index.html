@@ -43,7 +43,7 @@ crossorigin="anonymous"></script>
   <script>
     //warning alers plus change the mode to default  make it extenral later.
     document.addEventListener('DOMContentLoaded', function() {
-      var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus, #run3');
+      var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
       emulators.forEach(function(emulator) {
         emulator.addEventListener('click', function() {
           normal1();
@@ -56,7 +56,7 @@ crossorigin="anonymous"></script>
       var run3 = document.getElementById('run3');
       run3.addEventListener('click', function() {
         normal1();
-        alert('Warning: Launching in default mode, errors otherwise.');
+        alert('Warning: You have to refresh the page after the second level.');
       });
     });
 
