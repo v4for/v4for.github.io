@@ -42,17 +42,10 @@ crossorigin="anonymous"></script>
   </head>
   <script>
     //rice cooker
-function normal1() {
-    var noElement = document.getElementById('no');
+    function normal1() {
+    var noElement = document.getElementById('normal');
     if (noElement && !noElement.classList.contains('active')) {
-        console.log("'no' element found and is not active. Emulating click.");
-        noElement.dispatchEvent(new MouseEvent('click', {
-            view: window,
-            bubbles: true,
-            cancelable: true
-        }));
-    } else {
-        console.log("'no' element not found or is already active.");
+        noElement.click();
     }
 }
 
@@ -69,18 +62,15 @@ function handleRun3Click() {
 document.addEventListener('DOMContentLoaded', function() {
     var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
     emulators.forEach(function(emulator) {
-        console.log("Adding click listener to emulator:", emulator.id);
         emulator.addEventListener('click', handleEmulatorClick);
     });
 
     var run3 = document.getElementById('run3');
     if (run3) {
-        console.log("Adding click listener to run3.");
         run3.addEventListener('click', handleRun3Click);
-    } else {
-        console.log("'run3' element not found.");
     }
 });
+
 
   </script>
   <body>
