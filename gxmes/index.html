@@ -42,53 +42,32 @@ crossorigin="anonymous"></script>
   </head>
   <script>
     //warning alers plus change the mode to default  make it extenral later.
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('mencraft');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
+        document.addEventListener('DOMContentLoaded', function() {
+            var emulators = ['mencraft', 'mencraft2', 'dino', 'sus', 'run3'];
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('mencraft2');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
+            emulators.forEach(function(id) {
+                var emulator = document.getElementById(id);
+                if (emulator) {
+                    emulator.addEventListener('click', function() {
+                        normal();
+                        if (id === 'run3') {
+                            showAler3t();
+                        } else {
+                            showAlert();
+                        }
+                    });
+                }
+            });
+        });
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('dino');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
+        function showAler3t() {
+            alert('Warning: You have to reload the website after the 2nd level then everything should work.');
+        }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('sus');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
+        function showAlert() {
+            alert('Warning: Launching in default mode, errors otherwise.');
+        }
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('run3');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAler3t();
-      });
-    });
-
-    function showAler3t() {
-      alert('Warning: You have to reload the website after the 2nd level then everything should work.');
-    }
-    
-    function showAlert() {
-      alert('Warning: Launching in default mode, errors otherwise.');
-    }
   </script>
   <body>
 
