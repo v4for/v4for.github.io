@@ -41,29 +41,30 @@
 crossorigin="anonymous"></script>
   </head>
   <script>
-    //warning alers plus change the mode to default  make it extenral later.
-    function normal1() {
-      var noElement = document.getElementById('no');
-      noElement.click();
-    }
+function normal1() {
+  var noElement = document.getElementById('no');
+  noElement.click();
+}
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
-      emulators.forEach(function(emulator) {
-        emulator.addEventListener('click', function() {
-          normal1();
-          alert('Warning: Launching in default mode, errors otherwise.');
-        });
-      });
-    });    
+function handleEmulatorClick() {
+  normal1();
+  alert('Warning: Launching in default mode, errors otherwise.And this game is highly laggy.');
+}
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var run3 = document.getElementById('run3');
-      run3.addEventListener('click', function() {
-        normal1();
-        alert('Warning: You have to refresh the page after the second level.');
-      });
-    });
+function handleRun3Click() {
+  normal1();
+  alert('Warning: You have to refresh the page after the second level.');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
+  emulators.forEach(function(emulator) {
+    emulator.addEventListener('click', handleEmulatorClick);
+  });
+
+  var run3 = document.getElementById('run3');
+  run3.addEventListener('click', handleRun3Click);
+});
 
   </script>
   <body>

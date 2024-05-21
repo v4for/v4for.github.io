@@ -44,30 +44,7 @@ crossorigin="anonymous"></script>
   </head>
   <body>
     <script>
-function normal1() {
-  var noElement = document.getElementById('no');
-  noElement.click();
-}
 
-function handleEmulatorClick() {
-  normal1();
-  alert('Warning: Launching in default mode, errors otherwise.And this game is highly laggy.');
-}
-
-function handleRun3Click() {
-  normal1();
-  alert('Warning: You have to refresh the page after the second level.');
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
-  emulators.forEach(function(emulator) {
-    emulator.addEventListener('click', handleEmulatorClick);
-  });
-
-  var run3 = document.getElementById('run3');
-  run3.addEventListener('click', handleRun3Click);
-});
 
   </script>
 
