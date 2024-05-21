@@ -42,6 +42,11 @@ crossorigin="anonymous"></script>
   </head>
   <script>
     //warning alers plus change the mode to default  make it extenral later.
+    function normal1() {
+      var noElement = document.getElementById('no');
+      noElement.click();
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
       emulators.forEach(function(emulator) {
@@ -60,12 +65,6 @@ crossorigin="anonymous"></script>
       });
     });
 
-    function normal1() {
-      var noElement = document.getElementById('no');
-        if (noElement) {
-          noElement.click();
-        }
-      }
   </script>
   <body>
 
