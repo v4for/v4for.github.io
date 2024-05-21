@@ -42,9 +42,12 @@ crossorigin="anonymous"></script>
   </head>
   <script>
 function normal1() {
-  var noElement = document.getElementById('no');
-  noElement.click();
+    var noElement = document.getElementById('no');
+    if (noElement && !noElement.classList.contains('active')) {
+        noElement.click();
+    }
 }
+
 
 function handleEmulatorClick() {
   normal1();

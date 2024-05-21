@@ -44,6 +44,13 @@ crossorigin="anonymous"></script>
   </head>
   <body>
     <script>
+      function normal1() {
+          var noElement = document.getElementById('no');
+          if (noElement && !noElement.classList.contains('active')) {
+              noElement.click();
+          }
+      }
+      
     document.addEventListener('DOMContentLoaded', function() {
       var emulator = document.getElementById('emulator');
       emulator.addEventListener('click', showAlert);
@@ -65,7 +72,7 @@ crossorigin="anonymous"></script>
     document.addEventListener('DOMContentLoaded', function() {
       var emulator = document.getElementById('url');
       emulator.addEventListener('click', function() {
-        normal();
+        normal1();
         showAlert3();
       });
     });
