@@ -47,20 +47,16 @@ crossorigin="anonymous"></script>
       emulators.forEach(function(emulator) {
         emulator.addEventListener('click', function() {
           normal1();
-          showAlert();
+          alert('Warning: Launching in default mode, errors otherwise.');
         });
       });
-    });
-
-    function showAlert() {
-      alert('Warning: Launching in default mode, errors otherwise.');
-    }
+    });    
 
     document.addEventListener('DOMContentLoaded', function() {
       var run3 = document.getElementById('run3');
       run3.addEventListener('click', function() {
         normal1();
-        alert('Warning: You have to reload when the game freezes, it will work.')
+        alert('Warning: Launching in default mode, errors otherwise.');
       });
     });
 
