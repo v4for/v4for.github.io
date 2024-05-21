@@ -44,36 +44,37 @@ crossorigin="anonymous"></script>
   </head>
   <body>
     <script>
-    function normal1() {
-      var noElement = document.getElementById('no');
-      noElement.click();
-    }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('emulator');
-      emulator.addEventListener('click', showAlert);
-  
-      function showAlert() {
-        alert('Warning: This may not work. If you encounter a network error, use Web Retro.');
-      }
-    });
+// Define the function to perform the common action
+function normal1() {
+  var noElement = document.getElementById('no');
+  noElement.click();
+}
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('taco');
-      emulator.addEventListener('click', showAlert1);
-  
-      function showAlert1() {
-        alert('Pr6xy created by TacoGuy, may be blocked. Some websites completely break though. And everything is in arabic? Idk, dont ask me.');
-      }
-    });
+// Define a function to handle emulator clicks
+function handleEmulatorClick() {
+  normal1();
+  alert('Warning: Launching in default mode, errors otherwise.');
+}
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('url');
-      emulator.addEventListener('click', function() {
-        normal1();
-        alert('Warning: Launching in default mode, errors otherwise.');
-      });
-    });
+// Define a function to handle 'run3' button click
+function handleRun3Click() {
+  normal1();
+  alert('Warning: You have to refresh the page after the second level.');
+}
+
+// Add event listeners after DOM content is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Add event listener for emulator clicks
+  var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
+  emulators.forEach(function(emulator) {
+    emulator.addEventListener('click', handleEmulatorClick);
+  });
+
+  // Add event listener for 'run3' button click
+  var run3 = document.getElementById('run3');
+  run3.addEventListener('click', handleRun3Click);
+});
+
   </script>
 
     <header class="site-header">
