@@ -43,40 +43,27 @@ crossorigin="anonymous"></script>
   <script>
     //warning alers plus change the mode to default  make it extenral later.
     document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('mencraft');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('mencraft2');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('dino');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
-      });
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('sus');
-      emulator.addEventListener('click', function() {
-        normal();
-        showAlert();
+      var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus, #run3');
+      emulators.forEach(function(emulator) {
+        emulator.addEventListener('click', function() {
+          normal();
+          showAlert();
+        });
       });
     });
 
     function showAlert() {
       alert('Warning: Launching in default mode, errors otherwise.');
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var run3 = document.getElementById('run3');
+      run3.addEventListener('click', function() {
+        normal();
+        alert('Warning: You have to reload when the game freezes, it will work.')
+      });
+    });
+
   </script>
   <body>
 
