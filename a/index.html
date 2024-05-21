@@ -44,33 +44,27 @@ crossorigin="anonymous"></script>
   </head>
   <body>
     <script>
-// Define the function to perform the common action
 function normal1() {
   var noElement = document.getElementById('no');
   noElement.click();
 }
 
-// Define a function to handle emulator clicks
 function handleEmulatorClick() {
   normal1();
-  alert('Warning: Launching in default mode, errors otherwise.');
+  alert('Warning: Launching in default mode, errors otherwise.And this game is highly laggy.');
 }
 
-// Define a function to handle 'run3' button click
 function handleRun3Click() {
   normal1();
   alert('Warning: You have to refresh the page after the second level.');
 }
 
-// Add event listeners after DOM content is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Add event listener for emulator clicks
   var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
   emulators.forEach(function(emulator) {
     emulator.addEventListener('click', handleEmulatorClick);
   });
 
-  // Add event listener for 'run3' button click
   var run3 = document.getElementById('run3');
   run3.addEventListener('click', handleRun3Click);
 });
