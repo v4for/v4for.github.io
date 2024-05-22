@@ -32,7 +32,7 @@ function blank2true() {
     if (localStorage.getItem('blank2') === null) {
         localStorage.setItem('blank2', 'true');
     } else {
-        localStorage.setItem('blank2', 'newValue');
+        localStorage.setItem('blank2', 'true');
     }
 }
 
