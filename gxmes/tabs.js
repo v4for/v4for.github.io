@@ -1,7 +1,5 @@
 window.onload = function() {
-    var elementx = document.getElementById("blamk");
-    elementx.click();
-
+    document.getElementById("blamk").click();
 };
 
 function makeActive(link) {
