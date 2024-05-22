@@ -45,40 +45,43 @@ crossorigin="anonymous"></script>
   </head>
   <body>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('emulator');
-      emulator.addEventListener('click', showAlert);
-  
-      function showAlert() {
-        alert('Warning: This may not work. If you encounter a network error, use Web Retro.');
-      }
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('taco');
-      emulator.addEventListener('click', showAlert1);
-  
-      function showAlert1() {
-        alert('Pr6xy created by TacoGuy, may be blocked. Some websites completely break though. And everything is in arabic? Idk, dont ask me.');
-      }
-    });
-    function normal1() {
+    //rice cooker
+function normal1() {
     var noElement = document.getElementById('normal');
     if (noElement && !noElement.classList.contains('active')) {
         noElement.click();
     }
 }
-    document.addEventListener('DOMContentLoaded', function() {
-      var emulator = document.getElementById('url');
-      emulator.addEventListener('click', function() {
-        normal1();
-        showAlert3();
-      });
-    });
 
-    function showAlert3() {
-      alert('Warning: Launching in default mode, errors otherwise.');
+function handleRun3Click() {
+    normal1();
+    alert('Warning: Launching in default mode, errors otherwise.');
+}
+
+function k() {
+    alert('Warning: You may encounter a network error , use WebRetro .');
+}
+
+function m() {
+    alert('P6xy made by tacoguy. Everything is in arabic.');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var run3 = document.getElementById('url');
+    if (run3) {
+        run3.addEventListener('click', handleRun3Click);
     }
+
+    var notrun3 = document.getElementById('emulator');
+    if (notrun3) {
+        notrun3.addEventListener('click', k);
+    }
+
+    var taco = document.getElementById('taco');
+    if (taco) {
+        taco.addEventListener('click', m);
+    }
+});
 
   </script>
 
