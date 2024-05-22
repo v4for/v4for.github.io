@@ -43,18 +43,17 @@ crossorigin="anonymous"></script>
   </head>
   <script>
     //rice cooker
-    function handleEmulatorClick() {
-    document.getElementById("default").click();  
-    setTimeout(function() {
-      alert('Warning: Launching in default mode, errors otherwise.');
-    }, 100); 
+    function handleEmulatorClick(event) {
+    event.preventDefault(); 
+    alert('Warning: Launching in default mode, errors otherwise.');
+    document.getElementById("default").click();
 }
 
-function handleRun3Click() {
-    document.getElementById("default").click();  
-    setTimeout(function() {
-      alert('Warning: You have to refresh the page after the second level. And this game is highly laggy.');
-    }, 100); 
+function handleRun3Click(event) {
+    event.preventDefault(); 
+    alert('Warning: You have to refresh the page after the second level. And this game is highly laggy.');
+    document.getElementById("default").click(); 
+
 }
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -47,10 +47,9 @@ crossorigin="anonymous"></script>
     <script>
     //rice cooker
 function handleRun3Click() {
+    event.preventDefault(); 
     alert('Warning: Launching in default mode, errors otherwise.');
-    setTimeout(function() {
-        document.getElementById("default").click();
-    }, 100); 
+    document.getElementById("default").click();
 }
 
 function k() {
