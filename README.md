@@ -7,4 +7,4 @@ TODO:
 
 UIX work for settings and bypases page
 
-add more bypasses + get load on blank working(already have and easy idea for that), and last thign is desigin and make a download your progress button and loader. 
+add more bypasses +  and last thign is desigin and make a download your progress button and loader. 
