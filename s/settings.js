@@ -35,7 +35,6 @@ function blank2true() {
         localStorage.setItem('blank2', 'true');
     }
 }
-
 function blank2false() {
     if (localStorage.getItem('blank2') === null) {
         localStorage.setItem('blank2', 'false');
