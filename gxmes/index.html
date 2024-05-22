@@ -61,6 +61,7 @@ function handleRun3Click() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+   document.getElementById("blamk").click();
     var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
     emulators.forEach(function(emulator) {
         emulator.addEventListener('click', handleEmulatorClick);

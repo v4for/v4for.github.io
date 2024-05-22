@@ -1,7 +1,3 @@
-window.onload = function() {
-    document.getElementById("blamk").click();
-};
-
 function makeActive(link) {
     var links = document.querySelectorAll('.nav-link');
     links.forEach(function(link) {
