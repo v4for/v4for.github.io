@@ -23,7 +23,7 @@ function openBlob() {
 
             };
         }); 
-    }, 50); // Delay of 50 milliseconds
+    }, 50); 
 }
 
 function openAboutBlank() {
@@ -50,7 +50,7 @@ function openAboutBlank() {
                 win.document.body.appendChild(iframe);
             };
         }); 
-    }, 50); // Delay of 50 milliseconds
+    }, 50); 
 } 
 
 function openDefault() {
@@ -59,7 +59,7 @@ function openDefault() {
         links.forEach(function(link) {
             link.onclick = null;
         });
-    }, 50); // Delay of 50 milliseconds
+    }, 50);
 }
 
 function openPopup() {
@@ -86,5 +86,5 @@ function openPopup() {
                 win.document.body.appendChild(iframe);
             };
         }); 
-    }, 50); // Delay of 50 milliseconds
+    }, 50);
 } 

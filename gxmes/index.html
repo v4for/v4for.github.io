@@ -44,12 +44,10 @@ crossorigin="anonymous"></script>
   <script>
     //rice cooker
 function handleEmulatorClick(event) {
-    document.getElementById("default").click();
     alert('Warning: Launching in default mode, errors otherwise.');
 }
 
 function handleRun3Click(event) {
-    document.getElementById("default").click(); 
     alert('Warning: You have to refresh the page after the second level. And this game is highly laggy.');
 }
 
@@ -78,10 +76,10 @@ document.addEventListener('DOMContentLoaded', function() {
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex w-100 justify-content-end">
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()">blob</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk">about:blank</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()" id="default">default</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()">popup</a></li>              
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()" href="#">blob</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk" href="#">about:blank</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()" id="default" href="#">default</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()" href="#">popup</a></li>              
                 </ul>
             </div>              
           </div>
@@ -94,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
        <p class="lost">Some games like 1v1 lol and pixel gun have there servers blocked. Cope.</p> 
       </div>
       <div class="for">
-      <div style="display: flex; justify-content: center; flex-wrap: wrap;" id="searchlist">
+      <div style="display: flex; justify-content: center; flex-wrap: wrap;">
         <div style="margin: 10px;">
           <a href="../Vafor_IT-main/hookingman/" target="_blank">
             <img src="../assets/img/stickman.jpeg" alt="Hooking man" class="rounded-image" width="100px" height="100px">
@@ -276,28 +274,10 @@ document.addEventListener('DOMContentLoaded', function() {
           <p class="description" style="color: #95d0b4;">Ducklife</p>
         </div>
         <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/minecraft" target="_blank" id="mencraft">
-            <img src="../assets/img/mencraft.png" alt="men craft" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Minecraft 1.5</p>
-        </div>
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/mencraft-1.8/" target="_blank" id="mencraft2">
-            <img src="../Vafor_IT-main/mencraft-1.8/favicon.png" alt="men craft" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Minecraft 1.8</p>
-        </div>
-        <div style="margin: 10px;">
           <a href="../Vafor_IT-main/pixelgun/maxwellstevenson.com.html" target="_blank">
             <img src="../assets/img/pixelgun.jfif" alt="pixily men" class="rounded-image" width="100px" height="100px">
           </a>
           <p class="description" style="color: #95d0b4;">Pixel Gun 2</p>
-        </div>
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/dino.html" target="_blank" id="dino">
-            <img src="../assets/img/dino.png" alt="Chrome dino" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Chrome dino</p>
         </div>
         <div style="margin: 10px;">
           <a href="../Vafor_IT-main/drive-mad/" target="_blank">
@@ -426,12 +406,6 @@ document.addEventListener('DOMContentLoaded', function() {
           <p class="description" style="color: #95d0b4;">Soccer random</p>
         </div>
         <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/among-us/" target="_blank" id="sus">
-            <img src="../Vafor_IT-main/among-us/red.png" alt="sussy wussy" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Among us</p>
-        </div>
-        <div style="margin: 10px;">
           <a href="../Vafor_IT-main/subway-surfers/" target="_blank">
             <img src="../Vafor_IT-main/subway-surfers/img/splash.jpg" alt="stupid boy gets hit by trin" class="rounded-image" width="100px" height="100px">
           </a>
@@ -448,12 +422,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <img src="../Vafor_IT-main/run2/run-2-logo.jpg" alt="what is the point of this gm" class="rounded-image" width="100px" height="100px">
           </a>
           <p class="description" style="color: #95d0b4;">Run 2 </p>
-        </div>
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/run/" target="_blank" id="run3">
-            <img src="../assets/img/images.jfif" alt="what is the point of this gm this is more pointkess then 2" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Run 3 (infinite mode)</p>
         </div>
         <div style="margin: 10px;">
           <a href="../Vafor_IT-main/hilldraw/" target="_blank">
@@ -479,14 +447,40 @@ document.addEventListener('DOMContentLoaded', function() {
           </a>
           <p class="description" style="color: #95d0b4;">Pixel Speedrun</p>
         </div>
-        <!--
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/fakerun/Run 3 Unblocked Game.html" target="_blank">
-            <img src="../assets/img/run-3-editor.png" alt="url" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Run 3 (editor)</p>
+
+        <div class="notfor" style="display: flex; justify-content: center; flex-wrap: wrap;">
+          <div style="margin: 10px;">
+            <a href="../Vafor_IT-main/run/" target="_blank" id="run3">
+              <img src="../assets/img/images.jfif" alt="what is the point of this gm this is more pointkess then 2" class="rounded-image" width="100px" height="100px">
+            </a>
+            <p class="description" style="color: #95d0b4;">Run 3 (infinite mode)</p>
+          </div>
+          <div style="margin: 10px;">
+            <a href="../Vafor_IT-main/minecraft" target="_blank" id="mencraft">
+              <img src="../assets/img/mencraft.png" alt="men craft" class="rounded-image" width="100px" height="100px">
+            </a>
+            <p class="description" style="color: #95d0b4;">Minecraft 1.5</p>
+          </div>
+          <div style="margin: 10px;">
+            <a href="../Vafor_IT-main/mencraft-1.8/" target="_blank" id="mencraft2">
+              <img src="../Vafor_IT-main/mencraft-1.8/favicon.png" alt="men craft" class="rounded-image" width="100px" height="100px">
+            </a>
+            <p class="description" style="color: #95d0b4;">Minecraft 1.8</p>
+          </div>
+          <div style="margin: 10px;">
+            <a href="../Vafor_IT-main/dino.html" target="_blank" id="dino">
+              <img src="../assets/img/dino.png" alt="Chrome dino" class="rounded-image" width="100px" height="100px">
+            </a>
+            <p class="description" style="color: #95d0b4;">Chrome dino</p>
+          </div>
+          <div style="margin: 10px;">
+            <a href="../Vafor_IT-main/among-us/" target="_blank" id="sus">
+              <img src="../Vafor_IT-main/among-us/red.png" alt="sussy wussy" class="rounded-image" width="100px" height="100px">
+            </a>
+            <p class="description" style="color: #95d0b4;">Among us</p>
+          </div>
         </div>
-        -->
+
         </div>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
           crossorigin="anonymous"></script>
