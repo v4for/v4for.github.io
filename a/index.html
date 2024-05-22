@@ -47,7 +47,7 @@ crossorigin="anonymous"></script>
     <script>
     //rice cooker
 function handleRun3Click() {
-  openDefault();
+  document.getElementById("default").click();
     alert('Warning: Launching in default mode, errors otherwise.');
 }
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="navbar-nav d-flex w-100 justify-content-end">
                   <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()">blob</a></li>
                   <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk">about:blank</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()">default</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()" id="default">default</a></li>
                   <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()">popup</a></li>              
                 </ul>
             </div>              

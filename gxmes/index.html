@@ -43,25 +43,18 @@ crossorigin="anonymous"></script>
   </head>
   <script>
     //rice cooker
-function normal1() {
-    var noElement = document.getElementById('normal');
-    if (noElement && !noElement.classList.contains('active')) {
-        noElement.click();
-    }
-}
-
 function handleEmulatorClick() {
-  openDefault();
+    document.getElementById("default").click();
     alert('Warning: Launching in default mode, errors otherwise.');
 }
 
 function handleRun3Click() {
-  openDefault();
-    alert('Warning: You have to refresh the page after the second level. And this game is highly laggy.');
+  document.getElementById("default").click();
+  alert('Warning: You have to refresh the page after the second level. And this game is highly laggy.');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-   document.getElementById("blamk").click();
+    document.getElementById("blamk").click();
     var emulators = document.querySelectorAll('#mencraft, #mencraft2, #dino, #sus');
     emulators.forEach(function(emulator) {
         emulator.addEventListener('click', handleEmulatorClick);
@@ -86,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="navbar-nav d-flex w-100 justify-content-end">
                   <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()">blob</a></li>
                   <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk">about:blank</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()">default</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()" id="default">default</a></li>
                   <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()">popup</a></li>              
                 </ul>
             </div>              
