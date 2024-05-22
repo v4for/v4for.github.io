@@ -46,15 +46,8 @@ crossorigin="anonymous"></script>
   <body>
     <script>
     //rice cooker
-function normal1() {
-    var noElement = document.getElementById('normal');
-    if (noElement && !noElement.classList.contains('active')) {
-        noElement.click();
-    }
-}
-
 function handleRun3Click() {
-    normal1();
+  openDefault();
     alert('Warning: Launching in default mode, errors otherwise.');
 }
 
@@ -94,10 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex w-100 justify-content-end">
-                      <li class="nav-item"><a id="useIframe" class="nav-link">blob</a></li>
-                      <li class="nav-item"><a id="no" class="nav-link">about:blank</a></li>
-                      <li class="nav-item"><a id="normal" class="nav-link">default</a></li>
-                      <li class="nav-item"><a id="popup" class="nav-link">popup</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()">blob</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk">about:blank</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()">default</a></li>
+                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()">popup</a></li>              
                 </ul>
             </div>              
           </div>
