@@ -1,4 +1,4 @@
-Games ideas: Smashkarts, volleball giraffe game.
+Games ideas: Smashkarts, volleball giraffe game , sausage flip and earth sausage.
 
 Pixel speedrun, i did it the lazy way may fix in the future (or not)
 Run 3 ifinte mode is glitchy you have to reload it after it freezes
