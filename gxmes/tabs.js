@@ -11,7 +11,7 @@ function makeActive(link) {
   }
 
 function openBlob() {
-    var links = document.querySelectorAll('a');
+    var links = document.querySelectorAll('div.for a');
     links.forEach(function(link) {
         link.onclick = function(event) {
             event.preventDefault(); 
@@ -26,7 +26,7 @@ function openBlob() {
 }
 
 function openAboutBlank() {
-    var links = document.querySelectorAll('a');
+    var links = document.querySelectorAll('div.for a');
     links.forEach(function(link) {
         link.onclick = function(event) {
             event.preventDefault(); 
@@ -52,14 +52,14 @@ function openAboutBlank() {
 
 
   function openDefault() {
-    var links = document.querySelectorAll('a');
+    var links = document.querySelectorAll('div.for a');
     links.forEach(function(link) {
         link.onclick = null;
     });
   }
 
   function openPopup() {
-    var links = document.querySelectorAll('a');
+    var links = document.querySelectorAll('div.for a');
     links.forEach(function(link) {
         link.onclick = function(event) {
             event.preventDefault(); 
