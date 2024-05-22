@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Smash Karts - Poki</title>
+	<script>
+		window.config = {
+		loader: 'unity-2020',
+		debug: false,
+		maxRatio: 16 / 9,
+		minRatio: 9 / 16,
+
+		title: 'Smash Karts',
+		thumbnail: 'https:\/\/img.poki.com\/9c9e529b14731be871b07b89660bbc2a.png',
+		numScreenshots:  4 ,
+
+		unityVersion: '2021.2.14f1',
+		unityWebglBuildUrl: '',
+
+		fileSize:  63 ,
+		cachedDecompressedFileSizes: {
+			'8b4c343a154b1e61369dc73cb5f9da83.wasm':  35330335 ,
+			'93f2e491884f0102a6777ff959f45da3.js':  657808 ,
+			'SmashKarts_pa8.loader.js':  18894 ,
+			'f0444602f224d7bdf4cf7e1607fc23c6.data':  27533206 ,
+		},
+		"metadata": {"poki_template_version":1,"background_color":"#1B70F0","code_filename":"8b4c343a154b1e61369dc73cb5f9da83.wasm","company_name":"TallTeam","data_filename":"f0444602f224d7bdf4cf7e1607fc23c6.data","development_player":"false","framework_filename":"93f2e491884f0102a6777ff959f45da3.js","height":"600","loader_filename":"SmashKarts_pa8.loader.js","product_name":"Smash Karts","product_version":"2.2.1","splash_screen_style":"Light","unity_version":"2021.2.14f1","use_data_caching":"true","use_threads":"false","use_wasm":"true","use_webgl_1_0":"true","use_webgl_2_0":"true","width":"960"}
+	};
+	</script>
+	<!-- will be copied to the resulting head //-->
+</head>
+
+<body>
+	<script src="/master-loader.js"></script>
+	<!-- will be copied to the resulting body //-->
+	<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-auth-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-database-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-performance-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-functions-compat.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/auth.js"></script>
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAdY2qq9083amKDS0R8tn2tjIKQB8mocco",
+			authDomain: "webgltest-17af1.firebaseapp.com",
+			databaseURL: "https://webgltest-17af1.firebaseio.com",
+			projectId: "webgltest-17af1",
+			storageBucket: "webgltest-17af1.appspot.com",
+			messagingSenderId: "480659433590",
+			appId: "1:480659433590:web:a01ad1599e963843a0d757",
+			measurementId: "G-1W23DRFHK9"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		var firebaseSupported = false;
+		if(firebase.analytics != null)
+		{
+			firebase.analytics.isSupported().then((isSupported) => 
+			{
+				if (isSupported) 
+				{
+				analytics = firebase.analytics();
+				firebaseSupported = true;
+				}
+				else 
+				{
+				console.log("firebase.analytics() not supported ");
+				}
+			})
+		}
+
+	</script>
+	<!-- will also be copied to the resulting body //-->
+</body>
+
+</html>
