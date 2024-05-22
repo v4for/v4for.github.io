@@ -1,13 +1,17 @@
 function toggleButton(button) {
+    // Deselect all buttons except the one being toggled
     document.querySelectorAll('.nav-link').forEach(link => {
         if (link !== button) {
             link.classList.remove('active');
+            // Disable behavior associated with the deselected button
             disableButtonBehavior(link);
         }
     });
 
+    // Toggle the active state of the clicked button
     button.classList.toggle('active');
     
+    // Enable or disable behavior associated with the clicked button
     if (button.classList.contains('active')) {
         enableButtonBehavior(button);
     } else {
@@ -89,9 +93,13 @@ function enableButtonBehavior(button) {
 function disableButtonBehavior(button) {
     // Disable behavior associated with the button
     if (button === useIframeButton) {
+        // Disable behavior for useIframeButton
     } else if (button === noButton) {
+        // Disable behavior for noButton
     } else if (button === popupButton) {
+        // Disable behavior for popupButton
     } else if (button === normalButton) {
+        // Disable behavior for normalButton
     }
 }
 
