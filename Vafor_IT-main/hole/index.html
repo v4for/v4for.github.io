@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MY0THGFRYS"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Hole.IO - Sten Unblocked</title>
+    <link rel="icon" href="../stennerela.jpg">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3054952862534774" crossorigin="anonymous"></script>
+
+    <style>
+      .webgl-content * {border: 0; margin: 0; padding: 0}
+.webgl-content {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+
+.webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+.webgl-content .logo {background: url('../slope/style/progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
+.webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
+.webgl-content .progress .empty {background: url('../slope/style/progressEmpty.Light.png') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
+.webgl-content .progress .full {background: url('../slope/style/progressFull.Light.png') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
+
+.webgl-content .logo.Dark {background-image: url('../slope/style/Logo.Light.png');}
+.webgl-content .progress.Dark .empty {background-image: url('../slope/style/Logo.Light.png');}
+.webgl-content .progress.Dark .full {background-image: url('../slope/style/Logo.Light.png');}
+
+.webgl-content .footer {margin-top: 5px; height: 38px; line-height: 38px; font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 18px;} 
+.webgl-content .footer .webgl-logo, .title, .fullscreen {height: 100%; display: inline-block; background: transparent center no-repeat;} 
+.webgl-content .footer .webgl-logo {background-image: url('../slope/style/webgl-logo.png'); width: 204px; float: left;}
+.webgl-content .footer .title {margin-right: 10px; float: right;}
+.webgl-content .footer .fullscreen {background-image: url('../slope/style/fullscreen.png'); width: 38px; float: right;}
+    </style>
+    <style>
+    h3 {
+        font-size: 20px;
+        font-family: Arial;
+    }
+    </style>
+    <script>
+      
+function UnityProgress(gameInstance, progress) {
+  if (!gameInstance.Module)
+    return;
+  if (!gameInstance.logo) {
+    gameInstance.logo = document.createElement("div");
+    gameInstance.logo.className = "logo " + gameInstance.Module.splashScreenStyle;
+    gameInstance.container.appendChild(gameInstance.logo);
+  }
+  if (!gameInstance.progress) {    
+    gameInstance.progress = document.createElement("div");
+    gameInstance.progress.className = "progress " + gameInstance.Module.splashScreenStyle;
+    gameInstance.progress.empty = document.createElement("div");
+    gameInstance.progress.empty.className = "empty";
+    gameInstance.progress.appendChild(gameInstance.progress.empty);
+    gameInstance.progress.full = document.createElement("div");
+    gameInstance.progress.full.className = "full";
+    gameInstance.progress.appendChild(gameInstance.progress.full);
+    gameInstance.container.appendChild(gameInstance.progress);
+  }
+  gameInstance.progress.full.style.width = (100 * progress) + "%";
+  gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
+  if (progress == 1)
+    gameInstance.logo.style.display = gameInstance.progress.style.display = "none";
+}
+    </script>
+    <script src="UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "build.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <!--<div class="webgl-logo"></div>-->
+        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="title">Hole.IO</div>
+      </div>
+    </div>
+<h3><a href="../index.html">Sten Unblocked</a></h3>
+<h3><a id="likes" href="#" onclick="like()">Loading likes...</a></h3>
+  <script>
+  var game = "/hole-io/";
+  </script>
+  <script src="../stenunblockedmain.js"></script>
+
+  </body>
+</html>
