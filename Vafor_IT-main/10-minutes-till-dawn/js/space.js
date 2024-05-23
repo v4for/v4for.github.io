@@ -7,7 +7,3 @@ document.addEventListener('keydown', function(event) {
         }
     }
 });
-
-document.getElementById('gameContainer').addEventListener('click', function() {
-    console.log('Space bar was pressed.');
-});
