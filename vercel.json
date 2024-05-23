@@ -1,0 +1,9 @@
+{
+    "routes": [
+      {
+        "src": "/assets/(.*)",
+        "dest": "Vafor_it-main/basketballstars/assets/$1"
+      }
+    ]
+  }
+  
