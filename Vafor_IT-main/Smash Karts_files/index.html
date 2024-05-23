@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Smash Karts </title>
+	<meta name="robots" content="noindex">
+	<script>
+	window.config = {
+		loader: 'unity-2020',
+		debug: false,
+		maxRatio: 24 / 9,
+		minRatio: 9 / 24,
+
+		title: 'Smash Karts',
+		thumbnail: '9c9e529b14731be871b07b89660bbc2a.png',
+		numScreenshots:  4 ,
+
+		unityVersion: '2021.2.14f1',
+		unityWebglBuildUrl: '',
+
+		fileSize:  66 ,
+		cachedDecompressedFileSizes: {
+			'6a793744ad86b15bfe005393e138d5ef.js':  664795 ,
+			'SmashKarts_sp6.loader.js':  18894 ,
+			'b4c6ea99dc51c73858f47239f387f162.data':  30346175 ,
+			'f944e4c35e7de77e9a40598d481f8cba.wasm':  35618848 ,
+		},
+		"metadata": {"poki_template_version":1,"background_color":"#1B70F0","code_filename":"f944e4c35e7de77e9a40598d481f8cba.wasm","company_name":"TallTeam","data_filename":"b4c6ea99dc51c73858f47239f387f162.data","development_player":"false","framework_filename":"6a793744ad86b15bfe005393e138d5ef.js","height":"600","loader_filename":"SmashKarts_sp6.loader.js","product_name":"Smash Karts","product_version":"2.2.6","splash_screen_style":"Light","unity_version":"2021.2.14f1","use_data_caching":"true","use_threads":"false","use_wasm":"true","use_webgl_1_0":"true","use_webgl_2_0":"true","width":"960"}
+	};
+	</script>
+<!-- will be copied to the resulting head //-->
+</head>
+<body>
+
+		<script src="/master-loader.js"></script>
+
+<!-- will be copied to the resulting body //-->
+	<script src="firebase-app-compat.js"></script>
+	<script src="firebase-auth-compat.js"></script>
+	<script src="firebase-database-compat.js"></script>
+	<script src="firebase-analytics-compat.js"></script>
+	<script src="firebase-performance-compat.js"></script>
+	<script src="firebase-functions-compat.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/auth.js"></script>
+	<script>
+		var firebaseConfig = {
+			apiKey: "AIzaSyAdY2qq9083amKDS0R8tn2tjIKQB8mocco",
+			authDomain: "webgltest-17af1.firebaseapp.com",
+			databaseURL: "https://webgltest-17af1.firebaseio.com",
+			projectId: "webgltest-17af1",
+			storageBucket: "webgltest-17af1.appspot.com",
+			messagingSenderId: "480659433590",
+			appId: "1:480659433590:web:a01ad1599e963843a0d757",
+			measurementId: "G-1W23DRFHK9"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		var firebaseSupported = false;
+		if(firebase.analytics != null)
+		{
+			firebase.analytics.isSupported().then((isSupported) => 
+			{
+				if (isSupported) 
+				{
+				analytics = firebase.analytics();
+				firebaseSupported = true;
+				}
+				else 
+				{
+				console.log("firebase.analytics() not supported ");
+				}
+			})
+		}
+
+	</script>
+<!-- will also be copied to the resulting body //-->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"83527c138b5e1095","version":"2023.10.0","token":"08a46637120a404a963395dd86986b4f"}' crossorigin="anonymous"></script>
+</body>
+</html>
