@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (element.textContent.includes(keyword)) {
                     let parentDiv = element.closest('div');
                     if (parentDiv) {
-                        parentDiv.classList.add('hidden');
+                        parentDiv.style.display = 'none';
                     }
                 }
             }
