@@ -1,0 +1,15 @@
+{
+    "rewrites": [
+      {
+        "source": "/basketballstars/:path*",
+        "headers": {"Referer": {"startsWith": "/basketballstars"}},
+        "destination": "/Vafor_IT-main/basketballstars/:path*"
+      },
+      {
+        "source": "/ovo/:path*",
+        "headers": {"Referer": {"startsWith": "/ovo"}},
+        "destination": "/Vafor_IT-main/ovo/:path*"
+      }
+    ]
+  }
+  
