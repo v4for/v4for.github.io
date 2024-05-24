@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const keywords = ['ovo', 'basketball', 'vex 6' , 'slope'];
+    const keywords = ['ovo', 'Basketball', 'vex 6' , 'Slope'];
 
     if (window.location.href.includes('vercel.app')) {
         const elements = document.body.getElementsByTagName('*');
