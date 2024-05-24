@@ -1,14 +1,12 @@
 {
-    "redirects": [
+    "routes": [
       {
-        "source": "/ovo/:slug",
-        "destination": "/Vafor_IT-main/ovo/:slug",
-        "permanent": true
-      },
-      {
-        "source": "/basketballstars/:slug",
-        "destination": "/Vafor_IT-main/basketballstars/:slug",
-        "permanent": true
+        "src": "/Vafor_IT",
+        "headers": {
+          "Referer": "https://vafor-it.vercel.app/Vafor_IT-main/ovo"
+        },
+        "status": 301,
+        "dest": "/Vafor_IT-main/ovo/"
       }
     ]
   }
