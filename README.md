@@ -1,8 +1,4 @@
-Games ideas: S̶m̶a̶s̶h̶k̶a̶r̶t̶s̶, v̶o̶l̶l̶e̶b̶a̶l̶l̶ g̶i̶r̶a̶f̶f̶e̶ g̶a̶m̶e̶ , sausage flip and earth sausage.
-
-Pixel speedrun, i did it the lazy way may fix in the future (or not)
-Run 3 ifinte mode is glitchy you have to reload it after it freezes
-
+ATTENTION if you so copy some of my games, make sure to credit me and include a link to maxwellstevenson.com or something. This will always be open source. Remember you need to copy the poki loader js and unity loader js files. Games are stored in the Vafor_it-main.
 #TODO:
 
 IMPORTANT set up redirects for vercel so games can actaully load.
