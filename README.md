@@ -3,7 +3,9 @@ ATTENTION if you do copy some of my games, make sure to credit me and include a 
 OFFICAL LINKS
 
 https://maxwellstevenson.com
+
 https://vafor.netlify.app
+
 https://vafor-it.vercel.app (only some games work, use with caution)
 
 IMPORTANT set up redirects for vercel so games can actaully load
