@@ -6,7 +6,7 @@ https://maxwellstevenson.com
 
 https://vafor.netlify.app
 
-httpa://ph4xus.github.io (doent always have the latest updates)
+https://ph4xus.github.io (doent always have the latest updates)
 
 https://vafor-it.vercel.app (only some games work, use with caution)
 
