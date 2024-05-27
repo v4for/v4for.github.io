@@ -90,7 +90,7 @@ function openPopup() {
 } 
 
 //search
-function search() {
+function searchmedaddy() {
     var keyword = prompt("What is blud searching for?");
 
     const elements = document.body.getElementsByTagName('*');
