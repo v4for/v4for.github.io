@@ -1,15 +1,35 @@
+// Function to store initial display styles
+const initialDisplayStyles = {};
+
+function storeInitialStyles() {
+    const elements = document.body.getElementsByTagName('*');
+    for (let element of elements) {
+        initialDisplayStyles[element] = element.style.display;
+    }
+}
+
+function restoreInitialStyles() {
+    for (let element in initialDisplayStyles) {
+        if (initialDisplayStyles.hasOwnProperty(element)) {
+            element.style.display = initialDisplayStyles[element];
+        }
+    }
+}
+
 function searchmedaddy() {
     // Prompt user for a search keyword
     var keyword = prompt("What is blud searching for?");
+    if (!keyword) {
+        alert("No keyword entered.");
+        return;
+    }
     var regex = new RegExp(keyword, "i"); // Create a case-insensitive regex
 
     // Get all elements in the body
     const elements = document.body.getElementsByTagName('*');
 
     // First, restore visibility of all elements
-    for (let element of elements) {
-        element.style.display = '';
-    }
+    restoreInitialStyles();
 
     let found = false;
 
@@ -25,7 +45,6 @@ function searchmedaddy() {
                         el.style.display = 'none';
                     }
                 }
-                break;
             }
         }
     }
@@ -35,3 +54,6 @@ function searchmedaddy() {
         alert("No results found for: " + keyword);
     }
 }
+
+// Store initial styles when the page loads
+window.onload = storeInitialStyles;
