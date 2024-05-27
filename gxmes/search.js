@@ -29,7 +29,6 @@ function searchmedaddy() {
         }
     }
 
-    // If the keyword is not found, alert the user
     if (!found) {
         alert("No results found for: " + keyword);
     }
