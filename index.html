@@ -28,6 +28,11 @@
             redirectToWebsite(); 
           }
       }
+      document.addEventListener('keydown', function(event) {
+          if (event.ctrlKey && event.key === 'u') {
+            window.location.pathname = '/Vafor_IT-main/fake-virus'
+          }
+        });
     </script>
   </head>
   <!-- Google tag (gtag.js) -->
