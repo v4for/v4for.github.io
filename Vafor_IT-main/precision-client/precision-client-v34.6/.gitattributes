@@ -1,0 +1,9 @@
+#
+# https://help.github.com/articles/dealing-with-line-endings/
+#
+
+*.bat           text eol=crlf
+gradlew         text eol=lf
+
+*.html linguist-vendored
+*.htm linguist-vendored

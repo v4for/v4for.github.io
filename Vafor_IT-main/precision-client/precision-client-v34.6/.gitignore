@@ -1,0 +1,14 @@
+.gradle
+.settings
+.idea
+build
+bin
+rundir/
+sp-server/.gradle
+sp-server/.settings
+sp-server/build
+sp-server/bin
+zip-generator/out
+zip-generator/src/META-INF
+*.iml
+crash_report_override.txt
