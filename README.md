@@ -8,11 +8,11 @@ https://vafor.netlify.app
 
 https://ph4xus.github.io (doent always have the latest updates)
 
-https://vafor-it.vercel.app (only some games work, use with caution)
-
 IMPORTANT set up redirects for vercel so games can actaully load
 UIX work for settings and bypases page. DO NOT USE VERCEL.
 
 TODO section.
-add more bypasses +  and last thign is desigin and make a download your progress button and loader. 
+last thign is desigin and make a download your progress button and loader. 
+
+Check out my north korea repo, stuff i cant do with google adsense us on there.
 
