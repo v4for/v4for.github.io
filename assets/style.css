@@ -66,5 +66,7 @@ html, body {
   .sidenav a {font-size: 18px;}
 }
 .sidebutton {
-    
+  position: absolute;
+  top:0;
+  left:0;
 }
