@@ -64,4 +64,8 @@ html, body {
   position: absolute;
   top:0;
   left:0;
+  color:#a1a0ab;
+}
+.sidebutton:hover {
+    color:#fff
 }
