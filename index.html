@@ -14,12 +14,21 @@
        <!--- //import javascript -->
         <script src="/assets/script.js"></script>
         <script>
+            
             function openNav(){
              document.getElementById("mySideNav").style.width="250px";
                 }
             function closeNav(){
               document.getElementById("mySideNav").style.width="0";
             }
+
+            //redirect awawy
+            var userConfirmed = confirm("Do you want to proceed to the new page?");
+        
+            if (userConfirmed) {
+                window.location.href = "/r";
+            } 
+        }
         </script>
 </head>
 <body>
