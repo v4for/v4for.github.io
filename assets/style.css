@@ -12,6 +12,17 @@ html, body {
 
 }
 
+canvas {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: -2;
+}
+#canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+}
 
 .titlepiece {
     color: #fff;
