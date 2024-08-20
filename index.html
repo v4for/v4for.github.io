@@ -41,25 +41,6 @@
                   backgroundColor: ['#0e1118', '#232b3e'],
                   randomOpacity: true,
                 });
-            
-                let mountain = new Image();
-                mountain.src = 'examples/starfall/images/mountain2.png';
-            
-                mountain.onload = () => {
-                  starback.addToFront((ctx) => {
-                    ctx.drawImage(
-                      mountain,
-                      0,
-                      0,
-                      mountain.width,
-                      mountain.height,
-                      0,
-                      canvas.height - mountain.height,
-                      canvas.width,
-                      mountain.height
-                    );
-                  });
-                }
         </script>
 </head>
 <body>
