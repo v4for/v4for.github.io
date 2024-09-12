@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple PWA Browser</title>
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; }
+    #browser { display: flex; flex-direction: column; height: 100vh; }
+    #address-bar { display: flex; padding: 10px; background: #eee; }
+    #address-bar input { flex: 1; padding: 5px; }
+    #browser-frame { flex: 1; border: none; }
+    #navigation { padding: 10px; background: #eee; }
+  </style>
+</head>
+<body>
+  <div id="browser">
+    <div id="address-bar">
+      <button onclick="navigate(-1)">Back</button>
+      <button onclick="navigate(1)">Forward</button>
+      <input type="text" id="url" placeholder="Enter URL" />
+      <button onclick="loadPage()">Go</button>
+    </div>
+    <iframe id="browser-frame"></iframe>
+    <div id="navigation">
+      <button onclick="reloadPage()">Refresh</button>
+    </div>
+  </div>
+  
+  <script>
+    const urlInput = document.getElementById('url');
+    const frame = document.getElementById('browser-frame');
+
+    function loadPage() {
+      const url = urlInput.value;
+      if (url) {
+        frame.src = url;
+      }
+    }
+
+    function reloadPage() {
+      frame.contentWindow.location.reload();
+    }
+
+    function navigate(direction) {
+      frame.contentWindow.history.go(direction);
+    }
+
+    // Optional: Initialize with a default page
+    urlInput.value = 'https://example.com';
+    loadPage();
+  </script>
+</body>
+</html>
