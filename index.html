@@ -22,14 +22,12 @@
               document.getElementById("mySideNav").style.width="0";
             }
 
-            //redirect awawy
-            var userConfirmed = confirm("The UIX here is a work in progress. Do you want to click to the old UIX?");
-        
+            //redirect awawy        
             window.location.href = "/r";
             
         </script>
 </head>
-<body>
+<body onload="window.location.replace('/public');">
    <div id="mySideNav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
       <a href="/gxmes">Gxmes</a>
