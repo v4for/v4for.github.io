@@ -86,7 +86,14 @@ startGame.onclick = function() {
                 console.log("Preroll Ad Completed: " + evt);
             },
             AIP_REMOVE: function ()  {
-                // Here it's save to remove the PREROLL_ELEM from the page if you want. But it's not recommend.
+                var prerollElement = this.PREROLL_ELEM();
+
+                if (prerollElement) {
+                prerollElement.parentNode.removeChild(prerollElement); 
+                }
+
+                console.log("No ads. Nice");
+
                 
             }
         });
