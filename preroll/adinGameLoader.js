@@ -86,15 +86,7 @@ startGame.onclick = function() {
                 console.log("Preroll Ad Completed: " + evt);
             },
             AIP_REMOVE: function ()  {
-                var prerollElement = this.PREROLL_ELEM();
-
-                if (prerollElement) {
-                prerollElement.parentNode.removeChild(prerollElement); 
-                }
-
-                console.log("No ads. Nice");
-
-                
+		document.getElementById('preroll')?.style.display = 'none';
             }
         });
     });
