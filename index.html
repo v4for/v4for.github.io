@@ -17,9 +17,12 @@
             
             function openNav(){
              document.getElementById("mySideNav").style.width="250px";
+             document.getElementById("br").style.display="none";
+
                 }
             function closeNav(){
               document.getElementById("mySideNav").style.width="0";
+              document.getElementById("br").style.display="";
             }
 
             //redirect awawy        
@@ -35,9 +38,12 @@
       <a href="#">fliller</a>
       <a href="#">filler</a>
     </div>
+
+    <div class="topright">
+      <span style="font-size:30px; cursor:pointer;" onclick="openNav()" class="sidebutton" id="br">&#9776;</span>
+    </div>
     
         <div class="main">
-                <span style="font-size:30px; cursor:pointer;" onclick="openNav()" class="sidebutton">&#9776;</span>
                 <h1 class="titlepiece">Vafor IT</h1>
         </div>
 </body>
