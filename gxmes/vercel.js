@@ -1,3 +1,5 @@
+//ik people are going to use vercel anyway
+
 document.addEventListener('DOMContentLoaded', () => {
     const keywords = ['ovo', 'Basketball', 'vex 6' , 'Slope'];
 
