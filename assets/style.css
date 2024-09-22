@@ -48,20 +48,24 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.3s;
 }
 
 .titlepiece {
     color: #fff;
     margin: 0;
     font-size:3em;
-    text-align: center;
+    left: 50%;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%, -50%);
 }
 
 .sidenav
 {
   height:100%;
   width:0;
-  background-color:#111;
+  background-color:#13111c;
   position:fixed;
   z-index: 10;
   overflow-x:hidden;
@@ -78,7 +82,6 @@ body{
   top:0;
   left:0;
   padding-top:60px;
-  padding-left: 10px;
 }
 
 
@@ -86,13 +89,13 @@ body{
   padding: 8px 8px 8px 32px;
   text-decoration:none;
   font-size:25px;
-  color:#818181;
+  color:#737373;
   display:block;
   transition:0.3s;
 }
 
 .sidenav a:hover{
-  color: #f1f1f1;
+  color: #ced4da;
 }
 
 .sidenav .closebtn{
@@ -114,4 +117,21 @@ body{
 }
 .sidebutton:hover {
     color:#fff
+}
+
+.toptext {
+  position: absolute;
+  top:0;
+  right:0;
+}
+
+.toptext a {
+  color: #ced4da;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.toptext a:hover {
+  transition:0.3s;
+  color: #737373;
 }
