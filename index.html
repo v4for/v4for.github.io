@@ -11,6 +11,7 @@
        <!--- //import css -->
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
        <link rel="stylesheet" type="text/css" href="assets/style.css">
+       <link rel="stylesheet" type="text/css" href="assets/modal.css">
        <!--- //import javascript -->
         <script src="assets/script.js"></script>
         <script src="assets/search.js"></script>
@@ -48,6 +49,15 @@
           </div>
        </div>
 
+       <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal" onclick="closeModal()">&times;</span>
+            <h2 style="display: inline;">Results for:</h2>
+        <h2 id="whatisearchedfor" style="display: inline;"></h2>
+            <br>
+            <p>Results something something</p>
+        </div>
+    </div>
 
 
         <script>
