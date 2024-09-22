@@ -1,16 +1,16 @@
-document.addEventListener('keydown', function (event) {
-  if (event.keyCode === 13) {
-      let search = document.getElementsByClassName('searchTerm')[0].value;
-
-      if (search === '') {
-          alert('Please search for something');
-      } else {
-          displayResults(search); 
-      }
+document.getElementById('inputField').addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+      displayResults();
   }
 });
 
+function displayResults() {
+  const inputField = document.getElementsByClassName('inputField'); 
+  console.log('Entered text:', inputField.value);
 
-function displayResults(search) {
-  document.getElementById('whatisearched').innerText = search; 
+  if (inputField.value === '') { 
+    alert("Say something!");
+  } else {
+    document.getElementById("whatisearched").innerHTML = inputField.value;
+  }
 }
