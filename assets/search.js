@@ -5,7 +5,7 @@ function displayResults() {
     alert("Say something!");
   } else {
     console.log(inputField.value)
-    document.getElementById("whatisearched").innerHTML = inputField.value;
+      document.getElementById("whatisearchedfor").innerHTML = inputField.value;
       
       const modal = document.getElementById('modal');
       modal.style.display = 'block';
