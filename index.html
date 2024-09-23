@@ -19,11 +19,14 @@
           window.onload = function() {
             document.getElementById('searchTerm').focus();
         };
-        document.getElementById('searchTerm').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                displayResults();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchTerm').addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    displayResults();
+                }
+            });
         });
+
         </script>
 
     </head>
