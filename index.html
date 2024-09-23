@@ -42,7 +42,7 @@
 
         <div class="wrap">
           <div class="search">
-             <input type="text" class="searchTerm" placeholder="What are you looking to play?" style="height: 36px;">
+             <input id="searchTerm" type="text" class="searchTerm" placeholder="What are you looking to play?" style="height: 36px;">
              <button type="submit" class="searchButton" onclick="displayResults()">
                <i class="fa fa-search"></i>
             </button>
@@ -53,7 +53,7 @@
         <div class="modal-content">
             <span class="close" id="closeModal" onclick="closeModal()">&times;</span>
             <h2 style="display: inline;">Results for:</h2>
-        <h2 id="whatisearchedfor" style="display: inline;"></h2>
+            <h2 id="whatisearchedfor" style="display: inline;">result</h2>
             <br>
             <p>Results something something</p>
         </div>

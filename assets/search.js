@@ -5,7 +5,7 @@ document.getElementById('searchTerm').addEventListener('keydown', function(event
 });
 
 function displayResults() {
-  const inputField = document.getElementsByClassName('searchTerm'); 
+  const inputField = document.getElementById('searchTerm'); 
 
   if (!inputField.value) { 
     alert("Say something!");
