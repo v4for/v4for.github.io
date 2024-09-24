@@ -43,8 +43,20 @@
               document.getElementsByTagName('head')[0].appendChild(link);
             }
 
-            function opensettings() {
-                var win = window.open('', 'Settings', 'height=300,width=650,screenX=400,screenY=350');
+            if (window.self !== window.top) {
+              } else {
+                if (localStorage.getItem('blank2') === 'true') { 
+                    redirectToWebsite(); 
+                  }
+              }
+
+              document.getElementById('settings').addEventListener('click', function(event) {
+                event.preventDefault(); 
+                opensettings(); 
+              });
+
+          function opensettings() {
+              var win = window.open('', 'Settings', 'height=300,width=650,screenX=400,screenY=350');
                 var iframe = win.document.createElement('iframe');
                 iframe.style.position = "fixed";
                 iframe.style.top = "0";
@@ -60,14 +72,7 @@
                 iframe.style.zIndex = "999999";
                 iframe.src = "/s";
                 win.document.body.appendChild(iframe);
-            }
-
-            if (window.self !== window.top) {
-              } else {
-                if (localStorage.getItem('blank2') === 'true') { 
-                    redirectToWebsite(); 
-                  }
-              }
+          }
         </script>
 
         <style>
@@ -96,7 +101,7 @@
       <a href="/a/">Apps</a>
       <a href="https://vafor.netlify.app">Netlify</a>
       <a href="https://ph4xus.github.io">Github</a>
-      <a onclick="opensettings()" style="position: absolute; bottom: 0; padding-bottom: 15px;">Settings</a>
+      <a id="settings" style="position: absolute; bottom: 0; padding-bottom: 15px;">Settings</a>
     </div>
 
     <div class="toptext" style="padding-right: 15px; padding-top: 10px;">
