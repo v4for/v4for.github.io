@@ -73,6 +73,30 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+  function hideElementsInIframe() {
+        if (window.self !== window.top) {
+            document.getElementsByClassName('site-header').style.display = 'none';
+            document.getElementsByClassName('text_group').style.display = 'none';
+
+            const whatisearched = localStorage.getItem('searched');
+
+            const items = document.querySelectorAll('div[style="margin: 10px;"]');
+
+            items.forEach(item => {
+              const description = item.querySelector('.description').innerText;
+
+              if (!description.toLowerCase().includes(whatIsSearched.toLowerCase())) {
+                item.style.visibility = 'hidden';
+              }
+            });
+
+        }
+    }
+
+    hideElementsInIframe();
+
+
+
   </script>
   <body>
 

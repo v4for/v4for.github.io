@@ -6,6 +6,9 @@ function displayResults() {
   } else {
     console.log(inputField.value)
       document.getElementById("whatisearchedfor").innerHTML = inputField.value;
+
+      localStorage.setItem('searched', inputField.value);
+
       
       const modal = document.getElementById('modal');
       modal.style.display = 'block';
