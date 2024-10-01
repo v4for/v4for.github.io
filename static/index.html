@@ -8,6 +8,41 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+      <script>
+            let usernam1 = prompt("What is the password wittle boy:");
+
+            async function sha256(message) {
+               const msgBuffer = new TextEncoder().encode(message);
+               const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+               const hashArray = Array.from(new Uint8Array(hashBuffer));
+               const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+               return hashHex;
+            }
+
+            async function checkPassword(password, hashToCheck) {
+               const hashedPassword = await sha256(password);
+               return hashedPassword === hashToCheck;
+            }
+
+            const hashToCheck = 'f0f5986bc9902760dd9fe3630fdbe714075821057ddbc54bf7bebafbf00796ea';
+
+            if (usernam1) {
+               checkPassword(usernam1, hashToCheck).then(isMatch => {
+                  if (isMatch) {
+                        console.log('Password matches the hash!');
+
+                  } else {
+                        //window.history.pushState('Transfemboy xxx videos', 'pornhub.org/watch/43thsadifuh43');
+                        window.location.href = 'https://www.maxwellstevenson.com';
+                  }
+               }).catch(error => {
+                  console.error('Error checking password:', error);
+               });
+            } else {
+               console.log('No password entered.');
+            }
+      </script>
    </head>
    <body>
       <div id="header">
