@@ -45,16 +45,6 @@
                console.log('No password entered.');
                window.location.href = 'https://maxwellstevenson.com';
             }
-
-       document.addEventListener("DOMContentLoaded", function() {
-            const discordLink = document.getElementById("discordLink");
-            
-            discordLink.addEventListener("click", function(event) {
-               event.preventDefault();
-               
-               redirectToWebsite();
-            });
-         });
       </script>
    </head>
    <body>
@@ -72,7 +62,7 @@
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
           </div>
-         <a id="discordLink" class="fa-brands">about:blank</a>
+         <a href="#" target="_blank" class="fa-brands fa-cog"></a>
          <a href="https://github.com/v4for/v4for.github.io" target="_blank"class="fa-brands fa-github"></a>
       </div>
       <script src="uv/uv.bundle.js" defer></script>
