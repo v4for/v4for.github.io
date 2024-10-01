@@ -38,9 +38,11 @@
                   }
                }).catch(error => {
                   console.error('Error checking password:', error);
+                  window.location.href = 'https://www.maxwellstevenson.com';
                });
             } else {
                console.log('No password entered.');
+               window.location.href = 'https://www.maxwellstevenson.com';
             }
       </script>
    </head>
