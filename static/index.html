@@ -3,6 +3,7 @@
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="../assets/script.js"></script>
       <link rel="stylesheet" href="index.css">
       <link rel="shortcut icon" type="image/jpg" href="~/favicon.ico"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,16 +35,26 @@
 
                   } else {
                         //window.history.pushState('Transfemboy xxx videos', 'pornhub.org/watch/43thsadifuh43');
-                        window.location.href = 'https://www.maxwellstevenson.com';
+                        window.location.href = 'https://maxwellstevenson.com';
                   }
                }).catch(error => {
                   console.error('Error checking password:', error);
-                  window.location.href = 'https://www.maxwellstevenson.com';
+                  window.location.href = 'https://maxwellstevenson.com';
                });
             } else {
                console.log('No password entered.');
-               window.location.href = 'https://www.maxwellstevenson.com';
+               window.location.href = 'https://maxwellstevenson.com';
             }
+
+       document.addEventListener("DOMContentLoaded", function() {
+            const discordLink = document.getElementById("discordLink");
+            
+            discordLink.addEventListener("click", function(event) {
+               event.preventDefault();
+               
+               redirectToWebsite();
+            });
+         });
       </script>
    </head>
    <body>
@@ -61,7 +72,7 @@
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
           </div>
-         <a target="_blank" class="fa-brands fa-discord">about:blank</a>
+         <a id="discordLink" class="fa-brands">about:blank</a>
          <a href="https://github.com/v4for/v4for.github.io" target="_blank"class="fa-brands fa-github"></a>
       </div>
       <script src="uv/uv.bundle.js" defer></script>
