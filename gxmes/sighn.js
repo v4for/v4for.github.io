@@ -26,9 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hidesomediv(searched);
 
-    if (!matchFound) {
-       // alert("No matches found for " + searched + ". redircted you away")
-       //window.location = "/gxmes"
-       console.log("no matches found")
-    }
+        if (window.location.search.includes("?searched")) {
+            if (!matchFound) {
+                console.log("No matches found");
+                // alert("No matches found for " + searched + ". redircted you away")
+                //window.location = "/gxmes"
+            }
+        }
+
 });
