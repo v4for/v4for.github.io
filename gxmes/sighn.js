@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.location.search.includes("?searched")) {
             if (!matchFound) {
                 console.log("No matches found");
-                alert("No matches found for " + searched + ". redircted you away")
+                alert("No matches found for " + searched + ". redirecting you away")
                 window.location = "/gxmes"
             }
         }
