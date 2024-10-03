@@ -32,62 +32,143 @@
         </script>
 
 
-        <script>
-          window.onload = function() {
-            document.getElementById('searchTerm').focus();
-        };
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchTerm').addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    displayResults();
+      <script>
+        /* ---- particles.js config ---- */
+
+        particlesJS("particles-js", {
+            "particles": {
+              "number": {
+                "value": 380,
+                "density": {
+                  "enable": true,
+                  "value_area": 800
                 }
-            });
-        });
-
-        var savedTabName = localStorage.getItem('tabName');
-            var savedTabImage = localStorage.getItem('tabImage');
-            if (savedTabName) {
-              document.title = savedTabName;
-            }
-            if (savedTabImage) {
-              var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-              link.type = 'image/x-icon';
-              link.rel = 'shortcut icon';
-              link.href = savedTabImage;
-              document.getElementsByTagName('head')[0].appendChild(link);
-            }
-
-            if (window.self !== window.top) {
-              } else {
-                if (localStorage.getItem('blank2') === 'true') { 
-                    redirectToWebsite(); 
-                  }
+              },
+              "color": {
+                "value": "#ffffff"
+              },
+              "shape": {
+                "type": "circle",
+                "stroke": {
+                  "width": 0,
+                  "color": "#000000"
+                },
+                "polygon": {
+                  "nb_sides": 5
+                },
+                "image": {
+                  "src": "img/github.svg",
+                  "width": 100,
+                  "height": 100
+                }
+              },
+              "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                  "enable": false,
+                  "speed": 1,
+                  "opacity_min": 0.1,
+                  "sync": false
+                }
+              },
+              "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                  "enable": false,
+                  "speed": 40,
+                  "size_min": 0.1,
+                  "sync": false
+                }
+              },
+              "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+              },
+              "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                  "enable": false,
+                  "rotateX": 600,
+                  "rotateY": 1200
+                }
               }
+            },
+            "interactivity": {
+              "detect_on": "canvas",
+              "events": {
+                "onhover": {
+                  "enable": true,
+                  "mode": "grab"
+                },
+                "onclick": {
+                  "enable": true,
+                  "mode": "push"
+                },
+                "resize": true
+              },
+              "modes": {
+                "grab": {
+                  "distance": 140,
+                  "line_linked": {
+                    "opacity": 1
+                  }
+                },
+                "bubble": {
+                  "distance": 400,
+                  "size": 40,
+                  "duration": 2,
+                  "opacity": 8,
+                  "speed": 3
+                },
+                "repulse": {
+                  "distance": 200,
+                  "duration": 0.4
+                },
+                "push": {
+                  "particles_nb": 4
+                },
+                "remove": {
+                  "particles_nb": 2
+                }
+              }
+            },
+            "retina_detect": true
+          });
+          
+          
+          /* ---- stats.js config ---- */
+          
+          var count_particles, stats, update;
+          stats = new Stats;
+          stats.setMode(0);
+          stats.domElement.style.position = 'absolute';
+          stats.domElement.style.left = '0px';
+          stats.domElement.style.top = '0px';
+          document.body.appendChild(stats.domElement);
+          count_particles = document.querySelector('.js-count-particles');
+          update = function() {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+              count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+          };
+          requestAnimationFrame(update);
 
-              document.getElementById('settings').addEventListener('click', function(event) {
-                opensettings(); 
-              });
 
-          function opensettings() {
-            event.preventDefault(); 
-                var win = window.open('', 'Settings', 'height=300,width=650,screenX=400,screenY=350');
-                var iframe = win.document.createElement('iframe');
-                iframe.style.position = "fixed";
-                iframe.style.top = "0";
-                iframe.style.left = "0";
-                iframe.style.bottom = "0";
-                iframe.style.right = "0";
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                iframe.style.border = "none";
-                iframe.style.margin = "0";
-                iframe.style.padding = "0";
-                iframe.style.overflow = "hidden";
-                iframe.style.zIndex = "999999";
-                iframe.src = "/s";
-                win.document.body.appendChild(iframe);
-          }
-        </script>
+      </script>
 
         <style>
           .text_group {
