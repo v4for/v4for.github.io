@@ -17,8 +17,9 @@
         <script src="assets/search.js"></script>
         <script type="text/javascript" src="/s/leaveconf.js"></script>
         <script type="text/javscript" src="/assets/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
           <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -124,10 +125,22 @@ var savedTabName = localStorage.getItem('tabName');
             #footer p {
               margin: 0;
             }
+
+            #particles-js {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+              z-index: -1; 
+            }
         </style>
 
     </head>
 <body>
+
+  <div id="particles-js"></div>
+
    <div id="mySideNav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
       <a href="/gxmes">Gxmes</a>
