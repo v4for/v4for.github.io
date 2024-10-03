@@ -4,14 +4,12 @@ function displayResults() {
   if (!inputField.value) { 
     alert("Say something!");
   } else {
-    console.log(inputField.value)
-      document.getElementById("whatisearchedfor").innerHTML = inputField.value;
-
-      localStorage.setItem('searched', inputField.value);
+      console.log(inputField.value)
 
       window.location.href = "/gxmes?searched=" + inputField.value;
 
       /*
+      document.getElementById("whatisearchedfor").innerHTML = inputField.value;
       const modal = document.getElementById('modal');
       modal.style.display = 'block';
       const modalContent = modal.querySelector('.modal-content');
