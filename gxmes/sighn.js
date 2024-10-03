@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return; 
         }
         document.getElementById("hidethis").style.display = "none";
-        document.getElementById("searchtitle").innerHTML = "Results for" + searched;
+        document.getElementById("searchtitle").innerHTML = "Results for: " + searched;
 
         const descriptions = document.querySelectorAll('.description');
         descriptions.forEach(description => {
