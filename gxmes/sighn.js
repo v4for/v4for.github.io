@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!matchFound) {
                 console.log("No matches found");
                 alert("No matches found for " + searched + ". redirecting you away")
-                window.location = "/gxmes"
+                window.location = "/"
             }
         }
 
