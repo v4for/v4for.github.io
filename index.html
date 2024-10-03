@@ -86,6 +86,10 @@ var savedTabName = localStorage.getItem('tabName');
         iframe.src = "/s";
         win.document.body.appendChild(iframe);
   }
+  
+  particlesJS.load('particles-js', 'assets/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
 
 
       </script>
