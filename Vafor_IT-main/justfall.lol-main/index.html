@@ -99,7 +99,7 @@
 		
 		injectAdByWindowSize();
 		
-		//showAds();
+		showAds();
 		
 		document.addEventListener('visibilitychange',
 		function () {
@@ -165,7 +165,6 @@
 			cpmstarAPI({ kind: "adcmd", module: "POOL 85074", command: "refresh" });
 			
 			console.log("refresh ads");
-			hideAds();
 		}
 
 		window.onfocus = function () {
