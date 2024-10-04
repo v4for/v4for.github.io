@@ -7,7 +7,7 @@ let stringToRemove = "adinGameLoader.js";
 
 let newUrl = currentUrl.replace(stringToRemove, '');
 
-const styleLink = newUrl + '/style.css';
+const styleLink = newUrl + 'style.css';
 
 const myAdsCode = document.createElement('div');
 myAdsCode.style.cssText = 'position:absolute;z-index:9999;background-color:black;color:lightyellow;width:100%;height:100%;padding:0;margin:0';
