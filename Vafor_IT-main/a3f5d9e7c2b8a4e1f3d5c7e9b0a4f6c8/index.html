@@ -1,137 +1,147 @@
 <!-- suck my nuts frivez -->
-<!DOCTYPE html><html lang="en"><head><title>BuildNow GG</title><meta charset="UTF-8" /><meta name="robots" content="noindex, follow" /><meta name="description" content="The game files for BuildNow GG, a free browser game" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Accept-CH" content="DPR" /><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" /><style id="pacman-styles">/* background */
-body {
-  background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
-  background-position: center;
-  text-align: center;
-} 
-/* for positioning of pacman loader */
-body, html { height: 100%; }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-@keyframes rotate_preloadpacman_half_up {
-  0% {
-    transform: rotate(270deg); }
-  50% {
-    transform: rotate(360deg); }
-  100% {
-    transform: rotate(270deg); }
-}
-
-@keyframes rotate_preloadpacman_half_down {
-  0% {
-    transform: rotate(90deg);
+<!DOCTYPE html><html lang="en"><head><title>BuildNow GG Game</title><meta charset="UTF-8" /><meta name="robots" content="noindex, follow" /><meta name="description" content="The game files for BuildNow GG, a free browser game" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Accept-CH" content="DPR" /><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" /><style id="pacman-styles">/* background */
+  body {
+    background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
+    background-position: center;
+    text-align: center;
+  } 
+  /* for positioning of pacman loader */
+  body, html { height: 100%; }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
-  50% {
-    transform: rotate(0deg);
+  
+  @keyframes rotate_preloadpacman_half_up {
+    0% {
+      transform: rotate(270deg); }
+    50% {
+      transform: rotate(360deg); }
+    100% {
+      transform: rotate(270deg); }
   }
-  100% {
-    transform: rotate(90deg);
+  
+  @keyframes rotate_preloadpacman_half_down {
+    0% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
   }
+  
+  @keyframes preloadpacman-balls {
+    75% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translate(-100px, -6.25px);
+    }
+  }
+  
+  .preloadpacman {
+    position: relative;
+  }
+  .preloadpacman > div:nth-child(2) {
+    animation: preloadpacman-balls 1s -0.99s infinite linear;
+  }
+  .preloadpacman > div:nth-child(3) {
+    animation: preloadpacman-balls 1s -0.66s infinite linear;
+  }
+  .preloadpacman > div:nth-child(4) {
+    animation: preloadpacman-balls 1s -0.33s infinite linear;
+  }
+  .preloadpacman > div:nth-child(5) {
+    animation: preloadpacman-balls 1s 0s infinite linear;
+  }
+  .preloadpacman > div:first-of-type {
+    width: 0px;
+    height: 0px;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #fff;
+    border-left: 25px solid #fff;
+    border-bottom: 25px solid #fff;
+    border-radius: 25px;
+    animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
+    position: relative;
+    left: -30px;
+  }
+  .preloadpacman > div:nth-child(2) {
+    width: 0px;
+    height: 0px;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #fff;
+    border-left: 25px solid #fff;
+    border-bottom: 25px solid #fff;
+    border-radius: 25px;
+    animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
+    margin-top: -50px;
+    position: relative;
+    left: -30px;
+  }
+  .preloadpacman > div:nth-child(3),
+  .preloadpacman > div:nth-child(4),
+  .preloadpacman > div:nth-child(5),
+  .preloadpacman > div:nth-child(6) {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    transform: translate(0, -6.25px);
+    top: 25px;
+    left: 70px;
+  }
+  </style>
+  <script>
+let srcUrl = "https://maxwellstevenson.com/Vafor_IT-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/Build/crazygames2.js";
+
+if (window.location.href === "https://vafor.netlify.app/vafor_it-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8") {
+    srcUrl = "https://vafor.netlify.app/vafor_it-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/Build/crazygames2.js";
+} else if (window.location.href === "https://ph4xus.github.io/Vafor-IT_main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8") {
+    srcUrl = "https://ph4xus.github.io/Vafor_IT-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/Build/crazygames2.js";
 }
 
-@keyframes preloadpacman-balls {
-  75% {
-    opacity: 0.7;
+  </script>
+  <script src="/adinLoader.js"></script></head><body><div class="preloadpacman" id="pacman"><div></div><div></div><div></div><div></div><div></div></div><script type="text/javascript">function loadScript(url, callback) {
+    var head = document.head;
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+    script.async = true;
+    script.onreadystatechange = callback;
+    script.onload = callback;
+    head.appendChild(script);
   }
-  100% {
-    transform: translate(-100px, -6.25px);
-  }
-}
-
-.preloadpacman {
-  position: relative;
-}
-.preloadpacman > div:nth-child(2) {
-  animation: preloadpacman-balls 1s -0.99s infinite linear;
-}
-.preloadpacman > div:nth-child(3) {
-  animation: preloadpacman-balls 1s -0.66s infinite linear;
-}
-.preloadpacman > div:nth-child(4) {
-  animation: preloadpacman-balls 1s -0.33s infinite linear;
-}
-.preloadpacman > div:nth-child(5) {
-  animation: preloadpacman-balls 1s 0s infinite linear;
-}
-.preloadpacman > div:first-of-type {
-  width: 0px;
-  height: 0px;
-  border-right: 25px solid transparent;
-  border-top: 25px solid #fff;
-  border-left: 25px solid #fff;
-  border-bottom: 25px solid #fff;
-  border-radius: 25px;
-  animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
-  position: relative;
-  left: -30px;
-}
-.preloadpacman > div:nth-child(2) {
-  width: 0px;
-  height: 0px;
-  border-right: 25px solid transparent;
-  border-top: 25px solid #fff;
-  border-left: 25px solid #fff;
-  border-bottom: 25px solid #fff;
-  border-radius: 25px;
-  animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
-  margin-top: -50px;
-  position: relative;
-  left: -30px;
-}
-.preloadpacman > div:nth-child(3),
-.preloadpacman > div:nth-child(4),
-.preloadpacman > div:nth-child(5),
-.preloadpacman > div:nth-child(6) {
-  background-color: #fff;
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  margin: 2px;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  transform: translate(0, -6.25px);
-  top: 25px;
-  left: 70px;
-}
-</style>
-<script src="/adinLoader.js"></script></head><body><div class="preloadpacman" id="pacman"><div></div><div></div><div></div><div></div><div></div></div><script type="text/javascript">function loadScript(url, callback) {
-  var head = document.head;
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = url;
-  script.async = true;
-  script.onreadystatechange = callback;
-  script.onload = callback;
-  head.appendChild(script);
-}
-var options = {"loader":"unity2020","loaderOptions":{"showProgress":true,"unityLoaderUrl":"Build/BuildNow.loader.js","unityConfigOptions":{"codeUrl":"Build/BuildNow.wasm.br","dataUrl":"Build/BuildNow.data.br","frameworkUrl":"Build/BuildNow.framework.js.br"}},"author":"battlelab","thumbnail":"https://images.crazygames.com/buildnow-gg/20210823164305/buildnow-gg-cover?auto=format,compress&q=75&cs=strip&w=360","gameName":"BuildNow GG","gameHttps":true,"gameSlug":"buildnow-gg","gameId":"19611","gameStatus":"published","showAdOnExternal":"ALWAYS","showAdOnInternal":"DEFAULT","disableEmbedding":true,"dollarRate":0.9490403304178815,"upvotes":69420,"downvotes":walter,"releaseDate":"2021-08-23","locale":"en_US","controls":{"mouse":{"left":{"en_US":"Shoot"},"right":{"en_US":"Aim/reset edit"}},"keyboard":[{"keys":["Q"],"label":{"en_US":"Wall"}},{"keys":["C"],"label":{"en_US":"Floor"}},{"keys":["V"],"label":{"en_US":"Ramp"}},{"keys":["LEFT SHIFT"],"label":{"en_US":"Roof"}},{"keys":["WASD","ARROWS"],"label":{"en_US":"Move"}}]},"videoThumbnail":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-205x115.mp4","video":{"original":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg.mp4","sizes":[{"width":205,"height":115,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-205x115.mp4"},{"width":249,"height":140,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-249x140.mp4"},{"width":364,"height":208,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-364x208.mp4"},{"width":494,"height":276,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-494x276.mp4"},{"width":611,"height":343,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-611x343.mp4"}]},"sandbox":true,"totalSize":"67 MB","minTimeBetweenMidrollAdsInMs":120000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":2,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"shooting","tagsEnSlugs":["3d","webgl","third-person-shooter","build","with-friends","multiplayer"],"isKids":false,"hasMidroll":true,"hasRewarded":false,"fullscreen":"ADDS_VALUE","bannerRefreshDelayInMs":30000,"category":"Third Person Shooter","categoryLink":"https://www.crazygames.comasda/t/third-person-shooter","gameLink":"https://www.crazygames.comasda/game/buildnow-gg","alternativeGames":[],"domainHasNoCMP":false};
-var SDK_READY = false;
-var GF_READY = false;
-var GF_LOAD_CALLED = false;
-loadScript(window.location.href + "/Build/crazygames2.js", function() {
-    Crazygames.load(options).then(function() {
-      var pacmanWrapper = document.getElementById('pacman');
-      var pacmanStyles = document.getElementById('pacman-styles');
-
-      if (pacmanWrapper && pacmanStyles) {
-        pacmanWrapper.remove();
-        pacmanStyles.remove();
-      }
-    });
-});</script>
-	<script>
-       if (typeof getAdinDomain !== 'undefined') {
-           const bodyTag = document.getElementsByTagName('body')[0];
-
-           let addAdinPreroll = document.createElement('script');
-            addAdinPreroll.src = getAdinDomain;
-            bodyTag.appendChild(addAdinPreroll);
+  var options = {"loader":"unity2020","loaderOptions":{"showProgress":true,"unityLoaderUrl":"Build/BuildNow.loader.js","unityConfigOptions":{"codeUrl":"Build/BuildNow.wasm.br","dataUrl":"Build/BuildNow.data.br","frameworkUrl":"Build/BuildNow.framework.js.br"}},"author":"battlelab","thumbnail":"https://images.crazygames.com/buildnow-gg/20210823164305/buildnow-gg-cover?auto=format,compress&q=75&cs=strip&w=360","gameName":"BuildNow GG","gameHttps":true,"gameSlug":"buildnow-gg","gameId":"19611","gameStatus":"published","showAdOnExternal":"ALWAYS","showAdOnInternal":"DEFAULT","disableEmbedding":true,"dollarRate":0.9490403304178815,"upvotes":42096,"downvotes":2,"releaseDate":"2021-08-23","locale":"en_US","controls":{"mouse":{"left":{"en_US":"Shoot"},"right":{"en_US":"Aim/reset edit"}},"keyboard":[{"keys":["Q"],"label":{"en_US":"Wall"}},{"keys":["C"],"label":{"en_US":"Floor"}},{"keys":["V"],"label":{"en_US":"Ramp"}},{"keys":["LEFT SHIFT"],"label":{"en_US":"Roof"}},{"keys":["WASD","ARROWS"],"label":{"en_US":"Move"}}]},"videoThumbnail":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-205x115.mp4","video":{"original":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg.mp4","sizes":[{"width":205,"height":115,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-205x115.mp4"},{"width":249,"height":140,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-249x140.mp4"},{"width":364,"height":208,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-364x208.mp4"},{"width":494,"height":276,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-494x276.mp4"},{"width":611,"height":343,"location":"https://videos.crazygames.com/buildnow-gg/2/buildnow-gg-611x343.mp4"}]},"sandbox":true,"totalSize":"67 MB","minTimeBetweenMidrollAdsInMs":120000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":2,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"shooting","tagsEnSlugs":["3d","webgl","third-person-shooter","build","with-friends","multiplayer"],"isKids":false,"hasMidroll":true,"hasRewarded":false,"fullscreen":"ADDS_VALUE","bannerRefreshDelayInMs":30000,"category":"Third Person Shooter","categoryLink":"https://www.crazygames.comasda/t/third-person-shooter","gameLink":"https://www.crazygames.comasda/game/buildnow-gg","alternativeGames":[],"domainHasNoCMP":false};
+  var SDK_READY = false;
+  var GF_READY = false;
+  var GF_LOAD_CALLED = false;
+  loadScript(srcUrl, function() {
+      Crazygames.load(options).then(function() {
+        var pacmanWrapper = document.getElementById('pacman');
+        var pacmanStyles = document.getElementById('pacman-styles');
+  
+        if (pacmanWrapper && pacmanStyles) {
+          pacmanWrapper.remove();
+          pacmanStyles.remove();
         }
-  </script></body></html>
+      });
+  });</script>
+    <script>
+         if (typeof getAdinDomain !== 'undefined') {
+             const bodyTag = document.getElementsByTagName('body')[0];
+  
+             let addAdinPreroll = document.createElement('script');
+              addAdinPreroll.src = getAdinDomain;
+              bodyTag.appendChild(addAdinPreroll);
+          }
+    </script></body></html>
