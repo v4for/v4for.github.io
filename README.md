@@ -15,7 +15,8 @@ IMPORTANT set up redirects for vercel so games can actaully load
 UIX work for settings and bypases page. DO NOT USE VERCEL.
 
 
-Buildnow gg resrouces to copy over to the buildnowggimportant folder
+Buildnow gg resrouces to copy over to the buildnowggimportant folder chunckload error 
+![sad](https://github.com/user-attachments/assets/d6f06111-efde-412a-ba2f-1b5dabd7decb)
 
 https://lablockedgames.com/crazygames/crazyframe/160.71485b48.js
 https://lablockedgames.com/crazygames/crazyframe/208.61aa0a94.js
