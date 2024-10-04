@@ -1,6 +1,6 @@
 let currentUrl = window.location.href;
 
-let stringToRemove = "vafor_main-it/adinGameLoader.js";
+let stringToRemove = "adinGameLoader.js";
 
 let newUrl = currentUrl.replace(stringToRemove, '');
 
