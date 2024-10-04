@@ -1,6 +1,14 @@
 const headTag = document.getElementsByTagName('head')[0];
 
-const styleLink = 'https://ph4xus.github.io/preroll/style.css';
+let cssurl = "maxwellstevenson.com";
+
+if (window.location.href.includes('github.io')) {
+    cssurl = "ph4xus.github.io";
+} else if (window.location.href.includes('netlify.app')) {
+    cssurl = "vafor.netlify.app";
+} 
+
+const styleLink = 'https://' + cssurl + '/preroll/style.css';
 
 const myAdsCode = document.createElement('div');
 myAdsCode.style.cssText = 'position:absolute;z-index:9999;background-color:black;color:lightyellow;width:100%;height:100%;padding:0;margin:0';
@@ -23,7 +31,7 @@ headTag.innerHTML += (reqAdinPlay);
 
 //make it to improtant something later
 let addJquery = document.createElement('script');
-addJquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
+addJquery.src = 'https://' + cssurl + '/importantsomething.js';
 headTag.appendChild(addJquery);
 
 let addBtnStyle = document.createElement('link');
