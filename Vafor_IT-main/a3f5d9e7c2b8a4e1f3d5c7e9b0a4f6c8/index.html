@@ -115,7 +115,7 @@ var options = {"loader":"unity2020","loaderOptions":{"showProgress":true,"unityL
 var SDK_READY = false;
 var GF_READY = false;
 var GF_LOAD_CALLED = false;
-loadScript("https://maxwellstevenson.com/Vafor_IT-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/Build/crazygames2.js", function() {
+loadScript(window.location.href + "/Build/crazygames2.js", function() {
     Crazygames.load(options).then(function() {
       var pacmanWrapper = document.getElementById('pacman');
       var pacmanStyles = document.getElementById('pacman-styles');
