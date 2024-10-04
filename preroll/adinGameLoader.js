@@ -31,7 +31,7 @@ headTag.innerHTML += (reqAdinPlay);
 
 //make it to improtant something later
 let addJquery = document.createElement('script');
-addJquery.src = 'https://' + cssurl + '/importantsomething.js';
+addJquery.src = 'https://' + cssurl + '/buildnowggimportant/importantsomething.js';
 headTag.appendChild(addJquery);
 
 let addBtnStyle = document.createElement('link');
