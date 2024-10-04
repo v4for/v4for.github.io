@@ -1,13 +1,6 @@
 const headTag = document.getElementsByTagName('head')[0];
 
-
-let currentUrl = window.location.href;
-
-let stringToRemove = "adinGameLoader.js";
-
-let newUrl = currentUrl.replace(stringToRemove, '');
-
-const styleLink = newUrl + 'style.css';
+const styleLink = 'https://ph4xus.github.io/preroll/style.css';
 
 const myAdsCode = document.createElement('div');
 myAdsCode.style.cssText = 'position:absolute;z-index:9999;background-color:black;color:lightyellow;width:100%;height:100%;padding:0;margin:0';
@@ -28,6 +21,7 @@ const reqAdinPlay = '<script>\n' +
 
 headTag.innerHTML += (reqAdinPlay);
 
+//make it to improtant something later
 let addJquery = document.createElement('script');
 addJquery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js';
 headTag.appendChild(addJquery);
@@ -105,7 +99,6 @@ startGame.onclick = function() {
         console.log("Ad Could not be loaded, load your content here");
     }
 }
-
 
 
 
