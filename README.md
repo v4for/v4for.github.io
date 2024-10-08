@@ -1,22 +1,34 @@
-Requesting games. Open a issue on this repository as it is the fastest way for me to se it.
+# Welcome to the Game Repository
 
+## Requesting Games
+If you would like to request a game, please open an issue in this repository. This is the quickest way for me to see your request.
 
-ATTENTION if you do copy some of my games, make sure to credit me and include a link to maxwellstevenson.com (helps with seo). This will always be open source. Remember you need to copy the poki loader js and unity loader js files. Games are stored in the Vafor_it-main.
+---
 
-OFFICAL LINKS
+## Important Notice
+If you choose to copy any of my games, please ensure to credit me by including a link to [maxwellstevenson.com](https://maxwellstevenson.com). This helps with SEO and promotes fair use. Remember, this project will always remain open source.
 
-https://maxwellstevenson.com
+### Note:
+To ensure proper functionality, please make sure to copy the `poki-loader.js` and `unity-loader.js` files. All games are stored in the `Vafor_it-main` directory.
 
-https://vafor.netlify.app
+---
 
-https://ph4xus.github.io (doent always have the latest updates)
+## Official Links
+- [Personal Website](https://maxwellstevenson.com)
+- [Vafor Project](https://vafor.netlify.app)
+- [PH4XUS Repository](https://ph4xus.github.io) (Please note that this link may not always have the latest updates)
 
-IMPORTANT set up redirects for vercel so games can actaully load
-UIX work for settings and bypases page. DO NOT USE VERCEL.
+---
 
+## Important Setup Instructions
+- **Vercel Redirects:** Be sure to set up redirects on Vercel to ensure that the games load correctly.
+- **UIX Development:** Work is ongoing for the settings and bypass pages. Please **DO NOT** use Vercel for these functionalities.
 
-Buildnow gg resrouces to copy over to the buildnowggimportant folder chunckload error FIXED!
+---
 
+## BuildNow GG Resources
+Make sure to copy the necessary resources to the `buildnowggimportant` folder. The chunk load error has been fixed!
 
+---
 
-![happy](https://github.com/user-attachments/assets/825526be-76bc-44f4-92d5-42de752f6431)
+![Happy](https://github.com/user-attachments/assets/825526be-76bc-44f4-92d5-42de752f6431)
