@@ -165,7 +165,7 @@ body {
     color: #95d0b4;
     margin: 0;
     position: absolute; /* Keep it absolute */
-    top: 45%;           /* Change to 40% from top */
+    top: 42%;           /* Change to 40% from top */
     left: 50%;         /* Center horizontally */
     transform: translate(-50%, -50%); /* Offset to center horizontally */
 }
