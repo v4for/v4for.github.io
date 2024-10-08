@@ -118,12 +118,8 @@ body {
     font-size: 30px;
     cursor: pointer;
     padding: 10px;
-}        body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
-    margin: 0;
-}
+    position: absolute;
+}        
 
 .sidenav {
     height: 100%;
@@ -244,6 +240,7 @@ body {
 
 .toptext a {
     margin: 0 10px;
+    text-decoration: none;
     color: #fff;
 }
 
