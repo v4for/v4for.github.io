@@ -1,86 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Settings</title>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<!-- should be tab only -->
-<script type="text/javascript" src="tab.js"></script>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <style>
         * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Heebo", sans-serif;
-    }
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Heebo", sans-serif;
+        }
 
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-weight: 800;
+            color: #007bff;
+        }
+
+        p {
+            margin: 15px 0;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6c757d;
+        }
     </style>
 
-    <script>
-      
-    </script>
+    <script type="text/javascript" src="tab.js"></script>
+    <script type="text/javascript" src="settings.js"></script>
 </head>
 <body>
-    <!--
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Vafor</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav d-flex w-100 justify-content-end"> 
-                      <li class="nav-item"><a class="nav-link" href="/gxmes">gxmes</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/by">pc</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/a">apps</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/s/">settings</a></li>
-                  </ul>
-              </div>              
-            </div>
-        </nav>
-    </header>
--->
-  
-  <h1>Tab cloak</h1>
-<p>
-    <b>Google Search: </b>
-    <button onclick="var search = prompt('What is blud searching for???:'); if (search) applyUrl('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAmVBMVEVHcEz////////////////+/v/////////////////////////5ysjxi4TqQTTpKRXqOinubWP0rKf89+/96+rsWFD1sq7/4qL1lAD8xDb8uwH6sgzrQhr7wCCsxfqjv/n80GhBhPU2gPUtfPTf6f1WkfVTsFvj8ubWvDEzqVMqpksRokFuvYG838QgpEaQy53K5tA3l6as17YMoVzUAAAADHRSTlMAMobC6v5g7P8U3jtapumyAAABHUlEQVR4AX2TBRaCUBBFP91ldxcd+1+cE2LDVfKd6UE8kWRF1TRVkSXxjW6YTwz9Q7Js8wPbEk8c8wfnj6Z9q5bJuJ4fBGE0GJoEe+Z4o3EQ+kAYBhOOS3myGUkh6YFrIpizQXYBvvQ9LwpC1BADaqc8xmhGL4cRa4AkZLxMZ6CNzC9koeBlvliungZPFKHiZbFYrE1k82CLBasCz0MQdyTuD8zxhJl8iec9w+KX2/0RaEW1TWh9uZoEmx81SohLucXJxWS0E5ieuRRuQhrHScYjOR3AcMNNEAaKOapFWVV5ltYPQ+PZ+BJUkIsiiZP6eOLGP0fWpEnMFPG1Hdlz2MOySMEyjZvnsBGn3ZBrnlfXniViWOtfzf6l7vsc7uGRJfdwhuwGAAAAAElFTkSuQmCC', search + ' - Google Search');">Apply</button>
-</p>
-<p>
-    <b>Google Classroom: </b>
-    <button onclick="applyUrl('https://ssl.gstatic.com/classroom/favicon.png', 'Classes');">Apply</button>
-</p>
-<p>
-    <b>Google Docs: </b>
-    <button onclick="var docsv3 = prompt('Wich google doc is bro on????'); if (docsv3) applyUrl('https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico', docsv3 + ' - Google Docs');">Apply</button>
-</p>
-<p>
-    <b>Google Drive: </b>
-    <button onclick="var docs = prompt('Wich google drive is bro on???'); if (docs) applyUrl('https://ssl.gstatic.com/images/branding/product/2x/hh_drive_36dp.png', docs + ' - Google Drive');">Apply</button>
-</p>
-<p>
-    <b>Canvas: </b>
-    <button onclick="applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico' , 'Dashboard');">Apply</button>
-</p>
+    <div class="container">
+        <h1>Tab Cloak</h1>
 
-  <h1>Leave confirm (DyKnow & GoGuardian users)</h1>
-<p>Sadly theres no way to diffrentiate between clicking links and closing tabs womp womp</p>
-  <button id="toggleButton">false</button>
+        <p>
+            <b>Google Search:</b>
+            <button class="btn btn-custom" onclick="var search = prompt('What is blud searching for???:'); if (search) applyUrl('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAmVBMVEVHcEz////////////////+/v/////////////////////////5ysjxi4TqQTTpKRXqOinubWP0rKf89+/96+rsWFD1sq7/4qL1lAD8xDb8uwH6sgzrQhr7wCCsxfqjv/n80GhBhPU2gPUtfPTf6f1WkfVTsFvj8ubWvDEzqVMqpksRokFuvYG838QgpEaQy53K5tA3l6as17YMoVzUAAAADHRSTlMAMobC6v5g7P8U3jtapumyAAABHUlEQVR4AX2TBRaCUBBFP91ldxcd+1+cE2LDVfKd6UE8kWRF1TRVkSXxjW6YTwz9Q7Js8wPbEk8c8wfnj6Z9q5bJuJ4fBGE0GJoEe+Z4o3EQ+kAYBhOOS3myGUkh6YFrIpizQXYBvvQ9LwpC1BADaqc8xmhGL4cRa4AkZLxMZ6CNzC9koeBlvliungZPFKHiZbFYrE1k82CLBasCz0MQdyTuD8zxhJl8iec9w+KX2/0RaEW1TWh9uZoEmx81SohLucXJxWS0E5ieuRRuQhrHScYjOR3AcMNNEAaKOapFWVV5ltYPQ+PZ+BJUkIsiiZP6eOLGP0fWpEnMFPG1Hdlz2MOySMEyjZvnsBGn3ZBrnlfXniViWOtfzf6l7vsc7uGRJfdwhuwGAAAAAElFTkSuQmCC', search + ' - Google Search');">Apply</button>
+        </p>
 
-  <h1>Load site on blank</h1>  
+        <p>
+            <b>Google Classroom:</b>
+            <button class="btn btn-custom" onclick="applyUrl('https://ssl.gstatic.com/classroom/favicon.png', 'Classes');">Apply</button>
+        </p>
 
-  <button onclick="blank2true();">yes</button>
-  
-  <button onclick="blank2false();">no</button>
+        <p>
+            <b>Google Docs:</b>
+            <button class="btn btn-custom" onclick="var docsv3 = prompt('Which Google Doc is bro on????'); if (docsv3) applyUrl('https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico', docsv3 + ' - Google Docs');">Apply</button>
+        </p>
 
-  <!-- dom is not loading in time theries no way -->
-  <script type="text/javascript" src="settings.js"></script>
+        <p>
+            <b>Google Drive:</b>
+            <button class="btn btn-custom" onclick="var docs = prompt('Which Google Drive is bro on???'); if (docs) applyUrl('https://ssl.gstatic.com/images/branding/product/2x/hh_drive_36dp.png', docs + ' - Google Drive');">Apply</button>
+        </p>
 
+        <p>
+            <b>Canvas:</b>
+            <button class="btn btn-custom" onclick="applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico', 'Dashboard');">Apply</button>
+        </p>
 
+        <h1>Leave Confirm (DyKnow & GoGuardian Users)</h1>
+        <p class="note">Sadly, there's no way to differentiate between clicking links and closing tabs womp womp.</p>
+        <button id="toggleButton" class="btn btn-custom">false</button>
+
+        <h1>Load Site on Blank</h1>  
+        <button class="btn btn-custom" onclick="blank2true();">Yes</button>
+        <button class="btn btn-custom" onclick="blank2false();">No</button>
+
+        <div class="footer">
+            <p>© Vafor IT</p>
+        </div>
+    </div>
 </body>
 </html>
