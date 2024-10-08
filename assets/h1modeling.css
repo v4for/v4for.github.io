@@ -192,7 +192,6 @@ body {
 }
 
 .searchTerm {
-    width: 278px;
     padding: 10px;
     height: 20px;
     outline: none;
@@ -208,7 +207,7 @@ body {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     height: 40px;
-    width: 30px;
+    width: 45px;
 }
 
 .searchButton i {
