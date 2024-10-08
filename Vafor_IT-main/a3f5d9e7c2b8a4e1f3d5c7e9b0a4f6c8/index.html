@@ -106,12 +106,15 @@
 //make sure your website is here
 
 if (window.location.href.includes('github.io')) {
-    localStorage.setItem('srx', 'ph4xus.github.io');
+  localStorage.setItem('srx', 'ph4xus.github.io');
 } else if (window.location.href.includes('netlify.app')) {
   localStorage.setItem('srx', 'vafor.netlify.app');
 } else {
   localStorage.setItem('srx', 'maxwelltstevenson.com');
 }
+
+const srcUrl = localStorage.getItem('srx');
+
 
 console.log(srcUrl)
   </script>
