@@ -179,6 +179,7 @@ body {
     margin: 20px;
     height: 36px;
     margin: 0 auto;
+    transform: translate(-50%, -50%);
 }
 
 .search {
