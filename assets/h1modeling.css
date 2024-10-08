@@ -59,7 +59,7 @@ body {
 }
 
 .searchTerm {
-    width: 300px;
+    width: 350px;
     padding: 10px;
     height: 40px;
     border: none;
@@ -119,9 +119,8 @@ body {
     cursor: pointer;
     padding: 10px;
     position: absolute;
-    top: 50%; /* Center vertically */
+    top: 0%; /* Center vertically */
     left: 20px; /* Adjust as needed for spacing from the left */
-    transform: translateY(-50%); /* Center the button vertically */
     z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
