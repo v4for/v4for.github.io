@@ -1,203 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Vafor</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="work IT with vafor">
-        <meta name="keywords" content="maxwellstevenson.com, vafor, vafor IT, Vafor IT work,maxwell stevenson, gms ,vafor-it.vercel.app,vafor.netlify.app,66,76,mountain">
-        <meta name="author" content="Vafor">
-        <meta name="robots" content="index, follow">
-       <!--- //import css -->
-       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-       <link rel="stylesheet" type="text/css" href="assets/style.css">
-       <link rel="stylesheet" type="text/css" href="assets/modal.css">
-       <!--- //import javascript -->
-        <script src="assets/script.js"></script>
-        <script src="assets/search.js"></script>
-        <script type="text/javascript" src="/s/leaveconf.js"></script>
-        <script type="text/javscript" src="/assets/script.js"></script>
-        <script type="text/javscript" src="/particles.js"></script>
-        <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js?v=1.8"></script>
-          <!-- Google tag (gtag.js) -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-9Y3T9NZGP8');
-        </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vafor</title>
+    <meta name="description" content="Work IT with Vafor">
+    <meta name="keywords" content="maxwellstevenson.com, vafor, vafor IT, Vafor IT work">
+    <meta name="author" content="Vafor">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/modal.css">
+    
+    <!-- Import JavaScript -->
+    <script src="assets/script.js" defer></script>
+    <script src="assets/search.js" defer></script>
+    <script src="assets/leaveconf.js" defer></script>
+    <script src="assets/particles.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9Y3T9NZGP8');
 
+        window.onload = function() {
+            document.getElementById('searchTerm').focus();
+        };
 
-      <script>
-   window.onload = function() {
-    document.getElementById('searchTerm').focus();
-};
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('searchTerm').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            displayResults();
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchTerm').addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    displayResults();
+                }
+            });
+
+            // Manage tab name and icon
+            var savedTabName = localStorage.getItem('tabName');
+            var savedTabImage = localStorage.getItem('tabImage');
+            if (savedTabName) document.title = savedTabName;
+            if (savedTabImage) {
+                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                link.type = 'image/x-icon';
+                link.rel = 'shortcut icon';
+                link.href = savedTabImage;
+                document.head.appendChild(link);
+            }
+
+            // Redirect if necessary
+            if (window.self === window.top && localStorage.getItem('blank2') === 'true') {
+                redirectToWebsite();
+            }
+
+            // Settings button
+            document.getElementById('settings').addEventListener('click', opensettings);
+        });
+
+        function opensettings(event) {
+            event.preventDefault();
+            var win = window.open('', 'Settings', 'height=300,width=650,screenX=400,screenY=350');
+            var iframe = win.document.createElement('iframe');
+            iframe.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:999999;";
+            iframe.src = "/s";
+            win.document.body.appendChild(iframe);
         }
-    });
-});
+    </script>
 
-var savedTabName = localStorage.getItem('tabName');
-    var savedTabImage = localStorage.getItem('tabImage');
-    if (savedTabName) {
-      document.title = savedTabName;
-    }
-    if (savedTabImage) {
-      var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-      link.type = 'image/x-icon';
-      link.rel = 'shortcut icon';
-      link.href = savedTabImage;
-      document.getElementsByTagName('head')[0].appendChild(link);
-    }
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+        }
 
-    if (window.self !== window.top) {
-      } else {
-        if (localStorage.getItem('blank2') === 'true') { 
-            redirectToWebsite(); 
-          }
-      }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
 
-      document.getElementById('settings').addEventListener('click', function(event) {
-        opensettings(); 
-      });
+        .sidenav a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-  function opensettings() {
-    event.preventDefault(); 
-        var win = window.open('', 'Settings', 'height=300,width=650,screenX=400,screenY=350');
-        var iframe = win.document.createElement('iframe');
-        iframe.style.position = "fixed";
-        iframe.style.top = "0";
-        iframe.style.left = "0";
-        iframe.style.bottom = "0";
-        iframe.style.right = "0";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "none";
-        iframe.style.margin = "0";
-        iframe.style.padding = "0";
-        iframe.style.overflow = "hidden";
-        iframe.style.zIndex = "999999";
-        iframe.src = "/s";
-        win.document.body.appendChild(iframe);
-  }
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
 
+        .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
 
-
-      </script>
-
-        <style>
-          .text_group {
-            margin-left:auto;
-            margin-right: auto;
+        .titlepiece {
             text-align: center;
-            padding-top: 30px;
-            padding-bottom: 20px;
-          }
-
-          .lost {
+            margin: 40px 0;
+            font-size: 2.5em;
             color: #95d0b4;
-          }
+        }
 
-          .header {
-              color: #fff;
-          }
-          #footer {
-              position: fixed;
-              left: 0;
-              bottom: 0;
-              border-top-width: 1px;
-              border-top-style: solid;
-              border-top-color: #42946e;
-              font-family: 'Open Sans', sans-serif;
-              width: 100%;
-              height:15px;
-              padding-bottom: 20px;
-              padding-top:2px;
-              text-align: left;
-              color: #fff;
-              font-size: 14px;
-            }
+        .wrap {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
 
-            #footer p {
-              margin: 0;
-            }
-            #particles-js {
-                position: fixed;
-                width: 100%;
-                height: 100vh;
-                z-index: -1;
-              }
-        </style>
+        .search {
+            display: flex;
+        }
 
-    </head>
+        .searchTerm {
+            width: 300px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .searchButton {
+            padding: 10px;
+            background-color: #95d0b4;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .searchButton i {
+            color: #fff;
+        }
+
+        #footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #111;
+            text-align: center;
+            padding: 10px;
+            color: #fff;
+        }
+
+        #footer a {
+            color: #95d0b4;
+            text-decoration: none;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        .toptext {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+
+        .toptext a {
+            margin: 0 10px;
+            color: #fff;
+        }
+
+        .sidebutton {
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+</head>
 <body>
-
-   <div id="mySideNav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
-      <a href="/gxmes">Gxmes</a>
-      <a href="/a/">Apps</a>
-      <a href="https://vafor.netlify.app">Netlify</a>
-      <a href="https://ph4xus.github.io">Github</a>
-      <a id="settings" style="position: absolute; bottom: 0; padding-bottom: 25px;" onclick="opensettings();">Settings</a>
+    <div id="mySideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+        <a href="/gxmes">Gxmes</a>
+        <a href="/a/">Apps</a>
+        <a href="https://vafor.netlify.app">Netlify</a>
+        <a href="https://ph4xus.github.io">Github</a>
+        <a id="settings" style="padding-bottom: 25px;">Settings</a>
     </div>
 
-    <div class="toptext" style="padding-right: 15px; padding-top: 10px;">
-      <a href="/r">Old UIX</a>
-      <a>|</a>
-      <a href="/ouath">Log in</a>
+    <div class="toptext">
+        <a href="/r">Old UIX</a>
+        <a>|</a>
+        <a href="/ouath">Log in</a>
     </div>
 
     <div class="topright">
-      <span style="font-size:30px; cursor:pointer; padding-left: 10px;" onclick="openNav()" class="sidebutton" id="br">&#9776;</span>
+        <span class="sidebutton" id="br" onclick="openNav()">&#9776;</span>
     </div>
-    
 
+    <h1 class="titlepiece">Vafor IT</h1>
 
-        <h1 class="titlepiece">Vafor IT</h1>
-
-        <div class="wrap">
-          <div class="search">
-             <input id="searchTerm" type="text" class="searchTerm" placeholder="What are you looking to play?" style="height: 36px;">
-             <button type="submit" class="searchButton" onclick="displayResults()">
-               <i class="fa fa-search"></i>
+    <div class="wrap">
+        <div class="search">
+            <input id="searchTerm" type="text" class="searchTerm" placeholder="What are you looking to play?">
+            <button type="submit" class="searchButton" onclick="displayResults()">
+                <i class="fa fa-search"></i>
             </button>
-          </div>
-       </div>
-       <!-- old modal code-
-       <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal" onclick="closeModal()" style="color: #fff;">&times;</span>
-            <div class="text_group">
-              <h2 style="display: inline;" class="header">Results for:</h2>
-              <h2 id="whatisearchedfor" style="display: inline;" class="header">result</h2>
-
-              </div>
-
         </div>
     </div>
-  -->
 
     <div id="footer">
-      <p>Made by <a href="https://maxwellstevenson.com">maxwellstevenson.com</a></p>
-   </div>
+        <p>Made by <a href="https://maxwellstevenson.com">maxwellstevenson.com</a></p>
+    </div>
 
-
-        <script>
-            
-            function openNav(){
-             document.getElementById("mySideNav").style.width="250px";
-             document.getElementById("br").style.display="none";
-
-                }
-            function closeNav(){
-              document.getElementById("mySideNav").style.width="0";
-              document.getElementById("br").style.display="";
-            }
-        </script>
+    <script>
+        function openNav() {
+            document.getElementById("mySideNav").style.width = "250px";
+            document.getElementById("br").style.display = "none";
+        }
+        function closeNav() {
+            document.getElementById("mySideNav").style.width = "0";
+            document.getElementById("br").style.display = "block";
+        }
+    </script>
 </body>
 </html>
