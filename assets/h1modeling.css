@@ -159,12 +159,23 @@ body {
     margin-left: 50px;
 }
 
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .titlepiece {
     text-align: center;
     font-size: 2.5em;
     color: #95d0b4;
-    margin: 40vh;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
 
 .wrap {
     display: flex;
