@@ -174,11 +174,12 @@ body {
 
 
 .wrap {
-    display: flex;
-    align-items: center; /* Centers children vertically */
-    justify-content: center; /* Centers children horizontally */
-    height: 36px; /* Keep your specified height */
-    margin: 20px auto; /* Centers the wrap itself horizontally in its parent */
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
 }
 
 
