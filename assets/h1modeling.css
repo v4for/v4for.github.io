@@ -3,24 +3,55 @@ body {
     background-color: #1a1a1a;
     color: #fff;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    min-height: 100vh; /* Ensures the body takes the full height */
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
 
 .titlepiece {
     text-align: center;
     font-size: 2.5em;
     color: #95d0b4;
-    margin: 20px 0; /* Adjusts margin for better spacing */
+    margin: 40vh;
 }
 
 .wrap {
     display: flex;
     justify-content: center;
-    margin: 20px 0; /* Adjusts margin for better spacing */
+    margin: 20px;
+    height: 36px;
+    margin: 0 auto;
 }
 
 .search {
@@ -63,4 +94,148 @@ body {
 #footer a {
     color: #95d0b4;
     text-decoration: none;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.toptext {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.toptext a {
+    margin: 0 10px;
+    color: #fff;
+}
+
+.sidebutton {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}        body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.titlepiece {
+    text-align: center;
+    font-size: 2.5em;
+    color: #95d0b4;
+    margin: 40vh;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    height: 36px;
+    margin: 0 auto;
+}
+
+.search {
+    display: flex;
+}
+
+.searchTerm {
+    width: 300px;
+    padding: 10px;
+    height: 40px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.searchButton {
+    padding: 10px;
+    background-color: #95d0b4;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    height: 40px;
+}
+
+.searchButton i {
+    color: #fff;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #111;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+
+#footer a {
+    color: #95d0b4;
+    text-decoration: none;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.toptext {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.toptext a {
+    margin: 0 10px;
+    color: #fff;
+}
+
+.sidebutton {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
 }
