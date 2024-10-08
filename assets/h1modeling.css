@@ -159,13 +159,6 @@ body {
     margin-left: 50px;
 }
 
-.container2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .titlepiece {
     text-align: center;
     font-size: 2.5em;
