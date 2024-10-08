@@ -122,7 +122,7 @@ body {
     padding: 10px;
     position: absolute;
     top: 0%; /* Center vertically */
-    left: 20px; /* Adjust as needed for spacing from the left */
+    left: 10px; /* Adjust as needed for spacing from the left */
     z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
@@ -248,11 +248,4 @@ body {
     margin: 0 10px;
     text-decoration: none;
     color: #fff;
-}
-
-.sidebutton {
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-    padding-left: 10px;
 }
