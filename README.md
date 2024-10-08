@@ -1,4 +1,4 @@
-# Welcome to the Game Repository
+# Welcome to the Vafor Repository
 
 ## Requesting Games
 If you would like to request a game, please open an issue in this repository. This is the quickest way for me to see your request.
