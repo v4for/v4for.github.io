@@ -21,8 +21,8 @@ To ensure proper functionality, please make sure to copy the `poki-loader.js` an
 ---
 
 ## Important Setup Instructions
-- **Vercel Redirects:** Be sure to set up redirects on Vercel to ensure that the games load correctly.
-- **UIX Development:** Work is ongoing for the settings and bypass pages. Please **DO NOT** use Vercel for these functionalities.
+- **Vercel:** Avaid vercel as it will break a lot of things.
+- **Buildnow.gg:** Make sure to change the localstorage variable to the website you are hosting on.
 
 ---
 
