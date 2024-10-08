@@ -18,7 +18,6 @@
     <script src="assets/script.js" defer></script>
     <script src="assets/search.js" defer></script>
     <script src="assets/leaveconf.js" defer></script>
-    <script src="assets/particles.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -31,13 +30,15 @@
         };
 
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchTerm').addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    displayResults();
-                } else if (event.ctrlKey && event.key === 'u') {
-                 window.location.pathname = '/Vafor_IT-main/fake-virus'
-                }
-            });
+        document.getElementById('searchTerm').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                displayResults();
+            } else if (event.ctrlKey && event.key === 'u') {
+                window.location.pathname = '/Vafor_IT-main/fake-virus';
+            }
+        });
+    });
+
 
             
 
