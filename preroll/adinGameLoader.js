@@ -1,12 +1,7 @@
 const headTag = document.getElementsByTagName('head')[0];
 
-let cssurl = "maxwellstevenson.com";
+const cssurl = localStorage.getItem('srx');
 
-if (window.location.href.includes('github.io')) {
-    cssurl = "ph4xus.github.io";
-} else if (window.location.href.includes('netlify.app')) {
-    cssurl = "vafor.netlify.app";
-} 
 
 const styleLink = 'https://' + cssurl + '/preroll/style.css';
 
@@ -29,7 +24,6 @@ const reqAdinPlay = '<script>\n' +
 
 headTag.innerHTML += (reqAdinPlay);
 
-//make it to improtant something later
 let addJquery = document.createElement('script');
 addJquery.src = 'https://' + cssurl + '/buildnowggimportant/importantsomething.js';
 headTag.appendChild(addJquery);

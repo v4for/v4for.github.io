@@ -103,13 +103,15 @@
   </style>
   <script>
 //places the script is relevant, here, adinLoader.js, preroll/adinGameLoader.js and crazygames2.js
-let srcUrl = "maxwellstevenson.com";
+//make sure your website is here
 
 if (window.location.href.includes('github.io')) {
-    srcUrl = "ph4xus.github.io";
+    localStorage.setItem('srx', 'ph4xus.github.io');
 } else if (window.location.href.includes('netlify.app')) {
-    srcUrl = "vafor.netlify.app";
-} 
+  localStorage.setItem('srx', 'vafor.netlify.app');
+} else {
+  localStorage.setItem('srx', 'maxwelltstevenson.com');
+}
 
 console.log(srcUrl)
   </script>
