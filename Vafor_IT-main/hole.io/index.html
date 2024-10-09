@@ -1,0 +1,161 @@
+
+<head>
+    <title>Your Website Title</title>
+    <script>
+        window.addEventListener('load', function() {
+            // Create intro container
+            var introDiv = document.createElement('div');
+            introDiv.id = 'intro';
+
+            // Create and add STRONGDOG text
+            var strongDogDiv = document.createElement('div');
+            strongDogDiv.id = 'strongdog';
+            strongDogDiv.innerText = 'STRONGDOG';
+            strongDogDiv.style.opacity = '0'; // Start invisible
+            introDiv.appendChild(strongDogDiv);
+
+            // Create and add XP text
+            var xpDiv = document.createElement('div');
+            xpDiv.id = 'xp';
+            xpDiv.innerText = 'XP';
+            xpDiv.style.opacity = '0'; // Start invisible
+            introDiv.appendChild(xpDiv);
+
+            // Create and add image
+            var uploadedImage = document.createElement('img');
+            uploadedImage.id = 'uploadedImage';
+            uploadedImage.src = '/strongdog.webp'; // Path to your image
+            uploadedImage.style.display = 'none';
+            introDiv.appendChild(uploadedImage);
+
+            // Append intro to body
+            document.body.insertBefore(introDiv, document.body.firstChild);
+
+            // Add styles
+            var css = `
+                #intro {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(33, 33, 33, 1);
+                    z-index: 1000;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    transition: transform 0.5s ease-in-out;
+                }
+
+                #strongdog, #xp {
+                    font-size: 3em;
+                    font-weight: bold;
+                    opacity: 0;
+                    animation: fadeInSlam 1s ease forwards;
+                }
+
+                #strongdog {
+                    color: white;
+                }
+
+                #xp {
+                    color: orange;
+                    animation-delay: 0.5s; 
+                }
+
+                @keyframes fadeInSlam {
+                    0% { transform: scale(0); opacity: 0; }
+                    50% { transform: scale(1.2); opacity: 1; }
+                    100% { transform: scale(1); opacity: 1; }
+                }
+
+                @keyframes riseUp {
+                    0% { transform: translateY(0); }
+                    100% { transform: translateY(-100px); }
+                }
+
+                #uploadedImage {
+                    width: 100%;
+                    max-width: 600px;
+                    opacity: 0;
+                    transform: scale(0);
+                    animation: growAndSettle 1s ease forwards;
+                }
+
+                @keyframes growAndSettle {
+                    0% { transform: scale(0); opacity: 0; }
+                    50% { transform: scale(1.1); opacity: 1; }
+                    75% { transform: scale(0.9); }
+                    100% { transform: scale(1); }
+                }
+            `;
+            var styleSheet = document.createElement('style');
+            styleSheet.type = 'text/css';
+            styleSheet.innerText = css;
+            document.head.appendChild(styleSheet);
+
+            // Trigger image fade-in and text fade-out
+            setTimeout(() => {
+                uploadedImage.style.display = 'block';
+                uploadedImage.style.opacity = 1;
+                strongDogDiv.style.opacity = 0;
+                xpDiv.style.opacity = 0;
+            }, 1500);
+
+            // Slide up and remove intro
+            setTimeout(() => {
+                introDiv.style.transform = 'translateY(-100%)';
+                setTimeout(() => { introDiv.remove(); }, 500);
+            }, 3200);
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Hole.io</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/build.json");
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      canvas {
+        max-width: 100%;
+        max-height: 100vh;
+        width: 100%;
+        height: 100%;
+      }
+
+      .webgl-content {
+        position: relative;
+        top: 0;
+        left: 0;
+        -webkit-transform: none;
+        transform: none;
+        height: 100vh;
+      }
+
+      #gameContainer {
+        width: auto !important;
+        height: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+    </div>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"83300bbac86f6458","b":1,"version":"2023.10.0","token":"c843b8c381814d58b40d4597a1bf7962"}' crossorigin="anonymous"></script>
+</body>
+</html>
