@@ -6,7 +6,13 @@ function displayResults() {
   } else {
       console.log(inputField.value)
 
-      window.location.href = "/gxmes?searched=" + inputField.value;
+      if(inputField.value == "random"){
+        window.location.href = "/gxmes?random"
+      }else {
+        window.location.href = "/gxmes?searched=" + inputField.value;
+      }
+
+      
 
       /*
       document.getElementById("whatisearchedfor").innerHTML = inputField.value;
