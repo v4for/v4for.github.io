@@ -1,156 +1,48 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apps</title>
-    <meta name="description" content="description"/>
-    <meta name="author" content="author" />
-    <meta name="keywords" content="education " />
-    <script type="text/javascript" src="../gxmes/tabs.js"></script>
-    <script type="text/javascript" src="/s/tab.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="../assets/oldstyle.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-   <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Heebo", sans-serif;
-}
-
-      body {
-         background-color: #181622;
-      }
-
-      #text_group {
-        margin-left:auto;
-        margin-right: auto;
-        text-align: center;
-        padding-top: 30px;
-      }
-
-      .lost {
-        color: #a1a0ab;
-      }
-
-      .header {
-          color: #fff;
-      }
-    </style>
-
-  </head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9Y3T9NZGP8');
-</script>
-  <body>
-    <script>
-    //rice cooker
-function handleRun3Click() {
-    alert('Warning: Launching in default mode, errors otherwise.');
-}
-
-function k() {
-    alert('Warning: You may encounter a network error , use WebRetro .');
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("blamk").click();
-
-    var run3 = document.getElementById('url');
-    if (run3) {
-        run3.addEventListener('click', handleRun3Click);
-    }
-
-    var notrun3 = document.getElementById('emulator');
-    if (notrun3) {
-        notrun3.addEventListener('click', k);
-    }
-});
-
-  </script>
-
-    <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-              <span class="navbar-brand" onclick="window.location.pathname = '/'">Vafor</span>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex w-100 justify-content-end">
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()" href="#">blob</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk" href="#">about:blank</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()" id="default" href="#">default</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()" href="#">popup</a></li>              
-                </ul>
-            </div>              
-          </div>
-      </nav>
-  </header>
-    
-    <div id="text_group">
-      <h1 class="header">Apps</h1>
-     </div>
-     <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">
-     <div class="for"> 
-     <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/EmulatorJS-main/index.html" target="_blank" id="emulator">
-            <img src="../Vafor_IT-main/EmulatorJS-main/docs/favicon.ico" alt="Emulator JS" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Emulator JS</p>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="apps.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Applications</h1>
+        <hr>
+        <div class="app-grid">
+            <div class="app-card" onclick="window.open('../Vafor_IT-main/EmulatorJS-main/index.html', '_blank');">
+                <img src="../Vafor_IT-main/EmulatorJS-main/docs/favicon.ico" alt="Emulator JS">
+                <p>Emulator JS</p>
+            </div>
+            <div class="app-card" onclick="window.open('../Vafor_IT-main/webretro-master/', '_blank');">
+                <img src="../Vafor_IT-main/webretro-master/assets/terminal.svg" alt="Web Retro">
+                <p>Web Retro</p>
+            </div>
+            <div class="app-card" onclick="window.open('../Vafor_IT-main/better_ruffle/', '_blank');">
+                <img src="../assets/img/ruffle.png" alt="Flash Emulator">
+                <p>Flash Emulator</p>
+            </div>
+            <div class="app-card" onclick="window.open('../Vafor_IT-main/google', '_blank');">
+                <img src="../assets/img/googlebetter.jpg" alt="Google">
+                <p>Google</p>
+            </div>
+            <div class="app-card" onclick="window.open('../Vafor_IT-main/vmlinux-main/', '_blank');">
+                <img src="../assets/img/linu.png" alt="Linux">
+                <p>Linux</p>
+            </div>
+            <div class="app-card" onclick="window.open('../Vafor_IT-main/url', '_blank');">
+                <img src="../assets/img/url.png" alt="URL Opener">
+                <p>URL Opener</p>
+            </div>
         </div>
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/webretro-master/" target="_blank">
-            <img src="../Vafor_IT-main/webretro-master/assets/terminal.svg" alt="Web Retro" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Web Retro</p>
-        </div>
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/better_ruffle/" target="_blank">
-            <img src="../assets/img/ruffle.png" alt="Ruffle" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Flash Emulator</p>
-        </div>     
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/google" target="_blank">
-            <img src="../assets/img/googlebetter.jpg" alt="the silly search" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Google</p>
-        </div>
-        <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/vmlinux-main/" target="_blank">
-            <img src="../assets/img/linu.png" alt="silly funny penguin" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Linux</p>
-        </div>
-        </div>
-        </div>
-
-        <div id="text_group">
-          <h2 class="header">Iframe-restricted apps</h2>
-           <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">        </div>
-
-        <div class="notfor" style="display: flex; justify-content: center; flex-wrap: wrap;">
-          <div style="margin: 10px;">
-            <a href="../Vafor_IT-main/url" target="_blank" id="url">
-              <img src="../assets/img/url.png" alt="url" class="rounded-image" width="100px" height="100px">
-            </a>
-            <p class="description" style="color: #95d0b4;">Url Opener</p>
-          </div>
-        </div>
-        
-            
     </div>
-    
-  </body>
+
+    <div class="footer">
+        <p>© Vafor IT</p>
+    </div>
+</body>
 </html>
