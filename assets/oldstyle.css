@@ -167,6 +167,7 @@ body {
     transition: all 0.2s ease-in-out; /* add transition for smooth effect */
     display: block;
     margin: 0 auto;
+    object-fit: cover;
 }
 
 .rounded-image:hover {
