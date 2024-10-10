@@ -59,9 +59,6 @@ function handleEmulatorClick(event) {
     alert('Warning: Launching in default mode, errors otherwise.');
 }
 
-function handleRun3Click(event) {
-    alert('Warning: You have to refresh the page after the second level. And this gxme is highly laggy.');
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("blamk").click();
@@ -70,10 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         emulator.addEventListener('click', handleEmulatorClick);
     });
 
-    var run3 = document.getElementById('run3');
-    if (run3) {
-        run3.addEventListener('click', handleRun3Click);
-    }
 });
 
 //hehehewaaw
@@ -570,7 +563,7 @@ document.addEventListener('keydown', function(event) {
           <p class="description" style="color: #95d0b4;">Doge miner</p>
         </div>
         <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/run3editor/" target="_blank" id="run3">
+          <a href="../Vafor_IT-main/run3editor/" target="_blank">
             <img src="../Vafor_IT-main/run3editor/loading.png" alt="what is the point of this gm this is more pointkess then 2" class="rounded-image" width="100px" height="100px">
           </a>
           <p class="description" style="color: #95d0b4;">Run 3</p>
