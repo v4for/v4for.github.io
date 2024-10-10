@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert("No matches found for " + searched + ". redirecting you away")
                 window.location = "/"
             }
+        } else if (window.location.search.includes("?random")) {
+            const div = document.getElementById('for');
+            const links = div.getElementsByTagName('a');
+            const randomIndex = Math.floor(Math.random() * links.length);
+            links[randomIndex].click();
         }
 
 });
