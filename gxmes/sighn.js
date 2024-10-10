@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.getElementById('for');
             const links = div.getElementsByTagName('a');
             const randomIndex = Math.floor(Math.random() * links.length);
-            links[randomIndex].click();
+            const randomLink = links[randomIndex].href;
+            console.log(randomLink)
+
         }
 
 });

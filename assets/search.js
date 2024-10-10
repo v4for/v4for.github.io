@@ -11,23 +11,6 @@ function displayResults() {
       } else {
         window.location.href = "/gxmes?searched=" + inputField.value;
       }
-
-      
-
-      /*
-      document.getElementById("whatisearchedfor").innerHTML = inputField.value;
-      const modal = document.getElementById('modal');
-      modal.style.display = 'block';
-      const modalContent = modal.querySelector('.modal-content');
-      modalContent.style.animation = 'none';
-      modalContent.offsetHeight; 
-      modalContent.style.animation = '';
-      */
       
   }
-}
-
-function closeModal() {
-  const modal = document.getElementById('modal');
-  modal.style.display = 'none';
 }
