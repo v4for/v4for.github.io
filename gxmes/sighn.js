@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomIndex = Math.floor(Math.random() * links.length);
         const randomLink = links[randomIndex].href;
         console.log(randomLink)
-        alert("Your gxme was: " + randomLink)
+        //alert("Your gxme was: " + randomLink)
         createIframePopup(randomLink);
 
     }
