@@ -59,22 +59,20 @@
             }
         });
 
-        function openWindow(event, title, src) {
-            event.preventDefault();
-            var win = window.open('', title, 'height=650,width=300,screenX=400,screenY=350');
+        function openIframe(event, title, src) {
+        event.preventDefault();
+        var win = window.open('', title, 'height=650,width=300,screenX=400,screenY=350');
+
+        if (win) { 
             var iframe = win.document.createElement('iframe');
             iframe.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:999999;";
             iframe.src = src;
+
             win.document.body.appendChild(iframe);
+        } else {
+            alert('womp womp');
         }
-
-        document.getElementById('settings').addEventListener('click', function(event) {
-            openWindow(event, 'Settings', '/s');
-        });
-
-        document.getElementById('apps').addEventListener('click', function(event) {
-            openWindow(event, 'Apps', '/a');
-        });
+    }
 
     </script>
 </head>
@@ -84,8 +82,8 @@
         <a href="/gxmes">Gxmes</a>
         <a href="https://vafor.netlify.app">Netlify</a>
         <a href="https://ph4xus.github.io">Github</a>
-        <a id="apps" style="cursor: pointer;">Apps</a>
-        <a id="settings" style="cursor: pointer;">Settings</a>
+        <a onclick="openIframe(event, 'Apps', '/a')" style="cursor: pointer;">Apps</a>
+        <a onclick="openIframe(event, 'Settings', '/s')" style="cursor: pointer;">Settings</a>
     </div>
 
     <div class="toptext">
