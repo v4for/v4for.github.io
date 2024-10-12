@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en-us" id="mainhtml">
+<head>
+    <!-- REGULAR VERSION -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-417136E0Z8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-417136E0Z8');
+    </script>
+
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title> SandStrike.io | BEST 3D Online Multiplayer</title>
+    <meta name="description" content="SandStrike.io is a free 3D Multiplayer Online Game. No Download needed!">
+    <meta name="keywords" content="SandStrike.io, io game,.io,online game,free game,browser fps,tps,roblox,free games,cool games,shooting, IO, io, Games, Tanks, free, tank, multiplayer, friends, weapons, coins, boom">
+    <meta name="author" content="Lee Zak">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+
+    <meta content="SandStrike.io | BEST 3D Online Multiplayer" property="og:title" />
+    <meta content="SandStrike.io is a free 3D Multiplayer Online Game. No Download needed!" property="og:description" />
+    <meta content="https://SandStrike.io/content-creator/logoNoText.png" property="og:image" />
+    <meta content=" #FFFFFF" data-react-helmet="true" name="theme-color" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+    </style>
+    <script>
+        window.aiptag = window.aiptag || { cmd: [] };
+        aiptag.cmd.display = aiptag.cmd.display || [];
+        aiptag.cmd.player = aiptag.cmd.player || [];
+        //CMP tool settings
+        aiptag.cmp = {
+            show: true,
+            position: "centered",  //centered, bottom
+            button: true,
+            buttonText: "Privacy settings",
+            buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+        }
+        aiptag.cmd.player.push(function () {
+            aiptag.adplayer = new aipPlayer({
+                AD_WIDTH: 960,
+                AD_HEIGHT: 540,
+                AD_DISPLAY: 'fullscreen', //default, fullscreen, center, fill
+                LOADING_TEXT: 'loading advertisement',
+                PREROLL_ELEM: function () { return document.getElementById('preroll') },
+                AIP_COMPLETE: function (state) {
+                    /*******************
+                     ***** WARNING *****
+                     *******************
+                     Please do not remove the PREROLL_ELEM
+                     from the page, it will be hidden automaticly.
+                    */
+                    //unityInstance.SendMessage('GameManager', 'OnPrerollAdFinished', "Success");
+                    unityInstance.SendMessage('GameManager', 'OnPrerollAdFinished', state);
+
+                    //console.log("Preroll Ad Completed: " + state);
+                }
+            });
+
+        });
+
+        function adinplay_show_preroll() {
+            //check if the adslib is loaded correctly or blocked by adblockers etc.
+            if (typeof aiptag.adplayer !== 'undefined') {
+                aiptag.cmd.player.push(function () { aiptag.adplayer.startPreRoll(); });
+            } else {
+                //Adlib didnt load this could be due to an adblocker, timeout etc.
+                //Please add your script here that starts the content, this usually is the same script as added in AIP_COMPLETE.
+                unityInstance.SendMessage('GameManager', 'OnPrerollAdFinished', "Failed");
+
+                console.log("Ad Could not be loaded, load your content here");
+            }
+        }
+    </script>
+    <script async src="//api.adinplay.com/libs/aiptag/pub/FGI/sandstrike.io/tag.min.js"></script>
+
+    <script type='text/javascript'>
+        // Check the referring domain
+        if (document.referrer.includes('miniclip') || document.referrer.includes('minijuegos')) {
+            var script = document.createElement('script');
+            script.src = 'https://ssl.minijuegosgratis.com/lechuck/js/latest.js';
+            script.onload = function () {
+                lechuck = new LeChuckAPI({});
+                function miniplaySendToAPI(stat, value) {
+                    //console.log("miniplaySend2API called. Waiting for a response");
+                    lechuck.stat.put(function (response) {
+                        console.log(response);
+                    }, stat, value);
+                }
+            };
+            document.head.appendChild(script);
+        }
+    </script>
+
+</head>
+<body class="dark" style="background-color: black;">
+    <script>
+        /*
+        var clientId = 'carfje4970i91xrle7zhr435pql28l';
+        var clientSecret = 'az6byl60d1719bpf27xqn8lcvmsm37';
+        var gameName = 'SandStrike.io';
+
+        // Get OAuth token
+        fetch('https://id.twitch.tv/oauth2/token?client_id=' + clientId + '&client_secret=' + clientSecret + '&grant_type=client_credentials', {
+            method: 'POST'
+        })
+            .then(response => response.json())
+            .then(response => {
+                var accessToken = response.access_token;
+                console.log("Twitch API, Access Token: " + accessToken);
+                // Get game id
+                fetch('https://api.twitch.tv/helix/games?name=' + gameName, {
+                    headers: {
+                        'Client-ID': clientId,
+                        'Authorization': 'Bearer ' + accessToken
+                    }
+                })
+                    .then(response => response.json())
+                    .then(response => {
+                        var gameId = response.data[0].id;
+
+                        // Poll Twitch API every 10 seconds to get current streams
+                        setInterval(() => {
+                            fetch('https://api.twitch.tv/helix/streams?game_id=' + gameId, {
+                                headers: {
+                                    'Client-ID': clientId,
+                                    'Authorization': 'Bearer ' + accessToken
+                                }
+                            })
+                                .then(response => response.json())
+                                .then(response => {
+                                    unityInstance.SendMessage('GameManager', 'OnGotStreams', JSON.stringify(response));
+                                });
+                        }, 10000);
+                    });
+            });
+            */
+
+
+        function SetDeadBanner(y) {
+            var x = document.getElementById("sandstrike-io_300x250_2");
+            var xx = document.getElementById("adBanner1");
+            x.style.display = y;
+            xx.style.display = y;
+
+        }
+
+        var preventUnload = function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        };
+
+
+        function SetGameplayStartCrazyGames() {
+            PreventCtrlW();
+        }
+        function SetGameplayStopCrazyGames() {
+            AllowCtrlW();
+        }
+
+        function PreventCtrlW() {
+            window.addEventListener('beforeunload', preventUnload);
+        }
+
+        function AllowCtrlW() {
+            console.log("AllowCtrlW");
+            window.removeEventListener('beforeunload', preventUnload);
+        }
+    </script>
+
+    <div id="adBanner1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;">
+        <div id='sandstrike-io_300x250_2' style="
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        transform-origin: 50% 0%;
+        top: 20px;
+        pointer-events: all;
+        user-select: none;
+        z-index: 9999;
+        display: none;">
+            <script type='text/javascript'>
+                aiptag.cmd.display.push(function () { aipDisplayTag.display('sandstrike-io_300x250_2'); });
+            </script>
+        </div>
+    </div>
+    <div id="adBanners" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none;">
+
+        <div id='sandstrike-io_728x90' style="
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 728px;
+        transform-origin: 50% 100%;
+        bottom: 2px;
+        pointer-events: all;
+        user-select: none;
+        z-index: 9999;
+        display: none;">
+            <script type='text/javascript'>
+                aiptag.cmd.display.push(function () { aipDisplayTag.display('sandstrike-io_728x90'); });
+            </script>
+        </div>
+        <div id='sandstrike-io_300x250_1' style="
+        position: absolute;
+        right: 0;
+        width: 300px;
+        transform-origin: 100% 0%;
+        top: 30%;
+        pointer-events: all;
+        user-select: none;
+        z-index: 9999;
+        display: none;">
+            <script type='text/javascript'>
+                aiptag.cmd.display.push(function () { aipDisplayTag.display('sandstrike-io_300x250_1'); });
+            </script>
+        </div>
+        <div id='sandstrike-io_250x250' style="
+        position: absolute;
+        left: 1%;
+        width: 300px;
+        transform-origin: 0% 0%;
+        top: 8%;
+        pointer-events: all;
+        user-select: none;
+        z-index: 9999;
+        display: none;">
+            <script type='text/javascript'>
+                aiptag.cmd.display.push(function () { aipDisplayTag.display('sandstrike-io_250x250'); });
+            </script>
+        </div>
+    </div>
+    <script>
+        function goFullscreenMobile() {
+            /*// Fullscreen
+            var elem = document.documentElement;
+
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { // Firefox
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { // IE/Edge
+                elem.msRequestFullscreen();
+            }
+
+            // Orientation lock
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('landscape').catch(function () {
+                    // Ignore errors for unsupported browsers
+                });
+            }
+
+            // Canvas resize
+            window.addEventListener('resize', function () {
+                // Code to adjust the canvas size
+            });
+
+            // Scrolling to hide browser UI
+            setTimeout(function () {
+                window.scrollTo(0, 1);
+            }, 100);*/
+        }
+
+        function copyCurrentURL() {
+            let currentUrl = window.location.href;
+            const el = document.createElement('textarea');
+            el.value = currentUrl;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+        function copyString(x) {
+            const el = document.createElement('textarea');
+            el.value = x;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+        function SetCursor(x) {
+            setCursor(x);
+        }
+        function setcursor(x) {
+            setCursor(x);
+        }
+        function setCursor(x) {
+            document.getElementById("mainhtml").style.cursor = x;
+        }
+    </script>
+    <script>
+        //const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        //if (/windows phone/i.test(userAgent)) {
+        //    goFullscreenMobile();
+        //}
+        //if (/android/i.test(userAgent)) {
+        //    goFullscreenMobile();
+        //}
+        //if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        //    goFullscreenMobile();
+        //}
+
+        //window.addEventListener('beforeunload', function (e) {
+        //    e.preventDefault();
+        //    e.returnValue = '';
+        //});
+
+        function detectMobileDevice() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/windows phone/i.test(userAgent)) {
+                unityInstance.SendMessage('GameManager', 'OnGotIsMobile');
+            }
+            if (/android/i.test(userAgent)) {
+                unityInstance.SendMessage('GameManager', 'OnGotIsMobile');
+            }
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                unityInstance.SendMessage('GameManager', 'OnGotIsMobile');
+            }
+        }
+        function showAllBanners() {
+            var adBanners = document.getElementById('adBanners');
+            adBanners.style.display = 'block';
+        }
+        function showBanners() {
+            var x = document.getElementsByClassName("adBanners");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = 'block';
+            }
+        }
+        function hideBanners() {
+            var x = document.getElementsByClassName("adBanners");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = 'none';
+            }
+        }
+        function show160x600() {
+            var x = document.getElementById("160x600");
+            x.style.display = 'block';
+        }
+        function Set728x90(y) {
+
+            var x = document.getElementById("sandstrike-io_728x90");
+            var ad2 = document.getElementById("sandstrike-io_300x250_1");
+            var ad3 = document.getElementById("sandstrike-io_250x250");
+            var ad4 = document.getElementById("sandstrike-io_300x250_2");
+
+            if (x) {
+                x.style.display = y;
+            }
+            if (ad2) {
+                ad2.style.display = y;
+            }
+            if (ad3) {
+                ad3.style.display = y;
+            }
+            if (ad4) {
+                ad4.style.display = 'none';
+            }
+
+        }
+        function hideNews() {
+            var x = document.getElementById("News");
+            x.style.display = 'none';
+        }
+        function hide160x600() {
+            var x = document.getElementById("160x600");
+            x.style.display = 'none';
+        }
+        function onWindowResize() {
+            var w = window.innerWidth / 1920.0; // the default tested resolution width
+            var h = window.innerHeight / 960.0; // the default tested resolution height
+            var newScale = Math.min(w, h);
+            //var leftPX = (-(300.0 / 2.0) * (1.0 - newScale)) + (newScale * 10.0);
+            //var leftSpecialPX = (-(160.0 / 2.0) * (1.0 - newScale)) + (newScale * 10.0);
+            //var topAD = document.getElementById("300x250");
+            var bottomAd = document.getElementById("sandstrike-io_728x90");
+            var ad2 = document.getElementById("sandstrike-io_300x250_1");
+            var ad3 = document.getElementById("sandstrike-io_250x250");
+            //var SpecialAd = document.getElementById("160x600");
+            //topAD.style.right = leftPX + "px";
+            //bottomAd.style.left = leftPX + "px";
+            //SpecialAd.style.left = leftSpecialPX + "px";
+            //topAD.style.transform = "scale("+newScale+")";
+            //console.log("onWindowResize");
+            bottomAd.style.transform = "scale(" + newScale + ")";
+            ad2.style.transform = "scale(" + newScale + ")";
+            ad3.style.transform = "scale(" + newScale + ")";
+            //bottomAd.style.transformOrigin = "50% 100%";
+
+
+            //SpecialAd.style.transform = "scale("+newScale+")";
+        };
+        onWindowResize();
+        window.onresize = onWindowResize;
+        window.onload = onWindowResize;
+    </script>
+    <div id="unity-container" style="position: absolute; width: 100%; height: 100%">
+        <canvas id="unity-canvas" width=1920 height=1080 style="width: 100%; height: 100%"></canvas>
+    </div>
+
+    <div id="loading-cover" style="display:none;">
+        <p id="loadingTxt" style="font-family: 'Fjalla One', sans-serif;position: absolute;bottom: 100px;right: 150px;color:white;user-select: none;">100%</p>
+        <img id="unity-logo" src="logo.png" style="position: absolute; top: 5px; left: 50%; transform: translateX(-50%); user-select: none; ">
+        <div id="unity-loading-bar" style="user-select: none;">
+
+            <p style="color: rgb(255, 255, 255);font-size: 37px;text-align: left; justify-content: left; position:absolute;left: 2%;bottom: 50px;">
+                <span id="words"></span>
+            </p>
+            <div id="unity-progress-bar-empty" style="display: none; margin-top: 0px;">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+
+            return array;
+        }
+        (function () {
+            var words = [
+                "Join Our Discord Server!",
+                "Remember, in sandStrike.io, there's no such thing as friendly fire... only fire.",
+                "In this game, the early bird gets shot.",
+                "Keep calm and carry a big gun.",
+                "Ready, aim, fire... then duck for cover.",
+                "If at first you don't succeed, respawn and try again.",
+                "A good shot is worth a thousand words... and a million points.",
+                "Sand, guns, and glory... what more could you want?",
+                "Remember, in sandStrike.io, it's not the size of your gun that matters... it's how you use it.",
+                "Always keep your eyes on the prize... and your enemies in your crosshairs.",
+                "The road to victory is littered with the bodies of your enemies.",
+                "Sand may be a peaceful place, but not in sandStrike.io.",
+                "In this game, it's not about speed, it's about precision... and a quick trigger finger.",
+                "You can run, but you can't hide... from my bullets.",
+                "In this game, you can never have too many guns... or too many allies.",
+                "The key to success in sandStrike.io is equal parts skill, luck, and having a backup plan.",
+                // New tips
+                "Ever tried a stealth approach? Just kidding, there's no place for stealth in sandStrike.io.",
+                "Safety first! Make sure to wear your helmet. It won't help, but it'll make you look cool.",
+                "Remember, there's no 'pause' button in sandStrike.io. Or in real life.",
+                "Tried diplomacy yet? No? Good, this is sandStrike.io.",
+                "Ever thought of digging a hole in the sand for protection? Me neither.",
+                "Pro tip: Reload only when no one's looking.",
+                "Remember, you miss 100% of the shots you don’t take. And most of the ones you do.",
+                "Ever wondered why it's called sandStrike.io? Neither have we.",
+                "Protip: Invest in sunglasses. The glare of the sun on the sand can be a real killer!",
+                "Even if you’re on the right track, you’ll get run over if you just sit there. Literally.",
+                "Know the saying, 'All's fair in love and war'? This isn't love.",
+                "The early bird gets the worm. But the second mouse gets the cheese. Or the bullet. Depends on the day.",
+                "Don't be upset by the results you didn't get from the work you didn't do. Just shoot.",
+                "Remember, amateurs practice until they get it right; professionals practice until they can’t get it wrong. Which one are you?",
+                "If you want peace, prepare for war. If you want war, well, you're in the right place.",
+                "It's not about how many times you fall, but about how many times you respawn.",
+                "If you're losing, remember that failure is the mother of success. And respawning is the father.",
+                "Pro tip: You can’t be late if you never set a timer.",
+                "Afraid of getting shot? Stay behind cover! Just kidding, there is no cover.",
+                "Want to avoid combat? Have you considered joining a library?"
+            ],
+                i = 0;
+            shuffle(words);
+            setInterval(function () {
+                $('#words').fadeOut(function () {
+                    $(this).html(words[(i = (i + 1) % words.length)]).fadeIn();
+                });
+            }, 3900)
+        })();
+    </script>
+
+
+    <style>
+        /* Default style for larger screens */
+        #words {
+            font-family: 'Fjalla One', sans-serif;
+            text-align: left;
+            justify-content: left;
+            user-select: none;
+            font-size: 37px;
+        }
+
+        #unity-logo {
+            max-width: 300px;
+        }
+        /* Smaller font size for screens with a width less than 1200px */
+        @media (max-width: 1200px) {
+            #words {
+                font-size: 30px;
+            }
+
+            #unity-logo {
+                max-width: 250px;
+            }
+        }
+
+        /* Smaller font size for screens with a width less than 992px */
+        @media (max-width: 992px) {
+            #words {
+                font-size: 25px;
+            }
+
+            #unity-logo {
+                max-width: 200px;
+            }
+        }
+
+        /* Smaller font size for screens with a width less than 768px */
+        @media (max-width: 768px) {
+            #words {
+                font-size: 20px;
+            }
+
+            #unity-logo {
+                max-width: 150px;
+            }
+        }
+
+        /* Smaller font size for screens with a width less than 576px */
+        @media (max-width: 576px) {
+            #words {
+                font-size: 15px;
+            }
+
+            #unity-logo {
+                max-width: 100px;
+            }
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Get the render scale value from the cookie (or return a default value of 1 if it doesn't exist)
+        function GetRenderScaleCookie() {
+            var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)render_scale\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            if (cookieValue) {
+                return parseFloat(cookieValue);
+            } else {
+                return 0.85;
+            }
+        }
+
+
+      window.addEventListener("load", function () {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("ServiceWorker.js");
+        }
+      });
+
+      var container = document.querySelector("#unity-container");
+        var canvas = document.querySelector("#unity-canvas");
+        const loadingCover = document.querySelector("#loading-cover");
+        const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+        const loadingTxt = document.querySelector("#loadingTxt");
+
+      //var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+        const spinner = document.querySelector('.spinner');
+
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/26c570c5b6d3d4cd47f30c0a8f6eab83.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/592e76869c3a9adf3ee81458c9935277.data.br",
+        frameworkUrl: buildUrl + "/16fb1b00414aeae19085812fd6bef5b4.framework.js.br",
+        codeUrl: buildUrl + "/99a9cdc3ec591da20f13ef50277d77d5.wasm.br",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Devclied",
+        productName: "SandStrike.io",
+        productVersion: "38.6",
+        devicePixelRatio: GetRenderScaleCookie()
+      };
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+        loadingCover.style.display = "";
+        const _script = document.createElement("script");
+        _script.src = loaderUrl;
+        _script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                spinner.style.display = "none";
+                progressBarEmpty.style.display = "";
+                progressBarFull.style.width = `${100 * progress}%`;
+                let x = Math.floor(100 * progress);
+                loadingTxt.innerHTML = `${x}%`;
+            }).then((unityInstance) => {
+                window.unityInstance = unityInstance;
+                loadingCover.style.display = "none";
+                Set728x90("none");
+            }).catch((message) => {
+                alert(message);
+            });
+        };
+        document.body.appendChild(_script);
+    </script>
+
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+
+    <script src="firebase.js"></script>
+
+
+    <script>
+        let previousTouches = 0;
+
+        var touchId = null;  // Store touch identifier
+
+        document.addEventListener('touchstart', function (event) {
+            event.preventDefault();
+
+
+            if (event.touches.length !== previousTouches) {
+                //console.log(`Touches changed: ${event.touches.length}`);
+                previousTouches = event.touches.length;
+            }
+
+
+            // Check all touches
+            for (var i = 0; i < event.touches.length; i++) {
+                var touch = event.touches[i];
+
+                // Only start if touch is on right half of screen
+                if (touch.clientX > window.innerWidth / 2) {
+                    var convertedY = window.innerHeight - touch.clientY;
+                    unityInstance.SendMessage("TouchLook", "StartTouch", touch.clientX + "|" + convertedY);
+                    touchId = touch.identifier;  // Store ID of touch
+                    break;  // Once we find a valid touch, exit loop
+                }
+            }
+        }, false);
+
+        document.addEventListener('touchmove', function (event) {
+            event.preventDefault();
+
+            for (var i = 0; i < event.touches.length; i++) {
+                var touch = event.touches[i];
+
+                // Only move if touch is the one we started with
+                if (touch.identifier === touchId) {
+                    var convertedY = window.innerHeight - touch.clientY;
+                    unityInstance.SendMessage("TouchLook", "MoveTouch", touch.clientX + "|" + convertedY);
+                }
+            }
+        }, false);
+
+        document.addEventListener('touchend', function (event) {
+            event.preventDefault();
+
+            for (var i = 0; i < event.changedTouches.length; i++) {
+                var touch = event.changedTouches[i];
+
+                // Only end if touch is the one we started with
+                if (touch.identifier === touchId) {
+                    unityInstance.SendMessage("TouchLook", "EndTouch");
+                    touchId = null;  // Clear stored ID
+                }
+            }
+
+            // The 'touches' array does not contain the touch that just ended.
+            // So, we need to manually calculate the new number of touches.
+            const newTouches = previousTouches - event.changedTouches.length;
+            if (newTouches !== previousTouches) {
+                previousTouches = newTouches;
+            }
+
+            // If the number of touches has just changed to 0, print "test"
+            if (previousTouches === 0) {
+                unityInstance.SendMessage("TouchLook", "AllLiftUp");
+            }
+        }, false);
+
+
+    </script>
+    <div id="paypalPaymentWindow" style="display: none;width: 100%; height: 100%;position: absolute; top: 0px; bottom: 0px;">
+        <div id="smart-button-container" style="bottom: 50%; position: absolute; right: 0px; left: 0px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div id="paypal-button-container"></div>
+                <button style="width: 200px; height: 40px; background-color: #f01818; color: white; text-align: center; line-height: 40px; border-radius: 8px; " onclick="CancelPaypalProcess()">Cancel</button>
+            </div>
+        </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=Aea5dVjCE6X_iB6kIOqdqalMaH6Z8lDrLG9kcFub93hCHFtvoxhbPkHQoJz6XtWVMOt9_gplVu0sBSoq&enable-funding=venmo,card,paylater,bancontact,giropay,ideal,mercadopago,mybank&currency=USD&components=buttons,marks" data-sdk-integration-source="button-factory"></script>
+        <script>
+            function initPayPalButton() {
+                paypal.Buttons({
+                    style: {
+                        shape: 'pill',
+                        color: 'blue',
+                        layout: 'vertical',
+                        label: 'paypal',
+
+                    },
+
+                    createOrder: function (data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{ "description": "In-game Gems", "amount": { "currency_code": "USD", "value": window.currentPaymentPrice } }]
+                        });
+                    },
+
+                    onApprove: function (data, actions) {
+                        return actions.order.capture().then(function (orderData) {
+                            var purchasePrice = orderData.purchase_units[0].amount.value;
+                            console.log("The purchase price is: " + purchasePrice);
+                            console.log("The WINDOW purchase price is: " + window.currentPaymentPrice);
+                            unityInstance.SendMessage('GameManager', 'OnPayPalPurchaseFinished', window.currentPaymentPrice.toString());
+                            document.getElementById('paypalPaymentWindow').style.display = 'none';
+
+
+                        });
+                    },
+
+                    onError: function (err) {
+                        console.log(err);
+                        unityInstance.SendMessage('GameManager', 'OnPayPalPurchaseFinished', "0");
+                        document.getElementById('paypalPaymentWindow').style.display = 'none';
+
+
+                    }
+                }).render('#paypal-button-container');
+            }
+            initPayPalButton();
+        </script>
+    </div>
+    <div id="preroll"></div>
+    <script>
+        /*function SetLobby(x){
+          document.getElementById('lobby').style.display = x;
+        }*/
+        function SetPaypalPaymentWindow(x) {
+            document.getElementById('paypalPaymentWindow').style.display = x;
+        }
+        function CancelPaypalProcess() {
+            unityInstance.SendMessage('GameManager', 'CancelPaypalProcess');
+        }
+        function PurchaseRemoveAds() {
+            window.currentPaymentPrice = '5.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function PurchaseJetpack() {
+            window.currentPaymentPrice = '14.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function Purchase20Gems() {
+            window.currentPaymentPrice = '1.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function Purchase50Gems() {
+            window.currentPaymentPrice = '4.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function Purchase120Gems() {
+            window.currentPaymentPrice = '9.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function Purchase200Gems() {
+            window.currentPaymentPrice = '15.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function Purchase600Gems() {
+            window.currentPaymentPrice = '44.99';
+            document.getElementById('paypalPaymentWindow').style.display = 'block';
+        }
+        function SetURL(add) {
+            var currentURL = window.location.protocol + "//" + window.location.host + window.location.pathname + add;
+            window.history.pushState({ path: currentURL }, '', currentURL);
+        }
+        function LockCursor() {
+            canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock;
+            canvas.requestPointerLock()
+        }
+        function ReloadGame() {
+            //auto-hide banners at start of load
+            hideBanners();
+            window.location.reload();
+        }
+        function toggleFullscreen() {
+            if (document.fullscreenElement === null) {
+                openFullscreen();
+                return;
+            }
+            exitFullscreen();
+        }
+        function openFullscreen() {
+            document.documentElement.requestFullscreen();
+        }
+        function exitFullscreen() {
+            document.exitFullscreen();
+
+        }
+        document.addEventListener('pointerlockchange', lockChangeAlert, false);
+        document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
+        function lockChangeAlert() {
+            if (document.pointerLockElement === canvas || document.mozPointerLockElement === canvas) {
+
+            } else {
+                unityInstance.SendMessage('GameManager', 'OnEscape');
+            }
+        }
+        window.addEventListener('load', (event) => {
+            onWindowResize();
+        });
+        Set728x90("none");
+    </script>
+</body>
+</html>
