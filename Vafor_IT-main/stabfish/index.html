@@ -1,646 +1,94 @@
-<html>
+<!DOCTYPE html><html lang="en"><head><title>Stabfish.io Game Files - Crazy Games</title><link href="https://www.crazygames.com/game/stabfish-io" rel="canonical"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Nunito:wght@400;600;700;800;900"/><meta charset="UTF-8"/><meta name="robots" content="noindex, follow"/><meta name="description" content="The game files for Stabfish.io, a free browser game on CrazyGames.com"/><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="Accept-CH" content="DPR"/><meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"/><style id="ziggyLoaderStyles">html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #13141E;
+  overflow: hidden;
+}
 
-<head>
-    <meta name="viewport" content="width=device-width,initial-scale=1, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta charset="UTF-8">
-    <meta name="authoring-tool" content="Adobe_Animate_CC">
-    <title>Stabfish.io</title>
-    <meta name="description"
-        content="IO GAME 2020! You are a deadly marine monster. Stab the enemies and hang their heads on your pike!">
-    <meta property="og:title" content="Stabfish.io" />
-    <meta property="og:description"
-        content="IO GAME 2020! You are a deadly marine monster. Stab the enemies and hang their heads on your pike!" />
-    <meta property="og:image" content="https://stabfish.io/images/cover.png" />
-    <meta property="og:url" content="https://stabfish.io" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:site_name" content="Stabfish.io">
-    <meta name="twitter:image:alt" content="Play Stabfish.io">
-    <!-- <meta property="fb:app_id" content="your_app_id" /> -->
-    <!-- <meta name="twitter:site" content="@website-username"> -->
+.ziggyLoader {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <!-- write your code here -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script src="https://sdk.crazygames.com/crazygames-sdk-v2.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SYDSLVKGV"></script>
-    <link href="css/fontawesome.min.css?t=1725996980650" rel="stylesheet">
-    <link href="css/brands.min.css?t=1725996980650" rel="stylesheet">
-    <link href="css/solid.min.css?t=1725996980650" rel="stylesheet">
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-0SYDSLVKGV');
-    </script>
-    <script>isCrazyGames = false</script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script> -->
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #F9FAFF;
+  font-family: 'Nunito',Arial,"Helvetica Neue",Helvetica,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.5;
+}
 
-    <!-- PIXI -->
-    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.0/pixi.min.js"></script> -->
-    <script src="libs/bootstrap.bundle.min.js?t=1725996980650"></script>
-    <script src="libs/pixi-legacy.min.js?t=1725996980650"></script>
-    <script src="libs/pixi-animate.js?v=1"></script>
-    <script src="skin1.js?t=1725996980650"></script>
-    <script src="assets.js?t=1725996980650"></script>
-    <script src="app.bundle.js?t=1725996980650"></script>
+@keyframes bob { 
+  0% {
+    transform: translate(0px, 0px); }
+  50% {
+    transform: translate(0px, 10.5px); }
+  100% {
+    transform: translate(0px, 0px); }
+}
+</style></head><body><div class="ziggyLoader" id="ziggyLoader"><div class="container"><svg viewBox="0 0 46 50" focusable="false" aria-hidden="true" style="display:inline-block;fill:currentcolor;height:24px;width:24px;width:46px;height:50px;-webkit-animation:bob 800ms linear infinite normal forwards;animation:bob 800ms linear infinite normal forwards;"><path fill-rule="evenodd" clip-rule="evenodd" d="M39.9436 1.74993C39.685 1.46063 39.3511 1.33714 38.9704 1.33714L38.9668 1.35126C37.5519 1.35126 35.4655 3.05179 34.004 4.4348C30.9264 2.96006 27.145 2.2368 22.552 2.2368C17.959 2.2368 14.1776 2.96006 11.1036 4.43127C9.64206 3.04826 7.55563 1.34773 6.14434 1.34773C5.76009 1.34773 5.42971 1.47121 5.17116 1.76051C2.97341 4.23723 2.76513 10.1679 2.84414 13.5831C1.853 16.2504 1.35025 19.3692 1.35025 22.9325C1.35025 30.4191 3.53362 35.9653 7.83215 39.4334C10.7302 41.7655 14.5116 43.1097 19.3308 43.5119C19.1291 43.6103 18.9246 43.7083 18.7177 43.8075C18.3463 43.9855 17.9671 44.1673 17.5819 44.3621L15.8367 45.2018L14.8455 45.6781C14.5704 45.8188 14.2933 45.9551 14.013 46.0931C13.3089 46.4395 12.5847 46.7959 11.8218 47.2552L11.5597 47.3892C11.4843 47.4421 11.4161 47.5303 11.4017 47.6327C11.3658 47.8232 11.4986 48.0031 11.6926 48.0313C11.996 48.0753 12.2985 48.1241 12.6008 48.1729C13.2681 48.2806 13.935 48.3883 14.6121 48.4441L15.3483 48.5253C15.5925 48.55 15.8331 48.5711 16.0845 48.5852L17.5604 48.6664C17.7902 48.6734 18.0201 48.6734 18.2499 48.6734C19.9987 48.6734 21.7548 48.557 23.4929 48.2889C25.4608 47.996 27.3964 47.4563 29.253 46.7048C31.106 45.9533 32.8728 44.9725 34.4744 43.7835C37.6489 41.3597 40.1447 38.0998 41.6278 34.4694C42.1701 33.1534 42.5795 31.788 42.8668 30.4015C43.4557 28.1753 43.7537 25.6845 43.7537 22.9255C43.7537 19.3727 43.2546 16.2609 42.267 13.5937C42.3496 10.182 42.1449 4.23017 39.9436 1.74993ZM33.7454 2.83305C35.8857 0.927886 37.6022 0 38.9704 0C39.7712 0 40.4607 0.299887 40.9743 0.874965C43.3156 3.51044 43.7214 9.07776 43.6388 13.3785C44.6228 16.141 45.122 19.3515 45.122 22.9255C45.122 25.7585 44.8131 28.3764 44.199 30.7014C43.883 32.1973 43.4449 33.6332 42.8955 34.9633C41.3082 38.8477 38.6867 42.2594 35.3003 44.8419C33.6269 46.0838 31.7703 47.1246 29.7773 47.9325C27.7842 48.7369 25.7409 49.2979 23.7119 49.5978C21.9918 49.8659 20.1567 50 18.2571 50C18.0201 50 17.7794 50 17.5424 49.9929H17.4886L16.0126 49.9118C15.7397 49.8977 15.474 49.8765 15.201 49.8448L14.4828 49.7671C13.7915 49.7105 13.1226 49.6037 12.4731 49.4999C12.4343 49.4937 12.3956 49.4875 12.3569 49.4814L12.355 49.4811C12.0683 49.4353 11.7817 49.3895 11.5058 49.3473C11.0498 49.2838 10.6332 49.0368 10.3639 48.6699C10.0981 48.31 9.99039 47.8549 10.0622 47.4174C10.134 46.9764 10.389 46.5707 10.7697 46.299L10.8487 46.2426L10.9348 46.1967L11.1575 46.0838C11.9511 45.6075 12.6837 45.2477 13.3947 44.8984L13.3947 44.8984C13.4415 44.8754 13.4882 44.8525 13.5348 44.8297C13.7671 44.7158 13.9969 44.6031 14.2243 44.4856L14.2386 44.4785L14.253 44.4715L14.885 44.1681C11.7716 43.4413 9.16085 42.2135 6.97747 40.4565C2.34857 36.7168 0 30.8178 0 22.922C0 19.3374 0.502749 16.1198 1.4903 13.3538C1.4077 9.06012 1.81708 3.50692 4.15488 0.871437C4.66122 0.299887 5.3543 0 6.15152 0C7.51972 0 9.23626 0.927886 11.373 2.82952C14.4757 1.52413 18.1421 0.885549 22.5556 0.885549C26.969 0.885549 30.6427 1.52413 33.7454 2.83305ZM22.5592 9.70929C27.0732 9.70929 30.2944 10.5419 32.3951 12.2389C34.8766 14.2499 36.0904 17.7463 36.0904 22.9255C36.0904 33.8978 30.6822 36.1417 22.5592 36.1417C14.4361 36.1417 9.02797 33.8943 9.02797 22.9255C9.02797 17.7498 10.2346 14.2464 12.7232 12.2389C14.824 10.5349 18.0452 9.70929 22.5592 9.70929ZM17.9051 28.3058C19.4601 28.3058 20.7313 27.0675 20.7313 25.5504V22.3081C20.6559 22.3151 20.5769 22.3187 20.4979 22.3187C19.2482 22.3187 18.2391 21.3343 18.2391 20.1171C18.2391 19.1293 18.9034 18.2931 19.8192 18.0144C19.3164 17.5593 18.6449 17.277 17.9051 17.277C16.3502 17.277 15.0789 18.5154 15.0789 20.0325V25.5504C15.0789 27.0639 16.3502 28.3058 17.9051 28.3058ZM27.2096 28.3058C28.7646 28.3058 30.0358 27.0675 30.0358 25.5504V22.0929C29.9245 22.1105 29.8132 22.1211 29.6982 22.1211C28.4485 22.1211 27.4395 21.1367 27.4395 19.9196C27.4395 18.967 28.0607 18.159 28.9262 17.8521C28.4485 17.4922 27.856 17.277 27.2096 17.277C25.6547 17.277 24.3834 18.5154 24.3834 20.0325V25.5504C24.3834 27.0639 25.6547 28.3058 27.2096 28.3058Z" fill="white"></path></svg><div style="margin-top:18px;">Preparing your game…</div></div></div><script type="text/javascript">function loadScript(url, callback) {
+  var head = document.head;
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = url;
+  script.async = true;
+  script.onreadystatechange = callback;
+  script.onload = callback;
+  head.appendChild(script);
+}
+var options = {"loader":"iframe","loaderOptions":{"url":"https://stabfish-io.game-files.crazygames.com/stabfish-io/131/index.html"},"thumbnail":"stabfish-io_16x9/20240416060337/stabfish-io_16x9-cover","gameName":"Stabfish.io","gameHttps":true,"gameSlug":"stabfish-io","gameId":"18019","gameStatus":"published","showAdOnExternal":"ALWAYS","showAdOnInternal":"DEFAULT","disableEmbedding":false,"dollarRate":0.9146595225660225,"upvotes":193132,"downvotes":32077,"releaseDate":null,"locale":"en_US","controls":{"text":"<h3>Controls</h3>\n<h3>PC</h3>\n<ul>\n    <li>Move your mouse to control the movement</li>\n    <li>Press the left mouse button to boost the speed</li>\n</ul>\n<h3>Mobile</h3>\n<ul>\n    <li>Swipe to control the direction</li>\n    <li>Hold two fingers on the screen to boost</li>\n</ul>"},"videoThumbnail":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-205x115_30fps.mp4","video":{"original":"https://videos.crazygames.com/stabfish-io/2/stabfish-io.mp4","sizes":[{"width":205,"height":115,"location":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-205x115_30fps.mp4"},{"width":249,"height":140,"location":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-249x140_30fps.mp4"},{"width":364,"height":208,"location":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-364x208_30fps.mp4"},{"width":494,"height":276,"location":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-494x276_30fps.mp4"},{"width":611,"height":343,"location":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-611x343_30fps.mp4"}],"blurredVideo":{"width":922,"height":532,"location":"https://videos.crazygames.com/stabfish-io/2/stabfish-io-landscape-922x532_30fps_blurred.mp4"}},"sandbox":true,"totalSizeBytes":105965009,"minTimeBetweenMidrollAdsInMs":120000,"minTimeBetweenRewardedAdsInMs":5000,"noMidrollAdInFirstMinutes":2,"noRewardedAdInFirstMinutes":0,"categoryEnSlug":"io","tagsEnSlugs":["grow","water","top-down","battle","shark","mouse","collect","killing"],"isKids":false,"androidFriendly":true,"iosFriendly":true,"hasMidroll":true,"hasRewarded":true,"showExternalProviderWarning":false,"fullscreen":"ADDS_VALUE","orientation":"PORTRAIT","apsStorageType":"disabled","userProgressionSaveMessage":"ingame","category":"Shark","categoryLink":"https://www.crazygames.com/t/shark","gameLink":"https://www.crazygames.com/game/stabfish-io","domainHasNoCMP":false,"source":"games"};
+var SDK_READY = false;
+var GF_READY = false;
+var GF_LOAD_CALLED = false;
 
-    <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
-    <!-- END PIXI -->
+// Build GF path
+var gfBuildPath = 'https://builds.crazygames.com/gameframe'
+var gfDefaultVersion = '1'
+var useLocalGF = false
+var customGFHost = ''
+var params = new URLSearchParams(window.location.search);
+var version = params.get('v');
+// Validate version param to prevent XSS
+if(version) {
+  var versionRegex = /^\d+(\.\d+)?(\.\d+)?$/;
+  if(!versionRegex.test(version)) {
+    console.error('Invalid Gameframe version provided, falling back to default version');
+    version = null;
+  }
+}
+var gameframeJs = gfBuildPath + '/v' + (version || gfDefaultVersion) + '/bundle.js';
+if (useLocalGF) {
+  gameframeJs = 'http://localhost:3002/static/js/bundle.js';
+}
 
-    <script>
-        var isAip = false;
-        var PokiSDK = undefined;
-    </script>
-    <!-- HIDE FOR CRAZYGAMES -->
-    <script>
-        var isAip = true;
-        var PokiSDK;
-    </script>
-    <script>
-        window.aiptag = window.aiptag || { cmd: [] };
-        aiptag.cmd.display = aiptag.cmd.display || []; aiptag.cmd.player = aiptag.cmd.player || [];
-        // Show GDPR consent tool
-        // aiptag.gdprShowConsentTool = true;
-        aiptag.cmp = {
-            show: true,
-            position: "bottom",  //centered or bottom
-            button: false,
-            buttonText: "Privacy settings",
-            buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
-        };
-        // If you use your own GDPR consent tool please set aiptag.gdprConsent = false; if an EU user has declined or not yet accepted marketing cookies, for users outside the EU or for users that accepted the GDPR please use aiptag.gdprConsent = true;
-        // aiptag.gdprShowConsentToolButton = true;
-        aiptag.cmd.player.push(function () {
-            adplayer = new aipPlayer({
-                AD_WIDTH: 960,
-                AD_HEIGHT: 540,
-                AD_FULLSCREEN: true,
-                AD_CENTERPLAYER: false,
-                LOADING_TEXT: 'loading advertisement',
-                PREROLL_ELEM: function () { return document.getElementById('preroll'); },
-                AIP_COMPLETE: function () {
-                    /*******************
-                     ***** WARNING *****
-                     *******************
-                     Please do not remove the PREROLL_ELEM
-                     from the page, it will be hidden automaticly.
-                     If you do want to remove it use the AIP_REMOVE callback.
-                    */
-                    // alert("Ad Completed");
-                    aipVideoAdCompleted();
-                },
-                AIP_REMOVE: function () {
-                    // Here it's save to remove the PREROLL_ELEM from the page.
-                    // But it's not necessary.
-                    aipVideoAdRemoved();
-                },
-                AIP_REWARDEDCOMPLETE: function (evt) {
-                    aipRewardedAdCompleted(evt);
-                },
-                AIP_REWARDEDGRANTED: function () {
-                    aipRewardedAdGranted();
-                }
-            });
-        });
-    </script>
-    <script async src="https://api.adinplay.com/libs/aiptag/pub/SFH/stabfish.io/tag.min.js"></script>
-    <!--<script src="https://game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>-->
-    <!-- END HIDE FOR CRAZYGAMES -->
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s);
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '246880370429019');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=246880370429019&ev=PageView&noscript=1" /></noscript>
-    <!-- End Facebook Pixel Code -->
-    <link rel="stylesheet" href="styles.css?t=1725996980650">
-</head>
+if (customGFHost) {
+  gameframeJs = customGFHost + '/static/js/bundle.js';
+}
 
-<body style="margin:0px;">
-    <!-- PIXI -->
-    <canvas id="stage" width="960" height="640" style="width: 100%; height: 100%; position:absolute;"></canvas>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-        WebFont.load({
-            google: {
-                families: ['Noto Sans', 'Pacifico']
-            },
-            active: e => {
-                init();
-            },
-            inactive: e => {
-                init();
-            }
-        });
-    </script>
-    <!-- END PIXI -->
-    <div id="titleMenu">
-        <div style="display: flex;">
-            <div class="left-col flex-column justify-content-end">
-                <div class="left-col-bottom flex-column">
-                    <div class="yt-subscribe">
-                        <script src="https://apis.google.com/js/platform.js"></script>
-                        <div class="g-ytsubscribe" data-channelid="UC2I5xnLIJ-neeuKcMTYQrzg" data-layout="full"
-                            data-theme="dark" data-count="default"></div>
-                    </div>
-                    <div id="latestChangelog">
-                        <a onclick="showChangelog()">
-                            <div id="latestChangelogItem"></div>
-                            <div id="toUnderline">
-                                View full changelog>>
-                            </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            <div class="middle-col">
-                <img id="logo" src="./brand/stabfish-logo.svg" width="100%" />
-                <input id="nameInput" type="text"></input>
-
-                <div class="d-flex my-2">
-                    <button id="playButton" class="btn btn-primary btn-100">Loading Asssets...0%</button>
-                    <!-- <div class="btn btn-deep-teal d-flex align-items-center ml-2" onclick="triggerFullscreen()"><i
-                            class="fas fa-expand"></i></div> -->
-                    <!-- <div class="btn btn-yellow d-flex align-items-center ml-2" onclick="showSettings()"><i
-                            class="fas fa-cog"></i></div> -->
-                </div>
-                <div style="display:flex;">
-                    <a id="showRecoverButton" style="color:orange; display:none;">❗️ Recover/Transfer Data</a>
-                    <a id="loginOpen" style="color:orange; display:none;">⚓ Login</a>
-                    <a id="logoutOpen" style="color:orange; display:none;">⚓ Logout</a>
-                    <a style="margin-left: auto;" onclick="showFeedback()">✉️ Feedback</a>
-                </div>
-                <div class="d-flex my-2">
-                    <a href="https://www.youtube.com/channel/UC2I5xnLIJ-neeuKcMTYQrzg/" target="_blank"
-                        class="w-100 mr-1">
-                        <button type="button" class="btn btn-youtube btn-lg w-100" data-toggle="tooltip"
-                            data-placement="bottom" title="Youtube"><i class="fab fa-youtube pr-2"></i>
-                            <!-- <span class="text-sm">Youtube</span> -->
-                        </button>
-                    </a>
-                    <a href="https://discord.gg/Hg3kkGP" target="_blank" class="w-100 mx-1">
-                        <button type="button" class="btn btn-discord btn-lg w-100" data-toggle="tooltip"
-                            data-placement="bottom" title="Discord"><i class="fab fa-discord pr-2"></i>
-                            <!-- <span class="text-sm">Discord</span> -->
-                        </button>
-                    </a>
-                    <a href="https://www.reddit.com/r/stabfishio/" target="_blank" class="w-100 mx-1">
-                        <button type="button" class="btn btn-reddit btn-lg w-100" data-toggle="tooltip"
-                            data-placement="bottom" title="Reddit"><i class="fab fa-reddit pr-2"></i>
-                            <!-- <span class="text-sm">Reddit</span> -->
-                        </button>
-                    </a>
-                    <button type="button" class="btn btn-yellow ml-1" style="width: auto;" onclick="showSettings()"
-                        data-toggle="tooltip" data-placement="bottom" title="Settings"><i
-                            class="fa fa-cog"></i></button>
-                </div>
-                <div>
-                    <div id="landingBanner">
-                        <div id='stabfish-io_300x250'></div>
-                    </div>
-                </div>
-            </div>
-            <div class="right-col">
-                <div id="highscoreContainer">
-                    <div class="highscore-item">
-                        <div class="rank"></div>
-                        <div class="name"></div>
-                        <div class="kills-header">Kills</div>
-                        <div class="score-header">Score</div>
-                    </div>
-                    <div id="connectingToServer">
-                        Connecting To Server...
-                    </div>
-                    <div id="highscores">
-                    </div>
-                    <hr />
-                    <div style="display: flex; justify-content: center;">
-                        <button id="todayButton" class="btn btn-highscore btn-sm active">Today</button>
-                        <button id="allButton" class="btn btn-highscore btn-sm mx-1">All</button>
-                        <button id="krakenRunButton" class="btn btn-highscore btn-sm ">Kraken&nbsp;Run</button>
-                        <button id="dragonRunButton" class="btn btn-highscore ml-1 btn-sm ">Dragon&nbsp;Run</button>
-                        <button id="topScoresButton" class="btn btn-highscore btn-sm active"
-                            style="display:none;">Score</button>
-                        <button id="topKillsButton" class="btn btn-highscore btn-sm ml-1"
-                            style="display:none;">Kills</button>
-                        <button id="topCombosButton" class="btn btn-highscore btn-sm ml-1"
-                            style="display:none;">Combos</button>
-                        <button id="topSurvivalsButton" class="btn btn-highscore btn-sm ml-1"
-                            style="display:none;">Survive</button>
-                    </div>
-                    <template id="sampleHighscoreItem">
-                        <div class="highscore-item">
-                            <div class="rank">1.</div>
-                            <div class="name ellipsis">dragonwhites</div>
-                            <div class="kills">10</div>
-                            <div class="score">1000</div>
-                        </div>
-                    </template>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="gameoverAd">
-        <div id="youtubeBar"></div>
-        <div id="gameOverBanner">
-            <div id="stabfish-io_320x50"></div>
-            <div id="stabfish-io_468x60"></div>
-            <div id="stabfish-io_320x100"></div>
-            <div id="stabfish-io_336x280"></div>
-            <div id="stabfish-io_728x90"></div>
-            <div id="stabfish-io_970x250"></div>
-        </div>
-    </div>
-    <div class="metrics">
-        <div>players: <span id="numPlayers">0</span> | bots: <span id="numBots">0</span></div>
-        <div id="ping">ping: 100ms</div>
-        <div id="renderDelay">render delay: 100ms</div>
-        <a id="spectateButton" style="color:orange; display:none;">spectate</a>
-    </div>
-    <div id="footer">
-        <a id="portal_crazygames" href="https://crazygames.com" title="https://crazygames.com" target="_blank"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">
-            <img src="./brand/Logo_Purple_Transparent.png" width="30px" />
-        </a>
-        <!-- HIDE FOR CRAZYGAMES -->
-        <a id="portal_y8" href="https://www.y8.com/" title="https://www.y8.com/" target="_blank"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">
-            <img src="./brand/y8-logo.svg" height="30px" />
-        </a>
-        <a id="portal_iogf" href="http://iogames.fun" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">Play IO Games</a>
-        <a id="portal_iogs" href="https://iogames.space" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">More IO Games</a>
-        <a id="portal_aiog" href="http://allgames.io" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">More IO Games</a>
-        <a id="portal_isg" href="http://insanegames.io" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">More IO Games</a>
-        <a id="portal_slio" href="http://www.slither-io.com/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">More IO Games</a>
-        <a id="portal_kong" href="http://www.kongregate.com/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">Kongregate</a>
-        <a id="portal_svg" href="https://www.silvergames.com/en/t/multiplayer" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">Silvergames.com</a>
-        <a id="portal_ofg" href="https://www.onlinefreegames.com" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">OnlineFreeGames.com</a>
-        <a id="portal_mtig" href="https://multoigri.ru/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">Multoigri.ru</a>
-        <a id="portal_pki" href="https://poki.com/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">Poki.com</a>
-        <a id="portal_kevin" href="https://kevin.games/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">Kevin.games</a>
-        <a id="portal_tordx" href="https://tordx.com/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">tordx.com</a>
-        <a id="portal_ogio" href="https://onlinegames.io/" target="_blank" title="More IO Games"
-            style="position: absolute; bottom: 10px; left: 10px; display:none;">OnlineGames.io</a>
-        <!-- END HIDE FOR CRAZYGAMES -->
-        <div style="position: absolute; bottom: 10px; right: 10px; color: #cfa2f9; font-size: .8rem;">
-
-            <div id="playerId" class="text-right text-xs text-gray-500"></div>
-            <!-- HIDE FOR CRAZYGAMES -->
-            <a href="javascript:void(0)" onclick="aipAPItag.showCMPScreen()">Privacy settings</a> |
-            <!-- END HIDE FOR CRAZYGAMES -->
-            <span class="d-none d-sm-inline">Zytech AI Sdn. Bhd. |</span>
-            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85ede0e9e9eac5f6f1e4e7e3ecf6edabecea">[email&#160;protected]</a>
-        </div>
-    </div>
-    <div id="overlay" style="display: none;"></div>
-    <div id="xmas2020BannerContainer" class="centerer" style="display: none;">
-        <img id="xmas2020Banner" src="./images/xmas2024-banner.png" style="max-width: 80%;" />
-    </div>
-    <div id="feedbackContainer" class="centerer" style="display: none;">
-        <div id="feedback" class="sf-modal">
-            <h1>✉️ Feedback</h1>
-            <!-- <input id="email" type="text" placeholder="Your Email (if you need us to contact)"
-                style="font-size: 0.8rem; text-align: left;"></input>
-            <textarea id="msg" rows=5 placeholder="Feedback"></textarea>
-            <button id="feedbackButton" class="btn btn-primary" onclick="sendFeedback()">Send</button> -->
-            <div style="margin-bottom: 10px; text-align: left;">
-                Come join us in my new Discord Channel!</br>
-                You can report bugs, send feedback, discuss strategies, and learn latest updates!
-            </div>
-            <a href="https://discord.gg/Hg3kkGP" target="_blank" class="w-100 ml-1">
-                <div class="btn btn-lg btn-discord w-100"><i class="fab fa-discord pr-2"></i>Discord</div>
-            </a>
-        </div>
-    </div>
-    <div id="recoverContainer" class="centerer" style="display: none;">
-        <div id="recover" class="sf-modal">
-            <div style="margin-bottom: 10px; text-align: left;">
-                If your data has lost, it means your browser doesn't support saving data using cookies.
-                To avoid losing data again, you must allow cookies or localStorage in your device/browser.
-                </br>
-                Hit 'Recover' Button to recover data by your current IP.
-                </br>
-                <i>Note: Feel free to use this method to transfer data from another device, it can only works if they
-                    are
-                    under same IP.</i>
-            </div>
-            <button id="recoverButton" class="btn btn-primary">Recover</button>
-        </div>
-    </div>
-
-    <div id="testDisclaimerContainer" class="centerer" style="display: none;">
-        <div id="testDisclaimer" class="sf-modal">
-            <h2>Disclaimer</h2>
-            <div style="margin-bottom: 10px; text-align: left;">
-                This multiplayer server is for testing only.
-                </br>
-                The server might be shut down unanounced.
-                </br>
-                Any progress in the game most probably will not be kept permanently.
-                </br>
-                Play at your discretion.
-                </br>
-                <i>And Thank you very much for testing my server -dragonwhites</i>
-            </div>
-            <button id="testDisclaimerButton" class="btn btn-primary">I understand</button>
-        </div>
-    </div>
-    <div id="settingsContainer" class="centerer" style="display: none;">
-        <div id="settings" class="sf-modal">
-            <h2>⚙️ Settings<span style="font-size: 0.7rem; margin-left: 5px" id="settingsver">v</span></h2>
-            <form id="settingsForm" class="pt-2">
-
-                <label for="control" class="font-weight-bold">Control</label>
-                <div class="mb-2">
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="settingsControlMouse" name="settingsControl"
-                            class="custom-control-input" value="mouse">
-                        <label class="custom-control-label" for="settingsControlMouse">Mouse</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="settingsControlTouch" name="settingsControl"
-                            class="custom-control-input" value="touch">
-                        <label class="custom-control-label" for="settingsControlTouch">Touch Screen</label>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-between my-3">
-                    <label for="fpsSwitch" class="font-weight-bold">Framerate</label>
-                    <div class="d-flex">
-                        <label class="pr-2" for="fpsSwitch">30 FPS</label>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="fpsSwitch">
-                            <label class="custom-control-label" for="fpsSwitch">60 FPS</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="d-flex justify-content-between">
-                        <label for="dpiRange" class="font-weight-bold">Resolution</label>
-                        <div id="dpiRangeText">1.0</div>
-                    </div>
-                    <input type="range" class="custom-range" id="dpiRange" name="dpi" min=0.5 max=2 step=0.1>
-                </div>
-                <div>
-                    <label for="detailsRange" class="font-weight-bold">Details</label>
-                    <div class="d-flex justify-content-between">
-                        <div class="text-sm">minimum</div>
-                        <div class="text-sm">maximum</div>
-                    </div>
-                    <input type="range" class="custom-range" id="detailsRange" name="details" min=0 max=10 step=10>
-                </div>
-                <div class="mt-2">
-                    <div class="d-flex justify-content-between">
-                        <label for="detailsRange" class="font-weight-bold">Team Colors</label>
-                        <div class="btn btn-primary btn-sm" id="defaultTeamColorButton">default</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3">green<input id="teamColorGreen" value='#39E700' /></div>
-                        <div class="col-3">red<input id="teamColorRed" value='#FF0033' /></div>
-                        <div class="col-3">yellow<input id="teamColorYellow" value='#FFCC00' /></div>
-                        <div class="col-3">purple<input id="teamColorPurple" value='#6633CC' /></div>
-                    </div>
-                </div>
-            </form>
-            <div id="webGlWarning" class="text-warning">WebGL is disabled! Enable it for better performance!</div>
-            <button id="closeSettingsButton" class="btn btn-primary" onclick="hideSettings()">Close</button>
-        </div>
-    </div>
-
-    <div id="changelogContainer" class="centerer" style="display: none;">
-        <div id="changelogContent">
-            <span style="font-weight: bolder; font-size: 1rem; padding: 5px;">Change Logs</span>
-            <span style="font-size: 0.7rem;" id="changelogver">v</span>
-            <div style="padding-left:5px;"><a href="https://discord.gg/JTHQmN8" target="_blank">Visit discord for more
-                    detailed logs</a></div>
-            <div id="changelogItemContainer"></div>
-        </div>
-        <template id="changelogItem">
-            <div class="changelog-item">
-                <div class="date">1/7/2020</div>
-                <div class="content">dragonwhites</div>
-            </div>
-        </template>
-    </div>
-
-    <div id="replyContainer">
-        <div class="content">
-            <div class="title">REPLY FROM DEV</div>
-            <div id="replyMessage">Thank you for your feedback!</div>
-        </div>
-        <button id="dismissMessage" class="btn" onclick="dismissReply()">Dismiss</button>
-    </div>
-
-    <div id="ytTips" class="">
-        <div id="ytTipsContent">
-            <a class="ytTips-link d-flex" href="https://www.youtube.com/watch?v=MpAmi8rPnxs" tabindex="-1"
-                target="_blank" title="How to get 100 KILLS in STABFISH.io (Unlock Psycho Killer Whale)">
-                <div class="ytTips-cover">
-                    <div class="ytTips-cover-img"
-                        style="background-image: url(&quot;https://i.ytimg.com/vi_webp/MpAmi8rPnxs/maxresdefault.webp&quot;);">
-                    </div>
-                </div>
-                <div class="ytTips-right">
-                    <i class="fa fa-youtube text-youtube pr-2"></i>How to get 100 KILLS in STABFISH.io (Unlock Psycho
-                    Killer Whale)
-                </div>
-            </a>
-        </div>
-        <div id="ytTipsCloseBtn">x</div>
-    </div>
-
-    <div class="modal fade funny-modal" id="skinModal" tabindex="-1" role="dialog" aria-labelledby="skinModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Skins</h5>
-                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex justify-content-center" id="skinsContainer">
-                        <div class="skin-btn-container mb-3 mx-2 pointable">
-                            <div class="skin-btn-padding">
-                                <div class="skin-btn">
-                                    <div class="
-                            no-skin-container
-                            d-flex
-                            align-items-center
-                            h-100
-                            w-100
-                            justify-content-center
-                            text-center
-                        "> NO<br>SKIN </div>
-                                </div>
-                            </div>
-                            <div class="equipped-icon"><i class="fa fas fa-tshirt" aria-hidden="true"></i></div>
-                        </div>
-                    </div>
-
-                    <template id="skinOption">
-
-                        <div class="skin-btn-container mb-3 mx-2 pointable">
-                            <div class="skin-btn-padding">
-                                <div class="skin-btn"><img src="images/skins/skin1/skinFull0001.png?v=1"
-                                        class="skin-img"></div>
-                            </div>
-                            <div class="equipped-icon"><i class="fa fas fa-tshirt" aria-hidden="true"></i></div>
-                        </div>
-                    </template>
-                    <div id="skinModalLoginPart" style="display: none;">
-                        <div class="d-flex flex-column align-items-center text-white text-sm mt-2">
-                            Login to start summoning skins.
-                            <div class="mt-1">
-                                <button id="openLoginModal2" type="button" class="btn btn-orange btn-sm w-100 mb-1"
-                                    data-placement="bottom">
-                                    Login
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="skinModalSummonPart" style="display: none;">
-                        <div class="d-flex flex-column align-items-center text-white text-sm mt-2">
-                            Summon skins from another universe!
-                            <div class="mt-1">
-                                <a id="toSummon" target="blackpearl">
-                                    <button type="button" class="btn btn-purple btn-sm w-100 mb-1"
-                                        data-placement="bottom">
-                                        Summon
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button id="equipSkinButton" type="button" class="btn btn-primary">Equip</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade funny-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Login</h5>
-                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="loginModalAlert" class="w-100 alert text-center">
-                        Login to use this feature.
-                    </div>
-                    <div class="text-center text-sm text-gray-500 mb-1">Stabfish 2 account can be used here.</div>
-                    <form id="loginForm">
-
-                        <input id="emailInput" type="text" placeholder="Email"></input>
-                        <input id="passwordInput" type="password" placeholder="Password" class="mb-1"></input>
-                        <input id="passwordConfirmInput" style="display:none;" type="password"
-                            placeholder="Confirm Password"></input>
-                        <div id="loginError" class="text-xs text-pink"></div>
-                        <div id="loginSuccess" class="text-xs text-green"></div>
-                        <input type="submit" id="loginButton" type="button" value="Sign In"
-                            class="btn btn-primary btn-md w-100 mb-1 mt-2" data-placement="bottom" />
-                    </form>
-                    <div class="d-flex justify-content-between">
-                        <a id="signInButton" style="color:orange; display:none;">Sign In</a>
-                        <a id="signUpButton" style="color:orange;">Register</a>
-                        <a id="forgotPasswordButton" style="color:orange;">Forgot Password</a>
-                    </div>
-                    <hr />
-                    <div class="text-center text-sm text-gray-500 mb-1">Other Methods</div>
-                    <button id="loginGoogle" type="button" class="btn btn-brand-google btn-md w-100 mb-1"
-                        data-placement="bottom"><i class="fab fa-google pr-2"></i>
-                        Login with Gmail
-                    </button>
-                    <button id="loginFacebook" type="button" class="btn btn-brand-facebook btn-md w-100 mb-1"
-                        data-placement="bottom"><i class="fab fa-facebook pr-2"></i>
-                        Login with Facebook
-                    </button>
-                    <button id="loginTwitter" type="button" class="btn btn-brand-twitter btn-md w-100 mb-1"
-                        data-placement="bottom"><i class="fab fa-twitter pr-2"></i>
-                        Login with Twitter
-                    </button>
-                    <button id="loginCrazyGames" type="button" class="btn btn-brand-crazyGames btn-md w-100 mb-1"
-                        style="display: none;" data-placement="bottom"><img class="pr-2" style="height: 15px;"
-                            src="images/icons/czg.svg" />
-                        Login with CrazyGames
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade funny-modal" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Ready to Leave?</h5>
-                    <button type="button" class="btn close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center text-sm text-gray-500 mb-1">Click "Logout" if you are ready to end your
-                        current session.</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button id="logoutButton" type="button" class="btn btn-primary">Logout</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="announcement" class="scroll-left">
-    </div>
-    <!-- HIDE FOR CRAZYGAMES -->
-    <div id="preroll"></div>
-    <!-- END HIDE FOR CRAZYGAMES -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8d14d2203ebefa6a","version":"2024.10.1","r":1,"token":"bb9dabbca1a04a8bbda4656485610673","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
-</body>
-
-</html>
+loadScript(gameframeJs, function() {
+  Crazygames.load(options).then(function() {
+    var loaderWrapper = document.getElementById('ziggyLoader');
+    var loaderStyles = document.getElementById('ziggyLoaderStyles');
+    if (loaderWrapper && loaderStyles) {
+      loaderWrapper.remove();
+      loaderStyles.remove();
+    }
+  });   
+});</script></body></html>
