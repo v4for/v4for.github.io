@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="126px" height="71px" viewBox="0 0 126 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-346.000000, -43.000000)">
+        <g id="logo-without-border-copy" transform="translate(346.000000, 43.000000)">
+            <g id="Logo-/-White-version" transform="translate(13.000000, 13.000000)">
+                <path d="M36,0 L45,0 L45,18 L36,18 L36,0 Z M27,18 L36,18 L36,27 L27,27 L27,18 Z M9,18 L18,18 L18,27 L9,27 L9,18 Z M18,27 L27,27 L27,45 L18,45 L18,27 Z M0,0 L9,0 L9,18 L0,18 L0,0 Z" id="Combined-Shape" fill="#000000"></path>
+                <path d="M62,0 L91,0 L91,9 L62,9 L62,0 Z M91,9 L100,9 L100,18 L91,18 L91,9 Z M53,9 L62,9 L62,18 L53,18 L53,9 Z M53,27 L62,27 L62,36 L53,36 L53,27 Z M62,18 L91,18 L91,27 L62,27 L62,18 Z M62,36 L91,36 L91,45 L62,45 L62,36 Z M91,27 L100,27 L100,36 L91,36 L91,27 Z" id="Combined-Shape" fill="#E81919"></path>
+            </g>
+        </g>
+    </g>
+</svg>
