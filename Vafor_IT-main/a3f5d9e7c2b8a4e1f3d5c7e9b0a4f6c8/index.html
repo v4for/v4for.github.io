@@ -104,13 +104,12 @@
   <script>
 //places the script is relevant, here, adinLoader.js, preroll/adinGameLoader.js and crazygames2.js
 //make sure your website is here
+const url = window.location.href; 
+const urlObject = new URL(url);   
+const domain = urlObject.hostname;
 
-const url = window.location;
-const domain = getDomainName(url);
+console.log(domain); // Log the domain name
 
-console.log(domain); 
-
-localStorage.setItem('srx', domain);
 
 const srcUrl = localStorage.getItem('srx');
 
