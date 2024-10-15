@@ -22,7 +22,7 @@ To ensure proper functionality, please make sure to copy the `poki-loader.js` an
 
 ## Important Setup Instructions
 - **Vercel:** Avaid vercel as it will break a lot of things.
-- **Buildnow.gg:** Make sure to change the localstorage variable to the website you are hosting on.
+
 
 ---
 
