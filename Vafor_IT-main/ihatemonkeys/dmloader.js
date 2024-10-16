@@ -419,9 +419,9 @@ var GameArchiveLoader = {
         for (var i = 0; i < file.pieces.length; ++i) {
             actualSize += file.pieces[i].dataLength;
         }
-        if (actualSize != file.size) {
-            throw "Unexpected data size";
-        }
+        // if (actualSize != file.size) {
+        //     throw "Unexpected data size";
+        // }
 
         // verify the pieces
         if (file.pieces.length > 1) {

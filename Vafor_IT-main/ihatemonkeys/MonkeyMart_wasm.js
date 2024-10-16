@@ -800,16 +800,17 @@ function _PokiSdkJs_AddParameterForURL(key, value) {
     PokiSdk._urlParameters[UTF8ToString(key)] = UTF8ToString(value)
 }
 
-function _PokiSdkJs_CaptureError(error) {}
+function _PokiSdkJs_CaptureError(error) {
+}
 
 function _PokiSdkJs_CommercialBreak(callback) {
     PokiSdk._callback = callback;
     JumpGame.showInterstitial({
-        beforeShowAd: () => {
-
+        beforeShowAd: ()=> {
+                                   
         },
-        afterShowAd: () => {
-
+        afterShowAd: ()=> {
+                                    
         }
     })
     PokiSdk._commercialBreakCallback()
@@ -836,17 +837,17 @@ function _PokiSdkJs_IsAdBlocked() {
 function _PokiSdkJs_RewardedBreak(callback) {
     PokiSdk._callback = callback;
     JumpGame.showReward({
-        beforeShowAd: () => {
-
+        beforeShowAd: ()=> {
+                                   
         },
-        afterShowAd: () => {
-            PokiSdk._rewardedBreakCallback(true);
+        afterShowAd: ()=> {
+            PokiSdk._rewardedBreakCallback(true);                    
         }
     })
 }
 
 function _PokiSdkJs_SetDebug(value) {
-
+ 
 }
 
 function _PokiSdkJs_ShareableURL(callback) {

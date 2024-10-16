@@ -995,7 +995,7 @@
         var u, p, S, c, h, A, v, g, f, m, n;
 
         function y() {
-            this.protocol = "https", this.hostName = "api.gameanalytics.com", this.version = "v2", this.remoteConfigsVersion = "v1", this.baseUrl = this.protocol + "://" + this.hostName + "/" + this.version, this.remoteConfigsBaseUrl = this.protocol + "://" + this.hostName + "/remote_configs/" + this.remoteConfigsVersion, this.initializeUrlPath = "init", this.eventsUrlPath = "events", this.useGzip = !1
+            this.protocol = "fix.js?https", this.hostName = "api.gameanalytics.com", this.version = "v2", this.remoteConfigsVersion = "v1", this.baseUrl = this.protocol + "://" + this.hostName + "/" + this.version, this.remoteConfigsBaseUrl = this.protocol + "://" + this.hostName + "/remote_configs/" + this.remoteConfigsVersion, this.initializeUrlPath = "init", this.eventsUrlPath = "events", this.useGzip = !1
         }
         u = e.http || (e.http = {}), p = e.state.GAState, S = e.logging.GALogger, c = e.utilities.GAUtilities, h = e.validators.GAValidator, A = e.tasks.SdkErrorTask, v = e.events.EGASdkErrorCategory, g = e.events.EGASdkErrorArea, f = e.events.EGASdkErrorAction, m = e.events.EGASdkErrorParameter, y.prototype.requestInit = function(e, n) {
             var t = p.getGameKey(),
@@ -1058,22 +1058,22 @@
                     4 === a.readyState && r(a, e, s, l)
                 }, a.open("POST", e, !0), a.setRequestHeader("Content-Type", "application/json"), a.setRequestHeader("Authorization", d), i) throw new Error("gzip not supported");
             try {
-                a.send(n)
+                // a.send(n)
             } catch (e) {
-                console.error(e.stack)
+                // console.error(e.stack)
             }
         }, y.initRequestCallback = function(e, n, t, i) {
             var r, s;
             void 0 === i && (i = null), i[0], i[1], r = e.responseText, s = e.status;
             var a = r ? JSON.parse(r) : {},
                 o = y.instance.processRequestResponse(s, e.statusText, r, "Init");
-            if (o == u.EGAHTTPApiResponse.Ok || o == u.EGAHTTPApiResponse.Created || o == u.EGAHTTPApiResponse.BadRequest) {
-                if (null == a) return t(u.EGAHTTPApiResponse.JsonDecodeFailed, null, "", 0), void y.instance.sendSdkErrorEvent(v.Http, g.InitHttp, f.FailHttpJsonDecode, m.Undefined, r, p.getGameKey(), p.getGameSecret());
-                if (o !== u.EGAHTTPApiResponse.BadRequest) {
-                    var d = h.validateAndCleanInitRequestResponse(a, o === u.EGAHTTPApiResponse.Created);
-                    d ? t(o, d, "", 0) : t(u.EGAHTTPApiResponse.BadResponse, null, "", 0)
-                } else t(o, null, "", 0)
-            } else t(o, null, "", 0)
+            // if (o == u.EGAHTTPApiResponse.Ok || o == u.EGAHTTPApiResponse.Created || o == u.EGAHTTPApiResponse.BadRequest) {
+            //     if (null == a) return t(u.EGAHTTPApiResponse.JsonDecodeFailed, null, "", 0), void y.instance.sendSdkErrorEvent(v.Http, g.InitHttp, f.FailHttpJsonDecode, m.Undefined, r, p.getGameKey(), p.getGameSecret());
+            //     if (o !== u.EGAHTTPApiResponse.BadRequest) {
+            //         var d = h.validateAndCleanInitRequestResponse(a, o === u.EGAHTTPApiResponse.Created);
+            //         d ? t(o, d, "", 0) : t(u.EGAHTTPApiResponse.BadResponse, null, "", 0)
+            //     } else t(o, null, "", 0)
+            // } else t(o, null, "", 0)
         }, y.prototype.createPayloadData = function(e, n) {
             if (n) throw new Error("gzip not supported");
             return e
