@@ -2,13 +2,19 @@
 // wraps XMLHttpRequest and adds retry support and progress updates when the
 // content is gzipped (gzipped content doesn't report a computable content length
 // on Google Chrome)
+const url3 = window.location.href; 
+const urlObject3 = new URL(url);   
+const domain3 = urlObject3.hostname;
+
+console.log(domain3); // Log the domain name
+
 var FileLoader = {
     options: {
         retryCount: 4,
         retryInterval: 1000,
     },
     // do xhr request with retries
-    request: function(url, method, responseType, currentAttempt) {
+    request: function(domain3, method, responseType, currentAttempt) {
         if (typeof method === 'undefined') throw "No method specified";
         if (typeof method === 'responseType') throw "No responseType specified";
         if (typeof currentAttempt === 'undefined') currentAttempt = 0;
@@ -19,7 +25,7 @@ var FileLoader = {
                 var onerror = this.onerror;
 
                 var xhr = new XMLHttpRequest();
-                xhr.open(method, url, true);
+                xhr.open(method, domain3, true);
                 xhr.responseType = responseType;
                 xhr.onprogress = function(e) {
                     if (onprogress) onprogress(xhr, e);
