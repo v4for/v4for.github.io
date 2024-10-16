@@ -2,6 +2,12 @@
 // wraps XMLHttpRequest and adds retry support and progress updates when the
 // content is gzipped (gzipped content doesn't report a computable content length
 // on Google Chrome)
+const url = window.location.href; 
+const urlObject = new URL(url);   
+const domain = urlObject.hostname;
+
+console.log(domain); // Log the domain name
+
 var FileLoader = {
     options: {
         retryCount: 4,
@@ -12,7 +18,6 @@ var FileLoader = {
         if (typeof method === 'undefined') throw "No method specified";
         if (typeof method === 'responseType') throw "No responseType specified";
         if (typeof currentAttempt === 'undefined') currentAttempt = 0;
-        console.log(url)
         var obj = {
             send: function() {
                 var onprogress = this.onprogress;
