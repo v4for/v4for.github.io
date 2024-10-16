@@ -2,18 +2,13 @@
 // wraps XMLHttpRequest and adds retry support and progress updates when the
 // content is gzipped (gzipped content doesn't report a computable content length
 // on Google Chrome)
-const url4 = window.location.href; 
-const urlObject4 = new URL(url4);   
-const domain4 = urlObject4.hostname;
-console.log(domain4);
-
 var FileLoader = {
     options: {
         retryCount: 4,
         retryInterval: 1000,
     },
     // do xhr request with retries
-    request: function(domain4, method, responseType, currentAttempt) {
+    request: function(url, method, responseType, currentAttempt) {
         if (typeof method === 'undefined') throw "No method specified";
         if (typeof method === 'responseType') throw "No responseType specified";
         if (typeof currentAttempt === 'undefined') currentAttempt = 0;
@@ -24,7 +19,7 @@ var FileLoader = {
                 var onerror = this.onerror;
 
                 var xhr = new XMLHttpRequest();
-                xhr.open(method, domain4, true);
+                xhr.open(method, url, true);
                 xhr.responseType = responseType;
                 xhr.onprogress = function(e) {
                     if (onprogress) onprogress(xhr, e);
@@ -47,8 +42,8 @@ var FileLoader = {
     },
     // Do HTTP HEAD request to get size of resource
     // callback will receive size or undefined in case of an error
-    size: function(domain4, callback) {
-        var request = FileLoader.request(domain4, "HEAD", "text");
+    size: function(url, callback) {
+        var request = FileLoader.request(url, "HEAD", "text");
         request.onerror = function(xhr, e) {
             callback(undefined);
         };
@@ -68,8 +63,8 @@ var FileLoader = {
     // onprogress(loaded, total)
     // onerror(error)
     // onload(response)
-    load: function(domain4, responseType, estimatedSize, onprogress, onerror, onload) {
-        var request = FileLoader.request(domain4, "GET", responseType);
+    load: function(url, responseType, estimatedSize, onprogress, onerror, onload) {
+        var request = FileLoader.request(url, "GET", responseType);
         request.onprogress = function(xhr, e) {
             if (e.lengthComputable) {
                 onprogress(e.loaded, e.total);
@@ -84,7 +79,7 @@ var FileLoader = {
             }
         };
         request.onerror = function(xhr, e) {
-            onerror("Error loading '" + domain4 + "' (" + e + ")");
+            onerror("Error loading '" + url + "' (" + e + ")");
         };
         request.onload = function(xhr, e) {
             if (xhr.readyState === 4) {
@@ -96,7 +91,7 @@ var FileLoader = {
                         onload(res);
                     }
                 } else {
-                    onerror("Error loading '" + domain4 + "' (" + e + ")");
+                    onerror("Error loading '" + url + "' (" + e + ")");
                 }
             }
         };
