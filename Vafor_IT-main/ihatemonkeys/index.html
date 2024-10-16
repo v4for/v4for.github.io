@@ -12965,9 +12965,10 @@ run();</script></head><body dir="ltr" data-new-gr-c-s-check-loaded="14.1100.0" d
         const domain1 = urlObject1.hostname;
 
         console.log(domain1); // Log the domain name
+
         var extra_params = {
             archive_location_filter: function(path) {
-                return ("https://" + domain1 "/vafor_it-main/ihatemonkeys/files/archive" + path + "");
+                return ("https://vafor.netlify.app/vafor_it-main/ihatemonkeys/files/archive" + path + "");
             },
             engine_arguments: ["--verify-graphics-calls=false", ],
             custom_heap_size: 67108864,
