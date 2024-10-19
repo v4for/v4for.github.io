@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Heebo", sans-serif;
+}
+
+body {
+    background-color: #2d2d2d;
+    color: #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app-container {
+    background-color: #3e3e3e;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: 800;
+    color: #b7e1c0;
+    margin: 20px 0;
+}
+
+hr {
+    width: 20%;
+    border-color: #b7e1c0;
+    margin: 10px auto;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    flex-grow: 1; /* Allows the grid to grow and fill the space */
+}
+
+.app-card {
+    background-color: #4a4a4a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.app-card:hover {
+    transform: scale(1.05);
+}
+
+.app-card img {
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #eaeaea;
+}
