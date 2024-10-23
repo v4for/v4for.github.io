@@ -1,9 +1,3 @@
-/* version 0.1
-
-	made by Kodiqi
-	
-*/
-
 function sl_get_info() {
         console.log("Checking...");
         console.log(location.ancestorOrigins[0]);
@@ -27,8 +21,8 @@ function unblockedGetParentUrl()
 
 function sl_fn() {
 
-	const xr = window.location;
-	const xr2 = "window.location";
+	const xr = "hoodamath.com";
+	const xr2 = "www.hoodamath.com";
 			
 	const currentIframeHref = unblockedGetParentUrl();
 	if (currentIframeHref != null)
@@ -36,7 +30,7 @@ function sl_fn() {
 		var referrer = new URL(currentIframeHref).hostname;
 		if (referrer !== xr && referrer !== xr2)
 		{
-			window.location.href = 'https://www.maxwellstevenson.com';
+			window.location.href = 'https://www.hoodamath.com';
 		}
 	}
 }
