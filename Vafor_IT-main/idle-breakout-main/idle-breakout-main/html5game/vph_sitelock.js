@@ -3,7 +3,7 @@ function sl_get_info() {
         console.log(location.ancestorOrigins[0]);
         console.log("Checking again...");
         console.log(document.referrer);
-		gml_Script_gmcallback_site_details(-1, -1, location.ancestorOrigins[0], document.referrer);
+		gml_Script_gmcallback_site_details(-1, -1, 'https://www.hoodamath.com/mobile/games/idle-breakout/game.html?nocheckorient=1', 'https://www.hoodamath.com/games/idlebreakout.html#gsc.tab=0');
     }
 
 
@@ -30,7 +30,8 @@ function sl_fn() {
 		var referrer = new URL(currentIframeHref).hostname;
 		if (referrer !== xr && referrer !== xr2)
 		{
-			window.location.href = 'https://www.hoodamath.com';
+			//frixk off hooda
+			//window.location.href = 'https://www.hoodamath.com';
 		}
 	}
 }
