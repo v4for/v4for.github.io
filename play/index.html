@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background-color: #111;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header h1 {
+            color: #95d0b4;
+            font-size: 2em;
+        }
+        
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        
+        main iframe {
+            width: 80vw;
+            height: 80vh;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        footer {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #95d0b4;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Game Hub</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <iframe src="https://example.com/game" title="Game"></iframe>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Game Hub. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

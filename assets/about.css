@@ -40,6 +40,8 @@ body {
     color: #95d0b4;
     margin-bottom: 20px;
   }
+
+
   
   main p {
     line-height: 1.5;
@@ -55,4 +57,26 @@ body {
   footer a {
     color: #95d0b4;
     text-decoration: none;
+  }
+
+  main iframe {
+    width: 80vw;
+    height: 80vh;
+    border: none;
+    border-radius: 10px;
+}
+
+  a {
+    color: #4a7cad; 
+    text-decoration: none; 
+    transition: color 0.3s ease, text-decoration 0.3s ease; 
+  }
+
+  a:hover {
+    color: #435a70; 
+    text-decoration: none; 
+  }
+
+  a:active {
+    color: #4a7cad; 
   }
