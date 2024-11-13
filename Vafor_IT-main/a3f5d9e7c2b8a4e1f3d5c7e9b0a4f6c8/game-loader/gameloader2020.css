@@ -47,6 +47,7 @@ body{
     bottom:0
 }
 .game-footer{
+    display: none;
     z-index:0;
     position:absolute;
     bottom:0;
