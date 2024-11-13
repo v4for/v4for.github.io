@@ -177,14 +177,29 @@
             return urlParams.get(name);
         }
 
+        // Base64 encoding function
+        function base64Decode(str) {
+            try {
+                return decodeURIComponent(atob(str)); // Decode the Base64 string
+            } catch (e) {
+                console.error("Error decoding Base64:", e);
+                return null;
+            }
+        }
+
         // Set iframe src based on the 'game' query parameter
         window.onload = function() {
-            const gameUrl = getQueryParam('game');  // Get the value of 'game' query parameter
+            const encodedGameUrl = getQueryParam('game');  // Get the value of 'game' query parameter
             
-            if (gameUrl) {
+            if (encodedGameUrl) {
                 const iframe = document.getElementById('gameFrame');
-                const decodedUrl = decodeURIComponent(gameUrl);  // Decode the URL
-                iframe.src = decodedUrl;  // Set iframe src dynamically
+                const decodedUrl = base64Decode(encodedGameUrl);  // Decode the Base64 URL
+                
+                if (decodedUrl) {
+                    iframe.src = decodedUrl;  // Set iframe src dynamically
+                } else {
+                    console.error("Failed to decode the game URL.");
+                }
             } else {
                 console.log("No game URL parameter found in the URL.");
             }
