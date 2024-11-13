@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vafor</title>
+    <!-- Include Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
     <style>
+        /* Use box-sizing border-box for all elements */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #1a1a1a;
@@ -38,22 +48,59 @@
             color: #fff;
             text-decoration: none;
         }
-        
+
+        /* Main section to center the iframe */
         main {
             flex-grow: 1;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 40px;
         }
-        
-        main iframe {
-            width: 80vw;
+
+        /* Container to hold iframe and strip */
+        .content-container {
+            width: 80%; /* Set the width of both iframe and strip */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Style for the iframe */
+        .content-container iframe {
+            width: 100%; /* Set iframe width to 100% of content-container */
             height: 80vh;
             border: none;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0; /* Remove rounded corners at the bottom */
+            transition: all 0.3s ease;
         }
-        
+
+        /* Small grey strip under iframe */
+        .fullscreen-strip {
+            width: 100%; /* Set strip width to 100% of content-container */
+            background-color: #555; /* Dark grey strip */
+            padding: 5px 20px;
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            align-items: center;
+            border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+        }
+
+        /* Fullscreen button (Font Awesome icon) */
+        .fullscreen-btn {
+            font-size: 1.5em; /* Make icon a little bigger */
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: #444; /* Darken when hovered */
+        }
+
         footer {
             background-color: #111;
             padding: 20px;
@@ -78,11 +125,70 @@
     </header>
     
     <main>
-        <iframe src="../Vafor_IT-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/" title="Game"></iframe>
+        <div class="content-container">
+            <!-- Game iframe with dynamic src -->
+            <iframe id="gameFrame" title="Game"></iframe>
+            
+            <div class="fullscreen-strip">
+                <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                    <i class="fas fa-expand"></i> <!-- Font Awesome fullscreen icon -->
+                </button>
+            </div>
+        </div>
     </main>
     
     <footer>
         <p>&copy; 2024 Vafor IT. All rights reserved. <a href="#">Privacy Policy</a></p>
     </footer>
+
+    <script>
+        // Fullscreen toggle function
+        function toggleFullscreen() {
+            var iframe = document.getElementById('gameFrame');
+            
+            if (!document.fullscreenElement) {
+                // If not in fullscreen, try to enter fullscreen
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.mozRequestFullScreen) { // Firefox
+                    iframe.mozRequestFullScreen();
+                } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) { // IE/Edge
+                    iframe.msRequestFullscreen();
+                }
+            } else {
+                // If already in fullscreen, exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Function to get the value of a query parameter by name
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Set iframe src based on the 'game' query parameter
+        window.onload = function() {
+            const gameUrl = getQueryParam('game');  // Get the value of 'game' query parameter
+            
+            if (gameUrl) {
+                const iframe = document.getElementById('gameFrame');
+                const decodedUrl = decodeURIComponent(gameUrl);  // Decode the URL
+                iframe.src = decodedUrl;  // Set iframe src dynamically
+            } else {
+                console.log("No game URL parameter found in the URL.");
+            }
+        };
+    </script>
 </body>
 </html>
