@@ -88,3 +88,33 @@ function openPopup() {
         }); 
     }, 50);
 } 
+
+function getParentFolder() {
+    var path = window.location.pathname;
+    path = path.endsWith('/') ? path.slice(0, -1) : path;
+    
+    var segments = path.split('/');
+
+    if (segments.length > 1) {
+        return segments[segments.length - 2];
+    } else {
+        return '/'; 
+    }
+    
+}
+
+let link2 = getParentFolder(); 
+
+function default2(){
+        setTimeout(function() {
+        var links = document.querySelectorAll('div.for a');
+        links.forEach(function(link) {
+            link.onclick = function(event) {
+                event.preventDefault(); 
+                let encodedStr = btoa(link.href);
+                window.open(link2 + "/play?game=" + encodedStr, '_self');
+
+            };
+        }); 
+    }, 50); 
+}
