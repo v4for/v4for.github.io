@@ -1,0 +1,11 @@
+.sidebarleft {
+    position: sticky;
+    top: 50%;    
+    left: 0;
+}
+
+.sidebarright {
+    position: sticky;
+    top: 50%;   
+    right: 0;
+}
