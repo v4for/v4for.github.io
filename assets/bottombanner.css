@@ -1,0 +1,7 @@
+.bottombannerad {
+    position: absolute;
+    top: 60%;       
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center; 
+}
