@@ -10,7 +10,4 @@
     position: absolute;    
     left: 50%; 
     transform: translateX(-50%); 
-    text-align: center; 
-    padding-left: 200px;
-    padding-right: 200px;
 }
