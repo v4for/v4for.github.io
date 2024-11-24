@@ -15,10 +15,8 @@ To ensure proper functionality, please make sure to copy the `poki-loader.js` an
 
 ## Official Links
 - [Recommende](https://maxwellstevenson.com)
-- [Netlify](https://vafor.netlify.app)
+- [Bitbucket](https://phexus.bitbucket.io)
 - [PH4XUS Repository](https://ph4xus.github.io) (Please note that this link may not always have the latest updates)
-- https://v4forgithubio-gcnh5.kinsta.page
-- https://vaforlite2-e5c816.gitlab.io/
 
 
 ---
