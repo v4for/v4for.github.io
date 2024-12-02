@@ -111,8 +111,9 @@ function default2(){
         links.forEach(function(link) {
             link.onclick = function(event) {
                 event.preventDefault(); 
+                var gameName = link.querySelector('img') ? link.querySelector('img').alt : 'Unknown Game';
                 let encodedStr = btoa(link.href);
-                window.open(link2 + "/play?game=" + encodedStr, '_self');
+                window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
 
             };
         }); 
