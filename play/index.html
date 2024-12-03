@@ -11,7 +11,6 @@
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
      crossorigin="anonymous"></script>
     <style>
-        /* Use box-sizing border-box for all elements */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -51,7 +50,6 @@
             text-decoration: none;
         }
 
-        /* Main section to center the iframe */
         main {
             flex-grow: 1;
             display: flex;
@@ -61,36 +59,32 @@
             padding: 40px 200px;
         }
 
-        /* Container to hold iframe and strip */
         .content-container {
-            width: 80%; /* Set the width of both iframe and strip */
+            width: 80%; 
             display: flex;
             flex-direction: column;
         }
 
-        /* Style for the iframe */
         .content-container iframe {
-            width: 100%; /* Set iframe width to 100% of content-container */
+            width: 100%; 
             height: 80vh;
             border: none;
-            border-radius: 10px 10px 0 0; /* Remove rounded corners at the bottom */
+            border-radius: 10px 10px 0 0; 
             transition: all 0.3s ease;
         }
 
-        /* Small grey strip under iframe */
         .fullscreen-strip {
-            width: 100%; /* Set strip width to 100% of content-container */
-            background-color: #555; /* Dark grey strip */
+            width: 100%; 
+            background-color: #555; 
             padding: 5px 20px;
             display: flex;
-            justify-content: flex-end; /* Align button to the right */
+            justify-content: flex-end;
             align-items: center;
-            border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+            border-radius: 0 0 10px 10px; 
         }
 
-        /* Fullscreen button (Font Awesome icon) */
         .fullscreen-btn {
-            font-size: 1.5em; /* Make icon a little bigger */
+            font-size: 1.5em; 
             background: none;
             border: none;
             color: #fff;
@@ -100,7 +94,7 @@
         }
 
         .fullscreen-btn:hover {
-            background-color: #444; /* Darken when hovered */
+            background-color: #444; 
         }
 
         footer {
@@ -128,12 +122,11 @@
     
     <main>
         <div class="content-container">
-            <!-- Game iframe with dynamic src -->
             <iframe id="gameFrame" title="Game"></iframe>
             
             <div class="fullscreen-strip">
                 <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                    <i class="fas fa-expand"></i> <!-- Font Awesome fullscreen icon -->
+                    <i class="fas fa-expand"></i> 
                 </button>
             </div>
         </div>
@@ -144,12 +137,10 @@
     </footer>
 
     <script>
-        // Fullscreen toggle function
         function toggleFullscreen() {
             var iframe = document.getElementById('gameFrame');
             
             if (!document.fullscreenElement) {
-                // If not in fullscreen, try to enter fullscreen
                 if (iframe.requestFullscreen) {
                     iframe.requestFullscreen();
                 } else if (iframe.mozRequestFullScreen) { // Firefox
@@ -160,7 +151,6 @@
                     iframe.msRequestFullscreen();
                 }
             } else {
-                // If already in fullscreen, exit fullscreen
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
                 } else if (document.mozCancelFullScreen) { // Firefox
@@ -173,32 +163,29 @@
             }
         }
 
-        // Function to get the value of a query parameter by name
         function getQueryParam(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
 
-        // Base64 encoding function
         function base64Decode(str) {
             try {
-                return decodeURIComponent(atob(str)); // Decode the Base64 string
+                return decodeURIComponent(atob(str)); 
             } catch (e) {
                 console.error("Error decoding Base64:", e);
                 return null;
             }
         }
 
-        // Set iframe src based on the 'game' query parameter
         window.onload = function() {
-            const encodedGameUrl = getQueryParam('game');  // Get the value of 'game' query parameter
+            const encodedGameUrl = getQueryParam('game');  
             
             if (encodedGameUrl) {
                 const iframe = document.getElementById('gameFrame');
-                const decodedUrl = base64Decode(encodedGameUrl);  // Decode the Base64 URL
+                const decodedUrl = base64Decode(encodedGameUrl);  
                 
                 if (decodedUrl) {
-                    iframe.src = decodedUrl;  // Set iframe src dynamically
+                    iframe.src = decodedUrl;  
                 } else {
                     console.error("Failed to decode the game URL.");
                 }
