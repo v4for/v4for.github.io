@@ -2,20 +2,33 @@ let matchFound = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     const searched = new URL(window.location).searchParams.get('searched');
-    console.log('Searched term:', searched); // search term
+    console.log('Searched term:', searched); // Log search term
 
     const container = document.getElementById('for');
+    if (!container) {
+        console.error('Div with id="for" not found.');
+        return;
+    }
+
     // Function to handle the main logic
     function handleLogic() {
-        console.log('DOM is fully loaded and #for contains 74 elements.');
+        console.log('Logic triggered: #for contains 74 elements.');
 
         function hidesomediv(text) {
             if (!text) {
+                console.log('No search text provided.');
                 return;
             }
 
-            document.getElementById("hidethis").style.display = "none";
-            document.getElementById("searchtitle").innerHTML = "Results for: " + searched;
+            const hidethisDiv = document.getElementById("hidethis");
+            if (hidethisDiv) {
+                hidethisDiv.style.display = "none";
+            }
+
+            const searchTitle = document.getElementById("searchtitle");
+            if (searchTitle) {
+                searchTitle.innerHTML = "Results for: " + searched;
+            }
 
             const descriptions = document.querySelectorAll('.description');
 
@@ -43,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (links.length > 0) {
                 const randomIndex = Math.floor(Math.random() * links.length);
                 const randomLink = links[randomIndex].href;
-                console.log(randomLink);
+                console.log('Random link selected:', randomLink);
                 window.location = randomLink;
             } else {
                 console.log("No links found in the #for div.");
@@ -53,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Monitor #for for changes
     const observer = new MutationObserver(() => {
+        console.log('Current child count in #for:', container.children.length);
         if (container.children.length === 74) {
             observer.disconnect(); // Stop observing once the condition is met
             handleLogic(); // Execute the main logic
@@ -61,4 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start observing the #for div for child list changes
     observer.observe(container, { childList: true });
+
+    // Initial log in case elements are already present
+    console.log('Initial child count in #for:', container.children.length);
+    if (container.children.length === 74) {
+        observer.disconnect();
+        handleLogic();
+    }
 });
