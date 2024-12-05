@@ -100,9 +100,6 @@
             color: #eaeaea;
             transition: transform 0.2s, box-shadow 0.3s;
         }
-        .gxme-card[hidden] {
-                display: none;
-            }
         .gxme-card img {
             max-width: 100%;
             height: auto;
@@ -268,9 +265,9 @@ function getQueryParam(name) {
                     const gxmeName = gxmes[index].name.toLowerCase();
 
                     if (gxmeName.includes(query)) {
-                        card.removeAttribute(''); // Show the card
+                        gxmeCard.style.display = '';
                     } else {
-                        card.setAttribute('none'); // Hide the card
+                        Gxmecard.style.display = 'none';
                     }
                 });
             }
