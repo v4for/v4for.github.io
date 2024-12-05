@@ -182,7 +182,7 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
 </head>
 <body>
     <nav class="navbar">
-        <a href="/index.html">Home</a>
+        <a href="/">Home</a>
         <div class="search-bar">
             <input type="text" id="search" placeholder="Search gxmes...">
             <button onclick="searchgxmes()">Search</button>
@@ -205,13 +205,35 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
     </footer>
 
     <script>
-function getQueryParam(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
+ function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name) || ''; // Return an empty string if the parameter is null
+}
 
-        const searchedurl = getQueryParam('searched');  
-        document.getElementById('search').value = searchedurl;
+function handleSearch(urlParams) {
+    // Get the 'searched' parameter
+    const searchedValue = urlParams.get('searched') || ''; // Fallback to an empty string
+
+    // Update the search input value
+    const searchInput = document.getElementById('search');
+    if (searchInput) {
+        searchInput.value = searchedValue;
+    }
+
+    // If a value exists, you can optionally trigger a search function
+    if (searchedValue) {
+        triggerSearch(searchedValue); // Replace with your own search logic
+    }
+}
+
+function triggerSearch(query) {
+    console.log(`Searching for: ${query}`); // Replace with your actual search logic
+}
+
+// Main execution
+const urlParams = new URLSearchParams(window.location.search);
+handleSearch(urlParams);
+
 
         function getParentFolder() {
             var path = window.location.pathname;
