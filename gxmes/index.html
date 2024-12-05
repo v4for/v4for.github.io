@@ -209,11 +209,34 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
     
     
 <script>
-    function getParentFolder() {
+function getParentFolder() {
     var path = window.location.pathname;
     path = path.endsWith('/') ? path.slice(0, -1) : path;
+    
     var segments = path.split('/');
-    return segments.length > 1 ? segments[segments.length - 2] : '/'; 
+
+    if (segments.length > 1) {
+        return segments[segments.length - 2];
+    } else {
+        return '/'; 
+    }
+    
+}
+
+let link2 = getParentFolder(); 
+
+function default2(){
+        setTimeout(function() {
+        var links = document.querySelectorAll('div.for a');
+        links.forEach(function(link) {
+            link.onclick = function(event) {
+                event.preventDefault(); 
+                let encodedStr = btoa(link.href);
+                window.open(link2 + "/play?game=" + encodedStr, '_self');
+
+            };
+        }); 
+    }, 50); 
 }
 
 const x = getParentFolder();
@@ -293,7 +316,7 @@ if (gxme.name.toLowerCase().includes(query)) {
 
 
 document.getElementById("search").addEventListener("input", searchgxmes);
-
+default2();
 function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
