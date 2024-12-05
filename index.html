@@ -39,6 +39,26 @@
                 }
             });
 
+            
+
+            // Manage tab name and icon
+            var savedTabName = localStorage.getItem('tabName');
+            var savedTabImage = localStorage.getItem('tabImage');
+            if (savedTabName) document.title = savedTabName;
+            if (savedTabImage) {
+                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                link.type = 'image/x-icon';
+                link.rel = 'shortcut icon';
+                link.href = savedTabImage;
+                document.head.appendChild(link);
+            }
+
+            // Redirect if necessary
+            if (window.self === window.top && localStorage.getItem('blank2') === 'true') {
+                redirectToWebsite();
+            }
+        });
+
         function openIframe(event, title, src) {
         event.preventDefault();
         var win = window.open('', title, 'height=649,width=730,screenX=400,screenY=350');
