@@ -208,104 +208,72 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
 
     <script>
 function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-const searchedurl = getQueryParam('searched');  
-var searchgxmes = searchedurl;
-document.getElementById('search').value = searchedurl;
-
-function getParentFolder() {
-    var path = window.location.pathname;
-    path = path.endsWith('/') ? path.slice(0, -1) : path;
-    
-    var segments = path.split('/');
-
-    if (segments.length > 1) {
-        return segments[segments.length - 2];
-    } else {
-        return '/'; 
-    }
-    
-}
-var x = getParentFolder();
-
-list.forEach((item, index) => {
-    let gxmeGridSection = document.querySelector('.gxme-grid');
-
-    // Create anchor element
-    let gxmeLink = document.createElement('a');
-    gxmeLink.href = listlink[index]; 
-    gxmeLink.target = '_self'; 
-    gxmeLink.style.textDecoration = 'none'; 
-    gxmeLink.style.color = 'inherit'; 
-
-    let gxmeCard = document.createElement('div');
-    gxmeCard.classList.add('gxme-card');
-    gxmeCard.style.cursor = 'pointer';
-
-    let img = document.createElement('img');
-    img.src = x + imgsrc[index];
-    img.alt = item;
-    img.style.width = '100px';
-    img.style.height = '100px';
-
-    let h3 = document.createElement('h3');
-    h3.textContent = item;
-
-    gxmeCard.appendChild(img);
-    gxmeCard.appendChild(h3);
-
-    gxmeLink.appendChild(gxmeCard);
-
-    gxmeGridSection.appendChild(gxmeLink);
-});
-
-
-
-            const gxmes = list.map((name, index) => ({
-    name,
-    img: imgsrc[index],
-    link: listlink[index],
-}));
-document.addEventListener('DOMContentLoaded', function () {
-
-const searchInput = document.getElementById('search');
-const gxmeGrid = document.querySelector('.gxme-grid');
-
-function searchgxmes() {
-    const query = searchInput.value.toLowerCase();
-
-    document.querySelectorAll('.gxme-card').forEach((card, index) => {
-        const gxmeName = gxmes[index].name.toLowerCase();
-        
-        if (gxmeName.includes(query)) {
-            card.style.display = ''; 
-        } else {
-            card.style.display = 'none';
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
         }
-    });
-}
-})
 
-document.getElementById("search").addEventListener("input", searchgxmes);
+        const searchedurl = getQueryParam('searched');  
+        document.getElementById('search').value = searchedurl;
 
-function default2() {
-    setTimeout(function() {
-        var gxmeCards = document.querySelectorAll('.gxme-card');
-        gxmeCards.forEach(function(card, index) {
-            card.onclick = function(event) {
-                event.preventDefault();
-                var gxmeName = card.querySelector('h3') ? card.querySelector('h3').textContent : 'Unknown gxme';
-                let encodedStr = btoa(listlink[index]);
-                window.open(x + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gxmeName), '_self');
-            };
+        function getParentFolder() {
+            var path = window.location.pathname;
+            path = path.endsWith('/') ? path.slice(0, -1) : path;
+            var segments = path.split('/');
+            return segments.length > 1 ? segments[segments.length - 2] : '/'; 
+        }
+
+        const x = getParentFolder();
+
+        const gxmes = list.map((name, index) => ({
+            name,
+            img: imgsrc[index],
+            link: listlink[index],
+        }));
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const gxmeGrid = document.querySelector('.gxme-grid');
+            gxmes.forEach((gxme, index) => {
+                let gxmeLink = document.createElement('a');
+                gxmeLink.href = gxme.link; 
+                gxmeLink.target = '_self'; 
+                gxmeLink.style.textDecoration = 'none'; 
+                gxmeLink.style.color = 'inherit'; 
+
+                let gxmeCard = document.createElement('div');
+                gxmeCard.classList.add('gxme-card');
+                gxmeCard.style.cursor = 'pointer';
+
+                let img = document.createElement('img');
+                img.src = x + gxme.img;
+                img.alt = gxme.name;
+                img.style.width = '100px';
+                img.style.height = '100px';
+
+                let h3 = document.createElement('h3');
+                h3.textContent = gxme.name;
+
+                gxmeCard.appendChild(img);
+                gxmeCard.appendChild(h3);
+                gxmeLink.appendChild(gxmeCard);
+                gxmeGrid.appendChild(gxmeLink);
+            });
+
+            const searchInput = document.getElementById('search');
+
+            function searchgxmes() {
+                const query = searchInput.value.toLowerCase();
+                document.querySelectorAll('.gxme-card').forEach((card, index) => {
+                    const gxmeName = gxmes[index].name.toLowerCase();
+                    if (gxmeName.includes(query)) {
+                        card.style.display = ''; 
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            document.getElementById("search").addEventListener("input", searchgxmes);
         });
-    }, 50);
-}
-
-default2();
-
     </script>
 </body>
 </html>
