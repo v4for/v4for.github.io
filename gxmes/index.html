@@ -262,15 +262,18 @@ function getQueryParam(name) {
 
             function searchgxmes() {
                 const query = searchInput.value.toLowerCase();
+
                 document.querySelectorAll('.gxme-card').forEach((card, index) => {
                     const gxmeName = gxmes[index].name.toLowerCase();
+                    
                     if (gxmeName.includes(query)) {
-                        card.style.display = ''; 
+                        card.style.display = 'block'; // Show the card
                     } else {
-                        card.style.display = 'none';
+                        card.style.display = 'none'; // Remove the card from the layout
                     }
                 });
             }
+
 
             document.getElementById("search").addEventListener("input", searchgxmes);
         });
