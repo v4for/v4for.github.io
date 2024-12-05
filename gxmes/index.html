@@ -212,7 +212,7 @@ function getQueryParam(name) {
     return urlParams.get(name);
 }
 const searchedurl = getQueryParam('searched');  
-searchgxmes(searchedurl)
+var searchgxmes = searchedurl;
 document.getElementById('search').value = searchedurl;
 
 function getParentFolder() {
