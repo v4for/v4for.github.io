@@ -268,11 +268,11 @@ function getQueryParam(name) {
 
                 document.querySelectorAll('.gxme-card').forEach((card, index) => {
                     const gxmeName = gxmes[index].name.toLowerCase();
-                    
+
                     if (gxmeName.includes(query)) {
-                        card.style.display = 'block'; 
+                        card.removeAttribute('hidden'); // Show the card
                     } else {
-                        card.style.display = 'none'; 
+                        card.setAttribute('hidden', ''); // Hide the card
                     }
                 });
             }
