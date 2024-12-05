@@ -89,7 +89,8 @@
             padding: 40px 20px;
             background-color: #3e3e3e;
             flex-grow: 1;
-            grid-auto-rows: auto; 
+            grid-auto-rows: minmax(min-height, auto); 
+
         }
         
         .gxme-card {
@@ -101,7 +102,9 @@
             color: #eaeaea;
             transition: transform 0.2s, box-shadow 0.3s;
         }
-        
+        .gxme-card[hidden] {
+                display: none;
+            }
         .gxme-card img {
             max-width: 100%;
             height: auto;
