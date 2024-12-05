@@ -329,6 +329,23 @@ document.getElementById('search').value = searchedurl;
 searchgxmes();
 
 });
+
+     var savedTabName = localStorage.getItem('tabName');
+            var savedTabImage = localStorage.getItem('tabImage');
+            if (savedTabName) document.title = savedTabName;
+            if (savedTabImage) {
+                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                link.type = 'image/x-icon';
+                link.rel = 'shortcut icon';
+                link.href = savedTabImage;
+                document.head.appendChild(link);
+            }
+
+            // Redirect if necessary
+            if (window.self === window.top && localStorage.getItem('blank2') === 'true') {
+                redirectToWebsite();
+            }
+        });
     </script>
 </body>
 </html>
