@@ -1,26 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gxmes - maxwellstevenson.com</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Play gxmes on maxwellstevenson.com">
     <meta name="keywords" content="Maxwellstevenson.com, buildnow.gg 1v1.lol funnyshooter 2 smash karts unblocked gxmes">
     <meta name="author" content="Vafor">
-    <!-- Import javascript-->
-    <script type="text/javascript" src="/gxmes/tabs.js"></script>
-    <script type="text/javascript" src="/gxmes/sighn.js"></script>
-    <script type="text/javascript" src="/gxmes/config.js"></script>  
+    <title>Gxmes - maxwellstevenson.com</title>
     <script type="text/javascript" src="/s/tab.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/oldstyle.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="../assets/bottombanner.css">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-     crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!-- Google tag (gtag.js) -->
+      <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -30,138 +21,291 @@
       gtag('config', 'G-9Y3T9NZGP8');
     </script>
     <style>
-      body {
-         background-color: #181622;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Heebo", sans-serif;
+        }
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body {
+            background-color: #2d2d2d;
+            color: #eaeaea;
+        }
+        
+        h1, h2 {
+            color: #b7e1c0; 
+        }
+        
+        .navbar {
+            background-color: #3e3e3e; 
+            padding: 15px;
+        }
+        
+        .navbar a {
+            color: #eaeaea;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: #b7e1c0; 
+        }
+        
+        .hero-section {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-custom {
+            background-color: #b7e1c0; 
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .btn-custom:hover {
+            background-color: #a0d1a4; 
+            transform: translateY(-2px);
+        }
+        
+        .gxme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 40px 20px;
+            background-color: #3e3e3e;
+            flex-grow: 1; 
+        }
+        
+        .gxme-card {
+            background-color: #444;
+            border-radius: 10px;
+            padding: 15px;
+            height: 150px;
+            text-align: center;
+            color: #eaeaea;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+        
+        .gxme-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .gxme-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .gxme-card h3 {
+            font-size: 1.2rem;
+            color: #b7e1c0;
+            margin-top: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 30px 20px;
+            color: #eaeaea;
+            font-size: 0.9rem;
+            flex-shrink: 0; /* Ensures the footer does not shrink */
+        }
+        
+        .footer a {
+            color: #b7e1c0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            color: #a0d1a4;
+        }
 
-      .text_group {
-        margin-left:auto;
-        margin-right: auto;
-        text-align: center;
-        padding-top: 30px;
-        padding-bottom: 20px;
-      }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #444;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
 
-      .lost {
-        color: #a1a0ab;
-      }
+        .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #eaeaea;
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 200px;
+        }
 
-      .header {
-          color: #fff;
-      }
-      .for{
-         padding-left: 200px;
-         padding-right: 200px;
-      }
-    </style>
-  <script>
-    //rice cooker
-function handleEmulatorClick(event) {
-    alert('Warning: Launching in default mode, errors otherwise.');
+        .search-bar button {
+            background-color: #b7e1c0;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #a0d1a4;
+        }
+        </style>
+        
+    <script>
+let list = ['Stickman hook', '1v1.lol', 'Buildnow.gg', 'Cookie Clicker', 'Retro Football', 'Agar.io', 'Smash karts', 'Slope', 'yohoho', 'Motor X3m', 'Monkey Mart', 'Awesome Tanks 2', 'Time Shooter 3', 'Sling Drift', 'Drift Boss', 'Bank Robbery', 'ovo', 'tiny fishing', 'vex 6', 'Basketball Stars', 'sm64', '60 second burger run', 'Paper.io 2', 'Cat mario', 'Idle breakout', 'Ducklife', 'Ducklife2', 'Ducklife3', 'Pixel Gun 2', 'Drive mad', 'Cluster Rush', '10 minutes till dawn', 'Google Snake', 'Gun mayhem 2', 'Generic fishing', 'FNAF', 'Ninja vs evilcorp', 'CSGO clicker', 'madalin stunt cars', 'bitlife', 'snowrider', 'Jetpack joyride', 'Impossible quiz', 'Pappas pizzaria', 'Pappas Freezeria', 'Pappas Pancakearia', 'World hardest gm 2', 'Rooftop sniper', 'stack', 'Tanuki sunset', 'Soccer random', 'Subway surfers', 'Learn to fly', 'Learn2fly', 'Hilldraw', 'Snoball io', 'Fireboy and water girl', 'Pixel Speedrun', 'A dance of fire and ice', 'giraffes volleyball', 'Deepest sword', 'Bottle flip 3d', 'Choppy orc', 'Precision client 1.5', 'Funny shooter', 'Hole io', 'Tomb of the mask', 'Doge miner', 'Run 3', 'Sausage flip', 'Sandstrike.io', 'Color tunnel', 'Polytrack', 'Friday night funkin']
+
+let imgsrc = ['/assets/img/stickman.jpeg', '/assets/img/1v1.webp', '/assets/img/builf.png', '/assets/img/cookieclicker.webp', '/assets/img/retrobowl.jpeg', '/assets/img/agar.png', '/Vafor_IT-main/d2f6b8c9e4a1f7d5a3c9e1b8f6d4a2e3/9c9e529b14731be871b07b89660bbc2a.png', '/assets/img/slope2.png', '/assets/img/pirates2.jfif', '/assets/img/moto.jfif', '/assets/img/monkey.jfif', '/assets/img/tanks2.jfif', '/assets/img/superhot.jfif', '/Vafor_IT-main/badtaxidriver/thumbnail.jpg', '/assets/img/drift.jpeg', '/assets/img/bank4.png', '/assets/img/ovo.png', '/assets/img/tinyfishing.png', '/assets/img/vex6.png', '/assets/img/basketball.jpeg', '/assets/img/sm64.jpg', '/assets/img/burger.png', '/assets/img/paper.jpg', '/assets/img/cat.png', '/assets/img/idle.png', '/assets/img/duck.jpeg', '/assets/img/ducklife2.webp', '/assets/img/ducklife3.webp', '/assets/img/pixelgun.jfif', '/assets/img/drivemad.jpeg', '/assets/img/bustergush.png', '/assets/img/20min.jfif', '/assets/img/drakethesnake.png', '/assets/img/gunmayhem.jpeg', '/assets/img/fishing.png', '/assets/img/fnaf.webp', '/assets/img/ninja.png', '/assets/img/csgo.png', '/assets/img/mcm.png', '/assets/img/bitlife.jpeg', '/assets/img/snow.png', '/assets/img/jet.png', '/assets/img/averageschool.png', '/Vafor_IT-main/papaspizzaria/papaspizzaria.jpg', '/assets/img/papas-freezeria.webp', '/assets/img/papaspancakes.png', '/Vafor_IT-main/worlds-hardest-game-2/the-worlds-hardest-game-2.jpg', '/assets/img/rooft.png', '/Vafor_IT-main/stack/stack.png', '/Vafor_IT-main/tanuki-sunset/img/logo.png', '/Vafor_IT-main/soccer-random/splash.png', '/Vafor_IT-main/subway-surfers/img/splash.jpg', '/assets/img/learntofly.jpeg', '/assets/img/learn.jpeg', '/Vafor_IT-main/hilldraw/icons/icon-512.png', '/assets/img/snowgamingisdead.jpg', '/assets/img/fireandwater.jpg', '/assets/img/pixelspeedrun.png', '/Vafor_IT-main/dances/splash.png', '/Vafor_IT-main/7a9b3c4e2f6d1e8c5a2f4b7d9e3c0a6f/favico.png', '/assets/img/deepest-sword.png', '/assets/img/sddefault.jpg', '/assets/img/thumb_2.jpg', '/assets/img/imgoingtoslapmartin.png', '/assets/img/funnyshooter.webp', '/assets/img/hole.io.jfif', '/assets/img/tomb-of-the-mask-logo.jpeg', '/Vafor_IT-main/doge/img/dogeminer_300x300.png', '/Vafor_IT-main/run3editor/loading.png', '/assets/img/sausage.jpg', '/assets/img/sanstrike.webp', '/Vafor_IT-main/colourtunnel/TemplateData/logo.png', '/assets/img/poly.jpeg', '/Vafor_IT-main/fnfweek7/friday-night-funkin.png']
+
+let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k8l0m1n2p3q4r5s', '/Vafor_IT-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/', '/Vafor_IT-main/cookie-clicker/', '/Vafor_IT-main/retrobowl/', '/Vafor_IT-main/jptr-agario-main/jptr-agario-main/web/index.html', '/Vafor_IT-main/d2f6b8c9e4a1f7d5a3c9e1b8f6d4a2e3', '/Vafor_IT-main/slope', '/Vafor_IT-main/pirates', '/Vafor_IT-main/mx3m', '/Vafor_IT-main/ihatemonkeys', '/Vafor_IT-main/awesometanks2/', '/Vafor_IT-main/time-shooter-3', '/Vafor_IT-main/badtaxidriver', '/Vafor_IT-main/germany%20drift/DriftBoss-gh-pages/', '/Vafor_IT-main/bank', '/Vafor_IT-main/ovo', '/Vafor_IT-main/tiny-fishing', '/Vafor_IT-main/vex6', '/Vafor_IT-main/basketball-stars', '/Vafor_IT-main/sm64', '/Vafor_IT-main/60min/index.html', '/Vafor_IT-main/paper-io-2/index.html', '/Vafor_IT-main/cat-mario/index.html', '/Vafor_IT-main/idle-breakout-main/idle-breakout-main/index.html', '/Vafor_IT-main/ducklife1/index.html', '/Vafor_IT-main/ducklife2', '/Vafor_IT-main/ducklife3', '/Vafor_IT-main/pixelgun/maxwellstevenson.com.html', '/Vafor_IT-main/drive-mad/', '/Vafor_IT-main/bustergush', '/Vafor_IT-main/10-minutes-till-dawn/', '/Vafor_IT-main/google-snake/', '/Vafor_IT-main/gunmayhem2/', '/Vafor_IT-main/fishing_game/', '/Vafor_IT-main/scarybear/', '/Vafor_IT-main/ninja.html', '/Vafor_IT-main/csgo_clicker/', '/Vafor_IT-main/mcm-files-main/mcm-files-main/index.html', '/Vafor_IT-main/bitlife/', '/Vafor_IT-main/Snow-Rider3D-main/index.html', '/Vafor_IT-main/jetpack-joyride/', '/Vafor_IT-main/impossiblequiz/', '/Vafor_IT-main/papaspizzaria/', '/Vafor_IT-main/papasfreezeria/', '/Vafor_IT-main/papaspancakeareia/', '/Vafor_IT-main/worlds-hardest-game-2/index.html', '/Vafor_IT-main/rooftop-snipers/', '/Vafor_IT-main/stack/', '/Vafor_IT-main/tanuki-sunset/', '/Vafor_IT-main/soccer-random/', '/Vafor_IT-main/subway-surfers/', '/Vafor_IT-main/learntofly/', '/Vafor_IT-main/learn2fly/index.html', '/Vafor_IT-main/hilldraw/', '/Vafor_IT-main/snowballio-main/', '/Vafor_IT-main/fireboywatergirlforesttemple-main/', '/Vafor_IT-main/pixellyballs/', '/Vafor_IT-main/dances/', '/Vafor_IT-main/7a9b3c4e2f6d1e8c5a2f4b7d9e3c0a6f', '/Vafor_IT-main/deepswordayo/', '/Vafor_IT-main/bottleflippingdiedin20126/', '/Vafor_IT-main/oh-good-good/docs/index.html', '/Vafor_IT-main/precision-client/precision-client-v34.6/public/', '/Vafor_IT-main/VAzg42bVjmum4loaFEocbmzmkIYQggJd/', '/Vafor_IT-main/hole.io/', '/Vafor_IT-main/totm', '/Vafor_IT-main/doge/', '/Vafor_IT-main/run3editor/', '/Vafor_IT-main/sausage/', '/Vafor_IT-main/sanstrike.io/', '/Vafor_IT-main/colourtunnel', '/Vafor_IT-main/polytrack', '/Vafor_IT-main/fnfweek7/']
+  
+  </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search gxmes...">
+            <button onclick="searchgxmes()">Search</button>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h1>Welcome to Vafor IT</h1>
+        <p>Explore over 70+ exciting gxmes from all genres</p>
+        <button class="btn-custom">Start Playing</button>
+    </section>
+
+    <section class="gxme-grid">
+
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 maxwellstevenson.com. All Rights Reserved.</p>
+        <p>Open an issue: <a href="https://github.com/v4for/v4for.github.io">Official repository</a></p>
+    </footer>
+
+    <script>
+
+function getParentFolder() {
+    var path = window.location.pathname;
+    path = path.endsWith('/') ? path.slice(0, -1) : path;
+    
+    var segments = path.split('/');
+
+    if (segments.length > 1) {
+        return segments[segments.length - 2];
+    } else {
+        return '/'; 
+    }
+    
+}
+var x = getParentFolder();
+
+list.forEach((item, index) => {
+    let gxmeGridSection = document.querySelector('.gxme-grid');
+
+    // Create anchor element
+    let gxmeLink = document.createElement('a');
+    gxmeLink.href = listlink[index]; 
+    gxmeLink.target = '_self'; 
+    gxmeLink.style.textDecoration = 'none'; 
+    gxmeLink.style.color = 'inherit'; 
+
+    let gxmeCard = document.createElement('div');
+    gxmeCard.classList.add('gxme-card');
+    gxmeCard.style.cursor = 'pointer';
+
+    let img = document.createElement('img');
+    img.src = x + imgsrc[index];
+    img.alt = item;
+    img.style.width = '100px';
+    img.style.height = '100px';
+
+    let h3 = document.createElement('h3');
+    h3.textContent = item;
+
+    gxmeCard.appendChild(img);
+    gxmeCard.appendChild(h3);
+
+    gxmeLink.appendChild(gxmeCard);
+
+    gxmeGridSection.appendChild(gxmeLink);
+});
+
+
+
+            const gxmes = list.map((name, index) => ({
+    name,
+    img: imgsrc[index],
+    link: listlink[index],
+}));
+const searchInput = document.getElementById('search');
+const gxmeGrid = document.querySelector('.gxme-grid');
+
+function searchgxmes() {
+    const query = searchInput.value.toLowerCase();
+
+    document.querySelectorAll('.gxme-card').forEach((card, index) => {
+        const gxmeName = gxmes[index].name.toLowerCase();
+        
+        if (gxmeName.includes(query)) {
+            card.style.display = ''; 
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+document.getElementById("search").addEventListener("input", searchgxmes);
+
+function default2() {
+    setTimeout(function() {
+        var gxmeCards = document.querySelectorAll('.gxme-card');
+        gxmeCards.forEach(function(card, index) {
+            card.onclick = function(event) {
+                event.preventDefault();
+                var gxmeName = card.querySelector('h3') ? card.querySelector('h3').textContent : 'Unknown gxme';
+                let encodedStr = btoa(listlink[index]);
+                window.open(x + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gxmeName), '_self');
+            };
+        });
+    }, 50);
 }
 
+default2();
 
-document.addEventListener('DOMContentLoaded', function() {
-   // document.getElementById("blamk").click();
-    var emulators = document.querySelectorAll('#dino, #sus, #lasthorizon');
-    emulators.forEach(function(emulator) {
-        emulator.addEventListener('click', handleEmulatorClick);
-    });
-
-    default2();
-});
-
-//hehehewaaw
-
-document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.key === 'u') {
-    alert("This project is open source on github :)")
-  }
-});
-
-
-
-  </script>
-  <body>
-
-    <header class="site-header">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-              <span class="navbar-brand" onclick="window.location.href = '/'">Vafor</span>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex w-100 justify-content-end">
-                  <!-- Might keep aviable as a paid subscription or somehitn idk 
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openBlob()" href="#">blob</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openAboutBlank()" id="blamk" href="#">about:blank</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openDefault()" id="default" href="#">default</a></li>
-                  <li class="nav-item"><a class="nav-link" onclick="makeActive(this); openPopup()" href="#">popup</a></li>
-                  -->
-                  <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/a">Apps</a></li>
-                  <li class="nav-item"><a class="nav-link" href="/?random">Random</a></li>
-                </ul>
-            </div>              
-          </div>
-      </nav>
-  </header>
-    
-    <div class="text_group">
-      <h1 class="header" id="searchtitle">Gxmes</h1>
-       <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">
-       <p class="lost">Some gxmes like 1v1 lol and pixel gun have there servers blocked.</p> 
-      </div>
-
-      <div class="for" id="for">
-       <div style="display: flex; justify-content: center; flex-wrap: wrap;" id="list">
-
-
-        </div>
-      </div>
-      
-    
-        <div class="text_group" id="hidethis">
-          <h2 class="header">Iframe-Restricted Gxmes</h2>
-           <hr style="width: 20%; color: #42946e; margin-left:auto; margin-right: auto; text-align: center;">
-           <p class="lost">They still work.</p> 
-          </div>
-        
-        <div class="notfor" style="display: flex; justify-content: center; flex-wrap: wrap;">
-          <div style="margin: 10px;">
-            <a href="../Vafor_IT-main/dino.html" target="_blank" id="dino">
-              <img src="../assets/img/dino.png" alt="Chrome dino" class="rounded-image" width="100px" height="100px">
-            </a>
-            <p class="description" style="color: #95d0b4;">Chrome dino</p>
-          </div>
-          <div style="margin: 10px;">
-            <a href="../Vafor_IT-main/among-us/" target="_blank" id="sus">
-              <img src="../Vafor_IT-main/among-us/red.png" alt="sussy wussy" class="rounded-image" width="100px" height="100px">
-            </a>
-            <p class="description" style="color: #95d0b4;">Among us</p>
-          </div>
-          <div style="margin: 10px;">
-          <a href="../Vafor_IT-main/lasthorizon1/" target="_blank" id="lasthorizon">
-            <img src="../assets/img/lasthorizon1.jfif" alt="Space" class="rounded-image" width="100px" height="100px">
-          </a>
-          <p class="description" style="color: #95d0b4;">Last Horizon</p>
-        </div>
-        </div>
-
-      </div>
-      
-    </div>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-     crossorigin="anonymous"></script>
-<ins class="adsbygoogle gridad"
-     style="display:inline-block;width:800px;height:500px"
-     data-ad-client="ca-pub-5247035630897467"
-     data-ad-slot="3234775291"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  </body>
+    </script>
+</body>
 </html>
