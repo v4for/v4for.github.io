@@ -25,11 +25,4 @@ To ensure proper functionality, please make sure to copy the `poki-loader.js` an
 - **Vercel:** Avaid vercel as it will break a lot of things.
 
 
----
 
-## BuildNow GG Resources
-Make sure to copy the necessary resources to the `buildnowggimportant` folder. The chunk load error has been fixed!
-
----
-
-![Happy](https://github.com/user-attachments/assets/825526be-76bc-44f4-92d5-42de752f6431)
