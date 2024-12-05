@@ -230,9 +230,10 @@ function default2(){
         var links = document.querySelectorAll('section.gxme-grid a');
         links.forEach(function(link) {
             link.onclick = function(event) {
+                var gameName = link.querySelector('img') ? link.querySelector('img').alt : 'Why are you here';
                 event.preventDefault(); 
                 let encodedStr = btoa(link.href);
-                window.open(link2 + "/play?game=" + encodedStr, '_self');
+                window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
 
             };
         }); 
