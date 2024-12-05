@@ -11,7 +11,168 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        
+        <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Heebo", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #2d2d2d;
+    color: #eaeaea;
+}
+
+h1, h2 {
+    color: #b7e1c0; 
+}
+
+.navbar {
+    background-color: #3e3e3e; 
+    padding: 15px;
+}
+
+.navbar a {
+    color: #eaeaea;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #b7e1c0; 
+}
+
+.hero-section {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.btn-custom {
+    background-color: #b7e1c0; 
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-custom:hover {
+    background-color: #a0d1a4; 
+    transform: translateY(-2px);
+}
+
+.gxme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 40px 20px;
+    background-color: #3e3e3e;
+    flex-grow: 1;
+}
+
+.gxme-card {
+    background-color: #444;
+    border-radius: 10px;
+    padding: 15px;
+    height: 150px;
+    text-align: center;
+    color: #eaeaea;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.gxme-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.gxme-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.gxme-card h3 {
+    font-size: 1.2rem;
+    color: #b7e1c0;
+    margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 30px 20px;
+    color: #eaeaea;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Ensures the footer does not shrink */
+}
+
+.footer a {
+    color: #b7e1c0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    color: #a0d1a4;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #444;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #eaeaea;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 200px;
+}
+
+.search-bar button {
+    background-color: #b7e1c0;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #a0d1a4;
+}
+        <style/>
     <script>
 let list = ['Stickman hook', '1v1.lol', 'Buildnow.gg', 'Cookie Clicker', 'Retro Football', 'Agar.io', 'Smash karts', 'Slope', 'yohoho', 'Motor X3m', 'Monkey Mart', 'Awesome Tanks 2', 'Time Shooter 3', 'Sling Drift', 'Drift Boss', 'Bank Robbery', 'ovo', 'tiny fishing', 'vex 6', 'Basketball Stars', 'sm64', '60 second burger run', 'Paper.io 2', 'Cat mario', 'Idle breakout', 'Ducklife', 'Ducklife2', 'Ducklife3', 'Pixel Gun 2', 'Drive mad', 'Cluster Rush', '10 minutes till dawn', 'Google Snake', 'Gun mayhem 2', 'Generic fishing', 'FNAF', 'Ninja vs evilcorp', 'CSGO clicker', 'madalin stunt cars', 'bitlife', 'snowrider', 'Jetpack joyride', 'Impossible quiz', 'Pappas pizzaria', 'Pappas Freezeria', 'Pappas Pancakearia', 'World hardest gm 2', 'Rooftop sniper', 'stack', 'Tanuki sunset', 'Soccer random', 'Subway surfers', 'Learn to fly', 'Learn2fly', 'Hilldraw', 'Snoball io', 'Fireboy and water girl', 'Pixel Speedrun', 'A dance of fire and ice', 'giraffes volleyball', 'Deepest sword', 'Bottle flip 3d', 'Choppy orc', 'Precision client 1.5', 'Funny shooter', 'Hole io', 'Tomb of the mask', 'Doge miner', 'Run 3', 'Sausage flip', 'Sandstrike.io', 'Color tunnel', 'Polytrack', 'Friday night funkin']
 
