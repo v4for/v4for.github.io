@@ -245,8 +245,6 @@ handleSearch(urlParams);
             img: imgsrc[index],
             link: listlink[index],
         }));
-
-        document.addEventListener('DOMContentLoaded', function () {
             const gxmeGrid = document.querySelector('.gxme-grid');
             gxmes.forEach((gxme, index) => {
                 let gxmeLink = document.createElement('a');
@@ -308,11 +306,13 @@ handleSearch(urlParams);
             gxmeLink.appendChild(gxmeCard);
             gxmeGrid.appendChild(gxmeLink);
         }
+
+
     });
 }
 
      document.getElementById("search").addEventListener("input", searchgxmes);
-        });
+    
     </script>
 </body>
 </html>
