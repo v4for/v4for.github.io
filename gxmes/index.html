@@ -205,13 +205,6 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
     </footer>
 
     <script>
-        function getQueryParam(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-
-        const searchedurl = getQueryParam('searched');  
-        document.getElementById('search').value = searchedurl;
         function getParentFolder() {
             var path = window.location.pathname;
             path = path.endsWith('/') ? path.slice(0, -1) : path;
@@ -296,6 +289,16 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
 
 
         document.getElementById("search").addEventListener("input", searchgxmes);
+
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const searchedurl = getQueryParam('searched');  
+        document.getElementById('search').value = searchedurl;
+        searchgxmes();
+        
     });
     </script>
 </body>
