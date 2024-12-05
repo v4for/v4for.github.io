@@ -259,21 +259,42 @@ function getQueryParam(name) {
             const searchInput = document.getElementById('search');
 
             function searchgxmes() {
-                const query = searchInput.value.toLowerCase();
+    const query = searchInput.value.toLowerCase();
 
-                document.querySelectorAll('.gxme-card').forEach((card, index) => {
-                    const gxmeName = gxmes[index].name.toLowerCase();
+    const gxmeGrid = document.querySelector('.gxme-grid');
+    gxmeGrid.innerHTML = ''; // Clear the grid
 
-                    if (gxmeName.includes(query)) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
+    // Re-populate with only matching cards
+    gxmes.forEach((gxme) => {
+        if (gxme.name.toLowerCase().includes(query)) {
+            let gxmeLink = document.createElement('a');
+            gxmeLink.href = gxme.link; 
+            gxmeLink.target = '_self'; 
+            gxmeLink.style.textDecoration = 'none'; 
+            gxmeLink.style.color = 'inherit'; 
 
+            let gxmeCard = document.createElement('div');
+            gxmeCard.classList.add('gxme-card');
+            gxmeCard.style.cursor = 'pointer';
 
-            document.getElementById("search").addEventListener("input", searchgxmes);
+            let img = document.createElement('img');
+            img.src = x + gxme.img;
+            img.alt = gxme.name;
+            img.style.width = '100px';
+            img.style.height = '100px';
+
+            let h3 = document.createElement('h3');
+            h3.textContent = gxme.name;
+
+            gxmeCard.appendChild(img);
+            gxmeCard.appendChild(h3);
+            gxmeLink.appendChild(gxmeCard);
+            gxmeGrid.appendChild(gxmeLink);
+        }
+    });
+}
+
+     document.getElementById("search").addEventListener("input", searchgxmes);
         });
     </script>
 </body>
