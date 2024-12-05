@@ -207,23 +207,19 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
     <script>
  function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name) || ''; // Return an empty string if the parameter is null
+    return urlParams.get(name) || ''; 
 }
 
 function handleSearch(urlParams) {
     // Get the 'searched' parameter
-    const searchedValue = urlParams.get('searched') || ''; // Fallback to an empty string
+    const searchedValue = urlParams.get('searched') || ''; 
 
-    // Update the search input value
     const searchInput = document.getElementById('search');
     if (searchInput) {
         searchInput.value = searchedValue;
+        searchgxmes();
     }
 
-    // If a value exists, you can optionally trigger a search function
-    if (searchedValue) {
-        triggerSearch(searchedValue); // Replace with your own search logic
-    }
 }
 
 function triggerSearch(query) {
@@ -280,13 +276,12 @@ handleSearch(urlParams);
 
             const searchInput = document.getElementById('search');
 
-            function searchgxmes() {
+ function searchgxmes() {
     const query = searchInput.value.toLowerCase();
 
     const gxmeGrid = document.querySelector('.gxme-grid');
     gxmeGrid.innerHTML = ''; // Clear the grid
 
-    // Re-populate with only matching cards
     gxmes.forEach((gxme) => {
         if (gxme.name.toLowerCase().includes(query)) {
             let gxmeLink = document.createElement('a');
