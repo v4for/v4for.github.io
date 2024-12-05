@@ -268,6 +268,8 @@ list.forEach((item, index) => {
     img: imgsrc[index],
     link: listlink[index],
 }));
+document.addEventListener('DOMContentLoaded', function () {
+
 const searchInput = document.getElementById('search');
 const gxmeGrid = document.querySelector('.gxme-grid');
 
@@ -284,6 +286,8 @@ function searchgxmes() {
         }
     });
 }
+}
+
 document.getElementById("search").addEventListener("input", searchgxmes);
 
 function default2() {
