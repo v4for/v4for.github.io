@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
     <style>
         * {
             margin: 0;
@@ -184,7 +183,7 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
 </head>
 <body>
     <nav class="navbar">
-        <a href="#">Home</a>
+        <a href="/index.html">Home</a>
         <div class="search-bar">
             <input type="text" id="search" placeholder="Search gxmes...">
             <button onclick="searchgxmes()">Search</button>
@@ -207,6 +206,9 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
     </footer>
 
     <script>
+const searchedurl = getQueryParam('searched');  
+searchgxmes(searchedurl)
+document.getElementById('search').value = searchedurl;
 
 function getParentFolder() {
     var path = window.location.pathname;
