@@ -231,13 +231,6 @@ body {
     text-decoration: none;
 }
 
-#particles-js {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
-
 .toptext {
     display: flex;
     justify-content: flex-end;
