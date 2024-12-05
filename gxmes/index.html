@@ -206,6 +206,10 @@ let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k
     </footer>
 
     <script>
+function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
 const searchedurl = getQueryParam('searched');  
 searchgxmes(searchedurl)
 document.getElementById('search').value = searchedurl;
