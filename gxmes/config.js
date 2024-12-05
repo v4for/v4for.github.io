@@ -5,43 +5,89 @@ let imgsrc = ['/assets/img/stickman.jpeg', '/assets/img/1v1.webp', '/assets/img/
 let listlink = ['/Vafor_IT-main/hookingman/', '/Vafor_IT-main/1a3b7c9e1f2g4h5j6k8l0m1n2p3q4r5s', '/Vafor_IT-main/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/', '/Vafor_IT-main/cookie-clicker/', '/Vafor_IT-main/retrobowl/', '/Vafor_IT-main/jptr-agario-main/jptr-agario-main/web/index.html', '/Vafor_IT-main/d2f6b8c9e4a1f7d5a3c9e1b8f6d4a2e3', '/Vafor_IT-main/slope', '/Vafor_IT-main/pirates', '/Vafor_IT-main/mx3m', '/Vafor_IT-main/ihatemonkeys', '/Vafor_IT-main/awesometanks2/', '/Vafor_IT-main/time-shooter-3', '/Vafor_IT-main/badtaxidriver', '/Vafor_IT-main/germany%20drift/DriftBoss-gh-pages/', '/Vafor_IT-main/bank', '/Vafor_IT-main/ovo', '/Vafor_IT-main/tiny-fishing', '/Vafor_IT-main/vex6', '/Vafor_IT-main/basketball-stars', '/Vafor_IT-main/sm64', '/Vafor_IT-main/60min/index.html', '/Vafor_IT-main/paper-io-2/index.html', '/Vafor_IT-main/cat-mario/index.html', '/Vafor_IT-main/idle-breakout-main/idle-breakout-main/index.html', '/Vafor_IT-main/ducklife1/index.html', '/Vafor_IT-main/ducklife2', '/Vafor_IT-main/ducklife3', '/Vafor_IT-main/pixelgun/maxwellstevenson.com.html', '/Vafor_IT-main/drive-mad/', '/Vafor_IT-main/bustergush', '/Vafor_IT-main/10-minutes-till-dawn/', '/Vafor_IT-main/google-snake/', '/Vafor_IT-main/gunmayhem2/', '/Vafor_IT-main/fishing_game/', '/Vafor_IT-main/scarybear/', '/Vafor_IT-main/ninja.html', '/Vafor_IT-main/csgo_clicker/', '/Vafor_IT-main/mcm-files-main/mcm-files-main/index.html', '/Vafor_IT-main/bitlife/', '/Vafor_IT-main/Snow-Rider3D-main/index.html', '/Vafor_IT-main/jetpack-joyride/', '/Vafor_IT-main/impossiblequiz/', '/Vafor_IT-main/papaspizzaria/', '/Vafor_IT-main/papasfreezeria/', '/Vafor_IT-main/papaspancakeareia/', '/Vafor_IT-main/worlds-hardest-game-2/index.html', '/Vafor_IT-main/rooftop-snipers/', '/Vafor_IT-main/stack/', '/Vafor_IT-main/tanuki-sunset/', '/Vafor_IT-main/soccer-random/', '/Vafor_IT-main/subway-surfers/', '/Vafor_IT-main/learntofly/', '/Vafor_IT-main/learn2fly/index.html', '/Vafor_IT-main/hilldraw/', '/Vafor_IT-main/snowballio-main/', '/Vafor_IT-main/fireboywatergirlforesttemple-main/', '/Vafor_IT-main/pixellyballs/', '/Vafor_IT-main/dances/', '/Vafor_IT-main/7a9b3c4e2f6d1e8c5a2f4b7d9e3c0a6f', '/Vafor_IT-main/deepswordayo/', '/Vafor_IT-main/bottleflippingdiedin20126/', '/Vafor_IT-main/oh-good-good/docs/index.html', '/Vafor_IT-main/precision-client/precision-client-v34.6/public/', '/Vafor_IT-main/VAzg42bVjmum4loaFEocbmzmkIYQggJd/', '/Vafor_IT-main/hole.io/', '/Vafor_IT-main/totm', '/Vafor_IT-main/doge/', '/Vafor_IT-main/run3editor/', '/Vafor_IT-main/sausage/', '/Vafor_IT-main/sanstrike.io/', '/Vafor_IT-main/colourtunnel', '/Vafor_IT-main/polytrack', '/Vafor_IT-main/fnfweek7/']
 
 
+function getParentFolder() {
+    var path = window.location.pathname;
+    path = path.endsWith('/') ? path.slice(0, -1) : path;
+    
+    var segments = path.split('/');
 
-document.addEventListener("DOMContentLoaded", function () {
-    if (list.length !== imgsrc.length || list.length !== listlink.length) {
-        console.error("Arrays must have the same length!");
+    if (segments.length > 1) {
+        return segments[segments.length - 2];
     } else {
-        const container = document.getElementById("list");
-
-        list.forEach((item, index) => {
-            const newDiv = document.createElement("div");
-            newDiv.style.margin = "10px";
-            newDiv.style.display = "flex";
-            newDiv.style.flexDirection = "column";
-            newDiv.style.alignItems = "center";
-
-            const newLink = document.createElement("a");
-            newLink.href = listlink[index]; 
-            newLink.target = "_blank";
-
-            const newImg = document.createElement("img");
-            newImg.src = "../" + imgsrc[index]; 
-            newImg.alt = item; 
-            newImg.className = "rounded-image";
-            newImg.style.width = "100px";
-            newImg.style.height = "100px";
-
-            newLink.appendChild(newImg);
-
-            const newParagraph = document.createElement("p");
-            newParagraph.className = "description";
-            newParagraph.style.color = "#95d0b4";
-            newParagraph.textContent = item; 
-
-
-            newDiv.appendChild(newLink);
-            newDiv.appendChild(newParagraph);
-
-            container.appendChild(newDiv);
-        });
+        return '/'; 
     }
-  });
+    
+}
+var x = getParentFolder();
+
+list.forEach((item, index) => {
+    let gxmeGridSection = document.querySelector('.gxme-grid');
+
+    // Create anchor element
+    let gxmeLink = document.createElement('a');
+    gxmeLink.href = listlink[index]; 
+    gxmeLink.target = '_self'; 
+    gxmeLink.style.textDecoration = 'none'; 
+    gxmeLink.style.color = 'inherit'; 
+
+    let gxmeCard = document.createElement('div');
+    gxmeCard.classList.add('gxme-card');
+    gxmeCard.style.cursor = 'pointer';
+
+    let img = document.createElement('img');
+    img.src = x + imgsrc[index];
+    img.alt = item;
+    img.style.width = '100px';
+    img.style.height = '100px';
+
+    let h3 = document.createElement('h3');
+    h3.textContent = item;
+
+    gxmeCard.appendChild(img);
+    gxmeCard.appendChild(h3);
+
+    gxmeLink.appendChild(gxmeCard);
+
+    gxmeGridSection.appendChild(gxmeLink);
+});
+
+
+
+            const gxmes = list.map((name, index) => ({
+    name,
+    img: imgsrc[index],
+    link: listlink[index],
+}));
+const searchInput = document.getElementById('search');
+const gxmeGrid = document.querySelector('.gxme-grid');
+
+function searchgxmes() {
+    const query = searchInput.value.toLowerCase();
+
+    document.querySelectorAll('.gxme-card').forEach((card, index) => {
+        const gxmeName = gxmes[index].name.toLowerCase();
+        
+        if (gxmeName.includes(query)) {
+            card.style.display = ''; 
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+document.getElementById("search").addEventListener("input", searchgxmes);
+
+function default2() {
+    setTimeout(function() {
+        var gxmeCards = document.querySelectorAll('.gxme-card');
+        gxmeCards.forEach(function(card, index) {
+            card.onclick = function(event) {
+                event.preventDefault();
+                var gxmeName = card.querySelector('h3') ? card.querySelector('h3').textContent : 'Unknown gxme';
+                let encodedStr = btoa(listlink[index]);
+                window.open(x + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gxmeName), '_self');
+            };
+        });
+    }, 50);
+}
+
+default2();
