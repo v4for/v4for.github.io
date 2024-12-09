@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vafor</title>
-    <!-- Include Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467" crossorigin="anonymous"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -60,41 +58,57 @@
         }
 
         .content-container {
-            width: 80%; 
+            width: 80%;
             display: flex;
             flex-direction: column;
+            position: relative; /* This makes the overlay align relative to this container */
         }
 
         .content-container iframe {
-            width: 100%; 
+            width: 100%;
             height: 80vh;
             border: none;
-            border-radius: 10px 10px 0 0; 
+            border-radius: 10px 10px 0 0;
             transition: all 0.3s ease;
         }
 
-        .fullscreen-strip {
-            width: 100%; 
-            background-color: #555; 
-            padding: 5px 20px;
+        /* The overlay that goes over the iframe */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
-            border-radius: 0 0 10px 10px; 
+            color: white;
+            font-size: 2rem;
+            visibility: hidden; /* Hidden by default */
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .fullscreen-btn {
-            font-size: 1.5em; 
-            background: none;
-            border: none;
-            color: #fff;
+        .overlay.show {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Style for the play button */
+        .overlay button {
+            font-size: 3rem;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 20px 40px;
             cursor: pointer;
-            padding: 5px;
-            transition: background 0.3s ease;
+            border-radius: 10px;
+            transition: background-color 0.3s;
         }
 
-        .fullscreen-btn:hover {
-            background-color: #444; 
+        .overlay button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         footer {
@@ -123,10 +137,14 @@
     <main>
         <div class="content-container">
             <iframe id="gameFrame" title="Game"></iframe>
-            
+
+            <div class="overlay" id="overlay">
+                <button onclick="removeOverlay()">Play</button>
+            </div>
+
             <div class="fullscreen-strip">
                 <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                    <i class="fas fa-expand"></i> 
+                    <i class="fas fa-expand"></i>
                 </button>
             </div>
         </div>
@@ -177,6 +195,11 @@
             }
         }
 
+        function removeOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.classList.remove('show');
+        }
+
         window.onload = function() {
             const encodedGameUrl = getQueryParam('game');  
             
@@ -192,26 +215,28 @@
             } else {
                 console.log("No game URL parameter found in the URL.");
             }
-              var savedTabName = localStorage.getItem('tabName');
-              var savedTabImage = localStorage.getItem('tabImage');
-              if (savedTabName) {
+
+            const name = getQueryParam('name');
+            if (name === "last horizon") {
+                const overlay = document.getElementById('overlay');
+                overlay.classList.add('show'); // Show overlay if name is "last horizon"
+            }
+
+            var savedTabName = localStorage.getItem('tabName');
+            var savedTabImage = localStorage.getItem('tabImage');
+            if (savedTabName) {
                 document.title = savedTabName;
-              } else {
-                  document.title = name + " - play now on maxwellstevenson.com";
-              }
-              if (savedTabImage) {
+            } else {
+                document.title = name + " - play now on maxwellstevenson.com";
+            }
+            if (savedTabImage) {
                 var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
                 link.type = 'image/x-icon';
                 link.rel = 'shortcut icon';
                 link.href = savedTabImage;
                 document.getElementsByTagName('head')[0].appendChild(link);
-              }
+            }
         };
-
-        const name = getQueryParam('name');
-
-        
-
     </script>
 </body>
 </html>
