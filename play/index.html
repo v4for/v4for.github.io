@@ -8,8 +8,8 @@
     <!-- Include Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-        crossorigin="anonymous"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
+     crossorigin="anonymous"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -26,7 +26,7 @@
             flex-direction: column;
             min-height: 100vh;
         }
-
+        
         header {
             background-color: #111;
             padding: 20px;
@@ -34,17 +34,17 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         header h1 {
             color: #95d0b4;
             font-size: 2em;
         }
-
+        
         header nav {
             display: flex;
             gap: 20px;
         }
-
+        
         header nav a {
             color: #fff;
             text-decoration: none;
@@ -60,32 +60,31 @@
         }
 
         .content-container {
-            width: 80%;
+            width: 80%; 
             display: flex;
             flex-direction: column;
-            position: relative;
         }
 
         .content-container iframe {
-            width: 100%;
+            width: 100%; 
             height: 80vh;
             border: none;
-            border-radius: 10px 10px 0 0;
+            border-radius: 10px 10px 0 0; 
             transition: all 0.3s ease;
         }
 
         .fullscreen-strip {
-            width: 100%;
-            background-color: #555;
+            width: 100%; 
+            background-color: #555; 
             padding: 5px 20px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            border-radius: 0 0 10px 10px;
+            border-radius: 0 0 10px 10px; 
         }
 
         .fullscreen-btn {
-            font-size: 1.5em;
+            font-size: 1.5em; 
             background: none;
             border: none;
             color: #fff;
@@ -95,7 +94,7 @@
         }
 
         .fullscreen-btn:hover {
-            background-color: #444;
+            background-color: #444; 
         }
 
         footer {
@@ -103,51 +102,11 @@
             padding: 20px;
             text-align: center;
         }
-
+        
         footer a {
             color: #95d0b4;
             text-decoration: none;
         }
-
-        /* Overlay Styles */
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 2em;
-            z-index: 10;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .play-now-btn {
-            background-color: #95d0b4;
-            color: #1a1a1a;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .play-now-btn:hover {
-            background-color: #77a594;
-        }
-
     </style>
 </head>
 <body>
@@ -160,27 +119,19 @@
             <a href="/a">Apps</a>
         </nav>
     </header>
-
+    
     <main>
         <div class="content-container">
             <iframe id="gameFrame" title="Game"></iframe>
-
+            
             <div class="fullscreen-strip">
                 <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                    <i class="fas fa-expand"></i>
+                    <i class="fas fa-expand"></i> 
                 </button>
-            </div>
-
-            <!-- Overlay (Initially hidden) -->
-            <div id="overlay" class="overlay">
-                <div>
-                    <p>Last Horizon Game</p>
-                    <button class="play-now-btn" onclick="removeOverlay()">Play Now</button>
-                </div>
             </div>
         </div>
     </main>
-
+    
     <footer>
         <p>&copy; 2024 Vafor IT. All rights reserved. <a href="#">Privacy Policy</a></p>
     </footer>
@@ -188,13 +139,13 @@
     <script>
         function toggleFullscreen() {
             var iframe = document.getElementById('gameFrame');
-
+            
             if (!document.fullscreenElement) {
                 if (iframe.requestFullscreen) {
                     iframe.requestFullscreen();
                 } else if (iframe.mozRequestFullScreen) { // Firefox
                     iframe.mozRequestFullScreen();
-                } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
                     iframe.webkitRequestFullscreen();
                 } else if (iframe.msRequestFullscreen) { // IE/Edge
                     iframe.msRequestFullscreen();
@@ -204,7 +155,7 @@
                     document.exitFullscreen();
                 } else if (document.mozCancelFullScreen) { // Firefox
                     document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
                     document.webkitExitFullscreen();
                 } else if (document.msExitFullscreen) { // IE/Edge
                     document.msExitFullscreen();
@@ -219,53 +170,48 @@
 
         function base64Decode(str) {
             try {
-                return decodeURIComponent(atob(str));
+                return decodeURIComponent(atob(str)); 
             } catch (e) {
                 console.error("Error decoding Base64:", e);
                 return null;
             }
         }
 
-        function removeOverlay() {
-            document.getElementById('overlay').classList.remove('show');
-        }
-
         window.onload = function() {
-            const encodedGameUrl = getQueryParam('game');
-
+            const encodedGameUrl = getQueryParam('game');  
+            
             if (encodedGameUrl) {
                 const iframe = document.getElementById('gameFrame');
-                const decodedUrl = base64Decode(encodedGameUrl);
-
+                const decodedUrl = base64Decode(encodedGameUrl);  
+                
                 if (decodedUrl) {
-                    iframe.src = decodedUrl;
+                    iframe.src = decodedUrl;  
                 } else {
                     console.error("Failed to decode the game URL.");
                 }
             } else {
                 console.log("No game URL parameter found in the URL.");
             }
-
-            var savedTabName = localStorage.getItem('tabName');
-            var savedTabImage = localStorage.getItem('tabImage');
-            if (savedTabName) {
+              var savedTabName = localStorage.getItem('tabName');
+              var savedTabImage = localStorage.getItem('tabImage');
+              if (savedTabName) {
                 document.title = savedTabName;
-            } else {
-                document.title = name + " - play now on maxwellstevenson.com";
-            }
-            if (savedTabImage) {
+              } else {
+                  document.title = name + " - play now on maxwellstevenson.com";
+              }
+              if (savedTabImage) {
                 var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
                 link.type = 'image/x-icon';
                 link.rel = 'shortcut icon';
                 link.href = savedTabImage;
                 document.getElementsByTagName('head')[0].appendChild(link);
-            }
-
-            const name = getQueryParam('name');
-            if (name === "last%20horizon") {
-                document.getElementById('overlay').classList.add('show');
-            }
+              }
         };
+
+        const name = getQueryParam('name');
+
+        
+
     </script>
 </body>
 </html>
