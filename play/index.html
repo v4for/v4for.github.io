@@ -122,7 +122,7 @@
     
     <main>
         <div class="content-container">
-            <iframe id="gameFrame" title="Game"></iframe>
+            <iframe id="gameFrame" title="Game" scrolling="no"></iframe>
             
             <div class="fullscreen-strip">
                 <button class="fullscreen-btn" onclick="toggleFullscreen()">
@@ -206,6 +206,8 @@
                 link.href = savedTabImage;
                 document.getElementsByTagName('head')[0].appendChild(link);
               }
+                document.getElementById('gameFrame').focus();
+
         };
 
         const name = getQueryParam('name');
