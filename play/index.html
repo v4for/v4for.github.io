@@ -7,9 +7,6 @@
     <title>Vafor</title>
     <!-- Include Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-     crossorigin="anonymous"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -83,7 +80,8 @@
             border-radius: 0 0 10px 10px; 
         }
 
-        .fullscreen-btn {
+        .fullscreen-btn,
+        .lock-btn {
             font-size: 1.5em; 
             background: none;
             border: none;
@@ -93,8 +91,27 @@
             transition: background 0.3s ease;
         }
 
-        .fullscreen-btn:hover {
+        .fullscreen-btn:hover,
+        .lock-btn:hover {
             background-color: #444; 
+        }
+
+        .lock-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .lock-text {
+            display: none;
+        }
+
+        .lock-btn:hover + .lock-text {
+            display: block;
+            position: absolute;
+            background-color: #111;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
         }
 
         footer {
@@ -122,12 +139,16 @@
     
     <main>
         <div class="content-container">
-            <iframe id="gameFrame" title="Game" tabindex="0" scrolling="no" style="overflow: hidden;"></iframe>
+            <iframe id="gameFrame" title="Game" tabindex="0"></iframe>
             
             <div class="fullscreen-strip">
                 <button class="fullscreen-btn" onclick="toggleFullscreen()">
                     <i class="fas fa-expand"></i> 
                 </button>
+                <button class="lock-btn" onclick="toggleScrolling()">
+                    <i class="fas fa-lock lock-icon"></i>
+                </button>
+                <span class="lock-text">Disable Scrolling</span>
             </div>
         </div>
     </main>
@@ -137,6 +158,8 @@
     </footer>
 
     <script>
+        let scrollingEnabled = true;
+
         function toggleFullscreen() {
             var iframe = document.getElementById('gameFrame');
             
@@ -161,6 +184,11 @@
                     document.msExitFullscreen();
                 }
             }
+        }
+
+        function toggleScrolling() {
+            scrollingEnabled = !scrollingEnabled;
+            document.body.style.overflow = scrollingEnabled ? 'auto' : 'hidden';
         }
 
         function getQueryParam(name) {
@@ -209,9 +237,6 @@
         };
 
         const name = getQueryParam('name');
-
-        
-
     </script>
 </body>
 </html>
