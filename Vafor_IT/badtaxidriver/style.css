@@ -47,7 +47,7 @@ html, body {
 @font-face {
   font-family: Torus;
   src:
-      url('//a.poki.com/fonts/torus-bold-webfont.woff2') format('woff2'),
+      url('patch/fonts/torus-bold-webfont.woff2') format('woff2'),
       url('//a.poki.com/fonts/torus-bold-webfont.woff') format('woff');
   font-style: bold;
   font-weight: 700;
