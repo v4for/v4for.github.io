@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vafor - maxwellstevenson.com</title>
+    <meta name="description" content="Play now on maxwellstevenson.com">
+    <meta name="keywords" content="maxwellstevenson.com, vafor, vafor IT, Vafor IT work,  buildnow.gg, 1v1.lol ,funnyshooter 2 ,smash karts ,unblocked gxmes, gxmes">
+    <meta name="author" content="Vafor">
+    <meta name="robots" content="index, follow">
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/h1modeling.css">
+    <link rel="stylesheet" href="assets/bottombanner.css">
+    
+    <!-- Import JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/script.js" defer></script>
+    <script src="assets/search.js" defer></script>
+    <script src="assets/typing.js" defer></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
+     crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-9Y3T9NZGP8');
+
+        window.onload = function() {
+            document.getElementById('searchTerm').focus();
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchTerm').addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    displayResults();
+                }
+            });
+
+            
+
+            // Manage tab name and icon
+            var savedTabName = localStorage.getItem('tabName');
+            var savedTabImage = localStorage.getItem('tabImage');
+            if (savedTabName) document.title = savedTabName;
+            if (savedTabImage) {
+                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                link.type = 'image/x-icon';
+                link.rel = 'shortcut icon';
+                link.href = savedTabImage;
+                document.head.appendChild(link);
+            }
+
+            // Redirect if necessary
+            if (window.self === window.top && localStorage.getItem('blank2') === 'true') {
+                redirectToWebsite();
+            }
+        });
+
+        function openIframe(event, title, src) {
+        event.preventDefault();
+        var win = window.open('', title, 'height=649,width=730,screenX=400,screenY=350');
+
+
+        if (win) { 
+            var iframe = win.document.createElement('iframe');
+            iframe.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:999999;";
+            iframe.src = src;
+
+            win.document.body.appendChild(iframe);
+        } else {
+            alert('womp womp');
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <div id="mySideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+        <a href="/">Gxmes</a>
+        <a onclick="openIframe(event, 'Apps', '/a')" style="cursor: pointer;">Apps</a>
+        <a onclick="openIframe(event, 'Settings', '/s')" style="cursor: pointer;">Settings</a>
+        <a href="https://phexus.bitbucket.io">Bitbucket</a>
+        <a href="https://ph4xus.github.io">Github</a>
+    </div>
+
+    <div class="toptext">
+        <a href="https://github.com/v4for">Github</a>
+        <a>|</a>
+        <a href="/about">About Us</a>
+    </div>
+
+    <div class="topright">
+        <span class="sidebutton" id="br" onclick="openNav()">&#9776;</span>
+    </div>
+
+    <h1 class="titlepiece">Vafor IT</h1>
+
+    <div class="wrap">
+        <div class="search">
+            <input id="searchTerm" type="text" class="searchTerm" placeholder="What are you looking to play?">
+            <button type="submit" class="searchButton" onclick="displayResults()">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
+        crossorigin="anonymous"></script>
+    <!-- Bottom Banner Ad -->
+    <ins class="adsbygoogle bottombannerad"
+        style="display:inline-block;width:728px;height:160px"
+        data-ad-client="ca-pub-5247035630897467"
+        data-ad-slot="5122372341"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <div id="footer">
+        <p>Made by <a href="https://maxwellstevenson.com">maxwellstevenson.com</a></p>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySideNav").style.width = "250px";
+            document.getElementById("br").style.display = "none";
+        }
+        function closeNav() {
+            document.getElementById("mySideNav").style.width = "0";
+            document.getElementById("br").style.display = "block";
+        }
+    </script>
+</body>
+</html>

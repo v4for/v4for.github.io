@@ -3,134 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vafor - maxwellstevenson.com</title>
-    <meta name="description" content="Play now on maxwellstevenson.com">
-    <meta name="keywords" content="maxwellstevenson.com, vafor, vafor IT, Vafor IT work,  buildnow.gg, 1v1.lol ,funnyshooter 2 ,smash karts ,unblocked gxmes, gxmes">
-    <meta name="author" content="Vafor">
-    <meta name="robots" content="index, follow">
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/h1modeling.css">
-    <link rel="stylesheet" href="assets/bottombanner.css">
-    
-    <!-- Import JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/script.js" defer></script>
-    <script src="assets/search.js" defer></script>
-    <script src="assets/typing.js" defer></script>
+    <title>Gxmes - maxwellstevenson.com</title>
+    <!--<script src="config.js"></script>
+    <link href="style.css" rel="stylesheet">
+    -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
      crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y3T9NZGP8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-9Y3T9NZGP8');
-
-        window.onload = function() {
-            document.getElementById('searchTerm').focus();
-        };
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchTerm').addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    displayResults();
-                }
-            });
-
-            
-
-            // Manage tab name and icon
-            var savedTabName = localStorage.getItem('tabName');
-            var savedTabImage = localStorage.getItem('tabImage');
-            if (savedTabName) document.title = savedTabName;
-            if (savedTabImage) {
-                var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-                link.type = 'image/x-icon';
-                link.rel = 'shortcut icon';
-                link.href = savedTabImage;
-                document.head.appendChild(link);
-            }
-
-            // Redirect if necessary
-            if (window.self === window.top && localStorage.getItem('blank2') === 'true') {
-                redirectToWebsite();
-            }
-        });
-
-        function openIframe(event, title, src) {
-        event.preventDefault();
-        var win = window.open('', title, 'height=649,width=730,screenX=400,screenY=350');
-
-
-        if (win) { 
-            var iframe = win.document.createElement('iframe');
-            iframe.style.cssText = "position:fixed; top:0; left:0; width:100%; height:100%; border:none; z-index:999999;";
-            iframe.src = src;
-
-            win.document.body.appendChild(iframe);
-        } else {
-            alert('womp womp');
+    <script src="../s/tab.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Heebo", sans-serif;
         }
-    }
 
-    </script>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            background-color: #2d2d2d;
+            color: #eaeaea;
+        }
+
+        h1, h2 {
+            color: #b7e1c0;
+        }
+
+        .navbar {
+            background-color: #3e3e3e;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: #eaeaea;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #b7e1c0;
+        }
+
+        .hero-section {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-custom {
+            background-color: #b7e1c0;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn-custom:hover {
+            background-color: #a0d1a4;
+            transform: translateY(-2px);
+        }
+
+        .gxme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 40px 20px;
+            background-color: #3e3e3e;
+            flex-grow: 1;
+        }
+
+        .gxme-card {
+            background-color: #444;
+            border-radius: 10px;
+            padding: 15px;
+            height: 150px;
+            text-align: center;
+            color: #eaeaea;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .gxme-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .gxme-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .gxme-card h3 {
+            font-size: 1.2rem;
+            color: #b7e1c0;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 30px 20px;
+            color: #eaeaea;
+            font-size: 0.9rem;
+            flex-shrink: 0; /* Ensures the footer does not shrink */
+        }
+
+        .footer a {
+            color: #b7e1c0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            color: #a0d1a4;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #444;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #eaeaea;
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 200px;
+        }
+
+        .search-bar button {
+            background-color: #b7e1c0;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #a0d1a4;
+        }
+    </style>
+
 </head>
-<body>
-    <div id="mySideNav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
-        <a href="/gxmes">Gxmes</a>
-        <a onclick="openIframe(event, 'Apps', '/a')" style="cursor: pointer;">Apps</a>
-        <a onclick="openIframe(event, 'Settings', '/s')" style="cursor: pointer;">Settings</a>
-        <a href="https://phexus.bitbucket.io">Bitbucket</a>
-        <a href="https://ph4xus.github.io">Github</a>
-    </div>
-
-    <div class="toptext">
-        <a href="https://github.com/v4for">Github</a>
-        <a>|</a>
-        <a href="/about">About Us</a>
-    </div>
-
-    <div class="topright">
-        <span class="sidebutton" id="br" onclick="openNav()">&#9776;</span>
-    </div>
-
-    <h1 class="titlepiece">Vafor IT</h1>
-
-    <div class="wrap">
-        <div class="search">
-            <input id="searchTerm" type="text" class="searchTerm" placeholder="What are you looking to play?">
-            <button type="submit" class="searchButton" onclick="displayResults()">
-                <i class="fa fa-search"></i>
-            </button>
-        </div>
-    </div>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-        crossorigin="anonymous"></script>
-    <!-- Bottom Banner Ad -->
-    <ins class="adsbygoogle bottombannerad"
-        style="display:inline-block;width:728px;height:160px"
-        data-ad-client="ca-pub-5247035630897467"
-        data-ad-slot="5122372341"></ins>
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+let list = ['Stickman hook', '1v1.lol', 'Buildnow.gg', 'Cookie Clicker', 'Retro Football', 'Agar.io', 'Smash karts', 'Slope', 'yohoho', 'Motor X3m', 'Monkey Mart', 'Awesome Tanks 2', 'Time Shooter 3', 'Sling Drift', 'Drift Boss', 'Bank Robbery', 'ovo', 'tiny fishing', 'vex 6', 'Basketball Stars', 'sm64', '60 second burger run', 'Paper.io 2', 'Cat mario', 'Idle breakout', 'Ducklife', 'Ducklife2', 'Ducklife3', 'Pixel Gun 2', 'Drive mad', 'Cluster Rush', '10 minutes till dawn', 'Google Snake', 'Gun mayhem 2', 'Generic fishing', 'FNAF', 'Ninja vs evilcorp', 'CSGO clicker', 'madalin stunt cars', 'bitlife', 'snowrider', 'Jetpack joyride', 'Impossible quiz', 'Pappas pizzaria', 'Pappas Freezeria', 'Pappas Pancakearia', 'World hardest gm 2', 'Rooftop sniper', 'stack', 'Tanuki sunset', 'Soccer random', 'Subway surfers', 'Learn to fly', 'Learn2fly', 'Hilldraw', 'Snoball io', 'Fireboy and water girl', 'Pixel Speedrun', 'A dance of fire and ice', 'giraffes volleyball', 'Deepest sword', 'Bottle flip 3d', 'Choppy orc', 'Precision client 1.5', 'Funny shooter', 'Hole io', 'Tomb of the mask', 'Doge miner', 'Run 3', 'Sausage flip', 'Sandstrike.io', 'Color tunnel', 'Polytrack', 'Friday night funkin', 'Last horizon', 'Fruit ninja']
+
+let imgsrc = ['/assets/img/stickman.jpeg', '/assets/img/1v1.webp', '/assets/img/builf.png', '/assets/img/cookieclicker.webp', '/assets/img/retrobowl.jpeg', '/assets/img/agar.png', '/Vafor_IT/d2f6b8c9e4a1f7d5a3c9e1b8f6d4a2e3/9c9e529b14731be871b07b89660bbc2a.png', '/assets/img/slope2.png', '/assets/img/pirates2.jfif', '/assets/img/moto.jfif', '/assets/img/monkey.jfif', '/assets/img/tanks2.jfif', '/assets/img/superhot.jfif', '/Vafor_IT/badtaxidriver/thumbnail.jpg', '/assets/img/drift.jpeg', '/assets/img/bank4.png', '/assets/img/ovo.png', '/assets/img/tinyfishing.png', '/assets/img/vex6.png', '/assets/img/basketball.jpeg', '/assets/img/sm64.jpg', '/assets/img/burger.png', '/assets/img/paper.jpg', '/assets/img/cat.png', '/assets/img/idle.png', '/assets/img/duck.jpeg', '/assets/img/ducklife2.webp', '/assets/img/ducklife3.webp', '/assets/img/pixelgun.jfif', '/assets/img/drivemad.jpeg', '/assets/img/bustergush.png', '/assets/img/20min.jfif', '/assets/img/drakethesnake.png', '/assets/img/gunmayhem.jpeg', '/assets/img/fishing.png', '/assets/img/fnaf.webp', '/assets/img/ninja.png', '/assets/img/csgo.png', '/assets/img/mcm.png', '/assets/img/bitlife.jpeg', '/assets/img/snow.png', '/assets/img/jet.png', '/assets/img/averageschool.png', '/Vafor_IT/papaspizzaria/papaspizzaria.jpg', '/assets/img/papas-freezeria.webp', '/assets/img/papaspancakes.png', '/Vafor_IT/worlds-hardest-game-2/the-worlds-hardest-game-2.jpg', '/assets/img/rooft.png', '/Vafor_IT/stack/stack.png', '/Vafor_IT/tanuki-sunset/img/logo.png', '/Vafor_IT/soccer-random/splash.png', '/Vafor_IT/subway-surfers/img/splash.jpg', '/assets/img/learntofly.jpeg', '/assets/img/learn.jpeg', '/Vafor_IT/hilldraw/icons/icon-512.png', '/assets/img/snowgamingisdead.jpg', '/assets/img/fireandwater.jpg', '/assets/img/pixelspeedrun.png', '/Vafor_IT/dances/splash.png', '/Vafor_IT/7a9b3c4e2f6d1e8c5a2f4b7d9e3c0a6f/favico.png', '/assets/img/deepest-sword.png', '/assets/img/sddefault.jpg', '/assets/img/thumb_2.jpg', '/assets/img/imgoingtoslapmartin.png', '/assets/img/funnyshooter.webp', '/assets/img/hole.io.jfif', '/assets/img/tomb-of-the-mask-logo.jpeg', '/Vafor_IT/doge/img/dogeminer_300x300.png', '/Vafor_IT/run3editor/loading.png', '/assets/img/sausage.jpg', '/assets/img/sanstrike.webp', '/Vafor_IT/colourtunnel/TemplateData/logo.png', '/assets/img/poly.jpeg', '/Vafor_IT/fnfweek7/friday-night-funkin.png', '/assets/img/lasthorizon1.jfif', '/Vafor_IT/fruitninja/FruitNinjaTeaser.jpg']
+
+let listlink = ['/Vafor_IT/hookingman/', '/Vafor_IT/1a3b7c9e1f2g4h5j6k8l0m1n2p3q4r5s', '/Vafor_IT/a3f5d9e7c2b8a4e1f3d5c7e9b0a4f6c8/', '/Vafor_IT/cookie-clicker/', '/Vafor_IT/retrobowl/', '/Vafor_IT/jptr-agario/web/', '/Vafor_IT/d2f6b8c9e4a1f7d5a3c9e1b8f6d4a2e3', '/Vafor_IT/slope', '/Vafor_IT/pirates', '/Vafor_IT/mx3m', '/Vafor_IT/ihatemonkeys', '/Vafor_IT/awesometanks2/', '/Vafor_IT/time-shooter-3', '/Vafor_IT/badtaxidriver', '/Vafor_IT/germany%20drift/DriftBoss-gh-pages/', '/Vafor_IT/bank', '/Vafor_IT/ovo', '/Vafor_IT/tiny-fishing', '/Vafor_IT/vex6', '/Vafor_IT/basketball-stars', '/Vafor_IT/sm64', '/Vafor_IT/60min/index.html', '/Vafor_IT/paper-io-2/index.html', '/Vafor_IT/cat-mario/index.html', '/Vafor_IT/idle-breakout/idle-breakout/index.html', '/Vafor_IT/ducklife1/index.html', '/Vafor_IT/ducklife2', '/Vafor_IT/ducklife3', '/Vafor_IT/pixelgun/maxwellstevenson.com.html', '/Vafor_IT/drive-mad/', '/Vafor_IT/bustergush', '/Vafor_IT/10-minutes-till-dawn/', '/Vafor_IT/google-snake/', '/Vafor_IT/gunmayhem2/', '/Vafor_IT/fishing_game/', '/Vafor_IT/scarybear/', '/Vafor_IT/ninja.html', '/Vafor_IT/csgo_clicker/', '/Vafor_IT/mcm-files/mcm-files/index.html', '/Vafor_IT/bitlife/', '/Vafor_IT/Snow-Rider3D/index.html', '/Vafor_IT/jetpack-joyride/', '/Vafor_IT/impossiblequiz/', '/Vafor_IT/papaspizzaria/', '/Vafor_IT/papasfreezeria/', '/Vafor_IT/papaspancakeareia/', '/Vafor_IT/worlds-hardest-game-2/index.html', '/Vafor_IT/rooftop-snipers/', '/Vafor_IT/stack/', '/Vafor_IT/tanuki-sunset/', '/Vafor_IT/soccer-random/', '/Vafor_IT/subway-surfers/', '/Vafor_IT/learntofly/', '/Vafor_IT/learn2fly/index.html', '/Vafor_IT/hilldraw/', '/Vafor_IT/snowballio/', '/Vafor_IT/fireboywatergirlforesttemple/', '/Vafor_IT/pixellyballs/', '/Vafor_IT/dances/', '/Vafor_IT/7a9b3c4e2f6d1e8c5a2f4b7d9e3c0a6f', '/Vafor_IT/deepswordayo/', '/Vafor_IT/bottleflippingdiedin20126/', '/Vafor_IT/ChoppyOrc', '/Vafor_IT/precision-client/precision-client-v34.6/public/', '/Vafor_IT/VAzg42bVjmum4loaFEocbmzmkIYQggJd/', '/Vafor_IT/hole.io/', '/Vafor_IT/totm', '/Vafor_IT/doge/', '/Vafor_IT/run3editor/', '/Vafor_IT/sausage/', '/Vafor_IT/sanstrike.io/', '/Vafor_IT/colourtunnel', '/Vafor_IT/polytrack', '/Vafor_IT/fnfweek7/', '/Vafor_IT/lasthorizon1', '/Vafor_IT/fruitninja']
     </script>
+<body>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search gxmes...">
+            <button onclick="searchgxmes()">Search</button>
+        </div>
+    </nav>
 
-    <div id="footer">
-        <p>Made by <a href="https://maxwellstevenson.com">maxwellstevenson.com</a></p>
-    </div>
+    <section class="hero-section">
+        <h1>Welcome to Vafor IT</h1>
+        <p>Explore over 70+ exciting gxmes from all genres</p>
+        <button class="btn-custom" onclick="randombutton()">Start Playing</button>
+    </section>
 
-    <script>
-        function openNav() {
-            document.getElementById("mySideNav").style.width = "250px";
-            document.getElementById("br").style.display = "none";
-        }
-        function closeNav() {
-            document.getElementById("mySideNav").style.width = "0";
-            document.getElementById("br").style.display = "block";
-        }
+    <section class="gxme-grid">
+        <!-- Dynamic game cards will be added here by JavaScript -->
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 maxwellstevenson.com. All Rights Reserved.</p>
+        <p>Open an issue: <a href="https://github.com/v4for/v4for.github.io">Official repository</a></p>
+    </footer>
+    
+    
+<script>
+function getParentFolder() {
+    var path = window.location.pathname;
+    path = path.endsWith('/') ? path.slice(0, -1) : path;
+    
+    var segments = path.split('/');
+
+    if (segments.length > 1) {
+        return segments[segments.length - 2];
+    } else {
+        return '/'; 
+    }
+    
+}
+
+let link2 = getParentFolder(); 
+
+function default2(){
+        setTimeout(function() {
+        var links = document.querySelectorAll('section.gxme-grid a');
+        links.forEach(function(link) {
+            link.onclick = function(event) {
+                var gameName = link.querySelector('img') ? link.querySelector('img').alt : 'Why are you here';
+                event.preventDefault(); 
+                let encodedStr = btoa(link.href);
+                window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
+
+            };
+        }); 
+    }, 50); 
+}
+
+const x = getParentFolder();
+
+const gxmes = list.map((name, index) => ({
+    name,
+    img: imgsrc[index],
+    link: listlink[index],
+}));
+
+document.addEventListener('DOMContentLoaded', function () {
+    const gxmeGrid = document.querySelector('.gxme-grid');
+    gxmes.forEach((gxme, index) => {
+        let gxmeLink = document.createElement('a');
+        gxmeLink.href = gxme.link; 
+        gxmeLink.target = '_self'; 
+        gxmeLink.style.textDecoration = 'none'; 
+        gxmeLink.style.color = 'inherit'; 
+
+        let gxmeCard = document.createElement('div');
+        gxmeCard.classList.add('gxme-card');
+        gxmeCard.style.cursor = 'pointer';
+
+        let img = document.createElement('img');
+        img.src = x + gxme.img;
+        img.alt = gxme.name;
+        img.style.width = '100px';
+        img.style.height = '100px';
+
+        let h3 = document.createElement('h3');
+        h3.textContent = gxme.name;
+
+        gxmeCard.appendChild(img);
+        gxmeCard.appendChild(h3);
+        gxmeLink.appendChild(gxmeCard);
+        gxmeGrid.appendChild(gxmeLink);
+    });
+
+    const searchInput = document.getElementById('search');
+
+function searchgxmes() {
+const query = searchInput.value.toLowerCase();
+
+const gxmeGrid = document.querySelector('.gxme-grid');
+gxmeGrid.innerHTML = ''; // Clear the grid
+
+// Re-populate with only matching cards
+gxmes.forEach((gxme) => {
+if (gxme.name.toLowerCase().includes(query)) {
+    let gxmeLink = document.createElement('a');
+    gxmeLink.href = gxme.link; 
+    gxmeLink.target = '_self'; 
+    gxmeLink.style.textDecoration = 'none'; 
+    gxmeLink.style.color = 'inherit'; 
+
+    let gxmeCard = document.createElement('div');
+    gxmeCard.classList.add('gxme-card');
+    gxmeCard.style.cursor = 'pointer';
+
+    let img = document.createElement('img');
+    img.src = x + gxme.img;
+    img.alt = gxme.name;
+    img.style.width = '100px';
+    img.style.height = '100px';
+
+    let h3 = document.createElement('h3');
+    h3.textContent = gxme.name;
+
+    gxmeCard.appendChild(img);
+    gxmeCard.appendChild(h3);
+    gxmeLink.appendChild(gxmeCard);
+    gxmeGrid.appendChild(gxmeLink);
+}
+});
+default2();
+}
+
+
+
+document.getElementById("search").addEventListener("input", searchgxmes);
+default2();
+function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+const searchedurl = getQueryParam('searched');  
+document.getElementById('search').value = searchedurl;
+searchgxmes();
+
+});
+function randombutton() {
+    const sectionLinks = document.querySelectorAll('section a');
+    if (sectionLinks.length > 0) {
+        const randomIndex = Math.floor(Math.random() * sectionLinks.length);
+        const randomLink = sectionLinks[randomIndex];
+        randomLink.click();
+    }
+}
     </script>
 </body>
 </html>
