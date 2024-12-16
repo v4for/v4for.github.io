@@ -9,7 +9,7 @@ If you would like to request a game, please open an issue in this repository. Th
 If you choose to copy any of my games, please ensure to credit me by including a link to [maxwellstevenson.com](https://maxwellstevenson.com). This helps with SEO and promotes fair use. Remember, this project will always remain open source.
 
 ### Note:
-To ensure proper functionality, please make sure to copy the `poki-loader.js` and `unity-loader.js` files. All games are stored in the `Vafor_it-main` directory.
+To ensure proper functionality, please make sure to copy the `poki-loader.js` and `unity-loader.js` files. All games are stored in the `Vafor_it` directory.
 
 ---
 
