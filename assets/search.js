@@ -7,9 +7,9 @@ function displayResults() {
       console.log(inputField.value)
 
       if(inputField.value == "random"){
-        window.location.href = "/gxmes?random"
+        window.location.href = "/?random"
       } else {
-        window.location.href = "/gxmes?searched=" + inputField.value;
+        window.location.href = "/?searched=" + inputField.value;
       }
       
   }
