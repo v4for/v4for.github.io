@@ -1,0 +1,13 @@
+{
+"companyName": "Ruby Games",
+"productName": "Sling Drift",
+"dataUrl": "webglProj.data.unityweb?v=1",
+"asmCodeUrl": "webglProj.asm.code.unityweb?v=1",
+"asmMemoryUrl": "webglProj.asm.memory.unityweb?v=1",
+"asmFrameworkUrl": "webglProj.asm.framework.unityweb?v=1",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#625775"
+}
