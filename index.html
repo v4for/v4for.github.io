@@ -222,17 +222,7 @@ let listlink = ['/Vafor_IT/hookingman/', '/Vafor_IT/1a3b7c9e1f2g4h5j6k8l0m1n2p3q
     
 <script>
 function getParentFolder() {
-    var path = window.location.pathname;
-    path = path.endsWith('/') ? path.slice(0, -1) : path;
-    
-    var segments = path.split('/');
-
-    if (segments.length > 1) {
-        return segments[segments.length - 2];
-    } else {
-        return '/'; 
-    }
-    
+    return window.location.origin; // Returns the protocol + domain
 }
 
 let link2 = getParentFolder(); 
