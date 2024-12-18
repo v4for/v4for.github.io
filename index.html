@@ -200,6 +200,11 @@
     </footer>
 
 <script>
+function getParentFolder() {
+    return window.location.origin; // Returns the protocol + domain
+}
+
+let link2 = getParentFolder(); 
     function default2(){
         setTimeout(function() {
         var links = document.querySelectorAll('section.gxme-grid a');
