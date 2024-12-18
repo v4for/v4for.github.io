@@ -252,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 gxmeLink.appendChild(gxmeCard);
                 gxmeGrid.appendChild(gxmeLink);
             });
+            default2();
         })
         .catch(error => console.error('Error loading the list.json:', error));
     
@@ -300,7 +301,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     searchInput.addEventListener('input', searchgxmes);
-    default2();
 
 });
 </script>
