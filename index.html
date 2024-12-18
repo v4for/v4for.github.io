@@ -200,6 +200,20 @@
     </footer>
 
 <script>
+    function default2(){
+        setTimeout(function() {
+        var links = document.querySelectorAll('section.gxme-grid a');
+        links.forEach(function(link) {
+            link.onclick = function(event) {
+                var gameName = link.querySelector('img') ? link.querySelector('img').alt : 'Why are you here';
+                event.preventDefault(); 
+                let encodedStr = btoa(link.href);
+                window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
+
+            };
+        }); 
+    }, 50); 
+}
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch the JSON data from the external URL
     fetch('/list.json')
@@ -275,11 +289,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         gxmeGrid.appendChild(gxmeLink);
                     }
                 });
+                default2();
             })
             .catch(error => console.error('Error searching games:', error));
     }
 
     searchInput.addEventListener('input', searchgxmes);
+    default2();
+
 });
 </script>
 
