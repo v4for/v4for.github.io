@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const gxmeGrid = document.querySelector('.gxme-grid');
         gxmeGrid.innerHTML = ''; // Clear the grid
 
-        fetch('https://ph4xus.github.io/list.json')
+        fetch('/list.json')
             .then(response => response.json())
             .then(data => {
                 // Re-populate with only matching cards
