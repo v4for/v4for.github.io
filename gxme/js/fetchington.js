@@ -17,7 +17,7 @@ async function fetchData(index) {
 
 const iframe = document.getElementById('gameFrame');    
 
-iframe.src = src;  
+iframe.src = item.linksrc;
 
 var savedTabName = localStorage.getItem('tabName');
 var savedTabImage = localStorage.getItem('tabImage');
@@ -25,7 +25,7 @@ var savedTabImage = localStorage.getItem('tabImage');
     if (savedTabName) {
         document.title = savedTabName;
     } else {
-        document.title = name1 + " - play now on maxwellstevenson.com";
+        document.title = item.name; + " - play now on maxwellstevenson.com";
     }
       if (savedTabImage) {
         var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
