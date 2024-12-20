@@ -2,17 +2,6 @@
 <html lang="en">
 <head>
     <script src="js/fetchington.js"></script>
-    <script>
-async function loadHeadContent() {
-    try {
-        const response = await fetch('head-content.html');
-        document.head.innerHTML = await response.text();
-    } catch (error) {
-        console.error('Error loading head content:', error);
-    }
-}
-loadHeadContent();
-    </script>
 </head>
 <body>
     <script>

@@ -1,3 +1,49 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const htmlContent = `
+        <header>
+            <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/'">Vafor</h1>
+            <nav>
+                <a href="/search/">Search</a>
+                <a href="/">Gxmes</a>
+                <a href="/about">About</a>
+                <a href="/a">Apps</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="content-container">
+                <iframe id="gameFrame" title="Game" scrolling="no"></iframe>
+                
+                <div class="fullscreen-strip">
+                    <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                        <i class="fas fa-expand"></i> 
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Vafor IT. All rights reserved. <a href="#">Privacy Policy</a></p>
+        </footer>
+    `;
+
+    document.body.innerHTML += htmlContent;
+
+    const headContent = `
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vafor</title>
+        <!-- Include Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet"/>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467" crossorigin="anonymous"></script>
+        <script src="js/fullscreen.js"></script>
+    `;
+
+    document.head.innerHTML += headContent;
+});
+
 async function fetchData(index) {
     try {
         const response = await fetch('/list.json');
@@ -33,18 +79,10 @@ async function fetchData(index) {
 
         document.getElementById('gameFrame').focus();
 
-        // Add keywords
-        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
-        addKeywords(keywords);
 
     } catch (error) {
         console.error('Fetch error:', error);
     }
 }
 
-function addKeywords(keywords) {
-    const meta = document.createElement('meta');
-    meta.name = 'keywords';
-    meta.content = keywords;
-    document.head.appendChild(meta);
-}
+//const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
