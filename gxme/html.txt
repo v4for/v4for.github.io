@@ -1,4 +1,3 @@
-const htmlContent = `
 <header>
     <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/'">Vafor</h1>
     <nav>
@@ -24,6 +23,3 @@ const htmlContent = `
 <footer>
     <p>&copy; 2024 Vafor IT. All rights reserved. <a href="#">Privacy Policy</a></p>
 </footer>
-`;
-
-document.body.innerHTML = htmlContent;
