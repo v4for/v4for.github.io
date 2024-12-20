@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/'">Vafor</h1>
             <nav>
                 <a href="/search/">Search</a>
-                <a href="/">Gxmes</a>
+                <a href="/gxmes">Gxmes</a>
                 <a href="/about">About</a>
                 <a href="/a">Apps</a>
             </nav>
@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
         <title>Vafor</title>
         <!-- Include Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link href="styles/style.css" rel="stylesheet"/>
+        <link href="../styles/style.css" rel="stylesheet"/>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467" crossorigin="anonymous"></script>
-        <script src="js/fullscreen.js"></script>
     `;
 
     document.head.innerHTML += headContent;
@@ -84,5 +83,32 @@ async function fetchData(index) {
         console.error('Fetch error:', error);
     }
 }
+
+function toggleFullscreen() {
+    var iframe = document.getElementById('gameFrame');
+    
+    if (!document.fullscreenElement) {
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+    }
+}
+
 
 //const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
