@@ -35,3 +35,14 @@ var savedTabImage = localStorage.getItem('tabImage');
         document.getElementsByTagName('head')[0].appendChild(link);
       }
         document.getElementById('gameFrame').focus();
+
+
+function addKeywords(keywords) {
+    const meta = document.createElement('meta');
+    meta.name = 'keywords';
+    meta.content = keywords;
+    document.head.appendChild(meta);
+}
+
+const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
+addKeywords(keywords);
