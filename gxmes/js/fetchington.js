@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const htmlContent = `
         <header>
-            <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/'">Vafor</h1>
+            <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/gxmes'">Vafor</h1>
             <nav>
                 <a href="/search/">Search</a>
                 <a href="/gxmes">Gxmes</a>
@@ -13,12 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
         <main>
             <div class="content-container">
                 <iframe id="gameFrame" title="Game" scrolling="no"></iframe>
-                
-                <!-- Game Info Box -->
-                <div class="game-info">
-                    <h2 class="game-title" id="gameTitle">Loading Game...</h2>
-                    <p class="game-keywords" id="gameKeywords">Keywords: Loading...</p>
-                </div>
 
                 <div class="fullscreen-strip">
                     <button class="fullscreen-btn" onclick="toggleFullscreen()">
@@ -26,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     </button>
                 </div>
             </div>
+            <!-- Game Info Box -->
+                <div class="game-info">
+                    <h2 class="game-title" id="gameTitle">Loading Game...</h2>
+                    <p class="game-keywords" id="gameKeywords">Keywords: Loading...</p>
+                </div>
         </main>
 
         <footer>
@@ -67,7 +66,7 @@ async function fetchData(index) {
         document.getElementById('gameTitle').textContent = name1;
 
         // Generate and set the keywords string dynamically
-        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
+        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work' + name1;
         document.getElementById('gameKeywords').textContent = 'Keywords: ' + keywords;
 
         // Set tab name and image
