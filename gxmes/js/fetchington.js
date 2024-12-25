@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
             <!-- Game Info Box -->
                 <div class="game-info">
-                    <h2 class="game-title" id="gameTitle">Loading Game...</h2>
-                    <p class="game-keywords" id="gameKeywords">Keywords: Loading...</p>
+                    <h2 class="game-title" id="gameTitle">Loading Gxme...</h2>
+                    <p class="game-keywords" id="gameKeywords">Tags: Loading...</p>
                 </div>
         </main>
 
@@ -64,7 +64,7 @@ async function fetchData(index) {
         document.getElementById('gameTitle').textContent = name1 + ' play now on maxwellstevenson.com';
 
         const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, ' + name1;
-        document.getElementById('gameKeywords').textContent = 'Keywords: ' + keywords;
+        document.getElementById('gameKeywords').textContent = 'Tags: ' + keywords;
 
         var savedTabName = localStorage.getItem('tabName');
         var savedTabImage = localStorage.getItem('tabImage');
