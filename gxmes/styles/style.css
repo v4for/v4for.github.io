@@ -94,3 +94,45 @@ footer a {
     color: #95d0b4;
     text-decoration: none;
 }
+
+/* Styling for the content container */
+.content-container {
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Styling for the iframe */
+.content-container iframe {
+    width: 100%; 
+    height: 80vh;
+    border: none;
+    border-radius: 10px 10px 0 0; 
+    transition: all 0.3s ease;
+}
+
+/* Game Info Box Styling */
+.game-info {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent dark background */
+    color: #fff;
+    padding: 15px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 800px; /* Make the box fit within the page */
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Game Title Styling */
+.game-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Game Keywords Styling */
+.game-keywords {
+    font-size: 16px;
+    color: #f0f0f0;
+}

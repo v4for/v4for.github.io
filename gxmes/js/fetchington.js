@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="content-container">
                 <iframe id="gameFrame" title="Game" scrolling="no"></iframe>
                 
+                <!-- Game Info Box -->
+                <div class="game-info">
+                    <h2 class="game-title" id="gameTitle">Loading Game...</h2>
+                    <p class="game-keywords" id="gameKeywords">Keywords: Loading...</p>
+                </div>
+
                 <div class="fullscreen-strip">
                     <button class="fullscreen-btn" onclick="toggleFullscreen()">
                         <i class="fas fa-expand"></i> 
@@ -34,14 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Vafor</title>
-        <!-- Include Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
         <link href="../styles/style.css" rel="stylesheet"/>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467" crossorigin="anonymous"></script>
     `;
 
     document.head.innerHTML += headContent;
 });
+
 
 async function fetchData(index) {
     try {
@@ -57,6 +62,13 @@ async function fetchData(index) {
         // Set iframe src
         const iframe = document.getElementById('gameFrame');    
         iframe.src = src;
+
+        // Set the game title dynamically
+        document.getElementById('gameTitle').textContent = name1;
+
+        // Generate and set the keywords string dynamically
+        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
+        document.getElementById('gameKeywords').textContent = 'Keywords: ' + keywords;
 
         // Set tab name and image
         var savedTabName = localStorage.getItem('tabName');
@@ -77,38 +89,9 @@ async function fetchData(index) {
         }
 
         document.getElementById('gameFrame').focus();
-
-
     } catch (error) {
         console.error('Fetch error:', error);
     }
 }
 
-function toggleFullscreen() {
-    var iframe = document.getElementById('gameFrame');
-    
-    if (!document.fullscreenElement) {
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) { // Firefox
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) { // IE/Edge
-            iframe.msRequestFullscreen();
-        }
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-            document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-            document.msExitFullscreen();
-        }
-    }
-}
 
-
-//const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, EZ 66, ' + name1;
