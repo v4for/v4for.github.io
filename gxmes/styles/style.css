@@ -97,7 +97,7 @@ footer a {
 
 /* Styling for the content container */
 .content-container {
-    width: 80%; 
+    width: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center; /* Center content horizontally */
@@ -119,9 +119,9 @@ footer a {
     padding: 15px;
     margin-top: 15px;
     width: 100%;
-    max-width: 800px; /* Make the box fit within the page */
     border-radius: 10px;
     text-align: center;
+    height: 140px;
 }
 
 /* Game Title Styling */

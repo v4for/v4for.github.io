@@ -58,18 +58,14 @@ async function fetchData(index) {
         console.log("name", name1);
         console.log("src", src);
 
-        // Set iframe src
         const iframe = document.getElementById('gameFrame');    
         iframe.src = src;
 
-        // Set the game title dynamically
-        document.getElementById('gameTitle').textContent = name1;
+        document.getElementById('gameTitle').textContent = name1 + ' play now on maxwellstevenson.com';
 
-        // Generate and set the keywords string dynamically
-        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work' + name1;
+        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, ' + name1;
         document.getElementById('gameKeywords').textContent = 'Keywords: ' + keywords;
 
-        // Set tab name and image
         var savedTabName = localStorage.getItem('tabName');
         var savedTabImage = localStorage.getItem('tabImage');
 
