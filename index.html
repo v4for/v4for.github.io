@@ -1,324 +1,293 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gxmes - maxwellstevenson.com</title>
-    <meta name="keywords" content="maxwellstevenson.com, vafor, vafor IT, Vafor IT work,  buildnow.gg, 1v1.lol ,funnyshooter 2 ,smash karts ,unblocked gxmes, gxmes, gxmes hub, gxmes online, gxmes space, gxmes spxce, gxmes space">
-    <meta name="description" content="Play over 70+ gxmes on maxwellstevenson.com">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
-    crossorigin="anonymous"></script>
-    <style href="assets/bottombanner.css"></style>
-    <script src="../s/tab.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Vafor IT - Home</title>
     <style>
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Heebo", sans-serif;
-        }
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
         }
 
         body {
-            background-color: #2d2d2d;
-            color: #eaeaea;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #2d2d2d; /* Dark Gray */
+            color: #eaeaea; /* Light Gray */
         }
 
-        h1, h2 {
-            color: #b7e1c0;
+        /* Header */
+        header {
+            background-color: #1a1a1a; /* Dark Gray */
+            color: #eaeaea; /* Light Gray */
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            align-items: center;
         }
 
-        .navbar {
-            background-color: #3e3e3e;
-            padding: 15px;
+        header .logo h1 {
+            font-size: 2rem;
         }
 
-        .navbar a {
-            color: #eaeaea;
-            padding: 10px 20px;
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-right: 2rem;
+        }
+
+        header nav ul li a {
+            color: #eaeaea; /* Light Gray */
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            font-size: 1rem;
         }
 
-        .navbar a:hover {
-            color: #b7e1c0;
+        header nav ul li a:hover {
+            text-decoration: underline;
         }
 
-        .hero-section {
-            background-color: #1a1a1a;
+        /* Hero Section */
+        .hero {
+            background-color: #1a1a1a; /* Dark Gray */
+            color: #eaeaea; /* Light Gray */
             text-align: center;
-            padding: 60px 20px;
+            padding: 4rem 0;
         }
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .hero h2 {
+            font-size: 3rem;
         }
 
-        .hero-section p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-        }
-
-        .btn-custom {
-            background-color: #b7e1c0;
-            color: #1a1a1a;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
+        .hero p {
             font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            margin: 1rem 0;
         }
 
-        .btn-custom:hover {
-            background-color: #a0d1a4;
-            transform: translateY(-2px);
+        .hero .cta-button {
+            padding: 10px 20px;
+            background-color: #b7e1c0; /* Pastel Green */
+            color: #1a1a1a; /* Dark Gray */
+            text-decoration: none;
+            border-radius: 5px;
         }
 
-        .gxme-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            padding: 40px 20px;
-            background-color: #3e3e3e;
-            flex-grow: 1;
+        .hero .cta-button:hover {
+            background-color: #a0d1a4; /* Pastel Green */
         }
 
-        .gxme-card {
-            background-color: #444;
-            border-radius: 10px;
-            padding: 15px;
-            height: 150px;
+        /* Featured Games */
+        .featured-games {
+            background-color: #3e3e3e; /* Dark Gray */
+            padding: 2rem;
             text-align: center;
-            color: #eaeaea;
-            transition: transform 0.2s, box-shadow 0.3s;
         }
 
-        .gxme-card img {
-            max-width: 100%;
+        .featured-games h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .game-cards {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .game-card {
+            background-color: #2d2d2d; /* Dark Gray */
+            width: 30%;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-card img {
+            width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 10px;
         }
 
-        .gxme-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        .game-card h3 {
+            margin-top: 1rem;
         }
 
-        .gxme-card h3 {
+        .game-card .game-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b7e1c0; /* Pastel Green */
+            color: #1a1a1a; /* Dark Gray */
+            text-decoration: none;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        .game-card .game-button:hover {
+            background-color: #a0d1a4; /* Pastel Green */
+        }
+
+        /* News Section */
+        .news {
+            background-color: #3e3e3e; /* Dark Gray */
+            padding: 2rem;
+        }
+
+        .news h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .news-posts {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .news-item {
+            width: 45%;
+            padding: 1rem;
+            background-color: #2d2d2d; /* Dark Gray */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: #b7e1c0; /* Pastel Green */
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Community Section */
+        .community {
+            text-align: center;
+            padding: 3rem;
+            background-color: #1a1a1a; /* Dark Gray */
+            color: #eaeaea; /* Light Gray */
+        }
+
+        .community h2 {
+            font-size: 2.5rem;
+        }
+
+        .community p {
             font-size: 1.2rem;
-            color: #b7e1c0;
-            margin-top: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .community .cta-button {
+            padding: 10px 20px;
+            background-color: #b7e1c0; /* Pastel Green */
+            color: #1a1a1a; /* Dark Gray */
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .community .cta-button:hover {
+            background-color: #a0d1a4; /* Pastel Green */
         }
 
         /* Footer */
-        .footer {
-            background-color: #1a1a1a;
+        footer {
+            background-color: #1a1a1a; /* Dark Gray */
+            color: #eaeaea; /* Light Gray */
             text-align: center;
-            padding: 30px 20px;
-            color: #eaeaea;
-            font-size: 0.9rem;
-            flex-shrink: 0; /* Ensures the footer does not shrink */
+            padding: 2rem 0;
         }
 
-        .footer a {
-            color: #b7e1c0;
+        footer .social-media a {
+            color: #eaeaea; /* Light Gray */
             text-decoration: none;
-            font-weight: 600;
+            margin: 0 10px;
         }
 
-        .footer a:hover {
-            color: #a0d1a4;
-        }
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: #444;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-        }
-
-        .search-bar input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #eaeaea;
-            padding: 0.5rem;
-            font-size: 1rem;
-            width: 200px;
-        }
-
-        .search-bar button {
-            background-color: #b7e1c0;
-            color: #1a1a1a;
-            border: none;
-            border-radius: 3px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-bar button:hover {
-            background-color: #a0d1a4;
+        footer .social-media a:hover {
+            text-decoration: underline;
         }
     </style>
-
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/gxmes">Gxmes</a>
-        <div class="search-bar">
-            <input type="text" id="search" placeholder="Search gxmes...">
-            <button onclick="searchgxmes()">Search</button>
+    <header>
+        <div class="logo">
+            <h1>Vafor IT</h1> <!-- Updated logo text -->
         </div>
-    </nav>
-    <ins class="adsbygoogle"
-     style="display:inline-block;height:120px;"
-     data-ad-client="ca-pub-5247035630897467"
-     data-ad-slot="5122372341"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <section class="hero-section">
-        <h1>Welcome to Vafor IT</h1>
-        <p>Explore over 70+ exciting gxmes from all genres</p>
-        <button class="btn-custom" onclick="randombutton()">Start Playing</button>
-    </section>
-<ins class="adsbygoogle"
-     style="display:inline-block;height:120px;"
-     data-ad-client="ca-pub-5247035630897467"
-     data-ad-slot="5122372341"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <section class="gxme-grid">
-        <!-- Dynamic game cards will be added here by JavaScript -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/gxmes">Gxmes</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Vafor IT</h2> 
+        <p>Your ultimate gxming destination!</p>
+        <a href="#" class="cta-button">Browse Latest Games</a>
     </section>
 
-    <footer class="footer">
-        <p>© 2024 maxwellstevenson.com. All Rights Reserved.</p>
-        <p>Open an issue: <a href="https://github.com/v4for/v4for.github.io">Official repository</a></p>
+    <section class="featured-games">
+        <h2>Featured Games</h2>
+        <div class="game-cards">
+            <div class="game-card">
+                <img src="game1.jpg" alt="Game 1">
+                <h3>Game Title 1</h3>
+                <p>Action-packed and immersive adventure.</p>
+                <a href="#" class="game-button">Play Now</a>
+            </div>
+            <div class="game-card">
+                <img src="game2.jpg" alt="Game 2">
+                <h3>Game Title 2</h3>
+                <p>Explore vast worlds in this RPG.</p>
+                <a href="#" class="game-button">Play Now</a>
+            </div>
+            <div class="game-card">
+                <img src="game3.jpg" alt="Game 3">
+                <h3>Game Title 3</h3>
+                <p>Multiplayer madness in this shooter.</p>
+                <a href="#" class="game-button">Play Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <h2>Latest News</h2>
+        <div class="news-posts">
+            <div class="news-item">
+                <h3>Big Game Update Coming Soon!</h3>
+                <p>Get ready for the biggest update of the year for Game Title 1...</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="news-item">
+                <h3>New Game Announced</h3>
+                <p>Discover the new title that everyone is talking about...</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="community">
+        <h2>Join the Community</h2>
+        <p>Connect with players from around the world. Share tips, strategies, and more!</p>
+        <a href="#" class="cta-button">Visit Community</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Vafor IT. All rights reserved.</p> <!-- Updated footer text -->
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
     </footer>
-
-<script>
-function getParentFolder() {
-    return window.location.origin; // Returns the protocol + domain
-}
-
-let link2 = getParentFolder(); 
-    function default2(){
-        setTimeout(function() {
-        var links = document.querySelectorAll('section.gxme-grid a');
-        links.forEach(function(link) {
-            link.onclick = function(event) {
-                var gameName = link.querySelector('img') ? link.querySelector('img').alt : 'Why are you here';
-                event.preventDefault(); 
-                let encodedStr = btoa(link.href);
-                window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
-
-            };
-        }); 
-    }, 50); 
-}
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to fetch the JSON data from the external URL
-    fetch('/list.json')
-        .then(response => response.json())
-        .then(data => {
-            const gxmeGrid = document.querySelector('.gxme-grid');
-
-            // Loop through each game entry in the JSON data
-            data.forEach(game => {
-                let gxmeLink = document.createElement('a');
-                gxmeLink.href = game.linksrc; 
-                gxmeLink.target = '_self'; 
-                gxmeLink.style.textDecoration = 'none'; 
-                gxmeLink.style.color = 'inherit'; 
-
-                let gxmeCard = document.createElement('div');
-                gxmeCard.classList.add('gxme-card');
-                gxmeCard.style.cursor = 'pointer';
-
-                let img = document.createElement('img');
-                img.src = game.imgsrc; // Use the imgsrc from the JSON
-                img.alt = game.name;
-                img.style.width = '100px';
-                img.style.height = '100px';
-
-                let h3 = document.createElement('h3');
-                h3.textContent = game.name; // Use the name from the JSON
-
-                gxmeCard.appendChild(img);
-                gxmeCard.appendChild(h3);
-                gxmeLink.appendChild(gxmeCard);
-                gxmeGrid.appendChild(gxmeLink);
-            });
-            default2();
-        })
-        .catch(error => console.error('Error loading the list.json:', error));
-    
-    // Search functionality
-    const searchInput = document.getElementById('search');
-
-    function searchgxmes() {
-        const query = searchInput.value.toLowerCase();
-        const gxmeGrid = document.querySelector('.gxme-grid');
-        gxmeGrid.innerHTML = ''; // Clear the grid
-
-        fetch('/list.json')
-            .then(response => response.json())
-            .then(data => {
-                // Re-populate with only matching cards
-                data.forEach(game => {
-                    if (game.name.toLowerCase().includes(query)) {
-                        let gxmeLink = document.createElement('a');
-                        gxmeLink.href = game.linksrc; 
-                        gxmeLink.target = '_self'; 
-                        gxmeLink.style.textDecoration = 'none'; 
-                        gxmeLink.style.color = 'inherit'; 
-
-                        let gxmeCard = document.createElement('div');
-                        gxmeCard.classList.add('gxme-card');
-                        gxmeCard.style.cursor = 'pointer';
-
-                        let img = document.createElement('img');
-                        img.src = game.imgsrc; // Use the imgsrc from the JSON
-                        img.alt = game.name;
-                        img.style.width = '100px';
-                        img.style.height = '100px';
-
-                        let h3 = document.createElement('h3');
-                        h3.textContent = game.name; // Use the name from the JSON
-
-                        gxmeCard.appendChild(img);
-                        gxmeCard.appendChild(h3);
-                        gxmeLink.appendChild(gxmeCard);
-                        gxmeGrid.appendChild(gxmeLink);
-                    }
-                });
-                default2();
-            })
-            .catch(error => console.error('Error searching games:', error));
-    }
-
-    searchInput.addEventListener('input', searchgxmes);
-
-});
-</script>
-
 </body>
 </html>

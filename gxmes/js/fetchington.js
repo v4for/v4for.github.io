@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
         <header>
             <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/gxmes'">Vafor</h1>
             <nav>
-                <a href="/search/">Search</a>
                 <a href="/gxmes">Gxmes</a>
                 <a href="/about">About</a>
                 <a href="/a">Apps</a>
