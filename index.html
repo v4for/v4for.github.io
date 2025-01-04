@@ -98,11 +98,26 @@
         }
 
         .game-card {
-            background-color: #2d2d2d; /* Dark Gray */
+            background-color: transparent; /* Make the background transparent */
             width: 30%;
             padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2d2d2d; /* Dark Gray for background */
+            border-radius: 10px;
+            z-index: -1; /* Position it behind the content */
         }
 
         .game-card img {
