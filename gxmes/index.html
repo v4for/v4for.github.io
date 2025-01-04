@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gxmes - maxwellstevenson.com</title>
     <meta name="keywords" content="maxwellstevenson.com, vafor, vafor IT, Vafor IT work,  buildnow.gg, 1v1.lol ,funnyshooter 2 ,smash karts ,unblocked gxmes, gxmes, gxmes hub, gxmes online, gxmes space, gxmes spxce, gxmes space">
-    <meta name="description" content="Play over 70+ exciting gxmes on maxwellstevenson.com">
+    <meta name="description" content="Play over 70+ gxmes on maxwellstevenson.com">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467"
     crossorigin="anonymous"></script>
-    <style href="../assets/bottombanner.css"></style>
+    <style href="assets/bottombanner.css"></style>
     <script src="../s/tab.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -143,26 +144,6 @@
         .footer a:hover {
             color: #a0d1a4;
         }
-
-        .content-section {
-            padding: 40px 20px;
-            background-color: #3e3e3e;
-            color: #eaeaea;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        .content-section h2 {
-            color: #b7e1c0;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-        }
-
         .search-bar {
             display: flex;
             align-items: center;
@@ -194,83 +175,51 @@
         .search-bar button:hover {
             background-color: #a0d1a4;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
+
 </head>
 <body>
     <nav class="navbar">
-        <a href="/">Gxmes</a>
-        <a href="#apps">Apps</a>
-        <a href="#about">About</a>
-        <a href="#alternatives">Alternative Links</a>
+        <a href="/gxmes">Gxmes</a>
         <div class="search-bar">
             <input type="text" id="search" placeholder="Search gxmes...">
             <button onclick="searchgxmes()">Search</button>
         </div>
     </nav>
-
     <ins class="adsbygoogle"
      style="display:inline-block;height:120px;"
      data-ad-client="ca-pub-5247035630897467"
      data-ad-slot="5122372341"></ins>
-
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     <section class="hero-section">
         <h1>Welcome to Vafor IT</h1>
         <p>Explore over 70+ exciting gxmes from all genres</p>
         <button class="btn-custom" onclick="randombutton()">Start Playing</button>
     </section>
-
-    <ins class="adsbygoogle"
+<ins class="adsbygoogle"
      style="display:inline-block;height:120px;"
      data-ad-client="ca-pub-5247035630897467"
      data-ad-slot="5122372341"></ins>
-
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
     <section class="gxme-grid">
         <!-- Dynamic game cards will be added here by JavaScript -->
     </section>
 
-    <!-- New Sections for Apps, About, and Alternatives -->
-    <section id="apps" class="content-section">
-        <h2>Our Apps</h2>
-        <p>Discover and download the best apps for your gaming experience.</p>
-        <!-- Include app details or links here -->
-    </section>
-
-    <section id="about" class="content-section">
-        <h2>About</h2>
-        <p>Learn more about Vafor IT and how we provide top-notch gaming experiences.</p>
-        <!-- About details here -->
-    </section>
-
-    <section id="alternatives" class="content-section">
-        <h2>Alternative Links</h2>
-        <p>If you're looking for other options, check out these alternative games.</p>
-        <!-- Alternative game links here -->
-    </section>
-
     <footer class="footer">
         <p>© 2024 maxwellstevenson.com. All Rights Reserved.</p>
-        <p><a href="#apps">Apps</a> | <a href="#about">About</a> | <a href="#alternatives">Alternative Links</a></p>
         <p>Open an issue: <a href="https://github.com/v4for/v4for.github.io">Official repository</a></p>
     </footer>
 
-    <script>
-    function getParentFolder() {
-        return window.location.origin; // Returns the protocol + domain
-    }
+<script>
+function getParentFolder() {
+    return window.location.origin; // Returns the protocol + domain
+}
 
-    let link2 = getParentFolder(); 
+let link2 = getParentFolder(); 
     function default2(){
         setTimeout(function() {
         var links = document.querySelectorAll('section.gxme-grid a');
@@ -280,16 +229,19 @@
                 event.preventDefault(); 
                 let encodedStr = btoa(link.href);
                 window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
+
             };
         }); 
     }, 50); 
 }
 document.addEventListener('DOMContentLoaded', function () {
+    // Function to fetch the JSON data from the external URL
     fetch('/list.json')
         .then(response => response.json())
         .then(data => {
             const gxmeGrid = document.querySelector('.gxme-grid');
 
+            // Loop through each game entry in the JSON data
             data.forEach(game => {
                 let gxmeLink = document.createElement('a');
                 gxmeLink.href = game.linksrc; 
@@ -299,19 +251,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 let gxmeCard = document.createElement('div');
                 gxmeCard.classList.add('gxme-card');
-                gxmeCard.style.cursor = 'pointer'; 
-                gxmeCard.innerHTML = `
-                    <img src="${game.thumbnail}" alt="${game.name}">
-                    <h3>${game.name}</h3>
-                `;
+                gxmeCard.style.cursor = 'pointer';
+
+                let img = document.createElement('img');
+                img.src = game.imgsrc; // Use the imgsrc from the JSON
+                img.alt = game.name;
+                img.style.width = '100px';
+                img.style.height = '100px';
+
+                let h3 = document.createElement('h3');
+                h3.textContent = game.name; // Use the name from the JSON
+
+                gxmeCard.appendChild(img);
+                gxmeCard.appendChild(h3);
                 gxmeLink.appendChild(gxmeCard);
                 gxmeGrid.appendChild(gxmeLink);
             });
-            
             default2();
         })
-        .catch(error => console.error('Error fetching gxmes:', error));
+        .catch(error => console.error('Error loading the list.json:', error));
+    
+    // Search functionality
+    const searchInput = document.getElementById('search');
+
+    function searchgxmes() {
+        const query = searchInput.value.toLowerCase();
+        const gxmeGrid = document.querySelector('.gxme-grid');
+        gxmeGrid.innerHTML = ''; // Clear the grid
+
+        fetch('/list.json')
+            .then(response => response.json())
+            .then(data => {
+                // Re-populate with only matching cards
+                data.forEach(game => {
+                    if (game.name.toLowerCase().includes(query)) {
+                        let gxmeLink = document.createElement('a');
+                        gxmeLink.href = game.linksrc; 
+                        gxmeLink.target = '_self'; 
+                        gxmeLink.style.textDecoration = 'none'; 
+                        gxmeLink.style.color = 'inherit'; 
+
+                        let gxmeCard = document.createElement('div');
+                        gxmeCard.classList.add('gxme-card');
+                        gxmeCard.style.cursor = 'pointer';
+
+                        let img = document.createElement('img');
+                        img.src = game.imgsrc; // Use the imgsrc from the JSON
+                        img.alt = game.name;
+                        img.style.width = '100px';
+                        img.style.height = '100px';
+
+                        let h3 = document.createElement('h3');
+                        h3.textContent = game.name; // Use the name from the JSON
+
+                        gxmeCard.appendChild(img);
+                        gxmeCard.appendChild(h3);
+                        gxmeLink.appendChild(gxmeCard);
+                        gxmeGrid.appendChild(gxmeLink);
+                    }
+                });
+                default2();
+            })
+            .catch(error => console.error('Error searching games:', error));
+    }
+
+    searchInput.addEventListener('input', searchgxmes);
+
 });
 </script>
+
 </body>
 </html>
