@@ -175,6 +175,12 @@
         .search-bar button:hover {
             background-color: #a0d1a4;
         }
+         .loading-text {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #b7e1c0;
+            margin-top: 20px;
+        }
     </style>
 
 </head>
@@ -207,6 +213,8 @@
 </script>
     <section class="gxme-grid">
         <!-- Dynamic game cards will be added here by JavaScript -->
+        <div class="loading-text" id="loadingText">Loading games, please wait...</div>
+
     </section>
 
     <footer class="footer">
@@ -220,8 +228,9 @@ function getParentFolder() {
 }
 
 let link2 = getParentFolder(); 
-    function default2(){
-        setTimeout(function() {
+
+function default2(){
+    setTimeout(function() {
         var links = document.querySelectorAll('section.gxme-grid a');
         links.forEach(function(link) {
             link.onclick = function(event) {
@@ -229,12 +238,14 @@ let link2 = getParentFolder();
                 event.preventDefault(); 
                 let encodedStr = btoa(link.href);
                 window.open(link2 + "/play?game=" + encodedStr + "&name=" + encodeURIComponent(gameName), '_self');
-
             };
         }); 
     }, 50); 
 }
+
 document.addEventListener('DOMContentLoaded', function () {
+    const loadingText = document.getElementById('loadingText');
+    
     // Function to fetch the JSON data from the external URL
     fetch('/list.json')
         .then(response => response.json())
@@ -267,9 +278,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 gxmeLink.appendChild(gxmeCard);
                 gxmeGrid.appendChild(gxmeLink);
             });
+
+            // Hide the loading text after games are loaded
+            loadingText.style.display = 'none';
             default2();
         })
-        .catch(error => console.error('Error loading the list.json:', error));
+        .catch(error => {
+            console.error('Error loading the list.json:', error);
+            loadingText.textContent = 'Failed to load games. Please try again later.';
+        });
     
     // Search functionality
     const searchInput = document.getElementById('search');
@@ -279,6 +296,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const gxmeGrid = document.querySelector('.gxme-grid');
         gxmeGrid.innerHTML = ''; // Clear the grid
 
+        // Show loading text while searching
+        loadingText.style.display = 'block';
+        
         fetch('/list.json')
             .then(response => response.json())
             .then(data => {
@@ -310,13 +330,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         gxmeGrid.appendChild(gxmeLink);
                     }
                 });
+
+                // Hide the loading text after search results are loaded
+                loadingText.style.display = 'none';
                 default2();
             })
-            .catch(error => console.error('Error searching games:', error));
+            .catch(error => {
+                console.error('Error searching games:', error);
+                loadingText.textContent = 'Failed to search games. Please try again later.';
+            });
     }
 
     searchInput.addEventListener('input', searchgxmes);
-
 });
 </script>
 
