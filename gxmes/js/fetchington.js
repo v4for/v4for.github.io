@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
     <footer>
-        <p>© 2025 Game Hub. All Rights Reserved.</p>
+        <p>© 2025 Vafor IT. All Rights Reserved.</p>
     </footer>
     `;
 
