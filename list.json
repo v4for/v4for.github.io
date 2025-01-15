@@ -454,5 +454,11 @@
         "imgsrc": "/Vafor_IT/fruitninja/FruitNinjaTeaser.jpg",
         "linksrc": "/Vafor_IT/fruitninja/",
         "foldername": "fruit-ninja"
+    },
+    {
+        "name": "Rocket Pult",
+        "imgsrc": "/assets/img/rocketpult.png",
+        "linksrc": "/Vafor_IT/rocketpult/",
+        "foldername": "rocket-pult"
     }
 ]
