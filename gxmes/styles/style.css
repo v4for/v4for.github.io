@@ -1,77 +1,99 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Heebo", sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
+html, body {
+    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    background-color: #2d2d2d;
+    color: #eaeaea;
 }
 
 header {
-    background-color: #111;
-    padding: 20px;
+    background-color: #3e3e3e;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header h1 {
-    color: #95d0b4;
-    font-size: 2em;
+header .title {
+    color: #eaeaea;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+header .title:hover {
+    color: #b7e1c0;
 }
 
 header nav {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 header nav a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
-main {
+header nav a:hover {
+    color: #b7e1c0;
+}
+
+.content {
     flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-info {
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 40px 200px;
 }
 
-.content-container {
-    width: 80%; 
-    display: flex;
-    flex-direction: column;
+.game-info h2 {
+    color: #b7e1c0;
+    margin-bottom: 10px;
+    text-align: left;
+    flex: 1;
 }
 
-.content-container iframe {
-    width: 100%; 
-    height: 80vh;
+.game-iframe {
+    width: 80%;
+    height: 500px;
     border: none;
-    border-radius: 10px 10px 0 0; 
-    transition: all 0.3s ease;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin: 0 auto; /* Ensure iframe is centered */
+    display: block; /* Ensure iframe is block element */
 }
 
 .fullscreen-strip {
-    width: 100%; 
-    background-color: #555; 
+    width: 80%;
+    background-color: #555;
     padding: 5px 20px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-radius: 0 0 10px 10px; 
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto 20px; /* Center and add bottom margin */
+    margin-top: -5px; /* Remove gap between iframe and strip */
 }
 
 .fullscreen-btn {
-    font-size: 1.5em; 
+    font-size: 1.5em;
     background: none;
     border: none;
     color: #fff;
@@ -81,53 +103,74 @@ main {
 }
 
 .fullscreen-btn:hover {
-    background-color: #444; 
+    background-color: #444;
 }
 
-footer {
-    background-color: #111;
-    padding: 20px;
-    text-align: center;
-}
-
-footer a {
-    color: #95d0b4;
-    text-decoration: none;
-}
-
-.content-container {
-    width: 100%; 
+.keywords-section {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
-
-.content-container iframe {
-    width: 100%; 
-    height: 80vh;
-    border: none;
-    border-radius: 10px 10px 0 0; 
-    transition: all 0.3s ease;
-}
-
-.game-info {
-    background-color: rgba(0, 0, 0, 0.7); 
-    color: #fff;
-    padding: 15px;
-    margin-top: 15px;
-    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #3e3e3e;
+    padding: 20px;
     border-radius: 10px;
-    text-align: center;
-    height: 140px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    margin: 0 auto; /* Center the section */
 }
 
-.game-title {
-    font-size: 24px;
-    font-weight: bold;
+.keywords {
+    width: 362px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.keywords h3 {
+    width: 100%;
+    color: #b7e1c0;
     margin-bottom: 10px;
 }
 
-.game-keywords {
-    font-size: 16px;
-    color: #f0f0f0;
+.keywords span {
+    display: inline-block;
+    background-color: #444;
+    color: #eaeaea;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.keywords span:hover {
+    background-color: #b7e1c0;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+.game-image {
+    flex: 1;
+    text-align: right;
+}
+
+.game-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px;
+    color: #eaeaea;
+}
+
+footer a {
+    color: #b7e1c0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #a0d1a4;
 }

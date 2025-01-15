@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5247035630897467" crossorigin="anonymous"></script>
+    <script src="../js/fetchington.js"></script>
+</head>
+<body>
+    <script>
+        fetchData(0);
+    </script>
+</body>
+</html>

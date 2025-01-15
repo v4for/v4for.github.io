@@ -1,91 +1,104 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const htmlContent = `
-        <header>
-            <h1 style="cursor: pointer; padding-right:20px;" onclick="window.location.href = '/gxmes'">Vafor</h1>
-            <nav>
-                <a href="/gxmes">Gxmes</a>
-                <a href="/about">About</a>
-                <a href="/a">Apps</a>
-            </nav>
-        </header>
-
-        <main>
-            <div class="content-container">
-                <iframe id="gameFrame" title="Game" scrolling="no"></iframe>
-
-                <div class="fullscreen-strip">
-                    <button class="fullscreen-btn" onclick="toggleFullscreen()">
-                        <i class="fas fa-expand"></i> 
-                    </button>
-                </div>
-            </div>
-            <!-- Game Info Box -->
-                <div class="game-info">
-                    <h2 class="game-title" id="gameTitle">Loading Gxme...</h2>
-                    <p class="game-keywords" id="gameKeywords">Tags: Loading...</p>
-                </div>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 Vafor IT. All rights reserved. <a href="#">Privacy Policy</a></p>
-        </footer>
-    `;
-
-    document.body.innerHTML += htmlContent;
-
-    const headContent = `
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Vafor</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-        <link href="../styles/style.css" rel="stylesheet"/>
-    `;
-
-    document.head.innerHTML += headContent;
-});
-
-
 async function fetchData(index) {
     try {
         const response = await fetch('/list.json');
         const data = await response.json();
         const item = data[index];
         const name1 = item.name;
+        const imgsrc = item.imgsrc;
         const src = item.linksrc;
 
         console.log("name", name1);
         console.log("src", src);
 
-        const iframe = document.getElementById('gameFrame');    
+        const iframe = document.getElementById('game-iframe');    
         iframe.src = src;
-
-        document.getElementById('gameTitle').textContent = name1 + ' play now on maxwellstevenson.com';
-
+        const image = document.getElementById('bottomimage');
+        image.src = imgsrc; 
+        document.getElementById('gameTitle').textContent = name1 + ' play on maxwellstevenson.com';
+        document.title = name1 + ' - play on maxwellstevenson.com';
+        const imgSrc = 'favicon.ico'; document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'icon', href: imgSrc, id: 'faviconLink' }));
         const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, Vafor IT Work, ' + name1;
-        document.getElementById('gameKeywords').textContent = 'Tags: ' + keywords;
+    
+        const keywordsArray = keywords.split(', ');
 
-        var savedTabName = localStorage.getItem('tabName');
-        var savedTabImage = localStorage.getItem('tabImage');
+        const keywordsDiv = document.querySelector('.keywords');
 
-        if (savedTabName) {
-            document.title = savedTabName;
-        } else {
-            document.title = name1 + " - play now on maxwellstevenson.com";
-        }
+        keywordsDiv.innerHTML = '<h3>Keywords:</h3>';
 
-        if (savedTabImage) {
-            var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-            link.type = 'image/x-icon';
-            link.rel = 'shortcut icon';
-            link.href = savedTabImage;
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
+        keywordsArray.forEach(keyword => {
+            const span = document.createElement('span');
+            span.textContent = keyword;
+            keywordsDiv.appendChild(span);
+        });
 
-        document.getElementById('gameFrame').focus();
+        document.getElementById('game-iframe').focus();
     } catch (error) {
         console.error('Fetch error:', error);
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const link1 = document.createElement('link');
+    link1.rel = 'stylesheet';
+    link1.href = '../styles/style.css';
+    
+    const link2 = document.createElement('link');
+    link2.rel = 'stylesheet';
+    link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
+    
+    document.head.appendChild(link1);
+    document.head.appendChild(link2);
+    
+    const html3 = `
+    <header>
+        <a class="title" href="/gxmes">Vafor</a>
+        <nav>
+            <!--
+            <a href="#home">Home</a>
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            -->
+        </nav>
+    </header>
+    <div class="content">
+        <div class="game-info">
+            <h2 id="gameTitle">Loading...</h2>
+        </div>
+        <iframe id="game-iframe" class="game-iframe" src=""></iframe>
+        <div class="fullscreen-strip">
+            <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                <i class="fas fa-expand"></i>
+            </button>
+        </div>
+        <div class="keywords-section">
+            <div class="keywords">
+                <h3>Keywords:</h3>
+                <span>loading..</span>
+            </div>
+            <div class="game-image">
+                <img id="bottomimage">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 Game Hub. All Rights Reserved.</p>
+    </footer>
+    `;
 
+    const bodyTag = document.body;
+
+    bodyTag.innerHTML += html3;
+});
+function toggleFullscreen() {
+            const iframe = document.getElementById('game-iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { 
+                iframe.msRequestFullscreen();
+            }
+        }
