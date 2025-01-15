@@ -51,9 +51,12 @@ header nav a:hover {
 }
 
 .content {
-    flex-grow: 1;
+    flex: 1 0 auto;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; 
 }
 
 .game-info {
