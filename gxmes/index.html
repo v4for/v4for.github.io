@@ -353,7 +353,7 @@
     </div>
 
     <footer class="footer">
-        <p>© 2024 maxwellstevenson.com. All Rights Reserved.</p>
+        <p>© 2025 maxwellstevenson.com. All Rights Reserved.</p>
         <p>Open an issue: <a href="https://github.com/v4for/v4for.github.io">Official repository</a></p>
     </footer>
 
@@ -367,7 +367,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const loadingText = document.getElementById('loadingText');
             
-            fetch('/list.json')
+            fetch('../list.json')
                 .then(response => response.json())
                 .then(data => {
                     const gxmeGrid = document.querySelector('.gxme-grid');
@@ -417,7 +417,7 @@
                 // Show loading text while searching
                 loadingText.style.display = 'block';
                 
-                fetch('/list.json')
+                fetch('../list.json')
                     .then(response => response.json())
                     .then(data => {
                         // Re-populate with only matching cards
@@ -449,7 +449,6 @@
                             }
                         });
 
-                        // Hide the loading text after search results are loaded
                         loadingText.style.display = 'none';
                     })
                     .catch(error => {
@@ -460,7 +459,6 @@
 
             searchInput.addEventListener('input', searchgxmes);
 
-            // Modal functionality
             var modal = document.getElementById("myModal");
             var btn = document.getElementById("openModal");
             var span = document.getElementsByClassName("close")[0];
