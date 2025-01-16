@@ -207,7 +207,7 @@ header nav a:hover {
 
 .game-image img {
     width: 200px;
-    height: auto;
+    height: 200px;
     border-radius: 10px;
 }
 
