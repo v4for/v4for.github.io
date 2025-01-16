@@ -17,7 +17,7 @@ async function fetchData(index) {
         document.getElementById('gameTitle').textContent = name1 + ' play on maxwellstevenson.com';
         document.title = name1 + ' - play on maxwellstevenson.com';
         const imgSrc = imgsrc; document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'icon', href: imgSrc, id: 'faviconLink' }));
-        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, ' + name1 + ', ' + name1 + ' ' + 'school' + ', github, github gxmes, github ' + name1;
+        const keywords = 'gxme, gxmes, ' + name1 + ' unblxcked, ' + name1 + ' maxwellstevenson.com, Vafor, Vafor IT, ' + name1 + ', ' + name1 + ' ' + 'school' + ', github gxmes, github ' + name1;
 
     
         const keywordsArray = keywords.split(', ');
