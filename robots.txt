@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /Vafor-IT/
+Disallow: /Vafor_IT/
