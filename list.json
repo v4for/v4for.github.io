@@ -282,10 +282,10 @@
         "foldername": "world-hardest-gm-2"
     },
     {
-        "name": "Rooftop sniper",
+        "name": "Rooftop snipers",
         "imgsrc": "/assets/img/rooft.png",
         "linksrc": "/Vafor_IT/rooftop-snipers/",
-        "foldername": "rooftop-sniper"
+        "foldername": "rooftop-snipers"
     },
     {
         "name": "stack",
