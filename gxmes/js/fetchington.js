@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     link2.rel = 'stylesheet';
     link2.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css';
     
-    document.head.appendChild(link1);
+    //document.head.appendChild(link1);
     document.head.appendChild(link2);
     
     const html3 = `
