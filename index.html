@@ -374,7 +374,7 @@
 
                     data.forEach(game => {
                         let gxmeLink = document.createElement('a');
-                        gxmeLink.href = link2 + "/gxmes/" + gxme.foldername; 
+                        gxmeLink.href = link2 + "/gxmes/" + game.foldername; 
                         gxmeLink.target = '_self'; 
                         gxmeLink.style.textDecoration = 'none'; 
                         gxmeLink.style.color = 'inherit'; 
@@ -425,7 +425,7 @@
                         data.forEach(game => {
                             if (game.name.toLowerCase().includes(query)) {
                                 let gxmeLink = document.createElement('a');
-                                gxmeLink.href = link2 + "/gxmes/" + gxme.foldername; 
+                                gxmeLink.href = link2 + "/gxmes/" + game.foldername; 
                                 gxmeLink.target = '_self'; 
                                 gxmeLink.style.textDecoration = 'none'; 
                                 gxmeLink.style.color = 'inherit'; 
