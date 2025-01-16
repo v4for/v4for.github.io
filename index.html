@@ -400,7 +400,6 @@
 
                     // Hide the loading text after games are loaded
                     loadingText.style.display = 'none';
-                    default2();
                 })
                 .catch(error => {
                     console.error('Error loading the list.json:', error);
@@ -450,9 +449,7 @@
                             }
                         });
 
-                        // Hide the loading text after search results are loaded
                         loadingText.style.display = 'none';
-                        default2();
                     })
                     .catch(error => {
                         console.error('Error searching games:', error);
